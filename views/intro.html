@@ -1,0 +1,46 @@
+<html>
+
+<head>
+
+    <style>
+
+        #dropdown{
+            margin: auto;
+            width: 60px;
+        }
+
+    </style>
+</head>
+
+<body>
+<p>
+    Bist du ein Junge oder ein Mädchen?
+</p>
+
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary active">
+        <input type="radio" name="geschlecht" id="geschlecht_junge" autocomplete="off" checked> Junge
+    </label>
+    <label class="btn btn-secondary">
+        <input type="radio" name="geschlecht" id="geschlecht_maedchen" autocomplete="off"> Mädchen
+    </label>
+</div>
+
+<p>Wann bist du geboren?</p>
+<input id="date" type="date">
+<p>Ist Deutsch deine Muttersprache?</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary active">
+        <input type="radio" name="sprache" id="sprache_ja" autocomplete="off" checked> Ja
+    </label>
+    <label class="btn btn-secondary">
+        <input type="radio" name="sprache" id="sprache_nein" autocomplete="off"> Nein
+    </label>
+</div>
+<p>
+    <a class="btn btn-success" ng-click="startStory()" role="button">Geschichte Starten</a>
+</p>
+
+</body>
+
+</html>
