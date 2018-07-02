@@ -27,9 +27,9 @@ angular.module( 'App.services', [] )
     var z;
 
     window.addEventListener( 'devicemotion', function( event ) {
-      x = Math.round( event.acceleration.x );
-      y = Math.round( 100 * event.acceleration.y ) / 100;
-      z = Math.round( 100 * event.acceleration.z ) / 100;
+      x = event.acceleration.x;
+      y = event.acceleration.y;
+      z = event.acceleration.z;
     } );
 
     function logEvent( logText, component, item ) {
@@ -39,7 +39,7 @@ angular.module( 'App.services', [] )
 
     function logSensor() {
       var timestamp = Date.now() - startTime;
-      sensorStorage.push( timestamp + '; ' + x + '; ' + y + '; ' + z );
+      console.log( timestamp + '; ' + x + '; ' + y + '; ' + z );
     }
 
     function showEvents() {
@@ -53,7 +53,7 @@ angular.module( 'App.services', [] )
     function logStart() {
       startTime = Date.now();
       logEvent( 'Start' );
-      setInterval( logSensor, 300 );
+      setInterval( logSensor, 20 );
     }
 
     return {
