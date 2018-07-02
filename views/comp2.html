@@ -28,4 +28,6 @@
 
 <img src={{currentStory.image}} class="storyimg" ng-style="{'display': storyMode ? 'block' : 'none'}"/>
 
+<button class="btn-success" ng-click="btnBack()" ng-show="(!storyMode && showAnswers)"> Zurück</button>
+
 <button class="btn-success" ng-click="btnContinue()" ng-show="!(!storyMode && showAnswers && selectedAnswer < 1)"> Weiter</button>

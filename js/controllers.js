@@ -3,6 +3,10 @@ angular.module( 'App.controllers', [] )
   .controller( 'IntroCtrl', [ '$scope', '$window', 'storeEvents', function( $scope, $window, storeEvents ) {
     $scope.startStory = function() {
       storeEvents.logStart();
+      $window.location = '#/introduction';
+    }
+
+    $scope.startComp1 = function(){
       $window.location = '#/comp1';
     }
   } ] )
@@ -103,6 +107,10 @@ angular.module( 'App.controllers', [] )
     $scope.btnContinue = function() {
       if ( $scope.showAnswers ) nextQuestion();
       else continueStory();
+    }
+
+    $scope.btnBack = function(){
+      $scope.showAnswers = false;
     }
 
     $scope.selectAnswer = function( ans ) {

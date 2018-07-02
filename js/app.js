@@ -24,6 +24,11 @@ angular.module( 'App', [ 'ngRoute', 'App.services', 'App.controllers' ] )
         templateUrl: 'views/results.html'
       } )
 
+      .when( '/introduction', {
+        controller: 'IntroCtrl',
+        templateUrl: 'views/introduction.html'
+      } )
+
       .otherwise( {
         redirectTo: '/'
       } );
