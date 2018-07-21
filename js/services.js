@@ -1,24 +1,24 @@
-angular.module( 'App.services', [] )
-  .factory( 'cordovaReady', [ function() {
-    return function( fn ) {
+angular.module('App.services', [])
+  .factory('cordovaReady', [function() {
+    return function(fn) {
       var queue = [],
         impl = function() {
-          queue.push( [].slice.call( arguments ) );
+          queue.push([].slice.call(arguments));
         };
 
-      document.addEventListener( 'deviceready', function() {
-        queue.forEach( function( args ) {
-          fn.apply( this, args );
-        } );
+      document.addEventListener('deviceready', function() {
+        queue.forEach(function(args) {
+          fn.apply(this, args);
+        });
         impl = fn;
-      }, false );
+      }, false);
 
       return function() {
-        return impl.apply( this, arguments );
+        return impl.apply(this, arguments);
       };
     };
-  } ] )
-  .service( 'storeEvents', function() {
+  }])
+  .service('storeEvents', function() {
     var eventStorage = [];
     var sensorStorage = [];
     var startTime;
@@ -26,34 +26,34 @@ angular.module( 'App.services', [] )
     var y;
     var z;
 
-    window.addEventListener( 'devicemotion', function( event ) {
+    window.addEventListener('devicemotion', function(event) {
       x = event.acceleration.x;
       y = event.acceleration.y;
       z = event.acceleration.z;
-    } );
+    });
 
-    function logEvent( logText, component, item ) {
+    function logEvent(logText, component, item) {
       var timestamp = Date.now() - startTime;
-      eventStorage.push( timestamp + ': Component ' + component + ', Item ' + item + ': ' + logText );
+      eventStorage.push(timestamp + ': Component ' + component + ', Item ' + item + ': ' + logText);
     }
 
     function logSensor() {
       var timestamp = Date.now() - startTime;
-      console.log( timestamp + '; ' + x + '; ' + y + '; ' + z );
+      console.log(timestamp + '; ' + x + '; ' + y + '; ' + z);
     }
 
     function showEvents() {
-      console.log( eventStorage.join( '\n' ) );
+      console.log(eventStorage.join('\n'));
     }
 
     function showSensor() {
-      console.log( 'Timestamp;X;Y;Z' + '\n' + sensorStorage.join( '\n' ) );
+      console.log('Timestamp;X;Y;Z' + '\n' + sensorStorage.join('\n'));
     }
 
     function logStart() {
       startTime = Date.now();
-      logEvent( 'Start' );
-      setInterval( logSensor, 20 );
+      logEvent('Start');
+      setInterval(logSensor, 200);
     }
 
     return {
@@ -65,4 +65,4 @@ angular.module( 'App.services', [] )
       showSensor: showSensor
     };
 
-  } );
+  });
