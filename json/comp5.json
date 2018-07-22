@@ -1,0 +1,158 @@
+{
+  "questions": [{
+      "id": 1,
+      "story": "Bei den Kindermenüs gibt es kleine Boxen mit Figuren von Tieren aus dem Zoo. Auf Alis Box ist ein Nilpferd abgebildet und deswegen denkt Ali, dass darin eine Figur von einem Nilpferd ist. Aber Ali mag Nilpferde gar nicht so gerne. In Wirklichkeit ist aber die Figur von einem Tiger in Alis Box. Und Tiger mag Ali sehr gern.
+      Kannst Du mit zeigen,
+      wie Ali sich fühlt,
+      als er die Box mit dem Nilpferd drauf sieht ? ",
+      "storyImg" : "img/story/.JPG",
+      "question1": "Ekelt er sich oder ist er traurig oder ist er überrascht oder ist er fröhlich?",
+      "answers1": [
+        "img/emotions/ali/ekelnd.JPG",
+        "img/emotions/ali/traurig.JPG",
+        "img/emotions/ali/ueberrascht.JPG",
+        "img/emotions/ali/froehlich.JPG"
+      ],
+      "correctAnswer1": 2
+
+    },
+
+    {
+      "id": 2,
+      "story": "Zum Nachtisch hat sich Tims Mama einen heißen Kakao bestellt. Sie sagt, Tim darf probieren. Aber Tim denkt, dass der Kakao viel zu heiß ist und er sich den Mund verbrennt. In Wirklichkeit ist der Kakao aber gar nicht mehr so heiß.
+      Kannst Du mir zeigen,
+      wie Tim sich fühlt,
+      als er den heißen Kakao probieren soll ? ",
+      "storyImg" : "img/story/.JPG",
+      "question1": "Ist er fröhlich oder ekelt er sich oder ist er ängstlich oder ist er ärgerlich?",
+      "answers1": [
+        "img/emotions/tim/froehlich.JPG",
+        "img/emotions/tim/ekelnd.JPG",
+        "img/emotions/tim/aengstlich.JPG",
+        "img/emotions/tim/aergerlich.JPG"
+      ],
+      "correctAnswer1": 3
+    },
+    {
+      "id": 3,
+      "story": "Tims Vater sagt, Tim und Ali sollen sich etwas aus dem Kindermenü aussuchen. Tim denkt, die Portionen, die es im Kindermenü gibt, sind sehr klein. In Wirklichkeit sind die Portionen aber gar nicht klein. Das, was es im Kindermenü gibt, schmeckt den meisten Kindern sehr gut.
+      Kannst Du mir zeigen,
+      wie Tim sich fühlt,
+      als sein Vater ihm sagt,
+      dass er sich etwas aus dem Kindermenü aussuchen soll ? ",
+      "storyImg" : "img/story/.JPG",
+      "question1": "Ekelt er sich oder ist er fröhlich oder ist er überrascht oder ist er ärgerlich?",
+      "answers1": [
+        "img/emotions/tim/ekelnd.JPG",
+        "img/emotions/tim/froehlich.JPG",
+        "img/emotions/tim/ueberrascht.JPG",
+        "img/emotions/tim/aergerlich.JPG"
+      ],
+      "correctAnswer1": 4
+    },
+    {
+      "id": 4,
+      "story": "Einige der Vögel fliegen ganz dicht über Tim und Alis Köpfen. Es sieht so aus, als würden sie gleich auf ihren Köpfen landen.
+      Ali glaubt,
+      wenn die Vögel auf ihren Köpfen oder Schultern landen,
+      wird das ganz schön wehtun.
+      Aber Tim glaubt nicht,
+      dass es wehtun wird.Er glaubt,
+      er kann dann die schönen weichen Federn der Vögel streicheln.
+      Kannst Du mir zeigen,
+      wie Tim sich fühlt und wie Ali sich fühlt,
+      als es so aussieht,
+      als würden die Vögel auf ihren Köpfen landen ?
+      ",
+      "storyImg" : "img/story/.JPG",
+      "question1": "Ist Tim fröhlich oder ist er ärgerlich oder ist er ängstlich oder ist er überrascht?",
+      "question2": "Ist Ali ängstlich oder ist er fröhlich oder ist er traurig oder ist er überrascht?",
+      "answers1": [
+        "img/emotions/tim/froehlich.JPG",
+        "img/emotions/tim/aergerlich.JPG",
+        "img/emotions/tim/aengstlich.JPG",
+        "img/emotions/tim/ueberrascht.JPG"
+      ],
+      "correctAnswer1": 1,
+      "answers2": [
+        "img/emotions/ali/aengstlich.JPG",
+        "img/emotions/ali/froehlich.JPG",
+        "img/emotions/ali/traurig.JPG",
+        "img/emotions/ali/ueberrascht.JPG"
+      ],
+      "correctAnswer2": 1
+    },
+    {
+      "id": 5,
+      "story": "Tim und Ali wollen gerne einen Pelikan mit Fisch füttern. Jetzt sehen sie, wie ein anderes Kind zusammen mit einem Tierpfleger einen Pelikan füttert.
+      Tim glaubt,
+      dass der Pelikan jetzt bestimmt schon satt ist und sie ihn jetzt nicht mehr füttern dürfen.
+      Aber Ali denkt,
+      sie dürfen den Pelikan jetzt auch füttern.
+      Kannst Du mir zeigen,
+      wie Tim sich fühlt und wie Ali sich fühlt als sie sehen,
+      dass das andere Kind den Pelikan füttert ? ",
+      "storyImg" : "img/story/.JPG",
+      "question1": "Ist Tim ängstlich oder ist er traurig oder ist er überrascht oder ist er fröhlich?",
+      "question2": "Ekelt sich Ali oder ist er fröhlich oder ist er überrascht oder ist er ärgerlich?",
+      "answers1": [
+        "img/emotions/tim/aengstlich.JPG",
+        "img/emotions/tim/traurig.JPG",
+        "img/emotions/tim/ueberrascht.JPG",
+        "img/emotions/tim/froehlich.JPG"
+      ],
+      "correctAnswer1": 2,
+      "answers2": [
+        "img/emotions/ali/ekelnd.JPG",
+        "img/emotions/ali/froehlich.JPG",
+        "img/emotions/ali/ueberrascht.JPG",
+        "img/emotions/ali/aergerlich.JPG"
+      ],
+      "correctAnswer2": 2
+    },
+    {
+      "id": 6,
+      "story": "Einige kleine Kinder haben in der großen Halle einen ganzen Schwarm von Vögeln so sehr erschreckt, dass die Vögel nun ganz aufgeregt umherfliegen.
+      Tim findet,
+      dass es ganz schön blöd von den Kindern war,
+      dass sie die Vögel so erschreckt haben.
+      Aber Ali findet das ganz schön gefährlich,
+      weil er glaubt,
+      die Vögel könnten gegen ihn fliegen und ihm wehtun.
+      Kannst Du mir zeigen,
+      wie Tim sich fühlt und wie Ali sich fühlt,
+      als die Vögel so aufgeregt umherfliegen,
+      weil die Kinder sie erschreckt haben ? ",
+      "storyImg" : "img/story/.JPG",
+      "question1": "Ist Tim überrascht oder ekelt er sich oder ist er ärgerlich oder ist er traurig?",
+      "question2": "Und ist Ali überrascht oder ist er ängstlich oder ist er fröhlich oder ist er ärgerlich?",
+      "answers1": [
+        "img/emotions/tim/ueberrascht.JPG",
+        "img/emotions/tim/ekelnd.JPG",
+        "img/emotions/tim/aergerlich.JPG",
+        "img/emotions/tim/traurig.JPG"
+      ],
+      "correctAnswer1": 3,
+      "answers2": [
+        "img/emotions/ali/ueberrascht.JPG",
+        "img/emotions/ali/aengstlich.JPG",
+        "img/emotions/ali/froehlich.JPG",
+        "img/emotions/ali/aergerlich.JPG"
+      ],
+      "correctAnswer2": 2
+    }
+  ],
+  "story": [{
+      "text": "Tim und Ali und Tims Eltern wollen jetzt eine kleine Pause machen und etwas essen. Sie finden ein Restaurant und setzen sich dort an einen Tisch.",
+      "image": "img/story/.JPG",
+      "id": 1,
+      "location": 1
+    },
+    {
+      "text": "Dann geht es weiter zu den Vögeln. Es gibt eine große Halle, in die man hineingehen kann und in der dann ganz viele verschiedene Vögel um einen herumfliegen, ohne, dass noch ein Gitter oder eine Glasscheibe dazwischen ist.",
+      "image": "img/story/.JPG",
+      "id": 2,
+      "location": 4
+    }
+  ]
+}
