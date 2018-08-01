@@ -8,9 +8,10 @@ angular.module( 'App.controllers', [] )
       $window.location = '#/introduction';
     }
 
-    $scope.startComp1 = function(){
-      if(part2) {$window.location = '#/comp1'}
-      else{
+    $scope.startComp1 = function() {
+      if ( part2 ) {
+        $window.location = '#/comp1'
+      } else {
         part2 = true;
         $scope.introText = 'Wenn Du schon auf ein Gesicht getippt hast aber danach denkst, dass Du doch lieber ein anderes nehmen möchtest, kannst Du einfach auf das andere tippen und danach auf „Weiter“. Wenn Du noch nicht auf „Weiter“ getippt hast, kannst Du Dich so oft umentscheiden wie Du möchtest. Wenn Du auf einer Seite die Geschichte oder die Frage noch einmal hören möchtest, kannst du einfach auf „Wiederholung“ tippen. Dann lese ich Dir die Geschichte und die Frage noch einmal vor. Ich lese sie Dir so oft vor wie Du möchtest. Wenn Du dann trotzdem noch eine Frage hast, hole am besten einen Erwachsenen. So, jetzt kann es losgehen. Tippe auf „Start“, wenn Du mit der Geschichte anfangen möchtest. Wenn Du diese Einleitung noch einmal hören möchtest, tippe auf „Wiederholung“. Falls Du noch eine Frage hast, hole am besten einen Erwachsenen.'
       }
@@ -115,7 +116,7 @@ angular.module( 'App.controllers', [] )
       else continueStory();
     }
 
-    $scope.btnBack = function(){
+    $scope.btnBack = function() {
       $scope.showAnswers = false;
     }
 
@@ -127,14 +128,12 @@ angular.module( 'App.controllers', [] )
   } ] )
 
   .controller( 'ResultsCtrl', [ '$scope', 'storeEvents', function( $scope, storeEvents ) {
-    $scope.showResults = function() {
-      $scope.eventText = storeEvents.eventStorage.join( '\n' );
-      console.log( storeEvents.eventStorage.join( '\n' ) );
+    $scope.saveResults = function() {
+      storeEvents.saveEvents();
     }
 
-    $scope.showSensor = function() {
-      $scope.sensorText = storeEvents.sensorStorage.join( '\n' );
-      console.log( 'Timestamp;X;Y;Z;' + '\n' + storeEvents.sensorStorage.join( '\n' ) )
+    $scope.saveSensor = function() {
+      storeEvents.saveSensor();
     }
   } ] )
 
