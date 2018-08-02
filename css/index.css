@@ -2,7 +2,6 @@ body {
   background-color: white;
   color: black;
   max-width: auto;
-  text-align: left;
   margin: 5%;
 
 }
@@ -10,6 +9,7 @@ body {
 .storyText {
   font-size: 200%;
   font-weight: bold;
+  text-align: justify;
 }
 
 p {
@@ -20,9 +20,8 @@ p {
 
 .answerImgTable {
   text align: center;
-  margin: auto;
-  height: auto;
-  width: auto;
+  margin: 5%;
+
 }
 
 .img {
@@ -48,8 +47,4 @@ p {
   margin: auto;
   text-align: center;
   width: 30%;
-}
-
-button {
-  text-align: center;
 }
