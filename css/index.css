@@ -3,8 +3,11 @@ body {
   color: black;
   max-width: auto;
   text-align: left;
-  margin-top: 10%;
-  margin: 15%;
+  margin: 5%;
+
+}
+
+.storyText {
   font-size: 200%;
   font-weight: bold;
 }
