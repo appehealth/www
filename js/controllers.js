@@ -127,6 +127,79 @@ angular.module( 'App.controllers', [] )
 
   } ] )
 
+  .controller( 'Comp4Ctrl', [ '$scope', '$http', 'storeEvents', function( $scope, $http, storeEvents ) {
+    var allChoices = [];
+    var story = [];
+    var numberOfQuestions = 0;
+    var wrongAnswers = 0;
+    var results = [];
+    var showAnswers = false;
+    var nextStory = 0;
+    $scope.selectedAnswer = 0;
+    $scope.showChoiceImg = true;
+
+    $scope.btnChoice = function(ch){
+      storeEvents.logEvent( 'Select choice ' + ch, 4, $scope.currentChoice.id );
+      if(ch=='A') $scope.currentQuestion = $scope.currentChoice.questionA;
+      else $scope.currentQuestion = $scope.currentChoice.questionB;
+      $scope.displayMode = 'question';
+    }
+
+    $scope.confirmQuestion = function(){
+      results[ results.length ] = $scope.selectedAnswer;
+      storeEvents.logEvent( 'Confirm answer', 4, $scope.currentChoice.id )
+      if ( $scope.selectedAnswer == $scope.currentQuestion.correctAnswer ) {
+        wrongAnswers = 0;
+      } else {
+        wrongAnswers++;
+        if ( wrongAnswers == 3 ) {
+          alert( "Abbruch" );
+        }
+      }
+
+      $scope.selectedAnswer = 0;
+
+      if ( $scope.currentChoice.id < numberOfQuestions ) {
+        $scope.curentChoice = allChoices[ $scope.currentChoice.id ];
+        if ( $scope.currentChoice.id == nextStory ) {
+          $scope.displayMode = 'story';
+        } else $scope.displayMode = 'choice';
+      } else alert( "Ende" );
+    }
+
+    $scope.selectAnswer = function( ans ) {
+      $scope.selectedAnswer = ans;
+      storeEvents.logEvent( 'Select answer ' + ans, 4, $scope.currentChoice.id );
+    }
+
+    $scope.continueStory = function(){
+      if($scope.currentStory.id==story.lenth) {nextStory = 0;}
+      else{
+        $scope.currentStory = story[$scope.currentStory.id];
+        nextStory = $scope.currentStory.location;
+      }
+      $scope.displayMode = 'choice';
+    }
+
+    //Load component from JSON
+    $http.get( "json/comp4.json" ).then( function( response ) {
+      allChoices = response.data.choices;
+      story = response.data.story;
+      numberOfQuestions = allChoices.length;
+      $scope.currentChoice = allChoices[ 0 ];
+
+      if ( story.length > 0 ) {
+        $scope.currentStory = story[ 0 ];
+        nextStory = story[ 0 ].location;
+        if(nextStory==1) {$scope.displayMode = 'story';}
+        else {$scope.displayMode = 'choice';}
+      }
+    } );
+    /////////////////////////
+
+
+  } ] )
+
   .controller( 'ResultsCtrl', [ '$scope', 'storeEvents', function( $scope, storeEvents ) {
     $scope.saveResults = function() {
       storeEvents.saveEvents();

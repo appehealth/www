@@ -1,6 +1,6 @@
 <div ng-show="displayMode==='choice'">
   <p class="storyText">{{currentChoice.choiceStory}}</p>
-  <img src={{currentQuestion.choiceStoryImg}} class="storyimg" ng-show="showChoiceImg" />
+  <img src={{currentChoice.choiceStoryImg}} class="storyimg" ng-show="showChoiceImg" />
   <button class="btn-success" ng-click="showChoiceImg = false" ng-show="showChoiceImg">Weiter</button>
   <button class="btn-success" ng-click="btnChoice('A')" ng-show="!showChoiceImg">{{currentChoice.choiceA}}</button>
   <button class="btn-success" ng-click="btnChoice('B')" ng-show="!showChoiceImg">{{currentChoice.choiceB}}</button>
