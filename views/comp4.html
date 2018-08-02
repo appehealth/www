@@ -1,0 +1,33 @@
+<div ng-show="displayMode==='choice'">
+  <p>{{currentChoice.choiceStory}}</p>
+  <img src={{currentQuestion.choiceStoryImg}} class="storyimg" ng-show="showChoiceImg"/>
+  <button class="btn-success" ng-click="showChoiceImg = false" ng-show="showChoiceImg">Weiter</button>
+  <button class="btn-success" ng-click="btnChoice('A')" ng-show="!showChoiceImg">{{currentChoice.choiceA}}</button>
+  <button class="btn-success" ng-click="btnChoice('B')" ng-show="!showChoiceImg">{{currentChoice.choiceB}}</button>
+</div>
+
+<div ng-show="displayMode==='question'">
+  <p>{{currentQuestion.story}}</p>
+  <p ng-show="!showQuestionImg">{{currentQuestion.question}}</p>
+  <img src={{currentQuestion.questionImg}} class="storyimg" ng-show="showQuestionImg"/>
+  <button class = "btn-success" ng-click="showQuestionImg = false" ng-show="showQuestionImg">Weiter</button>
+  <div class="container" ng-show="!showQuestionImg" id="answerImages">
+      <table class="answerImgTable">
+          <tr>
+              <td class="td"><img src={{currentQuestion.answers[0]}} class="img" id="option1" ng-click="selectAnswer(1)" ng-style="{'outline': selectedAnswer === 1 ? '5px solid green' : ''}"></td>
+              <td class="td"><img src={{currentQuestion.answers[1]}} class="img" id="option2" ng-click="selectAnswer(2)" ng-style="{'outline': selectedAnswer === 2 ? '5px solid green' : ''}"></td>
+          </tr>
+          <tr>
+              <td class="td"><img src={{currentQuestion.answers[2]}} class="img" id="option3" ng-click="selectAnswer(3)" ng-style="{'outline': selectedAnswer === 3 ? '5px solid green' : ''}"></td>
+              <td class="td"><img src={{currentQuestion.answers[3]}} class="img" id="option4" ng-click="selectAnswer(4)" ng-style="{'outline': selectedAnswer === 4 ? '5px solid green' : ''}"></td>
+          </tr>
+      </table>
+  </div>
+  <button class="btn-success" ng-show="!showQuestionImg && selectedAnswer>0" ng-click="confirmQuestion()">Weiter</button>
+</div>
+
+<div ng-show="displayMode==='story'">
+  <p>{{currentStory.text}}</p>
+  <img src={{currentStory.image}} class="storyimg"/>
+  <button class="btn-success" ng-click="displayMode='choice'">Weiter</button>
+</div>
