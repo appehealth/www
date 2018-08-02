@@ -111,7 +111,7 @@ angular.module( 'App.services', [] )
       logEvent: logEvent,
       eventStorage: eventStorage,
       sensorStorage: sensorStorage,
-      showEvents: showEvents,
+      saveEvents: saveEvents,
       saveSensor: saveSensor
     };
 
