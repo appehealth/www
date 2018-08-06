@@ -54,13 +54,11 @@ angular.module( 'App.controllers', [] )
     var numberOfQuestions = 0;
     var wrongAnswers = 0;
     var results = [];
-    var showAnswers = false;
     var nextStory = 0;
     $scope.selectedAnswer = 0;
-    $scope.showAnswers = false;
-    $scope.storyMode = false;
+    $scope.showQuestionImg = true;
 
-    function nextQuestion() {
+    $scope.confirmQuestion = function() {
 
       results[ results.length ] = $scope.selectedAnswer;
       storeEvents.logEvent( 'Confirm answer', 2, $scope.currentQuestion.id )
@@ -77,6 +75,7 @@ angular.module( 'App.controllers', [] )
 
       if ( $scope.currentQuestion.id < numberOfQuestions ) {
         $scope.currentQuestion = allQuestions[ $scope.currentQuestion.id ];
+        $scope.showQuestionImg = true;
         if ( $scope.currentQuestion.id == nextStory ) {
           $scope.storyMode = true;
         } else $scope.showAnswers = false;
@@ -84,16 +83,19 @@ angular.module( 'App.controllers', [] )
 
     }
 
-    function continueStory() {
-      storeEvents.logEvent( 'Continue', 2, $scope.currentQuestion.id );
-      if ( $scope.storyMode ) {
-        $scope.storyMode = false;
-        $scope.showAnswers = false;
-        if ( $scope.currentStory.id < story.length )
-          $scope.currentStory = story[ $scope.currentStory.id ];
-        nextStory = $scope.currentStory.location;
-      } else $scope.showAnswers = true;
+    $scope.selectAnswer = function( ans ) {
+      $scope.selectedAnswer = ans;
+      storeEvents.logEvent( 'Select answer ' + ans, 2, $scope.currentQuestion.id );
+    }
 
+    $scope.continueStory = function() {
+      if ( $scope.currentStory.id == story.lenth ) {
+        nextStory = 0;
+      } else {
+        $scope.currentStory = story[ $scope.currentStory.id ];
+        nextStory = $scope.currentStory.location;
+      }
+      $scope.displayMode = 'question';
     }
 
     //Load component from JSON
@@ -106,28 +108,18 @@ angular.module( 'App.controllers', [] )
       if ( story.length > 0 ) {
         $scope.currentStory = story[ 0 ];
         nextStory = story[ 0 ].location;
-        $scope.storyMode = true;
+        if ( nextStory == 1 ) {
+          $scope.displayMode = 'story';
+        } else {
+          $scope.displayMode = 'question';
+        }
       }
     } );
     /////////////////////////
 
-    $scope.btnContinue = function() {
-      if ( $scope.showAnswers ) nextQuestion();
-      else continueStory();
-    }
-
-    $scope.btnBack = function() {
-      $scope.showAnswers = false;
-    }
-
-    $scope.selectAnswer = function( ans ) {
-      $scope.selectedAnswer = ans;
-      storeEvents.logEvent( 'Select answer ' + ans, 2, $scope.currentQuestion.id );
-    }
-
   } ] )
 
-  .controller( 'Comp3Ctrl', [ '$scope', '$http', 'storeEvents', function( $scope, $http, storeEvents ) {
+  .controller( 'Comp3Ctrl', [ '$scope', '$http', '$window', 'storeEvents', function( $scope, $http, $window, storeEvents ) {
     var allQuestions = [];
     var story = [];
     var numberOfQuestions = 0;
@@ -137,7 +129,7 @@ angular.module( 'App.controllers', [] )
     $scope.selectedAnswer = 0;
     $scope.showQuestionImg = true;
 
-    function confirmQuestion() {
+    $scope.confirmQuestion = function() {
 
       results[ results.length ] = $scope.selectedAnswer;
       storeEvents.logEvent( 'Confirm answer', 3, $scope.currentQuestion.id )
@@ -158,7 +150,7 @@ angular.module( 'App.controllers', [] )
         if ( $scope.currentQuestion.id == nextStory ) {
           $scope.storyMode = true;
         } else $scope.showAnswers = false;
-      } else alert( "Ende" );
+      } else $window.location = '#/comp4';
 
     }
 

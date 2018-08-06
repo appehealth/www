@@ -1,7 +1,7 @@
 <div ng-show="displayMode==='question'">
   <p class="storyText">{{currentQuestion.story}}</p>
   <p ng-show="!showQuestionImg" class="storyText">{{currentQuestion.question}}</p>
-  <img src={{currentQuestion.questionImg}} class="storyimg" ng-show="showQuestionImg" />
+  <img src={{currentQuestion.storyImg}} class="storyimg" ng-show="showQuestionImg" />
   <button class="btn-success" ng-click="showQuestionImg = false" ng-show="showQuestionImg">Weiter</button>
   <div class="container" ng-show="!showQuestionImg" id="answerImages">
     <table class="answerImgTable">

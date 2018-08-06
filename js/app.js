@@ -16,12 +16,12 @@ angular.module( 'App', [ 'ngRoute', 'App.services', 'App.controllers' ] )
 
       .when( '/comp2', {
         controller: 'Comp2Ctrl',
-        templateUrl: 'views/comp2.html'
+        templateUrl: 'views/comp2_3.html'
       } )
 
       .when( '/comp3', {
         controller: 'Comp3Ctrl',
-        templateUrl: 'views/comp3.html'
+        templateUrl: 'views/comp2_3.html'
       } )
 
       .when( '/comp4', {
