@@ -268,6 +268,102 @@ angular.module( 'App.controllers', [] )
 
   } ] )
 
+  .controller( 'Comp5Ctrl', [ '$scope', '$http', '$window', 'storeEvents', function( $scope, $http, $window, storeEvents ) {
+    var allQuestions = [];
+    var story = [];
+    var numberOfQuestions = 0;
+    var wrongAnswers = 0;
+    var results = [];
+    var nextStory = 0;
+    var answerQ1 = 0;
+    var currentId = 1;
+
+    $scope.selectedAnswer = 0;
+    $scope.showQuestionImg = true;
+
+    function nextQuestion() {
+      $scope.selectedAnswer = 0;
+      if ( currentId < numberOfQuestions ) {
+        $scope.currentQuestion = allQuestions[ currentId ];
+        $scope.currentQuestion.question = allQuestions[ currentId ].question1;
+        $scope.showQuestionImg = true;
+        currentId++;
+        if ( $scope.currentQuestion.id == nextStory ) {
+          $scope.storyMode = true;
+        } else $scope.showAnswers = false;
+      } else $window.location = '#/comp6';
+    }
+
+    $scope.confirmQuestion = function() {
+      if ( typeof( allQuestions[ currentId - 1 ].question2 ) === "undefined" ) {
+        results[ results.length ] = $scope.selectedAnswer;
+        storeEvents.logEvent( 'Confirm answer', 5, $scope.currentQuestion.id );
+        if ( $scope.selectedAnswer == $scope.currentQuestion.correctAnswer1 ) {
+          wrongAnswers = 0;
+        } else {
+          wrongAnswers++;
+          if ( wrongAnswers == 3 ) {
+            alert( "Abbruch" );
+          }
+        }
+        nextQuestion();
+
+      } else if ( $scope.currentQuestion.question == allQuestions[ currentId - 1 ].question1 ) {
+        answerQ1 = $scope.selectedAnswer;
+        storeEvents.logEvent( 'Question A: Confirm answer', 5, $scope.currentQuestion.id );
+        $scope.selectedAnswer = 0;
+        $scope.currentQuestion.question = allQuestions[ currentId - 1 ].question2;
+      } else {
+        results[ results.length ] = 'a: ' + answerQ1 + ', b: ' + $scope.selectedAnswer;
+        storeEvents.logEvent( 'Question B: Confirm answer', 5, $scope.currentQuestion.id );
+        if ( answerQ1 == allQuestions[ currentId - 1 ].correctAnswer1 && $scope.selectedAnswer == allQuestions[ currentId - 1 ].correctAnswer2 ) {
+          wrongAnswers = 0;
+        } else {
+          wrongAnswers++;
+          if ( wrongAnswers == 3 ) {
+            alert( "Abbruch" );
+          }
+        }
+        nextQuestion();
+      }
+    }
+
+    $scope.selectAnswer = function( ans ) {
+      $scope.selectedAnswer = ans;
+      storeEvents.logEvent( 'Select answer ' + ans, 5, $scope.currentQuestion.id );
+    }
+
+    $scope.continueStory = function() {
+      if ( $scope.currentStory.id == story.lenth ) {
+        nextStory = 0;
+      } else {
+        $scope.currentStory = story[ $scope.currentStory.id ];
+        nextStory = $scope.currentStory.location;
+      }
+      $scope.displayMode = 'question';
+    }
+
+    //Load component from JSON
+    $http.get( "json/comp5.json" ).then( function( response ) {
+      allQuestions = response.data.questions;
+      story = response.data.story;
+      numberOfQuestions = allQuestions.length;
+      $scope.currentQuestion = allQuestions[ 0 ];
+      $scope.currentQuestion.question = allQuestions[ 0 ].question1;
+      if ( story.length > 0 ) {
+        $scope.currentStory = story[ 0 ];
+        nextStory = story[ 0 ].location;
+        if ( nextStory == 1 ) {
+          $scope.displayMode = 'story';
+        } else {
+          $scope.displayMode = 'question';
+        }
+      }
+    } );
+    /////////////////////////
+
+  } ] )
+
   .controller( 'ResultsCtrl', [ '$scope', 'storeEvents', function( $scope, storeEvents ) {
     $scope.saveResults = function() {
       storeEvents.saveEvents();

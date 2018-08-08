@@ -29,6 +29,11 @@ angular.module( 'App', [ 'ngRoute', 'App.services', 'App.controllers' ] )
         templateUrl: 'views/comp4.html'
       } )
 
+      .when( '/comp5', {
+        controller: 'Comp5Ctrl',
+        templateUrl: 'views/comp5.html'
+      } )
+
       .when( '/results', {
         controller: 'ResultsCtrl',
         templateUrl: 'views/results.html'
