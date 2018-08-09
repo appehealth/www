@@ -5,6 +5,8 @@ angular.module( 'App.controllers', [] )
     $scope.introText = 'Hallo! Ich möchte gerne mit Dir zusammen eine Geschichte lesen. In dieser Geschichte geht es um zwei Jungen. Sie heißen Tim und Ali. In der Geschichte besuchen Tim und Ali zusammen mit Tims Eltern einen Zoo. Wenn wir die Geschichte lesen, werde ich Dich sehr oft fragen, wie Tim und Ali sich fühlen. Auf dem Bildschirm sind dann die Gesichter von Tim und Ali zu sehen. Du sollst immer auf das Gesicht tippen, das so aussieht, wie Tim oder Ali sich fühlen. Wenn Du ein Gesicht ausgesucht und angetippt hast, tippst Du einfach unten rechts auf „Weiter“ und die Geschichte geht weiter. Es ist nicht schlimm, wenn Du nicht immer genau weißt, was Du antippen sollst. Wenn Du Dir nicht ganz sicher bist, welches Gesicht Du auswählen sollst, tippst Du einfach auf das Gesicht, von dem Du denkst, dass es am besten passt. Danach tippst Du auf „Weiter“.'
     $scope.startStory = function() {
       storeEvents.logStart();
+      storeEvents.results.push( 'Birthday: ' + document.getElementById( 'day' ).value + '. ' + document.getElementById( 'month' ).value + '. ' + document.getElementById( 'year' ).value );
+      console.log( storeEvents.results );
       $window.location = '#/introduction';
     }
 
@@ -21,7 +23,6 @@ angular.module( 'App.controllers', [] )
   .controller( 'Comp1Ctrl', [ '$scope', '$http', '$window', 'storeEvents', function( $scope, $http, $window, storeEvents ) {
     var allQuestions = [];
     var numberOfQuestions = 0;
-    var results = [];
     $scope.nextBool = false;
 
     $http.get( "json/comp1.json" ).then( function( response ) {
@@ -36,7 +37,7 @@ angular.module( 'App.controllers', [] )
     }
 
     $scope.nextQuestion = function() {
-      results[ results.length ] = $scope.selectedAnswer;
+      storeEvents.results.push( 'Component 1, Question ' + $scope.currentQuestion.id + ': ' + $scope.selectedAnswer );
       $scope.selectedAnswer = 0;
       storeEvents.logEvent( 'Confirm answer', 1, $scope.currentQuestion.id );
       if ( $scope.currentQuestion.id < numberOfQuestions ) {
@@ -53,14 +54,13 @@ angular.module( 'App.controllers', [] )
     var story = [];
     var numberOfQuestions = 0;
     var wrongAnswers = 0;
-    var results = [];
     var nextStory = 0;
     $scope.selectedAnswer = 0;
     $scope.showQuestionImg = true;
 
     $scope.confirmQuestion = function() {
 
-      results[ results.length ] = $scope.selectedAnswer;
+      storeEvents.results.push( 'Component 2, Question ' + $scope.currentQuestion.id + ': ' + $scope.selectedAnswer );
       storeEvents.logEvent( 'Confirm answer', 2, $scope.currentQuestion.id )
       if ( $scope.selectedAnswer == $scope.currentQuestion.correctAnswer ) {
         wrongAnswers = 0;
@@ -124,14 +124,13 @@ angular.module( 'App.controllers', [] )
     var story = [];
     var numberOfQuestions = 0;
     var wrongAnswers = 0;
-    var results = [];
     var nextStory = 0;
     $scope.selectedAnswer = 0;
     $scope.showQuestionImg = true;
 
     $scope.confirmQuestion = function() {
 
-      results[ results.length ] = $scope.selectedAnswer;
+      storeEvents.results.push( 'Component 3, Question ' + $scope.currentQuestion.id + ': ' + $scope.selectedAnswer );
       storeEvents.logEvent( 'Confirm answer', 3, $scope.currentQuestion.id )
       if ( $scope.selectedAnswer == $scope.currentQuestion.correctAnswer ) {
         wrongAnswers = 0;
@@ -195,7 +194,6 @@ angular.module( 'App.controllers', [] )
     var story = [];
     var numberOfQuestions = 0;
     var wrongAnswers = 0;
-    var results = [];
     var showAnswers = false;
     var nextStory = 0;
     $scope.selectedAnswer = 0;
@@ -210,7 +208,7 @@ angular.module( 'App.controllers', [] )
     }
 
     $scope.confirmQuestion = function() {
-      results[ results.length ] = $scope.selectedAnswer;
+      storeEvents.results.push( 'Component 4, Question ' + $scope.currentQuestion.id + ': ' + $scope.selectedAnswer );
       storeEvents.logEvent( 'Confirm answer', 4, $scope.currentChoice.id )
       if ( $scope.selectedAnswer == $scope.currentQuestion.correctAnswer ) {
         wrongAnswers = 0;
@@ -273,7 +271,6 @@ angular.module( 'App.controllers', [] )
     var story = [];
     var numberOfQuestions = 0;
     var wrongAnswers = 0;
-    var results = [];
     var nextStory = 0;
     var answerQ1 = 0;
     var currentId = 1;
@@ -296,7 +293,7 @@ angular.module( 'App.controllers', [] )
 
     $scope.confirmQuestion = function() {
       if ( typeof( allQuestions[ currentId - 1 ].question2 ) === "undefined" ) {
-        results[ results.length ] = $scope.selectedAnswer;
+        storeEvents.results.push( 'Component 5, Question ' + $scope.currentQuestion.id + ': ' + $scope.selectedAnswer );
         storeEvents.logEvent( 'Confirm answer', 5, $scope.currentQuestion.id );
         if ( $scope.selectedAnswer == $scope.currentQuestion.correctAnswer1 ) {
           wrongAnswers = 0;
@@ -311,10 +308,11 @@ angular.module( 'App.controllers', [] )
       } else if ( $scope.currentQuestion.question == allQuestions[ currentId - 1 ].question1 ) {
         answerQ1 = $scope.selectedAnswer;
         storeEvents.logEvent( 'Question A: Confirm answer', 5, $scope.currentQuestion.id );
+        storeEvents.results.push( 'Component 5, Question ' + $scope.currentQuestion.id + ' a: ' + $scope.selectedAnswer );
         $scope.selectedAnswer = 0;
         $scope.currentQuestion.question = allQuestions[ currentId - 1 ].question2;
       } else {
-        results[ results.length ] = 'a: ' + answerQ1 + ', b: ' + $scope.selectedAnswer;
+        storeEvents.results.push( 'Component 5, Question ' + $scope.currentQuestion.id + ' b: ' + $scope.selectedAnswer );
         storeEvents.logEvent( 'Question B: Confirm answer', 5, $scope.currentQuestion.id );
         if ( answerQ1 == allQuestions[ currentId - 1 ].correctAnswer1 && $scope.selectedAnswer == allQuestions[ currentId - 1 ].correctAnswer2 ) {
           wrongAnswers = 0;
@@ -371,6 +369,10 @@ angular.module( 'App.controllers', [] )
 
     $scope.saveSensor = function() {
       storeEvents.saveSensor();
+    }
+
+    $scope.showResults = function() {
+      console.log( storeEvents.results.join( '\n' ) );
     }
   } ] )
 

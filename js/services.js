@@ -21,6 +21,7 @@ angular.module( 'App.services', [] )
   .service( 'storeEvents', function() {
     var eventStorage = [];
     var sensorStorage = [];
+    var results = [];
     var startTime;
     var x;
     var y;
@@ -112,7 +113,8 @@ angular.module( 'App.services', [] )
       eventStorage: eventStorage,
       sensorStorage: sensorStorage,
       saveEvents: saveEvents,
-      saveSensor: saveSensor
+      saveSensor: saveSensor,
+      results: results
     };
 
   } );
