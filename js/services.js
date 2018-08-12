@@ -1,4 +1,4 @@
-angular.module( 'App.services', [] )
+angular.module( 'ATEM-App.services', [] )
   .factory( 'cordovaReady', [ function() {
     return function( fn ) {
       var queue = [],
@@ -18,6 +18,7 @@ angular.module( 'App.services', [] )
       };
     };
   } ] )
+
   .service( 'storeEvents', function() {
     var eventStorage = [];
     var sensorStorage = [];
@@ -26,7 +27,6 @@ angular.module( 'App.services', [] )
     var x;
     var y;
     var z;
-    var filesystem;
 
     window.addEventListener( 'devicemotion', function( event ) {
       x = event.acceleration.x;

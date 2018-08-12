@@ -1,154 +1,129 @@
 {
   "questions": [{
       "id": 1,
-      "story": "Tim muss seit dem Essen eine Mütze gegen die Sonne tragen. Sie gefällt ihm gar nicht. Aber sein Vater findet sie ganz toll.
-      Als Tim sich über ein Wasserbecken mit einigen Schildkröten lehnt,
-      fällt seine Mütze in das Wasser und geht sofort unter.Jetzt kann er die Mütze nicht mehr tragen.
-      Tim möchte nicht,
-      dass sein Vater sieht,
-      dass er es gut findet,
-      dass seine Mütze in das Wasser gefallen ist.Deswegen sieht sein Gesicht anders aus als er sich wirklich fühlt.
-      Hier siehst Du,
-      wie sein Gesicht aussieht.
-      --Auf das Gesicht von Tim auf dem Bild zeigen--
-      Es sieht traurig aus.
-      ",
+      "story": "Tim muss seit dem Essen eine Mütze gegen die Sonne tragen. Sie gefällt ihm gar nicht. Aber sein Vater findet sie ganz toll. Als Tim sich über ein Wasserbecken mit einigen Schildkröten lehnt, fällt seine Mütze in das Wasser und geht sofort unter.Jetzt kann er die Mütze nicht mehr tragen. Tim möchte nicht, dass sein Vater sieht, dass er es gut findet, dass seine Mütze in das Wasser gefallen ist.Deswegen sieht sein Gesicht anders aus als er sich wirklich fühlt. Hier siehst Du, wie sein Gesicht aussieht. Es sieht traurig aus.",
       "storyImg": "img/story/.JPG",
-      "question1": "Kannst Du mir zeigen, wie Tim sich wirklich fühlt? Ist er ärgerlich oder ist er traurig oder ekelt er sich oder ist er fröhlich?",
-      "answers1": [
-        "img/emotions/tim/aergerlich.JPG",
-        "img/emotions/tim/traurig.JPG",
-        "img/emotions/tim/ekelnd.JPG",
-        "img/emotions/tim/froehlich.JPG"
-      ],
+      "question1": {
+        "question": "Kannst Du mir zeigen, wie Tim sich wirklich fühlt? Ist er ärgerlich oder ist er traurig oder ekelt er sich oder ist er fröhlich?",
+        "answers": [
+          "img/emotions/tim/aergerlich.JPG",
+          "img/emotions/tim/traurig.JPG",
+          "img/emotions/tim/ekelnd.JPG",
+          "img/emotions/tim/froehlich.JPG"
+        ]
+      },
       "correctAnswer1": 4
 
     },
 
     {
       "id": 2,
-      "story": "
-      Ali sieht bei den Schlangen einen anderen Freund aus der Schule.Der will sich gleich mit Ali zusammen die Schlangen anschauen.Aber Ali möchte eigentlich viel lieber mit Tim die Schlangen ansehen und nicht dem anderen Schulfreund.
-      Ali möchte seinem anderen Schulfreund nicht wehtun und schaut sich mit ihm die Schlangen an,
-      obwohl er das lieber mit Tim machen würde.
-      Sein Gesicht sieht aber anders aus,
-      als er sich wirklich fühlt.Hier siehst Du wie sein Gesicht aussieht
-      --Auf das Gesicht von Ali auf dem Bild zeigen--
-      Es sieht fröhlich aus.
-      ",
+      "story": "Ali sieht bei den Schlangen einen anderen Freund aus der Schule.Der will sich gleich mit Ali zusammen die Schlangen anschauen.Aber Ali möchte eigentlich viel lieber mit Tim die Schlangen ansehen und nicht dem anderen Schulfreund. Ali möchte seinem anderen Schulfreund nicht wehtun und schaut sich mit ihm die Schlangen an, obwohl er das lieber mit Tim machen würde. Sein Gesicht sieht aber anders aus, als er sich wirklich fühlt.Hier siehst Du wie sein Gesicht aussieht. Es sieht fröhlich aus.",
       "storyImg": "img/story/.JPG",
-      "question1": "Kannst Du mir zeigen, wie Ali sich wirklich fühlt?
-      Ist er ängstlich oder ist er traurig oder ist er fröhlich oder ist er überrascht ? ",
-      "answers1" : [
-        "img/emotions/ali/aengstlich.JPG",
-        "img/emotions/ali/traurig.JPG",
-        "img/emotions/ali/ekelnd.JPG",
-        "img/emotions/ali/froehlich.JPG"
-      ],
+      "question1": {
+        "question": "Kannst Du mir zeigen, wie Ali sich wirklich fühlt? Ist er ängstlich oder ist er traurig oder ist er fröhlich oder ist er überrascht?",
+        "answers": [
+          "img/emotions/ali/aengstlich.JPG",
+          "img/emotions/ali/traurig.JPG",
+          "img/emotions/ali/ekelnd.JPG",
+          "img/emotions/ali/froehlich.JPG"
+        ]
+      },
       "correctAnswer1": 2
     },
     {
       "id": 3,
-      "story": "Es gibt kleine Fische, die sich streicheln lassen. Tim und Ali finden das toll und wollen das auch gerne machen. Aber es darf immer nur ein Kind seine Hand in das Becken reinhalten.
-      Ali wollte eigentlich zuerst drankommen aber dann kommt Tim und drängelt sich ganz schnell vor.
-      Ali möchte sich nicht mit Tim streiten,
-      weil der sich vorgedrängelt hat.Deswegen sieht sein Gesicht anders aus als er sich fühlt.Hier siehst Du wie sein Gesicht aussieht
-      --Auf das Gesicht von Ali auf dem Bild zeigen--
-      Es sieht fröhlich aus.
-      ",
+      "story": "Es gibt kleine Fische, die sich streicheln lassen. Tim und Ali finden das toll und wollen das auch gerne machen. Aber es darf immer nur ein Kind seine Hand in das Becken reinhalten. Ali wollte eigentlich zuerst drankommen aber dann kommt Tim und drängelt sich ganz schnell vor. Ali möchte sich nicht mit Tim streiten, weil der sich vorgedrängelt hat.Deswegen sieht sein Gesicht anders aus als er sich fühlt.Hier siehst Du wie sein Gesicht aussieht. Es sieht fröhlich aus.",
       "storyImg": "img/story/.JPG",
-      "question1": "Kannst Du mir zeigen, wie Ali sich wirklich fühlt?
-      Ist er ängstlich oder ekelt er sich oder ist er ärgerlich oder ist er fröhlich ? ",
-      "answers1" : [
-        "img/emotions/ali/aengstlich.JPG",
-        "img/emotions/ali/ekelnd.JPG",
-        "img/emotions/ali/aergerlich.JPG",
-        "img/emotions/ali/froehlich.JPG"
-      ],
+      "question1": {
+        "question": "Kannst Du mir zeigen, wie Ali sich wirklich fühlt? Ist er ängstlich oder ekelt er sich oder ist er ärgerlich oder ist er fröhlich?",
+        "answers": [
+          "img/emotions/ali/aengstlich.JPG",
+          "img/emotions/ali/ekelnd.JPG",
+          "img/emotions/ali/aergerlich.JPG",
+          "img/emotions/ali/froehlich.JPG"
+        ]
+      },
       "correctAnswer1": 3
     },
     {
       "id": 4,
-      "story": "Tim möchte unbedingt auf einem Pony reiten. Aber Ali findet die Ponys viel zu groß und zu schnell. Trotzdem stellt er sich zum Reiten an.
-      Ali möchte nicht,
-      dass Tim denkt,
-      dass er ein Angsthase ist und deswegen geht er mit zum Ponyreiten.
-      ",
+      "story": "Tim möchte unbedingt auf einem Pony reiten. Aber Ali findet die Ponys viel zu groß und zu schnell. Trotzdem stellt er sich zum Reiten an. Ali möchte nicht, dass Tim denkt, dass er ein Angsthase ist und deswegen geht er mit zum Ponyreiten.",
       "storyImg": "img/story/.JPG",
-      "question1": "Kannst Du mir zeigen, wie Alis Gesicht aussieht, wenn er zum Ponyreiten geht?
-      Sieht sein Gesicht fröhlich aus oder sieht es traurig aus oder sieht es ängstlich aus oder sieht es überrascht aus ? ",
-      "question2" : "Und kannst Du mir zeigen, wie Ali sich fühlt, wenn er zum Ponyreiten geht?
-      Ist er ängstlich oder ist er fröhlich oder ist er traurig oder ist er überrascht ? ",
-      "answers1" : [
-        "img/emotions/ali/froehlich.JPG",
-        "img/emotions/ali/traurig.JPG",
-        "img/emotions/ali/aengstlich.JPG",
-        "img/emotions/ali/ueberrascht.JPG"
-      ],
+      "question1": {
+        "question": "Kannst Du mir zeigen, wie Alis Gesicht aussieht, wenn er zum Ponyreiten geht? Sieht sein Gesicht fröhlich aus oder sieht es traurig aus oder sieht es ängstlich aus oder sieht es überrascht aus?",
+        "answers": [
+          "img/emotions/ali/froehlich.JPG",
+          "img/emotions/ali/traurig.JPG",
+          "img/emotions/ali/aengstlich.JPG",
+          "img/emotions/ali/ueberrascht.JPG"
+        ]
+      },
       "correctAnswer1": 1,
-      "answers2": [
-        "img/emotions/ali/aengstlich.JPG",
-        "img/emotions/ali/froehlich.JPG",
-        "img/emotions/ali/traurig.JPG",
-        "img/emotions/ali/ueberrascht.JPG"
-      ],
+      "question2": {
+        "question": "Und kannst Du mir zeigen, wie Ali sich fühlt, wenn er zum Ponyreiten geht? Ist er ängstlich oder ist er fröhlich oder ist er traurig oder ist er überrascht?",
+        "answers": [
+          "img/emotions/ali/aengstlich.JPG",
+          "img/emotions/ali/froehlich.JPG",
+          "img/emotions/ali/traurig.JPG",
+          "img/emotions/ali/ueberrascht.JPG"
+        ]
+      },
       "correctAnswer2": 1
     },
     {
       "id": 5,
-      "story": "Im Kaninchenstall sind viele Mädchen, die die Kaninchen streicheln und füttern. Da kommt ein Mädchen und fragt Tim immer wieder, ob er ihr ein Kaninchen fängt.
-Tim findet das Mädchen wirklich nett aber Ali findet das total frech von dem Mädchen. Er sagt, dass es nervt.
-Tim möchte nicht, dass Ali weiß, dass er das Mädchen eigentlich ganz nett findet.",
-      "storyImg" : "img/story/.JPG",
-      "question1": "Kannst Du mir zeigen, wie Tims Gesicht aussieht, als das Mädchen immer wieder fragt, ob er ihr hilft?
-Sieht sein Gesicht fröhlich aus oder sieht es ängstlich aus oder sieht es ärgerlich aus oder sieht es aus als würde sich Tim ekeln?",
-      "question2": "Und kannst Du mir zeigen, wie Tim sich fühlt, als ihn das Mädchen immer wieder fragt, ob er ihr hilft?
-Ist Tim ärgerlich oder ist er fröhlich oder ist er traurig oder ekelt er sich?",
-      "answers1": [
-        "img/emotions/tim/froehlich.JPG",
-        "img/emotions/tim/aengstlich.JPG",
-        "img/emotions/tim/aergerlich.JPG",
-        "img/emotions/tim/ekelnd.JPG"
-      ],
+      "story": "Im Kaninchenstall sind viele Mädchen, die die Kaninchen streicheln und füttern. Da kommt ein Mädchen und fragt Tim immer wieder, ob er ihr ein Kaninchen fängt. Tim findet das Mädchen wirklich nett aber Ali findet das total frech von dem Mädchen. Er sagt, dass es nervt. Tim möchte nicht, dass Ali weiß, dass er das Mädchen eigentlich ganz nett findet.",
+      "storyImg": "img/story/.JPG",
+      "question1": {
+        "question": "Kannst Du mir zeigen, wie Tims Gesicht aussieht, als das Mädchen immer wieder fragt, ob er ihr hilft? Sieht sein Gesicht fröhlich aus oder sieht es ängstlich aus oder sieht es ärgerlich aus oder sieht es aus als würde sich Tim ekeln?",
+        "answers": [
+          "img/emotions/tim/froehlich.JPG",
+          "img/emotions/tim/aengstlich.JPG",
+          "img/emotions/tim/aergerlich.JPG",
+          "img/emotions/tim/ekelnd.JPG"
+        ]
+      },
       "correctAnswer1": 3,
-      "answers2": [
-        "img/emotions/tim/aergerlich.JPG",
-        "img/emotions/tim/froehlich.JPG",
-        "img/emotions/tim/traurig.JPG",
-        "img/emotions/tim/ekelnd.JPG"
-      ],
+      "question2": {
+        "question": "Und kannst Du mir zeigen, wie Tim sich fühlt, als ihn das Mädchen immer wieder fragt, ob er ihr hilft? Ist Tim ärgerlich oder ist er fröhlich oder ist er traurig oder ekelt er sich?",
+        "answers": [
+          "img/emotions/tim/aergerlich.JPG",
+          "img/emotions/tim/froehlich.JPG",
+          "img/emotions/tim/traurig.JPG",
+          "img/emotions/tim/ekelnd.JPG"
+        ]
+      },
       "correctAnswer2": 2
     },
     {
       "id": 6,
-      "story": "Ali hat eine Schachtel mit Ziegenfutter bekommen, obwohl er die Ziegen gar nicht füttern will.
-Auf einmal schnappt sich eine Ziege seine Schachtel mit dem Futter und frisst es ganz auf. Jetzt hat Ali kein Futter mehr.
-Ali möchte nicht, dass Tims Eltern wissen, dass er eigentlich kein Futter haben wollte.",
-      "storyImg" : "img/story/.JPG",
-      "question1": "Kannst Du mir zeigen, wie Alis Gesicht aussieht, als die Ziege ihm das Futter weggeschnappt hat?
-Sieht sein Gesicht traurig aus oder sieht es ängstlich aus oder sieht es fröhlich aus oder sieht es aus als würde sich Ali ekeln?",
-      "question2": "Und kannst Du mir zeigen wie Ali sich fühlt, als die Ziege ihm das Futter weggeschnappt hat?
-Ekelt Ali sich oder ist er ängstlich oder ist er fröhlich oder ist er traurig?",
-      "answers1": [
-        "img/emotions/ali/traurig.JPG",
-        "img/emotions/ali/aengstlich.JPG",
-        "img/emotions/ali/froehlich.JPG",
-        "img/emotions/ali/ekelnd.JPG"
-      ],
+      "story": "Ali hat eine Schachtel mit Ziegenfutter bekommen, obwohl er die Ziegen gar nicht füttern will. Auf einmal schnappt sich eine Ziege seine Schachtel mit dem Futter und frisst es ganz auf.Jetzt hat Ali kein Futter mehr. Ali möchte nicht, dass Tims Eltern wissen, dass er eigentlich kein Futter haben wollte.",
+      "storyImg": "img/story/.JPG",
+      "question1": {
+        "question": "Kannst Du mir zeigen, wie Alis Gesicht aussieht, als die Ziege ihm das Futter weggeschnappt hat? Sieht sein Gesicht traurig aus oder sieht es ängstlich aus oder sieht es fröhlich aus oder sieht es aus als würde sich Ali ekeln?",
+        "answers": [
+          "img/emotions/ali/traurig.JPG",
+          "img/emotions/ali/aengstlich.JPG",
+          "img/emotions/ali/froehlich.JPG",
+          "img/emotions/ali/ekelnd.JPG"
+        ]
+      },
       "correctAnswer1": 1,
-      "answers2": [
-        "img/emotions/ali/ekelnd.JPG",
-        "img/emotions/ali/aengstlich.JPG",
-        "img/emotions/ali/froehlich.JPG",
-        "img/emotions/ali/traurig.JPG"
-      ],
+      "question2": {
+        "question": "Und kannst Du mir zeigen wie Ali sich fühlt, als die Ziege ihm das Futter weggeschnappt hat? Ekelt Ali sich oder ist er ängstlich oder ist er fröhlich oder ist er traurig?",
+        "answers": [
+          "img/emotions/ali/ekelnd.JPG",
+          "img/emotions/ali/aengstlich.JPG",
+          "img/emotions/ali/froehlich.JPG",
+          "img/emotions/ali/traurig.JPG"
+        ]
+      },
       "correctAnswer2": 3
     }
   ],
   "story": [{
-      "text": "Die nächste Station ist das Tropenaquarium. Das ist ein großes Haus, in dem es ganz warm und feucht ist. Es ist für Tiere, die aus Ländern kommen, in denen es auch immer so warm und feucht ist.Dort leben z.B.Schlangen,
-      Eidechsen und Krokodile.Aber es gibt in dem Haus auch Fische.
-      ",
+      "text": "Die nächste Station ist das Tropenaquarium. Das ist ein großes Haus, in dem es ganz warm und feucht ist. Es ist für Tiere, die aus Ländern kommen, in denen es auch immer so warm und feucht ist. Dort leben z.B. Schlangen, Eidechsen und Krokodile. Aber es gibt in dem Haus auch Fische.",
       "image": "img/story/.JPG",
       "id": 1,
       "location": 1
@@ -160,8 +135,7 @@ Ekelt Ali sich oder ist er ängstlich oder ist er fröhlich oder ist er traurig?
       "location": 4
     },
     {
-      "text": "Tim und Ali haben mit Tims Eltern noch einen sehr schönen Tag im Zoo. Sie sehen noch viele Tiere. Zum Beispiel Löwen, Tiger, Giraffen und Nashörner. Sie haben viel Spaß und lernen auch viel über die Tiere. Am Abend fahren sie ganz müde wieder mit der S-Bahn nach Hause. Dabei erzählen sie sich die ganze Zeit, was sie alles erlebt haben.
-Danke, dass Du Dir mit mir die Geschichte angeschaut hast.",
+      "text": "Tim und Ali haben mit Tims Eltern noch einen sehr schönen Tag im Zoo. Sie sehen noch viele Tiere. Zum Beispiel Löwen, Tiger, Giraffen und Nashörner. Sie haben viel Spaß und lernen auch viel über die Tiere. Am Abend fahren sie ganz müde wieder mit der S-Bahn nach Hause. Dabei erzählen sie sich die ganze Zeit, was sie alles erlebt haben. Danke, dass Du Dir mit mir die Geschichte angeschaut hast.",
       "image": "",
       "id": 3,
       "location": 7

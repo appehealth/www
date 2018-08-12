@@ -1,7 +1,4 @@
-angular.module( 'App', [ 'ngRoute', 'App.services', 'App.controllers' ] )
-  // .config(['$compileProvider', function ($compileProvider) {
-  //     $compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
-  // }])
+angular.module( 'ATEM-App', [ 'ngRoute', 'ATEM-App.services', 'ATEM-App.controllers' ] )
   .config( function( $routeProvider ) {
     $routeProvider
       .when( '/', {
@@ -31,7 +28,12 @@ angular.module( 'App', [ 'ngRoute', 'App.services', 'App.controllers' ] )
 
       .when( '/comp5', {
         controller: 'Comp5Ctrl',
-        templateUrl: 'views/comp5.html'
+        templateUrl: 'views/comp5_6.html'
+      } )
+
+      .when( '/comp6', {
+        controller: 'Comp6Ctrl',
+        templateUrl: 'views/comp5_6.html'
       } )
 
       .when( '/results', {
