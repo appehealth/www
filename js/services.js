@@ -108,7 +108,7 @@ angular.module( 'ATEM-App.services', [] )
     function logStart() {
       startTime = Date.now();
       logEvent( 'Start' );
-      setInterval( logSensor, 200 );
+      setInterval( logSensor, 20 );
     }
 
     return {
