@@ -27,7 +27,13 @@
       </tr>
     </table>
   </div>
-  <button class="btn-success" ng-show="!showQuestionImg && selectedAnswer>0" ng-click="confirmQuestion()">Weiter</button>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-center">
+        <button class="btn-success" ng-show="!showQuestionImg && selectedAnswer>0" ng-click="confirmQuestion()">Weiter</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div ng-show="displayMode==='story'">

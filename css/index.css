@@ -7,7 +7,7 @@ body {
 }
 
 .storyText {
-  font-size: 200%;
+  font-size: 150%;
   font-weight: bold;
   text-align: justify;
 }
@@ -23,7 +23,7 @@ p {
 
 button {
   margin: 5%;
-  font-size: 300%;
+  font-size: 200%;
   padding: 2%;
   border-radius: 30px;
 
@@ -35,17 +35,19 @@ button {
   margin-left: auto;
   margin-right: auto;
 
+
 }
 
 .img {
   height: auto;
-  width: 300px;
+  width: 80%;
   margin: 5%;
 
 }
 
 .td {
   border-radius: 6px;
+
 }
 
 .storyimg {
@@ -53,7 +55,7 @@ button {
   margin-right: auto;
   text align: center;
   height: auto;
-  width: 60%;
+  width: 90%;
 
 }
 
