@@ -3,6 +3,7 @@ angular.module( 'ATEM-App.controllers', [] )
   .controller( 'IntroCtrl', [ '$scope', '$http', 'storeEvents', function( $scope, $http, storeEvents ) {
     var part2 = false;
     var intro = [];
+    $scope.language = 'german';
 
     $http.get( "json/intro.json" ).then( function( response ) {
       intro = response.data.text;
