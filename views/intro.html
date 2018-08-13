@@ -10,14 +10,14 @@
 <body>
 
   <p class="storyText">Bist du ein Junge oder ein Mädchen?</p>
-  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-    <label class="btn btn-secondary">
-        <input type="radio" name="geschlecht" id="geschlecht_junge" autocomplete="off"> Junge
-    </label>
-    <label class="btn btn-secondary">
-        <input type="radio" name="geschlecht" id="geschlecht_maedchen" autocomplete="off"> Mädchen
-    </label>
+
+  <div class="radio-inline">
+    <label><input type="radio" name="optradio" ng-click="gender='male'" checked>Junge</label>
   </div>
+  <div class="radio-inline">
+    <label><input type="radio" name="optradio" ng-click="gender='female'">Mädchen</label>
+  </div>
+
 
   <p class="storyText">Wann bist du geboren?</p>
 
@@ -115,6 +115,16 @@
 
 
   <p class="storyText">Welche Sprache sprichst du zuhause?</p>
+
+<div>
+  <select name='language' id='language' ng-model='language'>
+  <option value='german'>Deutsch</option>
+  <option value='arabic'>Arabisch</option>
+  <option value='turkish'>Türkisch</option>
+  <option value='others'>Eine andere Sprache</option>
+  </select>
+</div>
+
   <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Sprache
