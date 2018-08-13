@@ -497,7 +497,7 @@ angular.module( 'ATEM-App.controllers', [] )
     }
 
     $scope.showResults = function() {
-      console.log( storeEvents.results.join( '\n' ) );
+      storeEvents.saveAnswers();
     }
   } ] )
 

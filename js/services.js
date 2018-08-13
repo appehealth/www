@@ -118,6 +118,7 @@ angular.module( 'ATEM-App.services', [] )
       sensorStorage: sensorStorage,
       saveEvents: saveEvents,
       saveSensor: saveSensor,
+      saveResults: saveResults,
       results: results
     };
 
