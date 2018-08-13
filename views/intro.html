@@ -21,21 +21,22 @@
 
   <p class="storyText">Wann bist du geboren?</p>
 
-  <table>
-    <tr>
-      <td>
-        Tag
-      </td>
-      <td>
-        Monat
-      </td>
-      <td>
-        Jahr
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <select name='day' id='day' ng-model='day'>
+  <div class="dateSelect">
+    <table>
+      <tr>
+        <td>
+          Tag
+        </td>
+        <td>
+          Monat
+        </td>
+        <td>
+          Jahr
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <select name='day' id='day' ng-model='day'>
       <option value='1'>1</option>
       <option value='2'>2</option>
       <option value='3'>3</option>
@@ -68,9 +69,9 @@
       <option value='30'>30</option>
       <option value='31'>31</option>
       </select>
-      </td>
-      <td>
-        <select name='month' id='month' ng-model='month'>
+        </td>
+        <td>
+          <select name='month' id='month' ng-model='month'>
       <option value='1'>Januar</option>
       <option value='2'>Februar</option>
       <option value='3'>März</option>
@@ -84,9 +85,9 @@
       <option value='11'>November</option>
       <option value='12'>Dezember</option>
       </select>
-      </td>
-      <td>
-        <select name='year' id='year' ng-model='year'>
+        </td>
+        <td>
+          <select name='year' id='year' ng-model='year'>
       <option value='2006'>2006</option>
       <option value='2007'>2007</option>
       <option value='2008'>2008</option>
@@ -101,10 +102,10 @@
       <option value='2017'>2017</option>
 
       </select>
-      </td>
-    </tr>
-  </table>
-
+        </td>
+      </tr>
+    </table>
+  </div>
 
 
 
@@ -116,26 +117,16 @@
 
   <p class="storyText">Welche Sprache sprichst du zuhause?</p>
 
-<div>
-  <select name='language' id='language' ng-model='language'>
+  <div>
+    <select name='language' id='language' ng-model='language'>
   <option value='german'>Deutsch</option>
   <option value='arabic'>Arabisch</option>
   <option value='turkish'>Türkisch</option>
   <option value='others'>Eine andere Sprache</option>
   </select>
-</div>
-
-  <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Sprache
-  </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#" selected>Deutsch</a>
-      <a class="dropdown-item" href="#">Arabisch</a>
-      <a class="dropdown-item" href="#">Türkisch</a>
-      <a class="dropdown-item" href="#">Eine andere Sprache</a>
-    </div>
   </div>
+
+
 
 
   <p>

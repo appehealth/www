@@ -1,8 +1,8 @@
 body {
   background-color: white;
   color: black;
-  max-width: auto;
   margin: 5%;
+  max-width: auto;
 
 }
 
@@ -16,11 +16,25 @@ p {
   margin: 5%;
 }
 
+.dateSelect {
+  text align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-success {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 300%;
+
+}
+
 
 
 .answerImgTable {
   text align: center;
-  margin: 5%;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 
@@ -36,8 +50,8 @@ p {
 
 .storyimg {
   text align: center;
-  height: 500px;
-  width: 250px;
+  height: 30%;
+  width: 60%;
   margin: auto;
 }
 
