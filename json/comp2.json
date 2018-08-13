@@ -1,6 +1,5 @@
 {
-  "questions": [
-    {
+  "questions": [{
       "id": 1,
       "story": "Als Tim sich einen Schokoriegel in seinen Rucksack einpacken möchte, stellt er fest, dass in seinem Rucksack schon Schokoriegel drin sind. Kannst Du mir zeigen, wie Tim sich fühlt, wenn er sieht, dass in seinem Rucksack schon Schokoriegel drin sind?",
       "storyImg": "img/story/k2i1.JPG",
@@ -131,18 +130,28 @@
       "correctAnswer": 1
     }
   ],
-  "story":
-  [
+  "story": [{
+      "text": "",
+      "image": "img/BelohnungKomp1.JPG",
+      "id": 1,
+      "location": 1
+    },
     {
       "text": "Tim und Ali sind bei Tim zuhause und packen die Sachen ein, die sie für den Tag im Zoo brauchen.",
       "image": "img/story/k2intro.JPG",
-      "id": 1,
+      "id": 2,
       "location": 1
     },
     {
       "text": "Nachdem sie ihre Rucksäcke gepackt haben, machen sich Tim und Ali und Tims Eltern auf den Weg zum Zoo. Sie fahren mit der S-Bahn dort hin.",
       "image": "img/story/k2middle.JPG",
-      "id": 2,
+      "id": 3,
+      "location": 6
+    },
+    {
+      "text": "",
+      "image": "img/BelohnungKomp2.JPG",
+      "id": 4,
       "location": 6
     }
   ]

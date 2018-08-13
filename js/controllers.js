@@ -80,7 +80,7 @@ angular.module( 'ATEM-App.controllers', [] )
         if ( $scope.currentQuestion.id == nextStory ) {
           $scope.storyMode = true;
         } else $scope.showAnswers = false;
-      } else $window.location = '#/comp3';
+      } else $scope.displayMode = 'story';
 
     }
 
@@ -91,12 +91,14 @@ angular.module( 'ATEM-App.controllers', [] )
 
     $scope.continueStory = function() {
       if ( $scope.currentStory.id == story.length ) {
-        nextStory = 0;
+        window.location = '#/comp3';
       } else {
+        if ( $scope.currentStory.location != story[ $scope.currentStory.id ].location ) {
+          $scope.displayMode = 'question';
+        }
         $scope.currentStory = story[ $scope.currentStory.id ];
         nextStory = $scope.currentStory.location;
       }
-      $scope.displayMode = 'question';
     }
 
     //Load component from JSON
@@ -109,7 +111,7 @@ angular.module( 'ATEM-App.controllers', [] )
       if ( story.length > 0 ) {
         $scope.currentStory = story[ 0 ];
         nextStory = story[ 0 ].location;
-        if ( nextStory == 1 ) {
+        if ( nextStory <= 1 ) {
           $scope.displayMode = 'story';
         } else {
           $scope.displayMode = 'question';
@@ -151,7 +153,7 @@ angular.module( 'ATEM-App.controllers', [] )
         if ( $scope.currentQuestion.id == nextStory ) {
           $scope.storyMode = true;
         } else $scope.showAnswers = false;
-      } else $window.location = '#/comp4';
+      } else $scope.displayMode = 'story';
 
     }
 
@@ -162,12 +164,14 @@ angular.module( 'ATEM-App.controllers', [] )
 
     $scope.continueStory = function() {
       if ( $scope.currentStory.id == story.length ) {
-        nextStory = 0;
+        window.location = '#/comp4';
       } else {
+        if ( $scope.currentStory.location != story[ $scope.currentStory.id ].location ) {
+          $scope.displayMode = 'question';
+        }
         $scope.currentStory = story[ $scope.currentStory.id ];
         nextStory = $scope.currentStory.location;
       }
-      $scope.displayMode = 'question';
     }
 
     //Load component from JSON
@@ -230,7 +234,7 @@ angular.module( 'ATEM-App.controllers', [] )
         if ( $scope.currentChoice.id == nextStory ) {
           $scope.displayMode = 'story';
         } else $scope.displayMode = 'choice';
-      } else $window.location = '#/comp5';
+      } else $scope.displayMode = 'story';
     }
 
     $scope.selectAnswer = function( ans ) {
@@ -240,12 +244,14 @@ angular.module( 'ATEM-App.controllers', [] )
 
     $scope.continueStory = function() {
       if ( $scope.currentStory.id == story.length ) {
-        nextStory = 0;
+        window.location = '#/comp5';
       } else {
+        if ( $scope.currentStory.location != story[ $scope.currentStory.id ].location ) {
+          $scope.displayMode = 'choice';
+        }
         $scope.currentStory = story[ $scope.currentStory.id ];
         nextStory = $scope.currentStory.location;
       }
-      $scope.displayMode = 'choice';
     }
 
     //Load component from JSON
@@ -291,7 +297,7 @@ angular.module( 'ATEM-App.controllers', [] )
         if ( $scope.currentQuestion.id == nextStory ) {
           $scope.storyMode = true;
         } else $scope.showAnswers = false;
-      } else $window.location = '#/comp6';
+      } else $scope.displayMode = 'story';
     }
 
     $scope.confirmQuestion = function() {
@@ -337,12 +343,14 @@ angular.module( 'ATEM-App.controllers', [] )
 
     $scope.continueStory = function() {
       if ( $scope.currentStory.id == story.length ) {
-        nextStory = 0;
+        window.location = '#/comp6';
       } else {
+        if ( $scope.currentStory.location != story[ $scope.currentStory.id ].location ) {
+          $scope.displayMode = 'question';
+        }
         $scope.currentStory = story[ $scope.currentStory.id ];
         nextStory = $scope.currentStory.location;
       }
-      $scope.displayMode = 'question';
     }
 
     //Load component from JSON
@@ -447,12 +455,14 @@ angular.module( 'ATEM-App.controllers', [] )
     }
 
     $scope.continueStory = function() {
-      if ( $scope.currentStory.id == numberOfQuestions + 1 ) {
-        $window.location = '#/results';
+      if ( $scope.currentStory.id == story.length ) {
+        window.location = '#/results';
       } else {
+        if ( $scope.currentStory.location != story[ $scope.currentStory.id ].location ) {
+          $scope.displayMode = 'question';
+        }
         $scope.currentStory = story[ $scope.currentStory.id ];
         nextStory = $scope.currentStory.location;
-        $scope.displayMode = 'question';
       }
     }
 

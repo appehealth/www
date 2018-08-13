@@ -48,6 +48,10 @@ angular.module( 'ATEM-App.services', [] )
       sensorStorage.push( timestamp + '; ' + x + '; ' + y + '; ' + z );
     }
 
+    function saveResults() {
+      createFile( "results" + startTime + ".txt", results.join( '\n' ) );
+    }
+
     function saveEvents() {
       createFile( "events" + startTime + ".txt", eventStorage.join( '\n' ) );
     }

@@ -2,7 +2,7 @@
   "questions": [{
       "id": 1,
       "story": "Ali unterhält sich gerade ein bisschen mit Tims Mutter als ihn plötzlich jemand von hinten mit dem Finger antippt. Als er sich umdreht sieht er, dass es ein anderer Freund aus der Schule ist, den er sehr gerne mag. Ali wusste gar nicht, dass er auch in den Zoo kommen wollte. Kannst Du mir zeigen, wie Ali sich fühlt, wenn er plötzlich seinen anderen Freund in der Warteschlange sieht?",
-      "storyImg": "img/story/.JPG",
+      "storyImg": "img/story/k3i1.JPG",
       "question": "Ist er überrascht und fröhlich gleichzeitig oder ist er überrascht oder ist er traurig und ängstlich gleichzeitig oder ist er traurig?",
       "answers": [
         "img/emotions/ali/ueberraschtFroehlich.JPG",
@@ -16,7 +16,7 @@
     {
       "id": 2,
       "story": "Tim und seine Eltern wollen in dem Schaufenster vom Zooladen noch nach einem Geschenk für Tims Schwester schauen. Ali möchte das auch gerne ansehen aber er soll ganz alleine zwischen den fremden Menschen in der Warteschlage stehen bleiben und den Platz freihalten. Kannst Du mir zeigen, wie Ali sich fühlt, wenn er sich die Sachen im Schaufenster nicht ansehen kann und auch noch ganz alleine bei den fremden Menschen in der Warteschlange stehen bleiben muss?",
-      "storyImg": "img/story/.JPG",
+      "storyImg": "img/story/k3i2.JPG",
       "question": "Ist er traurig oder ist er überrascht oder ist er ängstlich und fröhlich gleichzeitig oder ist er traurig und ängstlich gleichzeitig?",
       "answers": [
         "img/emotions/ali/traurig.JPG",
@@ -29,7 +29,7 @@
     {
       "id": 3,
       "story": "Ein Mann mit einem großen Hund kommt vorbei. Der Hund sieht böse aus und will auf Ali zuspringen. Da macht Ali einen Schritt zurück und tritt in einen Hundehaufen. Kannst Du mir zeigen wie Ali sich fühlt, wenn der Hund auf ihn zuspringt und er in einen Hundehaufen tritt?",
-      "storyImg": "img/story/.JPG",
+      "storyImg": "img/story/k3i3.JPG",
       "question": "Ist er ärgerlich oder ist er ängstlich und ekelt sich gleichzeitig oder ist er ängstlich oder ist er überrascht und fröhlich gleichzeitig?",
       "answers": [
         "img/emotions/ali/aergerlich.JPG",
@@ -42,7 +42,7 @@
     {
       "id": 4,
       "story": "Tim malt mit einem Stock ein Bild in den Sand auf dem Weg. Da kommt ein Mann und läuft einfach durch sein Bild durch, sodass es nicht mehr zu erkennen ist. Kannst Du mir zeigen, wie Tim sich fühlt, wenn der Mann durch sein Bild läuft und es nicht mehr zu erkennen ist?",
-      "storyImg": "img/story/.JPG",
+      "storyImg": "img/story/k3i4.JPG",
       "question": "Ist er traurig oder ist er ärgerlich und traurig gleichzeitig oder ist er ängstlich und ärgerlich gleichzeitig oder ist er überrascht?",
       "answers": [
         "img/emotions/tim/traurig.JPG",
@@ -55,7 +55,7 @@
     {
       "id": 5,
       "story": "Tim und Ali bekommen von Tims Eltern jeder etwas Geld geschenkt, das sie im Zoo ausgeben können. Tim und Ali sprechen darüber, wie viele Süßigkeiten sie von dem Geld kaufen können. Aber Tims Mutter verbietet Tim, das ganze Geld nur für Süßigkeiten auszugeben. Kannst du mir zeigen, wie Tim sich fühlt, wenn er Geld bekommt aber seine Mutter ihm verbietet, es alles für Süßigkeiten auszugeben?",
-      "storyImg": "img/story/.JPG",
+      "storyImg": "img/story/k3i5.JPG",
       "question": "Ist er überrascht oder ist er ängstlich und fröhlich gleichzeitig oder ekelt er sich oder ist er fröhlich und ärgerlich gleichzeitig?",
       "answers": [
         "img/emotions/tim/ueberrascht.JPG",
@@ -68,7 +68,7 @@
     {
       "id": 6,
       "story": "Für die Zeit im Zoo bekommen Tim und Ali ein Handy von Tims Eltern, damit sie anrufen können, wenn sie sich mal verlieren sollten. Tim hat sich schon lange ein Handy gewünscht. Aber Tims Vater warnt sie: Wenn sie nicht gut auf das Handy aufpassen, wird Tim auch später kein Handy bekommen. Kannst Du mir zeigen, wie Tim sich fühlt, als sie das Handy bekommen aber sein Vater ihn warnt, dass er keins bekommt, wenn er nicht gut darauf aufpasst?",
-      "storyImg": "img/story/.JPG",
+      "storyImg": "img/story/k3i6.JPG",
       "question": "Ist er ängstlich oder ist er fröhlich und ängstlich gleichzeitig oder ekelt er sich und ist traurig gleichzeitig oder ist er ärgerlich und fröhlich gleichzeitig?",
       "answers": [
         "img/emotions/tim/aengstlich.JPG",
@@ -81,15 +81,21 @@
   ],
   "story": [{
       "text": "Tim und Ali und Tims Eltern sind am Zoo angekommen. Aber bevor sie hineingehen können, müssen sie sich eine Eintrittskarte kaufen. Sie stellen sich am Eingang an der Warteschlange an und warten, bis sie an der Reihe sind.",
-      "image": "img/story/k2intro.JPG",
+      "image": "img/story/k3intro.JPG",
       "id": 1,
       "location": 1
     },
     {
       "text": "Tim, Ali und Tims Eltern haben die Eintrittskarten gekauft und sind im Zoo angekommen. Tim und Ali wollen gleich los zu den Tieren. Aber Tims Eltern sagen, sie wollen sich einen Plan machen, wie sie den Tag im Zoo verbringen wollen und wo sie sich treffen, falls sie sich mal verlieren sollten.",
-      "image": "img/story/k2middle.JPG",
+      "image": "img/story/k3middle.JPG",
       "id": 2,
       "location": 5
+    },
+    {
+      "text": "",
+      "image": "img/BelohnungKomp3.JPG",
+      "id": 3,
+      "location": 7
     }
   ]
 }
