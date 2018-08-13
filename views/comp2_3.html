@@ -2,7 +2,15 @@
   <p class="storyText">{{currentQuestion.story}}</p>
   <p ng-show="!showQuestionImg" class="storyText">{{currentQuestion.question}}</p>
   <img src={{currentQuestion.storyImg}} class="storyimg" ng-show="showQuestionImg" />
-  <button class="btn-success" ng-click="showQuestionImg = false" ng-show="showQuestionImg">Weiter</button>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-center">
+        <button class="btn-success" ng-click="showQuestionImg = false" ng-show="showQuestionImg">Weiter</button>
+      </div>
+    </div>
+  </div>
+
   <div class="container" ng-show="!showQuestionImg" id="answerImages">
     <table class="answerImgTable">
       <tr>
@@ -21,6 +29,12 @@
 <div ng-show="displayMode==='story'">
   <p class="storyText">{{currentStory.text}}</p>
   <img src={{currentStory.image}} class="storyimg" />
-  <br/>
-  <button class="btn-success" ng-click="continueStory()">Weiter</button>
+  <p></p>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-center">
+        <button class="btn-success" ng-click="continueStory()">Weiter</button>
+      </div>
+    </div>
+  </div>
 </div>

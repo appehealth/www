@@ -1,42 +1,32 @@
-<html>
-
-<head>
-  <link rel="stylesheet" href="../css/bootstrap.css">
-  <link rel="stylesheet" href="../css/index.css">
-  <style>
-  </style>
-</head>
-
-<body>
-
-  <p class="storyText">Bist du ein Junge oder ein Mädchen?</p>
-
+<p class="storyText">
+  Bist du ein Junge oder ein Mädchen?</p>
+<div class="introSelect">
   <div class="radio-inline">
     <label><input type="radio" name="optradio" ng-click="gender='male'" checked>Junge</label>
   </div>
   <div class="radio-inline">
     <label><input type="radio" name="optradio" ng-click="gender='female'">Mädchen</label>
   </div>
+</div>
 
 
-  <p class="storyText">Wann bist du geboren?</p>
+<p class="storyText">Wann bist du geboren?</p>
 
-  <div class="dateSelect">
-    <table>
-      <tr>
-        <td>
-          Tag
-        </td>
-        <td>
-          Monat
-        </td>
-        <td>
-          Jahr
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <select name='day' id='day' ng-model='day'>
+<table class="introSelect">
+  <tr>
+    <td>
+      Tag
+    </td>
+    <td>
+      Monat
+    </td>
+    <td>
+      Jahr
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <select name='day' id='day' ng-model='day'>
       <option value='1'>1</option>
       <option value='2'>2</option>
       <option value='3'>3</option>
@@ -69,9 +59,9 @@
       <option value='30'>30</option>
       <option value='31'>31</option>
       </select>
-        </td>
-        <td>
-          <select name='month' id='month' ng-model='month'>
+    </td>
+    <td>
+      <select name='month' id='month' ng-model='month'>
       <option value='1'>Januar</option>
       <option value='2'>Februar</option>
       <option value='3'>März</option>
@@ -85,9 +75,9 @@
       <option value='11'>November</option>
       <option value='12'>Dezember</option>
       </select>
-        </td>
-        <td>
-          <select name='year' id='year' ng-model='year'>
+    </td>
+    <td>
+      <select name='year' id='year' ng-model='year'>
       <option value='2006'>2006</option>
       <option value='2007'>2007</option>
       <option value='2008'>2008</option>
@@ -102,37 +92,30 @@
       <option value='2017'>2017</option>
 
       </select>
-        </td>
-      </tr>
-    </table>
-  </div>
+    </td>
+  </tr>
+</table>
 
 
+<p class="storyText">Welche Sprache sprichst du zuhause?</p>
 
-
-
-
-
-
-
-  <p class="storyText">Welche Sprache sprichst du zuhause?</p>
-
-  <div>
-    <select name='language' id='language' ng-model='language'>
+<div class="introSelect">
+  <select name='language' id='language' ng-model='language'>
   <option value='german'>Deutsch</option>
   <option value='arabic'>Arabisch</option>
   <option value='turkish'>Türkisch</option>
   <option value='others'>Eine andere Sprache</option>
   </select>
+</div>
+
+
+
+
+<br/>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="text-center">
+      <a class="btn btn-success" ng-click="startStory()" role="button" class="buttonStyle">Geschichte Starten</a>
+    </div>
   </div>
-
-
-
-
-  <p>
-    <a class="btn btn-success" ng-click="startStory()" role="button">Geschichte Starten</a>
-  </p>
-
-</body>
-
-</html>
+</div>

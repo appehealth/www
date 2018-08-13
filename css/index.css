@@ -16,23 +16,22 @@ p {
   margin: 5%;
 }
 
-.dateSelect {
-  text align: center;
-  margin-left: auto;
-  margin-right: auto;
+.introSelect {
+  margin: 5%;
 }
 
-.btn-success {
-  margin-left: auto;
-  margin-right: auto;
+
+button {
+
   font-size: 300%;
+  padding: 2%;
+  border-radius: 5%%;
 
 }
-
 
 
 .answerImgTable {
-  text align: center;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
 
@@ -50,9 +49,10 @@ p {
 
 .storyimg {
   text align: center;
-  height: 30%;
-  width: 60%;
-  margin: auto;
+  height: 337%;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
