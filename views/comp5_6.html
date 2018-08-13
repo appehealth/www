@@ -1,7 +1,13 @@
 <div ng-show="displayMode==='question'">
   <p class="storyText">{{currentQuestion.story}}</p>
   <p ng-show="!showQuestionImg" class="storyText">{{currentQuestion.question.question}}</p>
-  <img src={{currentQuestion.storyImg}} class="storyimg" ng-show="showQuestionImg" />
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-center">
+        <img src={{currentQuestion.storyImg}} class="storyimg" ng-show="showQuestionImg" />
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-sm-12">
       <div class="text-center">
@@ -26,7 +32,13 @@
 
 <div ng-show="displayMode==='story'">
   <p class="storyText">{{currentStory.text}}</p>
-  <img src={{currentStory.image}} class="storyimg" />
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-center">
+        <img src={{currentStory.image}} class="storyimg" />
+      </div>
+    </div>
+  </div>
   <br>
   <div class="row">
     <div class="col-sm-12">
