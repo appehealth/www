@@ -1,7 +1,13 @@
 <div ng-show="displayMode==='question'">
   <p class="storyText">{{currentQuestion.story}}</p>
   <p ng-show="!showQuestionImg" class="storyText">{{currentQuestion.question}}</p>
-  <img src={{currentQuestion.storyImg}} class="storyimg" ng-show="showQuestionImg" />
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-center">
+        <img src={{currentQuestion.storyImg}} class="storyimg" ng-show="showQuestionImg" />
+      </div>
+    </div>
+  </div>
 
   <div class="row">
     <div class="col-sm-12">
@@ -23,12 +29,24 @@
       </tr>
     </table>
   </div>
-  <button class="btn-success" ng-show="!showQuestionImg && selectedAnswer>0" ng-click="confirmQuestion()">Weiter</button>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-center">
+        <button class="btn-success" ng-show="!showQuestionImg && selectedAnswer>0" ng-click="confirmQuestion()">Weiter</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div ng-show="displayMode==='story'">
   <p class="storyText">{{currentStory.text}}</p>
-  <img src={{currentStory.image}} class="storyimg" />
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-center">
+        <img src={{currentStory.image}} class="storyimg" />
+      </div>
+    </div>
+  </div>
   <p></p>
   <div class="row">
     <div class="col-sm-12">

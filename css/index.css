@@ -7,7 +7,7 @@ body {
 }
 
 .storyText {
-  font-size: 200%;
+  font-size: 150%;
   font-weight: bold;
   text-align: justify;
 }
@@ -22,10 +22,10 @@ p {
 
 
 button {
-
-  font-size: 300%;
+  margin: 5%;
+  font-size: 200%;
   padding: 2%;
-  border-radius: 5%%;
+  border-radius: 30px;
 
 }
 
@@ -35,24 +35,28 @@ button {
   margin-left: auto;
   margin-right: auto;
 
+
 }
 
 .img {
-  height: 300px;
-  width: 300px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  margin-left: 10px;
+  height: auto;
+  width: 80%;
+  margin: 5%;
+
+}
+
+.td {
   border-radius: 6px;
+
 }
 
 .storyimg {
-  text align: center;
-  height: 337%;
-  width: 75%;
   margin-left: auto;
   margin-right: auto;
+  text align: center;
+  height: auto;
+  width: 90%;
+
 }
 
 

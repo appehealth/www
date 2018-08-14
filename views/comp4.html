@@ -1,6 +1,12 @@
 <div ng-show="displayMode==='choice'">
   <p class="storyText">{{currentChoice.choiceStory}}</p>
-  <img src={{currentChoice.choiceStoryImg}} class="storyimg" ng-show="showChoiceImg" />
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-center">
+        <img src={{currentChoice.choiceStoryImg}} class="storyimg" ng-show="showChoiceImg" />
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-sm-12">
       <div class="text-center">
@@ -22,7 +28,13 @@
 <div ng-show="displayMode==='question'">
   <p class="storyText">{{currentQuestion.story}}</p>
   <p ng-show="!showQuestionImg" class="storyText">{{currentQuestion.question}}</p>
-  <img src={{currentQuestion.questionImg}} class="storyimg" ng-show="showQuestionImg" />
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-center">
+        <img src={{currentQuestion.questionImg}} class="storyimg" ng-show="showQuestionImg" />
+      </div>
+    </div>
+  </div>
   <button class="btn-success" ng-click="showQuestionImg = false" ng-show="showQuestionImg">Weiter</button>
   <div class="container" ng-show="!showQuestionImg" id="answerImages">
     <table class="answerImgTable">
@@ -41,7 +53,13 @@
 
 <div ng-show="displayMode==='story'">
   <p class="storyText">{{currentStory.text}}</p>
-  <img src={{currentStory.image}} class="storyimg" />
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-center">
+        <img src={{currentStory.image}} class="storyimg" />
+      </div>
+    </div>
+  </div>
   <br>
   <div class="row">
     <div class="col-sm-12">
