@@ -497,7 +497,7 @@ angular.module( 'ATEM-App.controllers', [] )
   } ] )
 
   .controller( 'ResultsCtrl', [ '$scope', 'storeEvents', function( $scope, storeEvents ) {
-    $scope.saveResults = function() {
+    $scope.saveEvents = function() {
       storeEvents.saveEvents();
     }
 
@@ -505,8 +505,8 @@ angular.module( 'ATEM-App.controllers', [] )
       storeEvents.saveSensor();
     }
 
-    $scope.showResults = function() {
-      storeEvents.saveAnswers();
+    $scope.saveResults = function() {
+      storeEvents.saveResults();
     }
   } ] )
 
