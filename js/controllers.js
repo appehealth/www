@@ -510,4 +510,15 @@ angular.module( 'ATEM-App.controllers', [] )
     }
   } ] )
 
+  .controller( 'StartCtrl', [ '$scope', '$rootScope', function( $scope, $rootScope ) {
+    $scope.normalClick = function() {
+      window.location = '#/intro';
+    }
+
+    $scope.presentationClick = function() {
+      $rootScope.presentationMode = true;
+      window.location = '#/intro';
+    }
+  } ] )
+
 ;
