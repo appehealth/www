@@ -2,6 +2,11 @@ angular.module( 'ATEM-App', [ 'ngRoute', 'ATEM-App.services', 'ATEM-App.controll
   .config( function( $routeProvider ) {
     $routeProvider
       .when( '/', {
+        controller: 'StartCtrl',
+        templateUrl: 'views/startScreen.html'
+      } )
+
+      .when( '/intro', {
         controller: 'IntroCtrl',
         templateUrl: 'views/intro.html'
       } )
