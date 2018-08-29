@@ -1,4 +1,4 @@
-{
+﻿{
   "choices": [{
       "id": 1,
       "choiceStory": "Um zu zeigen, wie stark die Elefanten mit ihren Rüsseln sind, lässt sich ein Tierpfleger von einem großen Elefanten auf dessen Rüssel über das Gelände tragen. Danach dürfen sich gleich zwei Kinder auf den Rüssel setzen wie auf eine Schaukel. Würdest Du Dich auch gerne auf den Elefantenrüssel setzen wie auf eine Schaukel? Oder würdest Du lieber dabei zusehen?",
@@ -11,10 +11,10 @@
         "storyImg": "img/story/k4i1A.JPG",
         "question": "Ekeln sie sich oder sind sie traurig oder sind sie fröhlich oder sind sie ärgerlich?",
         "answers": [
-          "img/emotions/both/ekelnd.JPG",
-          "img/emotions/both/traurig.JPG",
-          "img/emotions/both/froehlich.JPG",
-          "img/emotions/both/aergerlich.JPG"
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG"
         ],
         "correctAnswer": 3
       },
@@ -23,10 +23,10 @@
         "storyImg": "img/story/k4i1B.JPG",
         "question": "Ekeln sie sich oder sind sie traurig oder sind sie fröhlich oder sind sie ärgerlich?",
         "answers": [
-          "img/emotions/both/ekelnd.JPG",
-          "img/emotions/both/traurig.JPG",
-          "img/emotions/both/froehlich.JPG",
-          "img/emotions/both/aergerlich.JPG"
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG"
         ],
         "correctAnswer": 3
       }
@@ -44,10 +44,10 @@
         "storyImg": "img/story/k4i2A.JPG",
         "question": "Sind sie fröhlich oder sind sie ängstlich oder sind sie traurig oder ekeln sie sich?",
         "answers": [
-          "img/emotions/both/froehlich.JPG",
-          "img/emotions/both/aengstlich.JPG",
-          "img/emotions/both/traurig.JPG",
-          "img/emotions/both/ekelnd.JPG"
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG"
         ],
         "correctAnswer": 1
       },
@@ -57,10 +57,10 @@
         "storyImg": "img/story/k4i2B.JPG",
         "question": "Sind sie fröhlich oder sind sie ängstlich oder sind sie traurig oder ekeln sie sich?",
         "answers": [
-          "img/emotions/both/froehlich.JPG",
-          "img/emotions/both/aengstlich.JPG",
-          "img/emotions/both/traurig.JPG",
-          "img/emotions/both/ekelnd.JPG"
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG"
         ],
         "correctAnswer": 1
       }
@@ -79,10 +79,10 @@
         "storyImg": "img/story/k4i3A.JPG",
         "question": "Sind sie ängstlich oder ekeln sie sich oder sind sie fröhlich oder sind sie traurig?",
         "answers": [
-          "img/emotions/both/aengstlich.JPG",
-          "img/emotions/both/ekelnd.JPG",
-          "img/emotions/both/froehlich.JPG",
-          "img/emotions/both/traurig.JPG"
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG"
         ],
         "correctAnswer": 4
       },
@@ -92,10 +92,10 @@
         "storyImg": "img/story/k4i3B.JPG",
         "question": "Sind sie ängstlich oder ekeln sie sich oder sind sie fröhlich oder sind sie traurig?",
         "answers": [
-          "img/emotions/both/aengstlich.JPG",
-          "img/emotions/both/ekelnd.JPG",
-          "img/emotions/both/froehlich.JPG",
-          "img/emotions/both/traurig.JPG"
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG"
         ],
         "correctAnswer": 2
       }
@@ -127,10 +127,10 @@
         "storyImg": "img/story/k4i4B.JPG",
         "question": "Sind sie ängstlich oder sind sie ärgerlich oder sind sie überrascht oder sind sie fröhlich?",
         "answers": [
-          "img/emotions/both/aengstlich.JPG",
-          "img/emotions/both/aergerlich.JPG",
-          "img/emotions/both/ueberrascht.JPG",
-          "img/emotions/both/froehlich.JPG"
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG"
         ],
         "correctAnswer": 2
       }
@@ -149,10 +149,10 @@
         "storyImg": "img/story/k4i5A.JPG",
         "question": "Sind sie überrascht oder sind sie traurig oder sind sie fröhlich oder ekeln sie sich?",
         "answers": [
-          "img/emotions/both/ueberrascht.JPG",
-          "img/emotions/both/traurig.JPG",
-          "img/emotions/both/froehlich.JPG",
-          "img/emotions/both/ekelnd.JPG"
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG"
         ],
         "correctAnswer": 2
       },
@@ -162,10 +162,10 @@
         "storyImg": "img/story/k4i5B.JPG",
         "question": "Sind sie überrascht oder sind sie traurig oder sind sie fröhlich oder ekeln sie sich?",
         "answers": [
-          "img/emotions/both/ueberrascht.JPG",
-          "img/emotions/both/traurig.JPG",
-          "img/emotions/both/froehlich.JPG",
-          "img/emotions/both/ekelnd.JPG"
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG"
         ],
         "correctAnswer": 2
       }
@@ -184,10 +184,10 @@
         "storyImg": "img/story/k4i6A.JPG",
         "question": "Ekeln sie sich oder sind sie ängstlich oder sind sie traurig oder sind sie fröhlich?",
         "answers": [
-          "img/emotions/both/ekelnd.JPG",
-          "img/emotions/both/aengstlich.JPG",
-          "img/emotions/both/traurig.JPG",
-          "img/emotions/both/froehlich.JPG"
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG"
         ],
         "correctAnswer": 4
       },
@@ -197,10 +197,10 @@
         "storyImg": "img/story/k4i6B.JPG",
         "question": "Ekeln sie sich oder sind sie ängstlich oder sind sie traurig oder sind sie fröhlich?",
         "answers": [
-          "img/emotions/both/ekelnd.JPG",
-          "img/emotions/both/aengstlich.JPG",
-          "img/emotions/both/traurig.JPG",
-          "img/emotions/both/froehlich.JPG"
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG",
+          "img/platzhalter.JPG"
         ],
         "correctAnswer": 4
       }
