@@ -2,7 +2,11 @@ body {
   background-color: white;
   color: black;
   max-width: auto;
+}
 
+h2 {
+  text-align: center;
+  margin: 5%;
 }
 
 .leuphanaLogo {
@@ -26,10 +30,10 @@ p {
 
 
 button {
-  margin: 5%;
-  font-size: 200%;
-  padding: 2%;
-  border-radius: 30px;
+  margin: 2%;
+  font-size: 150%;
+  padding: 1%;
+  border-radius: 20px;
 
 }
 
@@ -40,10 +44,15 @@ button {
   color: white;
   font-weight: bold;
   font-size: 250%;
-  text-align: center;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+#presentation {
+  background-color: orange;
+
+}
 
 .answerImgTable {
   text-align: center;
