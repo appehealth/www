@@ -7,23 +7,15 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="text-center">
 
-        <button class="btn-success" ng-click="showChoiceImg = false" ng-show="showChoiceImg">Weiter</button>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="text-center">
-        <button class="btn-success" ng-click="btnChoice('A')" ng-show="!showChoiceImg">{{currentChoice.choiceA}}</button>
-        <button class="btn-success" ng-click="btnChoice('B')" ng-show="!showChoiceImg">{{currentChoice.choiceB}}</button>
-      </div>
-    </div>
-  </div>
+
+  <div class="BannerButton" ng-click="showChoiceImg = false" ng-show="showChoiceImg">Weiter</div>
+
+
+  <div class="BannerButton" ng-click="btnChoice('A')" ng-show="!showChoiceImg">{{currentChoice.choiceA}}</div>
+  <div class="BannerButton" ng-click="btnChoice('B')" ng-show="!showChoiceImg">{{currentChoice.choiceB}}</div>
 </div>
+
 
 <div ng-show="displayMode==='question'">
   <p class="storyText">{{currentQuestion.story}}</p>
@@ -35,13 +27,9 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="text-center">
-        <button class="btn-success" ng-click="showQuestionImg = false" ng-show="showQuestionImg">Weiter</button>
-      </div>
-    </div>
-  </div>
+
+  <div class="BannerButton" ng-click="showQuestionImg = false" ng-show="showQuestionImg">Weiter</div>
+
   <div class="container" ng-show="!showQuestionImg" id="answerImages">
     <table class="answerImgTable">
       <tr>
@@ -54,7 +42,7 @@
       </tr>
     </table>
   </div>
-  <button class="btn-success" ng-show="!showQuestionImg && selectedAnswer>0" ng-click="confirmQuestion()">Weiter</button>
+  <div class="BannerButton" ng-show="!showQuestionImg && selectedAnswer>0" ng-click="confirmQuestion()">Weiter</div>
 </div>
 
 <div ng-show="displayMode==='story'">
@@ -67,11 +55,6 @@
     </div>
   </div>
   <br>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="text-center">
-        <button class="btn-success" ng-click="continueStory()">Weiter</button>
-      </div>
-    </div>
-  </div>
+
+  <div class="BannerButton" ng-click="continueStory()">Weiter</div>
 </div>

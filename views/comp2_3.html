@@ -9,13 +9,9 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="text-center">
-        <button class="btn-success" ng-click="showQuestionImg = false" ng-show="showQuestionImg">Weiter</button>
-      </div>
-    </div>
-  </div>
+
+  <div class="BannerButton" ng-click="showQuestionImg = false" ng-show="showQuestionImg">Weiter</div>
+
 
   <div class="container" ng-show="!showQuestionImg" id="answerImages">
     <table class="answerImgTable">
@@ -48,11 +44,6 @@
     </div>
   </div>
   <p></p>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="text-center">
-        <button class="btn-success" ng-click="continueStory()">Weiter</button>
-      </div>
-    </div>
-  </div>
+
+  <div class="btn-success" ng-click="continueStory()">Weiter</div>
 </div>

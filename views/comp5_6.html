@@ -8,13 +8,9 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="text-center">
-        <button class="btn-success" ng-click="showQuestionImg = false" ng-show="showQuestionImg">Weiter</button>
-      </div>
-    </div>
-  </div>
+
+  <div class="BannerButton" ng-click="showQuestionImg = false" ng-show="showQuestionImg">Weiter</div>
+
   <div class="container" ng-show="!showQuestionImg" id="answerImages">
     <table class="answerImgTable">
       <tr>
@@ -27,14 +23,10 @@
       </tr>
     </table>
   </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="text-center">
-        <button class="btn-success" ng-show="!showQuestionImg && selectedAnswer>0" ng-click="confirmQuestion()">Weiter</button>
-      </div>
-    </div>
-  </div>
+
+  <div class="BannerButton" ng-show="!showQuestionImg && selectedAnswer>0" ng-click="confirmQuestion()">Weiter</div>
 </div>
+
 
 <div ng-show="displayMode==='story'">
   <p class="storyText">{{currentStory.text}}</p>
@@ -46,11 +38,6 @@
     </div>
   </div>
   <br>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="text-center">
-        <button class="btn-success" ng-click="continueStory()">Weiter</button>
-      </div>
-    </div>
-  </div>
+
+  <div class="BannerButton" ng-click="continueStory()">Weiter</div>
 </div>
