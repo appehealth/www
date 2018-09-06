@@ -2,12 +2,13 @@ angular.module( 'ATEM-App.controllers', [] )
 
   .controller( 'IntroCtrl', [ '$scope', '$http', 'storeEvents', function( $scope, $http, storeEvents ) {
     var part2 = false;
-    var intro = [];
+    var text1, text2;
     $scope.language = 'german';
 
     $http.get( "json/intro.json" ).then( function( response ) {
-      intro = response.data.text;
-      $scope.introText = intro[ 0 ];
+      text1 = response.data.text1;
+      text2 = response.data.text2;
+      $scope.introText = text1;
     } );
 
     $scope.startStory = function() {
@@ -24,7 +25,7 @@ angular.module( 'ATEM-App.controllers', [] )
         window.location = '#/comp1'
       } else {
         part2 = true;
-        $scope.introText = intro[ 1 ];
+        $scope.introText = text2;
       }
     }
   } ] )
