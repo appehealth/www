@@ -1,6 +1,6 @@
-﻿{
-  "questions": [
-    {
+﻿
+{
+  "questions": [{
       "id": 1,
       "question": "Das ist Tim. Tim ist meistens fröhlich. Kannst Du mir zeigen, wie Tim aussieht, wenn er fröhlich ist?",
       "answers": [
@@ -68,5 +68,6 @@
       "correctAnswer": 2
     }
   ],
-  "numberOfQuestions": 6
+  "numberOfQuestions": 6,
+  "rewardImg": "img/BelohnungKomp1.jpg"
 }

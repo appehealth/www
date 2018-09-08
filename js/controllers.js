@@ -33,11 +33,12 @@ angular.module( 'ATEM-App.controllers', [] )
   .controller( 'Comp1Ctrl', [ '$scope', '$http', '$window', 'storeEvents', function( $scope, $http, $window, storeEvents ) {
     var allQuestions = [];
     var numberOfQuestions = 0;
-    $scope.nextBool = false;
+    $scope.finished = false;
 
     $http.get( "json/comp1.json" ).then( function( response ) {
       allQuestions = response.data.questions;
       numberOfQuestions = allQuestions.length;
+      $scope.rewardImg = response.data.rewardImg;
       $scope.currentQuestion = allQuestions[ 0 ];
     } );
 
@@ -53,9 +54,13 @@ angular.module( 'ATEM-App.controllers', [] )
       if ( $scope.currentQuestion.id < numberOfQuestions ) {
         $scope.currentQuestion = allQuestions[ $scope.currentQuestion.id ];
       } else {
-        storeEvents.logEvent( 'Start component 2' )
-        $window.location = '#/comp2';
+        $scope.finished = true;
       }
+    }
+
+    $scope.nextComp = function() {
+      storeEvents.logEvent( 'Start Component 2' );
+      window.location = '#/comp2';
     }
   } ] )
 

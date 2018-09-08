@@ -1,30 +1,37 @@
-<p class="storyText">
+<div ng-show="!finished">
+  <p class="storyText">
 
-  {{currentQuestion.question}}</p>
+    {{currentQuestion.question}}</p>
 
 
 
-<div class="container">
-  <table class="answerImgTable">
-    <tr>
-      <td class="td">
-        <img src={{currentQuestion.answers[0]}} class="img" ng-click="selectAnswer(1)" ng-style="{'outline': selectedAnswer === 1 ? '5px solid green' : ''}">
-      </td>
-      <td class="td">
-        <img src={{currentQuestion.answers[1]}} class="img" ng-click="selectAnswer(2)" ng-style="{'outline': selectedAnswer === 2 ? '5px solid green' : ''}">
-      </td>
-    </tr>
-    <tr>
-      <td class="td">
-        <img src={{currentQuestion.answers[2]}} class="img" ng-click="selectAnswer(3)" ng-style="{'outline': selectedAnswer === 3 ? '5px solid green' : ''}">
-      </td>
-      <td class="td">
-        <img src={{currentQuestion.answers[3]}} class="img" ng-click="selectAnswer(4)" ng-style="{'outline': selectedAnswer === 4 ? '5px solid green' : ''}">
-      </td>
-    </tr>
-  </table>
+  <div class="container">
+    <table class="answerImgTable">
+      <tr>
+        <td class="td">
+          <img src={{currentQuestion.answers[0]}} class="img" ng-click="selectAnswer(1)" ng-style="{'outline': selectedAnswer === 1 ? '5px solid green' : ''}">
+        </td>
+        <td class="td">
+          <img src={{currentQuestion.answers[1]}} class="img" ng-click="selectAnswer(2)" ng-style="{'outline': selectedAnswer === 2 ? '5px solid green' : ''}">
+        </td>
+      </tr>
+      <tr>
+        <td class="td">
+          <img src={{currentQuestion.answers[2]}} class="img" ng-click="selectAnswer(3)" ng-style="{'outline': selectedAnswer === 3 ? '5px solid green' : ''}">
+        </td>
+        <td class="td">
+          <img src={{currentQuestion.answers[3]}} class="img" ng-click="selectAnswer(4)" ng-style="{'outline': selectedAnswer === 4 ? '5px solid green' : ''}">
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <br/>
+
+  <div class="BannerButton" ng-click="nextQuestion()" ng-show="selectedAnswer > 0">Weiter</div>
 </div>
 
-<br/>
-
-<div class="BannerButton" ng-click="nextQuestion()" ng-show="selectedAnswer > 0">Weiter</div>
+<div ng-show="finished">
+  <img src={{rewardImg}} class="storyimg" />
+  <div class="BannerButton" ng-click="nextComp()">Weiter</div>
+</div>
