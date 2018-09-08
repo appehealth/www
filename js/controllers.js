@@ -33,12 +33,13 @@ angular.module( 'ATEM-App.controllers', [] )
   .controller( 'Comp1Ctrl', [ '$scope', '$http', '$window', 'storeEvents', function( $scope, $http, $window, storeEvents ) {
     var allQuestions = [];
     var numberOfQuestions = 0;
+    var rewardImg;
     $scope.finished = false;
 
     $http.get( "json/comp1.json" ).then( function( response ) {
       allQuestions = response.data.questions;
       numberOfQuestions = allQuestions.length;
-      $scope.rewardImg = response.data.rewardImg;
+      rewardImg = response.data.rewardImg;
       $scope.currentQuestion = allQuestions[ 0 ];
     } );
 
@@ -54,13 +55,9 @@ angular.module( 'ATEM-App.controllers', [] )
       if ( $scope.currentQuestion.id < numberOfQuestions ) {
         $scope.currentQuestion = allQuestions[ $scope.currentQuestion.id ];
       } else {
-        $scope.finished = true;
+        storeEvents.logEvent( 'Start component 2' )
+        $window.location = '#/comp2';
       }
-    }
-
-    $scope.nextComp = function() {
-      storeEvents.logEvent( 'Start Component 2' );
-      window.location = '#/comp2';
     }
   } ] )
 
@@ -93,7 +90,7 @@ angular.module( 'ATEM-App.controllers', [] )
         $scope.currentQuestion = allQuestions[ $scope.currentQuestion.id ];
         $scope.showQuestionImg = true;
         if ( $scope.currentQuestion.id == nextStory ) {
-          $scope.storyMode = true;
+          $scope.displayMode = 'story';
         } else $scope.showAnswers = false;
       } else $scope.displayMode = 'story';
 
@@ -166,7 +163,7 @@ angular.module( 'ATEM-App.controllers', [] )
         $scope.currentQuestion = allQuestions[ $scope.currentQuestion.id ];
         $scope.showQuestionImg = true;
         if ( $scope.currentQuestion.id == nextStory ) {
-          $scope.storyMode = true;
+          $scope.displayMode = 'story';
         } else $scope.showAnswers = false;
       } else $scope.displayMode = 'story';
 
@@ -310,7 +307,7 @@ angular.module( 'ATEM-App.controllers', [] )
         $scope.showQuestionImg = true;
         currentId++;
         if ( $scope.currentQuestion.id == nextStory ) {
-          $scope.storyMode = true;
+          $scope.displayMode = 'story';
         } else $scope.showAnswers = false;
       } else $scope.displayMode = 'story';
     }
@@ -423,7 +420,7 @@ angular.module( 'ATEM-App.controllers', [] )
         $scope.showQuestionImg = true;
         currentId++;
         if ( $scope.currentQuestion.id == nextStory ) {
-          $scope.storyMode = true;
+          $scope.displayMode = 'story';
         } else $scope.showAnswers = false;
       } else $scope.displayMode = 'story';
     }
