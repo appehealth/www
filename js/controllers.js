@@ -1,14 +1,16 @@
 angular.module( 'ATEM-App.controllers', [] )
 
-  .controller( 'IntroCtrl', [ '$scope', '$http', 'storeEvents', function( $scope, $http, storeEvents ) {
+  .controller( 'IntroCtrl', [ '$scope', '$http', 'storeEvents', 'audioService', function( $scope, $http, storeEvents, audioService ) {
     var part2 = false;
     var text1, text2;
+    var audio = [];
     $scope.language = 'german';
 
     $http.get( "json/intro.json" ).then( function( response ) {
       text1 = response.data.text1;
       text2 = response.data.text2;
       $scope.introText = text1;
+      audio = response.data.audio;
     } );
 
     $scope.startStory = function() {
@@ -18,6 +20,7 @@ angular.module( 'ATEM-App.controllers', [] )
       storeEvents.results.push( 'Language: ' + $scope.language );
       console.log( storeEvents.results );
       window.location = '#/introduction';
+      audioService.playAudio( audio[ 0 ] );
     }
 
     $scope.startComp1 = function() {
