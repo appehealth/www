@@ -45,7 +45,7 @@ angular.module('ATEM-App.services', [])
 
     function logEvent(logText, component, item) {
       var timestamp = Date.now() - startTime;
-      appendFile("events" + startTime, timestamp + ': Component ' + component + ', Item ' + item + ': ' + logText);
+      appendFile("events" + startTime +".txt", timestamp + ': Component ' + component + ', Item ' + item + ': ' + logText);
     }
 
     function logSensor() {
