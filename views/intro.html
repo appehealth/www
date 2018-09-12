@@ -96,26 +96,35 @@
 
 <p class="storyText">Welche Sprache sprichst du zuhause?</p>
 
-
 <div class="introSelect">
-  <button type="button" class="btn btn-success">Deutsch</button>
-  <h3> und </h3>
-  <div class="dropdown">
-    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+  <div class="row">
+    <div class="column">
+      <button type="button" class="btn btn-success">Deutsch</button>
+    </div>
+    <div class="column">
+      <h3>  und  </h3>
+    </div>
+    <div class="column">
+      <div class="dropdown">
+        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       andere Sprache
     </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-      <button class="dropdown-item" type="button">keine andere Sprache</button>
-      <button class="dropdown-item" type="button">Englisch</button>
-      <button class="dropdown-item" type="button">Französisch</button>
-      <button class="dropdown-item" type="button">Spanisch</button>
-      <button class="dropdown-item" type="button">Arabisch</button>
-      <button class="dropdown-item" type="button">...</button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <button class="dropdown-item" type="button">keine andere Sprache</button>
+          <button class="dropdown-item" type="button">Englisch</button>
+          <button class="dropdown-item" type="button">Französisch</button>
+          <button class="dropdown-item" type="button">Spanisch</button>
+          <button class="dropdown-item" type="button">Arabisch</button>
+          <button class="dropdown-item" type="button">...</button>
+        </div>
+      </div>
     </div>
   </div>
+</div>
 
 
-  <!-- <div class="introSelect">
+<!-- <div class="introSelect">
 
   <select name='language' id='language' ng-model='language'>
   <button class="dropdown-item" type="button" value='german'>Deutsch</button>
@@ -131,9 +140,9 @@
   </select>
 </div> -->
 
-  <br />
+<br />
 
-  <button type="button" class="btn btn-success btn-block btn-lg" ng-click="startStory()">Geschichte Starten</button>
+<button type="button" class="btn btn-success btn-block btn-lg" ng-click="startStory()">Geschichte Starten</button>
 
 
-  <br />
+<br />
