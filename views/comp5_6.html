@@ -1,13 +1,11 @@
 <div ng-show="displayMode==='question'">
   <p class="storyText">{{currentQuestion.story}}</p>
   <p ng-show="!showQuestionImg" class="storyText">{{currentQuestion.question.question}}</p>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="text-center">
-        <img src={{currentQuestion.storyImg}} class="storyimg" ng-show="showQuestionImg" />
-      </div>
-    </div>
+
+  <div class="text-center">
+    <img src={{currentQuestion.storyImg}} class="storyimg" ng-show="showQuestionImg" />
   </div>
+
 
 
   <button type="button" class="btn btn-success btn-block btn-lg" ng-click="showQuestionImg = false" ng-show="showQuestionImg">Weiter</button>
@@ -30,13 +28,11 @@
 </div>
 <div ng-show="displayMode==='story'">
   <p class="storyText">{{currentStory.text}}</p>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="text-center">
-        <img src={{currentStory.image}} class="storyimg" />
-      </div>
-    </div>
+
+  <div class="text-center">
+    <img src={{currentStory.image}} class="storyimg" />
   </div>
+
   <br>
 
 

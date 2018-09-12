@@ -61,32 +61,39 @@
 </head>
 
 <body>
-  <!-- <div class="row">
-    <div class="col-sm-12">
-      <div class="text-center"> -->
-  <img src="img/Leuphana_logo.jpg" class="leuphanaLogo">
-  <!-- </div>
-    </div>
-  </div> -->
 
+  <div class="text-center">
+    <img src="img/Leuphana_logo.jpg" class="leuphanaLogo">
+  </div>
 
 
   <div ng-show="presentationMode">
-    <p>
-      <a href="#/">Titel</a>
-      <a href="#/intro">Anmeldung</a>
-      <a href="#/comp1">Komp1</a>
-      <a href="#/comp2">Komp2</a>
-      <a href="#/comp3">Komp3</a>
-      <a href="#/comp4">Komp4</a>
-      <a href="#/comp5">Komp5</a>
-      <a href="#/comp6">Komp6</a>
-      <a href="#/results">Results</a>
-    </p>
+
+
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#/">Titel</a></li>
+        <li class="page-item"><a class="page-link" href="#/intro">Anmeldung</a></li>
+        <li class="page-item"><a class="page-link" href="#/comp1">Komp1</a></li>
+        <li class="page-item"><a class="page-link" href="#/comp2">Komp2</a></li>
+        <li class="page-item"><a class="page-link" href="#/comp3">Komp3</a></li>
+        <li class="page-item"><a class="page-link" href="#/comp4">Komp4</a></li>
+        <li class="page-item"><a class="page-link" href="#/comp5">Komp5</a></li>
+        <li class="page-item"><a class="page-link" href="#/comp6">Komp6</a></li>
+        <li class="page-item"><a class="page-link" href="#/results">Results</a></li>
+
+      </ul>
+    </nav>
+
   </div>
-  <div>
-    <div ng-view></div>
-  </div>
+
+
+
+
+  <div ng-view></div>
+
+
+
 
 </body>
 
