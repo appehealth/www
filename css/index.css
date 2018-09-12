@@ -1,13 +1,10 @@
 body {
   background-color: white;
   color: black;
-  /* max-width: auto; */
+  max-width: auto;
 }
 
-h2 {
-  text-align: center;
-  /* margin: 5%; */
-}
+
 
 .leuphanaLogo {
   height: 70px;
@@ -17,16 +14,16 @@ h2 {
 .storyText {
   font-size: 200%;
   font-weight: bold;
-  /* text-align: left; */
+  text-align: left;
 }
 
 p {
-  /* margin: 2%;
-  margin-right: 0; */
+  margin: 2%;
+
 }
 
 .introSelect {
-  /* margin: 5%; */
+  margin: 5%;
 }
 
 
@@ -61,13 +58,10 @@ p {
 .img {
   height: auto;
   width: 80%;
-  /* margin: 5%; */
+  margin: 5%;
 }
 
-.td {
-  border-radius: 6px;
 
-}
 
 .storyimg {
   margin-left: auto;
@@ -76,12 +70,4 @@ p {
   height: auto;
   width: 90%;
 
-}
-
-
-
-.select {
-  /* margin: auto; */
-  text-align: center;
-  width: 30%;
 }
