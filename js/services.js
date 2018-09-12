@@ -1,25 +1,25 @@
-angular.module( 'ATEM-App.services', [] )
-  .factory( 'cordovaReady', [ function() {
-    return function( fn ) {
+angular.module('ATEM-App.services', [])
+  .factory('cordovaReady', [function() {
+    return function(fn) {
       var queue = [],
         impl = function() {
-          queue.push( [].slice.call( arguments ) );
+          queue.push([].slice.call(arguments));
         };
 
-      document.addEventListener( 'deviceready', function() {
-        queue.forEach( function( args ) {
-          fn.apply( this, args );
-        } );
+      document.addEventListener('deviceready', function() {
+        queue.forEach(function(args) {
+          fn.apply(this, args);
+        });
         impl = fn;
-      }, false );
+      }, false);
 
       return function() {
-        return impl.apply( this, arguments );
+        return impl.apply(this, arguments);
       };
     };
-  } ] )
+  }])
 
-  .service( 'storeEvents', function() {
+  .service('storeEvents', function() {
     var eventStorage = [];
     var sensorStorage = [];
     var results = [];
@@ -28,87 +28,95 @@ angular.module( 'ATEM-App.services', [] )
     var y;
     var z;
 
-    window.addEventListener( 'devicemotion', function( event ) {
+    window.addEventListener('devicemotion', function(event) {
       x = event.acceleration.x;
       y = event.acceleration.y;
       z = event.acceleration.z;
-    } );
+    });
 
-    function createFile() {
+    function appendFile(filename, msg) {
+      var fileDir = cordova.file.externalDataDirectory.replace(cordova.file.externalRootDirectory, '');
+      window.resolveLocalFileSystemURL(fileDir, function(dirEntry) {
+        console.log('file system open: ' + dirEntry.name);
+        createFile(dirEntry, filename, msg);
+      }, onErrorLoadFs);
 
     }
 
-    function logEvent( logText, component, item ) {
+    function logEvent(logText, component, item) {
       var timestamp = Date.now() - startTime;
-      eventStorage.push( timestamp + ': Component ' + component + ', Item ' + item + ': ' + logText );
+      appendFile("events"+startTime,timestamp + ': Component ' + component + ', Item ' + item + ': ' + logText);
     }
 
     function logSensor() {
       var timestamp = Date.now() - startTime;
-      sensorStorage.push( timestamp + '; ' + x + '; ' + y + '; ' + z );
+      sensorStorage.push(timestamp + '; ' + x + '; ' + y + '; ' + z);
     }
 
     function saveResults() {
-      createFile( "results" + startTime + ".txt", results.join( '\n' ) );
+      createFile("results" + startTime + ".txt", results.join('\n'));
     }
 
     function saveEvents() {
-      createFile( "events" + startTime + ".txt", eventStorage.join( '\n' ) );
+      createFile("events" + startTime + ".txt", eventStorage.join('\n'));
     }
 
     function saveSensor() {
-      createFile( "sensor" + startTime + ".csv", 'Timestamp;X;Y;Z' + '\n' + sensorStorage.join( '\n' ) );
+      createFile("sensor" + startTime + ".csv", 'Timestamp;X;Y;Z' + '\n' + sensorStorage.join('\n'));
     }
 
-    function writeFile( fileEntry, dataObj ) {
+    function writeFile(fileEntry, dataObj) {
       // Create a FileWriter object for our FileEntry (log.txt).
-      fileEntry.createWriter( function( fileWriter ) {
+      fileEntry.createWriter(function(fileWriter) {
 
         fileWriter.onwriteend = function() {
-          console.log( "Successful file write..." );
+          console.log("Successful file write...");
           //          readFile( fileEntry );
         };
 
-        fileWriter.onerror = function( e ) {
-          console.log( "Failed file write: " + e.toString() );
+        fileWriter.onerror = function(e) {
+          console.log("Failed file write: " + e.toString());
         };
 
         // If data object is not passed in,
         // create a new Blob instead.
-        if ( !dataObj ) {
-          dataObj = new Blob( [ 'some file data' ], {
+        if (!dataObj) {
+          dataObj = new Blob(['some file data'], {
             type: 'text/plain'
-          } );
+          });
         }
 
-        fileWriter.write( dataObj );
-      } );
+        fileWriter.write(dataObj);
+      });
     }
 
-    function createFile( fileName, fileText ) {
-      window.requestFileSystem( LocalFileSystem.PERSISTENT, 0, function( fs ) {
-        var fileDir = cordova.file.externalDataDirectory.replace( cordova.file.externalRootDirectory, '' );
+    function createFile(fileName, fileText) {
+      window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
+        var fileDir = cordova.file.externalDataDirectory.replace(cordova.file.externalRootDirectory, '');
         var filePath = fileDir + fileName;
-        console.log( fileDir );
-        console.log( cordova.file.externalDataDirectory );
-        fs.root.getFile( filePath, {
+        console.log(fileDir);
+        console.log(cordova.file.externalDataDirectory);
+        fs.root.getFile(filePath, {
           create: true,
           exclusive: true
-        }, function( fileEntry ) {
-          alert( 'File creation successfull!' );
-          writeFile( fileEntry, fileText );
-        }, function( e ) {
-          alert( 'Error1' + e.code );
-        } );
-      }, function( err ) {
-        alert( 'Error2' + err.code );
-      } );
+        }, function(fileEntry) {
+          alert('File creation successfull!');
+          writeFile(fileEntry, fileText);
+        }, function(e) {
+          alert('Error1' + e.code);
+        });
+      }, function(err) {
+        alert('Error2' + err.code);
+      });
     }
 
     function logStart() {
       startTime = Date.now();
-      logEvent( 'Start' );
-      setInterval( logSensor, 20 );
+      createFile("events" + startTime + ".txt");
+      createFile("sensor" + startTime + ".csv", 'Timestamp;X;Y;Z' + '\n');
+      createFile("results" + startTime + ".txt", results.join('\n'));
+      logEvent('Start');
+      setInterval(logSensor, 20);
     }
 
     return {
@@ -122,23 +130,24 @@ angular.module( 'ATEM-App.services', [] )
       results: results
     };
 
-  } )
-  .service( 'audioService', function() {
+  })
+  .service('audioService', function() {
 
     var my_media;
 
-    function playAudio( url ) {
+    function playAudio(url) {
       // Play the audio file at url
 
-      url = "/android_asset/www/audio/" + url;
-      my_media = new Media( url,
+      //url = "/android_asset/www/" + url;
+      //fix url for Android
+      my_media = new Media(url,
         // success callback
         function() {
-          console.log( "playAudio():Audio Success" );
+          console.log("playAudio():Audio Success");
         },
         // error callback
-        function( err ) {
-          console.log( "playAudio():Audio Error: " + err.code + err.message );
+        function(err) {
+          console.log("playAudio():Audio Error: " + err.code + err.message);
         }
       );
 
@@ -146,7 +155,7 @@ angular.module( 'ATEM-App.services', [] )
       my_media.play();
     }
 
-    function stopAudio(){
+    function stopAudio() {
       my_media.stop();
     }
 
@@ -154,4 +163,4 @@ angular.module( 'ATEM-App.services', [] )
       playAudio: playAudio,
       stopAudio: stopAudio
     };
-  } );
+  });
