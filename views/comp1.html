@@ -28,10 +28,10 @@
 
   <br/>
 
-  <div class="BannerButton" ng-click="nextQuestion()" ng-show="selectedAnswer > 0">Weiter</div>
-</div>
 
-<div ng-show="finished">
-  <img src={{rewardImg}} class="storyimg" />
-  <div class="BannerButton" ng-click="nextComp()">Weiter</div>
-</div>
+  <button type="button" class="btn btn-success btn-block btn-lg" ng-click="nextQuestion()" ng-show="selectedAnswer > 0">Weiter</button>
+
+  <div ng-show="finished">
+    <img src={{rewardImg}} class="storyimg" />
+
+    <button type="button" class="btn btn-success btn-block btn-lg" ng-click="nextComp()">Weiter</button>

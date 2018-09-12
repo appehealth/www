@@ -9,7 +9,8 @@
   </div>
 
 
-  <div class="BannerButton" ng-click="showChoiceImg = false" ng-show="showChoiceImg">Weiter</div>
+
+  <button type="button" class="btn btn-success btn-block btn-lg" ng-click="showChoiceImg = false" ng-show="showChoiceImg">Weiter</button>
 
 
   <div class="BannerButton" ng-click="btnChoice('A')" ng-show="!showChoiceImg">{{currentChoice.choiceA}}</div>
@@ -28,7 +29,8 @@
     </div>
   </div>
 
-  <div class="BannerButton" ng-click="showQuestionImg = false" ng-show="showQuestionImg">Weiter</div>
+
+  <button type="button" class="btn btn-success btn-block btn-lg" ng-click="showQuestionImg = false" ng-show="showQuestionImg">Weiter</button>
 
   <div class="container" ng-show="!showQuestionImg" id="answerImages">
     <table class="answerImgTable">
@@ -42,19 +44,18 @@
       </tr>
     </table>
   </div>
-  <div class="BannerButton" ng-show="!showQuestionImg && selectedAnswer>0" ng-click="confirmQuestion()">Weiter</div>
-</div>
 
-<div ng-show="displayMode==='story'">
-  <p class="storyText">{{currentStory.text}}</p>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="text-center">
-        <img src={{currentStory.image}} class="storyimg" />
+  <button type="button" class="btn btn-success btn-block btn-lg" ng-show="!showQuestionImg && selectedAnswer>0" ng-click="confirmQuestion()">Weiter</button>
+
+  <div ng-show="displayMode==='story'">
+    <p class="storyText">{{currentStory.text}}</p>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="text-center">
+          <img src={{currentStory.image}} class="storyimg" />
+        </div>
       </div>
     </div>
-  </div>
-  <br>
+    <br>
 
-  <div class="BannerButton" ng-click="continueStory()">Weiter</div>
-</div>
+    <button type="button" class="btn btn-success btn-block btn-lg" ng-click="continueStory()">Weiter</button>
