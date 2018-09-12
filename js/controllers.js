@@ -4,6 +4,13 @@ angular.module( 'ATEM-App.controllers', [] )
     var part2 = false;
     var text1, text2;
     var audio = [];
+    var d = new Date();
+    var y = d.getFullYear();
+    $scope.birthdayYears = [];
+    for(i=y-30;i<=y;i++){
+      $scope.birthdayYears.push(i);
+    }
+    console.log($scope.birthdayYears);
     $scope.language = 'german';
 
     $http.get( "json/intro.json" ).then( function( response ) {
@@ -55,21 +62,22 @@ angular.module( 'ATEM-App.controllers', [] )
     }
 
     $scope.nextQuestion = function() {
+      audioService.stopAudio();
       storeEvents.results.push( 'Component 1, Question ' + $scope.currentQuestion.id + ': ' + $scope.selectedAnswer );
       $scope.selectedAnswer = 0;
       storeEvents.logEvent( 'Confirm answer', 1, $scope.currentQuestion.id );
       if ( $scope.currentQuestion.id < numberOfQuestions ) {
         $scope.currentQuestion = allQuestions[ $scope.currentQuestion.id ];
         audioService.playAudio($scope.currentQuestion.audio);
+        window.scrollTo(0,0);
       } else {
-        audioService.stopAudio();
         storeEvents.logEvent( 'Start component 2' )
-        $window.location = '#/comp2';
+        window.location = '#/comp2';
       }
     }
   } ] )
 
-  .controller( 'Comp2Ctrl', [ '$scope', '$http', '$window', 'storeEvents', function( $scope, $http, $window, storeEvents ) {
+  .controller( 'Comp2Ctrl', [ '$scope', '$http', 'audioService', 'storeEvents', function( $scope, $http, audioService, storeEvents ) {
     var allQuestions = [];
     var story = [];
     var numberOfQuestions = 0;
@@ -79,7 +87,7 @@ angular.module( 'ATEM-App.controllers', [] )
     $scope.showQuestionImg = true;
 
     $scope.confirmQuestion = function() {
-
+      audioService.stopAudio();
       storeEvents.results.push( 'Component 2, Question ' + $scope.currentQuestion.id + ': ' + $scope.selectedAnswer );
       storeEvents.logEvent( 'Confirm answer', 2, $scope.currentQuestion.id )
       if ( $scope.selectedAnswer == $scope.currentQuestion.correctAnswer ) {
@@ -88,7 +96,7 @@ angular.module( 'ATEM-App.controllers', [] )
         wrongAnswers++;
         if ( wrongAnswers == 3 ) {
           storeEvents.results.push( 'Three wrong answers in a row. Test was stopped.' );
-          $window.location = '#/results';
+          window.location = '#/results';
         }
       }
 
@@ -99,7 +107,9 @@ angular.module( 'ATEM-App.controllers', [] )
         $scope.showQuestionImg = true;
         if ( $scope.currentQuestion.id == nextStory ) {
           $scope.displayMode = 'story';
-        } else $scope.showAnswers = false;
+        } else{
+          $scope.showAnswers = false;
+        }
       } else $scope.displayMode = 'story';
 
     }

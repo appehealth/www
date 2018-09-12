@@ -10,7 +10,11 @@
         "img/emotions/tim/ekelnd.JPG",
         "img/emotions/tim/ueberrascht.JPG"
       ],
-      "correctAnswer": 4
+      "correctAnswer": 4,
+      "audio":[
+        "audio/k2i7.mp3",
+        "audio/k2i7ant.mp3"
+      ]
     },
     {
       "id": 2,

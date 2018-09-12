@@ -10,7 +10,7 @@
         "img/emotions/tim/traurig.JPG"
       ],
       "correctAnswer": 2,
-      "audio": "k1i1.mp3"
+      "audio": "audio/k1i1.mp3"
     },
     {
       "id": 2,
@@ -22,7 +22,7 @@
         "img/emotions/ali/aergerlich.JPG"
       ],
       "correctAnswer": 1,
-      "audio": "k1i2.mp3"
+      "audio": "audio/k1i2.mp3"
     },
     {
       "id": 3,
@@ -34,7 +34,7 @@
         "img/emotions/ali/aergerlich.JPG"
       ],
       "correctAnswer": 4,
-      "audio": "k1i3.mp3"
+      "audio": "audio/k1i3.mp3"
     },
     {
       "id": 4,
@@ -46,7 +46,7 @@
         "img/emotions/tim/ueberrascht.JPG"
       ],
       "correctAnswer": 3,
-      "audio": "k1i4.mp3"
+      "audio": "audio/k1i4.mp3"
     },
     {
       "id": 5,
@@ -58,7 +58,7 @@
         "img/emotions/ali/aergerlich.JPG"
       ],
       "correctAnswer": 1,
-      "audio": "k1i5.mp3"
+      "audio": "audio/k1i5.mp3"
     },
     {
       "id": 6,
@@ -70,7 +70,7 @@
         "img/emotions/tim/traurig.JPG"
       ],
       "correctAnswer": 2,
-      "audio": "k1i6.mp3"
+      "audio": "audio/k1i6.mp3"
     }
   ],
   "numberOfQuestions": 6,
