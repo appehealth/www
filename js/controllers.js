@@ -25,11 +25,12 @@ angular.module( 'ATEM-App.controllers', [] )
 
     $scope.startComp1 = function() {
       if ( part2 ) {
+        audioService.stopAudio();
         window.location = '#/comp1';
-        window.scrollTo(0,0);
       } else {
         part2 = true;
         $scope.introText = text2;
+        window.scrollTo(0,0);
       }
     }
   } ] )
@@ -45,6 +46,7 @@ angular.module( 'ATEM-App.controllers', [] )
       numberOfQuestions = allQuestions.length;
       rewardImg = response.data.rewardImg;
       $scope.currentQuestion = allQuestions[ 0 ];
+      audioService.playAudio($scope.currentQuestion.audio);
     } );
 
     $scope.selectAnswer = function( ans ) {
@@ -60,6 +62,7 @@ angular.module( 'ATEM-App.controllers', [] )
         $scope.currentQuestion = allQuestions[ $scope.currentQuestion.id ];
         audioService.playAudio($scope.currentQuestion.audio);
       } else {
+        audioService.stopAudio();
         storeEvents.logEvent( 'Start component 2' )
         $window.location = '#/comp2';
       }

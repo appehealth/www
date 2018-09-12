@@ -125,11 +125,13 @@ angular.module( 'ATEM-App.services', [] )
   } )
   .service( 'audioService', function() {
 
+    var my_media;
+
     function playAudio( url ) {
       // Play the audio file at url
 
       url = "/android_asset/www/audio/" + url;
-      var my_media = new Media( url,
+      my_media = new Media( url,
         // success callback
         function() {
           console.log( "playAudio():Audio Success" );
@@ -144,7 +146,12 @@ angular.module( 'ATEM-App.services', [] )
       my_media.play();
     }
 
+    function stopAudio(){
+      my_media.stop();
+    }
+
     return {
-      playAudio: playAudio
+      playAudio: playAudio,
+      stopAudio: stopAudio
     };
   } );
