@@ -37,20 +37,30 @@ angular.module('ATEM-App.services', [])
     function appendFile(filename, msg) {
       var fileDir = cordova.file.externalDataDirectory.replace(cordova.file.externalRootDirectory, '');
       window.resolveLocalFileSystemURL(fileDir, function(dirEntry) {
-        console.log('file system open: ' + dirEntry.name);
-        createFile(dirEntry, filename, msg);
+        dirEntry.getFile(fileName, {
+          create: true,
+          exclusive: false
+        }, function(fileEntry) {
+
+          writeFile(fileEntry, null, true);
+
+        }, onErrorCreateFile);
       }, onErrorLoadFs);
 
     }
 
     function logEvent(logText, component, item) {
       var timestamp = Date.now() - startTime;
-      appendFile("events" + startTime +".txt", timestamp + ': Component ' + component + ', Item ' + item + ': ' + logText);
+      appendFile("events" + startTime + ".txt", timestamp + ': Component ' + component + ', Item ' + item + ': ' + logText);
     }
 
     function logSensor() {
       var timestamp = Date.now() - startTime;
-      sensorStorage.push(timestamp + '; ' + x + '; ' + y + '; ' + z);
+      appendFile("sensor"+startTime+".csv",timestamp + '; ' + x + '; ' + y + '; ' + z);
+    }
+
+    function logResult(msg){
+      appendFile("results"+startTime+".txt",msg);
     }
 
     function saveResults() {
@@ -65,27 +75,27 @@ angular.module('ATEM-App.services', [])
       createFile("sensor" + startTime + ".csv", 'Timestamp;X;Y;Z' + '\n' + sensorStorage.join('\n'));
     }
 
-    function writeFile(fileEntry, dataObj) {
+    function writeFile(fileEntry, dataObj, isAppend) {
       // Create a FileWriter object for our FileEntry (log.txt).
       fileEntry.createWriter(function(fileWriter) {
 
         fileWriter.onwriteend = function() {
-          console.log("Successful file write...");
-          //          readFile( fileEntry );
+          console.log("Successful file read...");
+          readFile(fileEntry);
         };
 
         fileWriter.onerror = function(e) {
-          console.log("Failed file write: " + e.toString());
+          console.log("Failed file read: " + e.toString());
         };
 
-        // If data object is not passed in,
-        // create a new Blob instead.
-        if (!dataObj) {
-          dataObj = new Blob(['some file data'], {
-            type: 'text/plain'
-          });
+        // If we are appending data to file, go to the end of the file.
+        if (isAppend) {
+          try {
+            fileWriter.seek(fileWriter.length);
+          } catch (e) {
+            console.log("file doesn't exist!");
+          }
         }
-
         fileWriter.write(dataObj);
       });
     }
@@ -101,7 +111,7 @@ angular.module('ATEM-App.services', [])
           exclusive: true
         }, function(fileEntry) {
           alert('File creation successfull!');
-          writeFile(fileEntry, fileText);
+          writeFile(fileEntry, fileText, false);
         }, function(e) {
           alert('Error1' + e.code);
         });
@@ -113,8 +123,8 @@ angular.module('ATEM-App.services', [])
     function logStart() {
       startTime = Date.now();
       createFile("events" + startTime + ".txt");
-      createFile("sensor" + startTime + ".csv", 'Timestamp;X;Y;Z' + '\n');
-      createFile("results" + startTime + ".txt", results.join('\n'));
+      //createFile("sensor" + startTime + ".csv", 'Timestamp;X;Y;Z' + '\n');
+      //createFile("results" + startTime + ".txt", results.join('\n'));
       logEvent('Start');
       setInterval(logSensor, 20);
     }
@@ -127,7 +137,7 @@ angular.module('ATEM-App.services', [])
       saveEvents: saveEvents,
       saveSensor: saveSensor,
       saveResults: saveResults,
-      results: results
+      logResult: logResult
     };
 
   })
