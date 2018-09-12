@@ -25,7 +25,8 @@ angular.module( 'ATEM-App.controllers', [] )
 
     $scope.startComp1 = function() {
       if ( part2 ) {
-        window.location = '#/comp1'
+        window.location = '#/comp1';
+        window.scrollTo(0,0);
       } else {
         part2 = true;
         $scope.introText = text2;
@@ -33,7 +34,7 @@ angular.module( 'ATEM-App.controllers', [] )
     }
   } ] )
 
-  .controller( 'Comp1Ctrl', [ '$scope', '$http', '$window', 'storeEvents', function( $scope, $http, $window, storeEvents ) {
+  .controller( 'Comp1Ctrl', [ '$scope', '$http', 'audioService', 'storeEvents', function( $scope, $http, audioService, storeEvents ) {
     var allQuestions = [];
     var numberOfQuestions = 0;
     var rewardImg;
@@ -57,6 +58,7 @@ angular.module( 'ATEM-App.controllers', [] )
       storeEvents.logEvent( 'Confirm answer', 1, $scope.currentQuestion.id );
       if ( $scope.currentQuestion.id < numberOfQuestions ) {
         $scope.currentQuestion = allQuestions[ $scope.currentQuestion.id ];
+        audioService.playAudio($scope.currentQuestion.audio);
       } else {
         storeEvents.logEvent( 'Start component 2' )
         $window.location = '#/comp2';
