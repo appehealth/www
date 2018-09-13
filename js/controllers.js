@@ -10,8 +10,10 @@ angular.module( 'ATEM-App.controllers', [] )
     for ( i = y - 30; i <= y; i++ ) {
       $scope.birthdayYears.push( i );
     }
-    console.log( $scope.birthdayYears );
-    $scope.language = 'german';
+    $scope.day = "Tag";
+    $scope.month = "Monat";
+    $scope.year = "Jahr";
+    $scope.language = 'keine weitere Sprache';
 
     $http.get( "json/intro.json" ).then( function( response ) {
       text1 = response.data.text1;
@@ -21,10 +23,10 @@ angular.module( 'ATEM-App.controllers', [] )
     } );
 
     $scope.startStory = function() {
+      storeEvents.results.push( 'Geburtstag: ' + $scope.day + ' ' + $scope.month + '. ' + $scope.year );
+      storeEvents.results.push( 'Geschlecht: ' + $scope.gender );
+      storeEvents.results.push( 'Sprache: Deutsch und ' + $scope.language );
       storeEvents.logStart();
-      storeEvents.results.push( 'Birthday: ' + $scope.day + '. ' + $scope.month + '. ' + $scope.year );
-      storeEvents.results.push( 'Gender: ' + $scope.gender );
-      storeEvents.results.push( 'Language: ' + $scope.language );
       console.log( storeEvents.results );
       window.location = '#/introduction';
       audioService.playAudio( audio[ 0 ] );
@@ -407,16 +409,9 @@ angular.module( 'ATEM-App.controllers', [] )
   } ] )
 
   .controller( 'ResultsCtrl', [ '$scope', 'storeEvents', function( $scope, storeEvents ) {
-    $scope.saveResults = function() {
-      storeEvents.saveEvents();
-    }
-
-    $scope.saveSensor = function() {
-      storeEvents.saveSensor();
-    }
-
-    $scope.showResults = function() {
-      console.log( storeEvents.results.join( '\n' ) );
+    $scope.returnToTile = function() {
+      storeEvents.wipeData();
+      window.location = '#/'
     }
   } ] )
 
@@ -535,6 +530,7 @@ angular.module( 'ATEM-App.controllers', [] )
 
   .controller( 'StartCtrl', [ '$scope', '$rootScope', function( $scope, $rootScope ) {
     $scope.normalClick = function() {
+      $rootScope.presentationMode = false;
       window.location = '#/intro';
     }
 

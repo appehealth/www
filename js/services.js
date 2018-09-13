@@ -30,6 +30,7 @@ angular.module( 'ATEM-App.services', [] )
     var x;
     var y;
     var z;
+    var sensorInterval;
 
     window.addEventListener( 'devicemotion', function( event ) {
       x = event.acceleration.x;
@@ -39,7 +40,7 @@ angular.module( 'ATEM-App.services', [] )
 
     function logEvent( logText, component, item ) {
       var timestamp = Date.now() - startTime;
-      writeFile( eventFile, timestamp + ': Component ' + component + ', Item ' + item + ': ' + logText, true );
+      writeFile( eventFile, timestamp + ': Component ' + component + ', Item ' + item + ': ' + logText + '\n', true );
     }
 
     function logSensor() {
@@ -48,19 +49,7 @@ angular.module( 'ATEM-App.services', [] )
     }
 
     function logResult( msg ) {
-      writeFile( resultFile, msg, true );
-    }
-
-    function saveResults() {
-      createFile( "results" + startTime + ".txt", results.join( '\n' ) );
-    }
-
-    function saveEvents() {
-      createFile( "events" + startTime + ".txt", eventStorage.join( '\n' ) );
-    }
-
-    function saveSensor() {
-      createFile( "sensor" + startTime + ".csv", 'Timestamp;X;Y;Z' + '\n' + sensorStorage.join( '\n' ) );
+      writeFile( resultFile, msg + '\n', true );
     }
 
     function writeFile( fileEntry, dataObj, isAppend ) {
@@ -119,7 +108,6 @@ angular.module( 'ATEM-App.services', [] )
 
         reader.onloadend = function() {
           console.log( "Successful file read: " + this.result );
-          displayFileData( fileEntry.fullPath + ": " + this.result );
         };
 
         reader.readAsText( file );
@@ -131,27 +119,28 @@ angular.module( 'ATEM-App.services', [] )
 
     function logStart() {
       startTime = Date.now();
-      createFile( "events" + startTime + ".csv", '' );
+      createFile( "events" + startTime + ".txt", '' );
       createFile( "sensor" + startTime + ".csv", 'Timestamp;X;Y;Z' + '\n' );
-      createFile( "results" + startTime + ".txt", results.join( '\n' ) );
+      createFile( "results" + startTime + ".txt", results.join( '\n' ) + '\n' );
     }
 
     function startSensor() {
       logEvent( 'Start', 1, 1 );
-      setInterval( logSensor, 20 );
+      sensorInterval = setInterval( logSensor, 20 );
+    }
+
+    function wipeData() {
+      results = [];
+      clearInterval( sensorInterval );
     }
 
     return {
       logStart: logStart,
       logEvent: logEvent,
-      eventStorage: eventStorage,
-      sensorStorage: sensorStorage,
-      saveEvents: saveEvents,
-      saveSensor: saveSensor,
-      saveResults: saveResults,
       logResult: logResult,
       startSensor: startSensor,
-      results: results
+      results: results,
+      wipeData: wipeData
     };
 
   } )

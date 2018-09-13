@@ -4,10 +4,10 @@
 <div class="introSelect">
   <div class="btn-group btn-group-toggle" data-toggle="buttons">
     <label class="btn btn-success btn-lg">
-    <input type="radio" ng-click="gender='male'"> Junge
+    <input type="radio" ng-click="gender='Junge'"> Junge
   </label>
     <label class="btn btn-success btn-lg">
-    <input type="radio" ng-click="gender='female'"> Mädchen
+    <input type="radio" ng-click="gender='Mädchen'"> Mädchen
   </label>
   </div>
 </div>
@@ -21,72 +21,100 @@
     <div class="column">
 
       <div class="dropdown">
-        <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Tag
+        <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">{{day}}
   <span class="caret"></span></button>
-        <ul class="dropdown-menu" ng-model='day'>
-          <button class="dropdown-item" type="button" value='1'>1</button>
-          <button class="dropdown-item" type="button" value='2'>2</button>
-          <button class="dropdown-item" type="button" value='3'>3</button>
-          <button class="dropdown-item" type="button" value='4'>4</button>
-          <button class="dropdown-item" type="button" value='5'>5</button>
-          <button class="dropdown-item" type="button" value='6'>6</button>
-          <button class="dropdown-item" type="button" value='7'>7</button>
-          <button class="dropdown-item" type="button" value='8'>8</button>
-          <button class="dropdown-item" type="button" value='9'>9</button>
-          <button class="dropdown-item" type="button" value='10'>10</button>
-          <button class="dropdown-item" type="button" value='11'>11</button>
-          <button class="dropdown-item" type="button" value='12'>12</button>
-          <button class="dropdown-item" type="button" value='13'>13</button>
-          <button class="dropdown-item" type="button" value='14'>14</button>
-          <button class="dropdown-item" type="button" value='15'>15</button>
-          <button class="dropdown-item" type="button" value='16'>16</button>
-          <button class="dropdown-item" type="button" value='17'>17</button>
-          <button class="dropdown-item" type="button" value='18'>18</button>
-          <button class="dropdown-item" type="button" value='19'>19</button>
-          <button class="dropdown-item" type="button" value='20'>20</button>
-          <button class="dropdown-item" type="button" value='21'>21</button>
-          <button class="dropdown-item" type="button" value='22'>22</button>
-          <button class="dropdown-item" type="button" value='23'>23</button>
-          <button class="dropdown-item" type="button" value='24'>24</button>
-          <button class="dropdown-item" type="button" value='25'>25</button>
-          <button class="dropdown-item" type="button" value='26'>26</button>
-          <button class="dropdown-item" type="button" value='27'>27</button>
-          <button class="dropdown-item" type="button" value='28'>28</button>
-          <button class="dropdown-item" type="button" value='29'>29</button>
-          <button class="dropdown-item" type="button" value='30'>30</button>
-          <button class="dropdown-item" type="button" value='31'>31</button>
+        <ul class="dropdown-menu">
+          <button class="dropdown-item" type="button" ng-click="day=1+'.'">1</button>
+          <button class="dropdown-item" type="button" ng-click="day=2+'.'">2</button>
+          <button class="dropdown-item" type="button" ng-click="day=3+'.'">3</button>
+          <button class="dropdown-item" type="button" ng-click="day=4+'.'">4</button>
+          <button class="dropdown-item" type="button" ng-click="day=5+'.'">5</button>
+          <button class="dropdown-item" type="button" ng-click="day=6+'.'">6</button>
+          <button class="dropdown-item" type="button" ng-click="day=7+'.'">7</button>
+          <button class="dropdown-item" type="button" ng-click="day=8+'.'">8</button>
+          <button class="dropdown-item" type="button" ng-click="day=9+'.'">9</button>
+          <button class="dropdown-item" type="button" ng-click="day=10+'.'">10</button>
+          <button class="dropdown-item" type="button" ng-click="day=11+'.'">11</button>
+          <button class="dropdown-item" type="button" ng-click="day=12+'.'">12</button>
+          <button class="dropdown-item" type="button" ng-click="day=13+'.'">13</button>
+          <button class="dropdown-item" type="button" ng-click="day=14+'.'">14</button>
+          <button class="dropdown-item" type="button" ng-click="day=15+'.'">15</button>
+          <button class="dropdown-item" type="button" ng-click="day=16+'.'">16</button>
+          <button class="dropdown-item" type="button" ng-click="day=17+'.'">17</button>
+          <button class="dropdown-item" type="button" ng-click="day=18+'.'">18</button>
+          <button class="dropdown-item" type="button" ng-click="day=19+'.'">19</button>
+          <button class="dropdown-item" type="button" ng-click="day=20+'.'">20</button>
+          <button class="dropdown-item" type="button" ng-click="day=21+'.'">21</button>
+          <button class="dropdown-item" type="button" ng-click="day=22+'.'">22</button>
+          <button class="dropdown-item" type="button" ng-click="day=23+'.'">23</button>
+          <button class="dropdown-item" type="button" ng-click="day=24+'.'">24</button>
+          <button class="dropdown-item" type="button" ng-click="day=25+'.'">25</button>
+          <button class="dropdown-item" type="button" ng-click="day=26+'.'">26</button>
+          <button class="dropdown-item" type="button" ng-click="day=27+'.'">27</button>
+          <button class="dropdown-item" type="button" ng-click="day=28+'.'">28</button>
+          <button class="dropdown-item" type="button" ng-click="day=29+'.'">29</button>
+          <button class="dropdown-item" type="button" ng-click="day=30+'.'">30</button>
+          <button class="dropdown-item" type="button" ng-click="day=31+'.'">31</button>
         </ul>
       </div>
     </div>
 
     <div class="column">
       <div class="dropdown">
-        <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Monat
+        <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">{{month}}
   <span class="caret"></span></button>
-        <ul class="dropdown-menu" ng-model='month'>
-          <button class="dropdown-item" type="button" value='1'>Januar</button>
-          <button class="dropdown-item" type="button" value='2'>Februar</button>
-          <button class="dropdown-item" type="button" value='3'>März</button>
-          <button class="dropdown-item" type="button" value='4'>April</button>
-          <button class="dropdown-item" type="button" value='5'>Mai</button>
-          <button class="dropdown-item" type="button" value='6'>Juni</button>
-          <button class="dropdown-item" type="button" value='7'>Juli</button>
-          <button class="dropdown-item" type="button" value='8'>August</button>
-          <button class="dropdown-item" type="button" value='9'>September</button>
-          <button class="dropdown-item" type="button" value='10'>Oktober</button>
-          <button class="dropdown-item" type="button" value='11'>November</button>
-          <button class="dropdown-item" type="button" value='12'>Dezember</button>
+        <ul class="dropdown-menu">
+          <button class="dropdown-item" type="button" ng-click="month='Januar'">Januar</button>
+          <button class="dropdown-item" type="button" ng-click="month='Februar'">Februar</button>
+          <button class="dropdown-item" type="button" ng-click="month='März'">März</button>
+          <button class="dropdown-item" type="button" ng-click="month='April'">April</button>
+          <button class="dropdown-item" type="button" ng-click="month='Mai'">Mai</button>
+          <button class="dropdown-item" type="button" ng-click="month='Juni'">Juni</button>
+          <button class="dropdown-item" type="button" ng-click="month='Juli'">Juli</button>
+          <button class="dropdown-item" type="button" ng-click="month='August'">August</button>
+          <button class="dropdown-item" type="button" ng-click="month='September'">September</button>
+          <button class="dropdown-item" type="button" ng-click="month='Oktober'">Oktober</button>
+          <button class="dropdown-item" type="button" ng-click="month='November'">November</button>
+          <button class="dropdown-item" type="button" ng-click="month='Dezember'">Dezember</button>
         </ul>
       </div>
     </div>
 
     <div class="column">
       <div class="dropdown">
-        <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Jahr
+        <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">{{year}}
   <span class="caret"></span></button>
-        <ul class="dropdown-menu" ng-model='year'>
-
-          <option ng-repeat="x in birthdayYears">{{x}}</option>
+        <ul class="dropdown-menu">
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[1]">{{birthdayYears[1]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[2]">{{birthdayYears[2]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[3]">{{birthdayYears[3]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[4]">{{birthdayYears[4]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[5]">{{birthdayYears[5]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[6]">{{birthdayYears[6]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[7]">{{birthdayYears[7]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[8]">{{birthdayYears[8]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[9]">{{birthdayYears[9]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[10]">{{birthdayYears[10]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[11]">{{birthdayYears[11]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[12]">{{birthdayYears[12]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[13]">{{birthdayYears[13]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[14]">{{birthdayYears[14]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[15]">{{birthdayYears[15]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[16]">{{birthdayYears[16]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[17]">{{birthdayYears[17]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[18]">{{birthdayYears[18]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[19]">{{birthdayYears[19]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[20]">{{birthdayYears[20]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[21]">{{birthdayYears[21]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[22]">{{birthdayYears[22]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[23]">{{birthdayYears[23]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[24]">{{birthdayYears[24]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[25]">{{birthdayYears[25]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[26]">{{birthdayYears[26]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[27]">{{birthdayYears[27]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[28]">{{birthdayYears[28]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[29]">{{birthdayYears[29]}}</button>
+          <button class="dropdown-item" type="button" ng-click="year=birthdayYears[30]">{{birthdayYears[30]}}</button>
         </ul>
       </div>
     </div>
@@ -108,15 +136,15 @@
     <div class="column">
       <div class="dropdown">
         <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      andere Sprache
+      {{language}}
     </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <button class="dropdown-item" type="button">keine andere Sprache</button>
-          <button class="dropdown-item" type="button">Englisch</button>
-          <button class="dropdown-item" type="button">Französisch</button>
-          <button class="dropdown-item" type="button">Spanisch</button>
-          <button class="dropdown-item" type="button">Arabisch</button>
-          <button class="dropdown-item" type="button">...</button>
+          <button class="dropdown-item" type="button" ng-click="language='keine andere Sprache'">keine andere Sprache</button>
+          <button class="dropdown-item" type="button" ng-click="language='Englisch'">Englisch</button>
+          <button class="dropdown-item" type="button" ng-click="language='Französisch'">Französisch</button>
+          <button class="dropdown-item" type="button" ng-click="language='Spanisch'">Spanisch</button>
+          <button class="dropdown-item" type="button" ng-click="language='Arabisch'">Arabisch</button>
+          <button class="dropdown-item" type="button" ng-click="language='...'">...</button>
         </div>
       </div>
     </div>
