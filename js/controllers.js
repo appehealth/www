@@ -61,12 +61,12 @@ angular.module('ATEM-App.controllers', [])
     $scope.selectAnswer = function(ans) {
       $scope.selectedAnswer = ans;
       storeEvents.logEvent('Select answer ' + ans, 1, $scope.currentQuestion.id);
-<<<<<<< HEAD
+
       window.scrollTo(0, document.body.scrollHeight);
-=======
+
 
       window.scrollTo(0, 500);
->>>>>>> cb1cb4cd816af8ab1fce94e6bc903a9551927475
+
     }
 
     $scope.nextQuestion = function() {
