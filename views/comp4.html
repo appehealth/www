@@ -1,5 +1,5 @@
 <div ng-show="displayMode==='choice'">
-  <p class="storyText">{{currentChoice.choiceStory}}</p>
+  <p class="storyText" ng-repeat="x in currentChoice.choiceStory">{{x}}</p>
 
   <div class="text-center">
     <img src={{currentChoice.choiceStoryImg}} class="storyimg" ng-show="showChoiceImg" />
@@ -17,7 +17,7 @@
 
 
 <div ng-show="displayMode==='question'">
-  <p class="storyText">{{currentQuestion.story}}</p>
+  <p class="storyText" ng-repeat="y in currentQuestion.story">{{y}}</p>
   <p ng-show="!showQuestionImg" class="storyText">{{currentQuestion.question}}</p>
 
   <div class="text-center">
@@ -44,7 +44,7 @@
   <button type="button" class="btn btn-success btn-block btn-lg" ng-show="!showQuestionImg && selectedAnswer>0" ng-click="confirmQuestion()">Weiter</button>
 </div>
 <div ng-show="displayMode==='story'">
-  <p class="storyText">{{currentStory.text}}</p>
+  <p class="storyText" ng-repeat="z in currentStory.text">{{z}}</p>
 
   <div class="text-center">
     <img src={{currentStory.image}} class="storyimg" />

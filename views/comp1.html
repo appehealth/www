@@ -1,7 +1,7 @@
 <div ng-show="!finished">
-  <p class="storyText">
+  <p class="storyText" ng-repeat="x in currentQuestion.question">
 
-    {{currentQuestion.question}}</p>
+    {{x}}</p>
 
 
 
