@@ -1,7 +1,10 @@
 {
   "questions": [{
       "id": 1,
-      "story": "Tim muss seit dem Essen eine Mütze gegen die Sonne tragen. Sie gefällt ihm gar nicht. Aber sein Vater findet sie ganz toll. Als Tim sich über ein Wasserbecken mit einigen Schildkröten lehnt, fällt seine Mütze in das Wasser und geht sofort unter.Jetzt kann er die Mütze nicht mehr tragen. Tim möchte nicht, dass sein Vater sieht, dass er es gut findet, dass seine Mütze in das Wasser gefallen ist.Deswegen sieht sein Gesicht anders aus als er sich wirklich fühlt. Hier siehst Du, wie sein Gesicht aussieht. Es sieht traurig aus.",
+      "story": ["Tim muss seit dem Essen eine Mütze gegen die Sonne tragen. Sie gefällt ihm gar nicht. Aber sein Vater findet sie ganz toll.",
+        "Als Tim sich über ein Wasserbecken mit einigen Schildkröten lehnt, fällt seine Mütze in das Wasser und geht sofort unter.Jetzt kann er die Mütze nicht mehr tragen.",
+        "Tim möchte nicht, dass sein Vater sieht, dass er es gut findet, dass seine Mütze in das Wasser gefallen ist.Deswegen sieht sein Gesicht anders aus als er sich wirklich fühlt.",
+        "Hier siehst Du, wie sein Gesicht aussieht. Es sieht traurig aus."],
       "storyImg": "img/story/k6i1.JPG",
       "question1": {
         "question": "Kannst Du mir zeigen, wie Tim sich wirklich fühlt? Ist er ärgerlich oder ist er traurig oder ekelt er sich oder ist er fröhlich?",
@@ -18,7 +21,10 @@
 
     {
       "id": 2,
-      "story": "Ali sieht bei den Schlangen einen anderen Freund aus der Schule.Der will sich gleich mit Ali zusammen die Schlangen anschauen.Aber Ali möchte eigentlich viel lieber mit Tim die Schlangen ansehen und nicht dem anderen Schulfreund. Ali möchte seinem anderen Schulfreund nicht wehtun und schaut sich mit ihm die Schlangen an, obwohl er das lieber mit Tim machen würde. Sein Gesicht sieht aber anders aus, als er sich wirklich fühlt.Hier siehst Du wie sein Gesicht aussieht. Es sieht fröhlich aus.",
+      "story": ["Ali sieht bei den Schlangen einen anderen Freund aus der Schule. Der will sich gleich mit Ali zusammen die Schlangen anschauen.Aber Ali möchte eigentlich viel lieber mit Tim die Schlangen ansehen und nicht dem anderen Schulfreund.",
+        "Ali möchte seinem anderen Schulfreund nicht wehtun und schaut sich mit ihm die Schlangen an, obwohl er das lieber mit Tim machen würde.",
+        "Sein Gesicht sieht aber anders aus, als er sich wirklich fühlt.",
+        "Hier siehst Du wie sein Gesicht aussieht. Es sieht fröhlich aus."],
       "storyImg": "img/story/k6i2.JPG",
       "question1": {
         "question": "Kannst Du mir zeigen, wie Ali sich wirklich fühlt? Ist er ängstlich oder ist er traurig oder ist er fröhlich oder ist er überrascht?",
@@ -33,7 +39,10 @@
     },
     {
       "id": 3,
-      "story": "Es gibt kleine Fische, die sich streicheln lassen. Tim und Ali finden das toll und wollen das auch gerne machen. Aber es darf immer nur ein Kind seine Hand in das Becken reinhalten. Ali wollte eigentlich zuerst drankommen aber dann kommt Tim und drängelt sich ganz schnell vor. Ali möchte sich nicht mit Tim streiten, weil der sich vorgedrängelt hat.Deswegen sieht sein Gesicht anders aus als er sich fühlt.Hier siehst Du wie sein Gesicht aussieht. Es sieht fröhlich aus.",
+      "story": ["Es gibt kleine Fische, die sich streicheln lassen. Tim und Ali finden das toll und wollen das auch gerne machen. Aber es darf immer nur ein Kind seine Hand in das Becken reinhalten.",
+        "Ali wollte eigentlich zuerst drankommen aber dann kommt Tim und drängelt sich ganz schnell vor.",
+        "Ali möchte sich nicht mit Tim streiten, weil der sich vorgedrängelt hat. Deswegen sieht sein Gesicht anders aus als er sich fühlt.",
+        "Hier siehst Du wie sein Gesicht aussieht. Es sieht fröhlich aus."],
       "storyImg": "img/story/k6i3.JPG",
       "question1": {
         "question": "Kannst Du mir zeigen, wie Ali sich wirklich fühlt? Ist er ängstlich oder ekelt er sich oder ist er ärgerlich oder ist er fröhlich?",
@@ -48,7 +57,8 @@
     },
     {
       "id": 4,
-      "story": "Tim möchte unbedingt auf einem Pony reiten. Aber Ali findet die Ponys viel zu groß und zu schnell. Trotzdem stellt er sich zum Reiten an. Ali möchte nicht, dass Tim denkt, dass er ein Angsthase ist und deswegen geht er mit zum Ponyreiten.",
+      "story": ["Tim möchte unbedingt auf einem Pony reiten. Aber Ali findet die Ponys viel zu groß und zu schnell. Trotzdem stellt er sich zum Reiten an.",
+        "Ali möchte nicht, dass Tim denkt, dass er ein Angsthase ist und deswegen geht er mit zum Ponyreiten."],
       "storyImg": "img/story/k6i4.JPG",
       "question1": {
         "question": "Kannst Du mir zeigen, wie Alis Gesicht aussieht, wenn er zum Ponyreiten geht? Sieht sein Gesicht fröhlich aus oder sieht es traurig aus oder sieht es ängstlich aus oder sieht es überrascht aus?",
@@ -73,7 +83,9 @@
     },
     {
       "id": 5,
-      "story": "Im Kaninchenstall sind viele Mädchen, die die Kaninchen streicheln und füttern. Da kommt ein Mädchen und fragt Tim immer wieder, ob er ihr ein Kaninchen fängt. Tim findet das Mädchen wirklich nett aber Ali findet das total frech von dem Mädchen. Er sagt, dass es nervt. Tim möchte nicht, dass Ali weiß, dass er das Mädchen eigentlich ganz nett findet.",
+      "story": ["Im Kaninchenstall sind viele Mädchen, die die Kaninchen streicheln und füttern. Da kommt ein Mädchen und fragt Tim immer wieder, ob er ihr ein Kaninchen fängt.",
+        "Tim findet das Mädchen wirklich nett aber Ali findet das total frech von dem Mädchen. Er sagt, dass es nervt.",
+        "Tim möchte nicht, dass Ali weiß, dass er das Mädchen eigentlich ganz nett findet."],
       "storyImg": "img/story/k6i5.JPG",
       "question1": {
         "question": "Kannst Du mir zeigen, wie Tims Gesicht aussieht, als das Mädchen immer wieder fragt, ob er ihr hilft? Sieht sein Gesicht fröhlich aus oder sieht es ängstlich aus oder sieht es ärgerlich aus oder sieht es aus als würde sich Tim ekeln?",
@@ -98,7 +110,9 @@
     },
     {
       "id": 6,
-      "story": "Ali hat eine Schachtel mit Ziegenfutter bekommen, obwohl er die Ziegen gar nicht füttern will. Auf einmal schnappt sich eine Ziege seine Schachtel mit dem Futter und frisst es ganz auf.Jetzt hat Ali kein Futter mehr. Ali möchte nicht, dass Tims Eltern wissen, dass er eigentlich kein Futter haben wollte.",
+      "story": ["Ali hat eine Schachtel mit Ziegenfutter bekommen, obwohl er die Ziegen gar nicht füttern will.",
+        "Auf einmal schnappt sich eine Ziege seine Schachtel mit dem Futter und frisst es ganz auf.Jetzt hat Ali kein Futter mehr.",
+        "Ali möchte nicht, dass Tims Eltern wissen, dass er eigentlich kein Futter haben wollte."],
       "storyImg": "img/story/k6i6.JPG",
       "question1": {
         "question": "Kannst Du mir zeigen, wie Alis Gesicht aussieht, als die Ziege ihm das Futter weggeschnappt hat? Sieht sein Gesicht traurig aus oder sieht es ängstlich aus oder sieht es fröhlich aus oder sieht es aus als würde sich Ali ekeln?",
