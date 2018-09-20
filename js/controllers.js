@@ -65,7 +65,6 @@ angular.module('ATEM-App.controllers', [])
       window.scrollTo(0, document.body.scrollHeight);
 
 
-      window.scrollTo(0, 500);
 
     }
 

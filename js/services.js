@@ -38,7 +38,7 @@ angular.module('ATEM-App.services', [])
     });
 
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
-      fileSystem = fs;
+      filesystem = fs;
     });
 
     function logEvent(logText, component, item) {
@@ -83,9 +83,9 @@ angular.module('ATEM-App.services', [])
     function logBirthday(day, month, year) {
       startTime = new Date();
 
-      if (!)
 
-        var dayNow = startTime.getDate();
+
+      var dayNow = startTime.getDate();
       var monthNow = startTime.getMonth() + 1;
       var yearNow = startTime.getFullYear();
       var bthDate = new Date(year, month - 1, day);
