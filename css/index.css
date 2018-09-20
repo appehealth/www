@@ -19,6 +19,15 @@ h2 {
   text-align: left;
 }
 
+.storyimg {
+  margin-left: auto;
+  margin-right: auto;
+  text align: center;
+  height: auto;
+  width: 90%;
+
+}
+
 p {
   margin: 2%;
 
@@ -34,32 +43,14 @@ p {
 
 
 
-
-
-
-
-
 .answerImgTable {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-
-
 }
 
 .img {
   height: auto;
   width: 80%;
   margin: 5%;
-}
-
-
-
-.storyimg {
-  margin-left: auto;
-  margin-right: auto;
-  text align: center;
-  height: auto;
-  width: 90%;
-
 }
