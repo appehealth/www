@@ -12,10 +12,6 @@ angular.module('ATEM-App.controllers', [])
     }
     $scope.language = 'german';
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 35f9103a1d40bcd60dc09f4c1ae940776b0375a2
     $http.get("json/intro.json").then(function(response) {
       text1 = response.data.text1;
       text2 = response.data.text2;
@@ -24,7 +20,6 @@ angular.module('ATEM-App.controllers', [])
     });
 
     $scope.startStory = function() {
-<<<<<<< HEAD
       // storeEvents.logStart();
       // storeEvents.logResult( 'Birthday: ' + $scope.day + '. ' + $scope.month + '. ' + $scope.year );
       // storeEvents.logResult( 'Gender: ' + $scope.gender );
@@ -32,14 +27,9 @@ angular.module('ATEM-App.controllers', [])
       // window.location = '#/introduction';
       // audioService.playAudio( audio[ 0 ] );
       storeEvents.logStart(parseInt($scope.day), $scope.monthID, $scope.year, $scope.gender);
-=======
-      storeEvents.logStart();
-      storeEvents.logResult('Birthday: ' + $scope.day + '. ' + $scope.month + '. ' + $scope.year);
-      storeEvents.logResult('Gender: ' + $scope.gender);
-      storeEvents.logResult('Language: ' + $scope.language);
+
       window.location = '#/introduction';
       audioService.playAudio(audio[0]);
->>>>>>> 35f9103a1d40bcd60dc09f4c1ae940776b0375a2
     }
 
     $scope.startComp1 = function() {
@@ -71,10 +61,8 @@ angular.module('ATEM-App.controllers', [])
     $scope.selectAnswer = function(ans) {
       $scope.selectedAnswer = ans;
       storeEvents.logEvent('Select answer ' + ans, 1, $scope.currentQuestion.id);
-<<<<<<< HEAD
-=======
+
       window.scrollTo(0, 500);
->>>>>>> 35f9103a1d40bcd60dc09f4c1ae940776b0375a2
     }
 
     $scope.nextQuestion = function() {
