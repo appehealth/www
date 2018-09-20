@@ -10,7 +10,6 @@ angular.module( 'ATEM-App.controllers', [] )
     for(i=y-30;i<=y;i++){
       $scope.birthdayYears.push(i);
     }
-    console.log($scope.birthdayYears);
     $scope.language = 'german';
 
     $http.get( "json/intro.json" ).then( function( response ) {
@@ -25,7 +24,6 @@ angular.module( 'ATEM-App.controllers', [] )
       storeEvents.logResult( 'Birthday: ' + $scope.day + '. ' + $scope.month + '. ' + $scope.year );
       storeEvents.logResult( 'Gender: ' + $scope.gender );
       storeEvents.logResult( 'Language: ' + $scope.language );
-      console.log( storeEvents.results );
       window.location = '#/introduction';
       audioService.playAudio( audio[ 0 ] );
     }
