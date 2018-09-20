@@ -20,10 +20,14 @@ angular.module('ATEM-App.controllers', [])
     });
 
     $scope.startStory = function() {
-      storeEvents.logStart();
-      storeEvents.logResult('Birthday: ' + $scope.day + '. ' + $scope.month + '. ' + $scope.year);
-      storeEvents.logResult('Gender: ' + $scope.gender);
-      storeEvents.logResult('Language: ' + $scope.language);
+      // storeEvents.logStart();
+      // storeEvents.logResult( 'Birthday: ' + $scope.day + '. ' + $scope.month + '. ' + $scope.year );
+      // storeEvents.logResult( 'Gender: ' + $scope.gender );
+      // storeEvents.logResult( 'Language: ' + $scope.language );
+      // window.location = '#/introduction';
+      // audioService.playAudio( audio[ 0 ] );
+      storeEvents.logStart(parseInt($scope.day), $scope.monthID, $scope.year, $scope.gender);
+
       window.location = '#/introduction';
       audioService.playAudio(audio[0]);
     }
@@ -57,7 +61,12 @@ angular.module('ATEM-App.controllers', [])
     $scope.selectAnswer = function(ans) {
       $scope.selectedAnswer = ans;
       storeEvents.logEvent('Select answer ' + ans, 1, $scope.currentQuestion.id);
+<<<<<<< HEAD
       window.scrollTo(0, document.body.scrollHeight);
+=======
+
+      window.scrollTo(0, 500);
+>>>>>>> cb1cb4cd816af8ab1fce94e6bc903a9551927475
     }
 
     $scope.nextQuestion = function() {
