@@ -1,5 +1,7 @@
 <div ng-show="displayMode==='question'">
   <p class="storyText" ng-repeat="y in currentQuestion.story">{{y}}</p>
+  <img src="img/repeat.png" style="margin:2%;" ng-click="repeatAudio()">
+  <br>
   <p ng-show="!showQuestionImg" class="storyText">{{currentQuestion.question}}</p>
 
   <div class="text-center">
@@ -30,6 +32,8 @@
 
 <div ng-show="displayMode==='story'">
   <p class="storyText">{{currentStory.text}}</p>
+  <img src="img/repeat.png" style="margin:2%;" ng-click="repeatAudio()">
+  <br>
 
   <div class="text-center">
     <img src={{currentStory.image}} class="storyimg" />
