@@ -27,7 +27,7 @@
   <button type="button" class="btn btn-success btn-block btn-lg" ng-show="!showQuestionImg && selectedAnswer>0" ng-click="confirmQuestion()">Weiter</button>
 </div>
 <div ng-show="displayMode==='story'">
-  <p class="storyText" ng-repeat="y in currentStory.text">{{y}}</p>
+  <p class="storyText">{{currentStory.text}}</p>
 
   <div class="text-center">
     <img src={{currentStory.image}} class="storyimg" />
