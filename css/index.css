@@ -4,7 +4,10 @@ body {
   max-width: auto;
 }
 
-
+.PlaceHolder {
+  height: 1px;
+  width: 1px;
+}
 
 .leuphanaLogo {
   height: 70px;
