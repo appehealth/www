@@ -50,13 +50,12 @@ angular.module( 'ATEM-App.controllers', [] )
   .controller( 'Comp1Ctrl', [ '$scope', '$http', 'audioService', 'storeEvents', function( $scope, $http, audioService, storeEvents ) {
     var allQuestions = [];
     var numberOfQuestions = 0;
-    var rewardImg;
     $scope.finished = false;
 
     $http.get( "json/comp1.json" ).then( function( response ) {
       allQuestions = response.data.questions;
       numberOfQuestions = allQuestions.length;
-      rewardImg = response.data.rewardImg;
+      $scope.rewardImg = response.data.rewardImg;
       $scope.currentQuestion = allQuestions[ 0 ];
       audioService.playAudio( $scope.currentQuestion.audio );
     } );
@@ -79,9 +78,13 @@ angular.module( 'ATEM-App.controllers', [] )
         audioService.playAudio( $scope.currentQuestion.audio );
         window.scrollTo( 0, 0 );
       } else {
-        storeEvents.logEvent( 'Start component 2' )
-        window.location = '#/comp2';
+        $scope.finished = true;
       }
+    }
+
+    $scope.nextComp = function() {
+      storeEvents.logEvent( 'Start component 2' )
+      window.location = '#/comp2';
     }
   } ] )
 
