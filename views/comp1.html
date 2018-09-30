@@ -33,6 +33,7 @@
 
   <button type="button" class="btn btn-success btn-block btn-lg" ng-click="nextQuestion()" ng-show="selectedAnswer > 0">Weiter</button>
 </div>
+<div class="PlaceHolder" ng-show="selectedAnswer <= 0"> </div>
 <div ng-show="finished">
   <img src={{rewardImg}} class="storyimg" />
 
