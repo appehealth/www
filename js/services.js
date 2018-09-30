@@ -21,6 +21,10 @@ angular.module( 'ATEM-App.services', [] )
 
   .service( 'storeEvents', function() {
     var results = [];
+    var files = [];
+    const SENSORID = 0;
+    const EVENTID = 1;
+    const RESULTID = 2;
     var eventFile;
     var resultFile;
     var sensorFile;
@@ -37,22 +41,31 @@ angular.module( 'ATEM-App.services', [] )
       z = event.acceleration.z;
     } );
 
-    window.requestFileSystem( LocalFileSystem.PERSISTENT, 0, function( fs ) {
-      filesystem = fs;
-    } );
+    function requestFS() {
+      window.requestFileSystem( LocalFileSystem.PERSISTENT, 0, function( fs ) {
+        filesystem = fs;
+      } );
+    }
 
     function logEvent( logText, component, item ) {
-      // var timestamp = Date.now() - startTime;
-      // writeFile(eventFile, timestamp + ': Component ' + component + ', Item ' + item + ': ' + logText + '\n', true);
+      var timestamp = Date.now() - startTime;
+      writeFile( files[ EVENTID ], timestamp + ': Component ' + component + ', Item ' + item + ': ' + logText + '\n', true );
     }
 
     function logSensor() {
-      // var timestamp = Date.now() - startTime;
-      // writeFile(sensorFile, timestamp + '; ' + x + '; ' + y + '; ' + z + '\n', true);
+      var timestamp = Date.now() - startTime;
+      writeFile( files[ SENSORID ], timestamp + '; ' + x + '; ' + y + '; ' + z + '\n', true );
     }
 
     function logResult( msg ) {
-      // writeFile(resultFile, msg + '\n', true);
+      writeFile( files[ RESULTID ], msg + '\n', true );
+    }
+
+    function logAnswer( comp, question, answer, correctAnswer ) {
+      var msg = "";
+      msg += ( "Komponente " + comp + ', Frage ' + question + ': ' + answer + ' (richtige Antwort: ' + correctAnswer + ')' );
+      console.log( msg );
+      logResult( msg );
     }
 
     function writeFile( fileEntry, dataObj, isAppend ) {
@@ -80,7 +93,7 @@ angular.module( 'ATEM-App.services', [] )
       } );
     }
 
-    function logBirthday( day, month, year ) {
+    function countMonths( day, month, year ) {
       startTime = new Date();
 
       var dayNow = startTime.getDate();
@@ -88,25 +101,25 @@ angular.module( 'ATEM-App.services', [] )
       var yearNow = startTime.getFullYear();
       var bthDate = new Date( year, month - 1, day );
       var ageYears, ageMonths, ageDays;
-
-      function leapYear( yr ) {
-        return ( ( yr % 4 == 0 ) && ( yr % 100 != 0 ) ) || ( yr % 400 == 0 );
-      }
-
-      if ( yearNow == year && ( month > monthNow || ( month == monthNow && day > dayNow ) ) ) throw "Ungültiges Geburtsdatum"
-      else switch ( month ) {
-        case 4:
-        case 6:
-        case 9:
-        case 11:
-          if ( day > 30 ) throw "Ungültiges Geburtsdatum";
-          break;
-        case 2:
-          if ( day > 29 ) throw "Ungültiges Geburtsdatum";
-          if ( day == 29 )
-            if ( !leapYear( year ) ) throw " Ungültiges Geburtsdatum";
-          break;
-      }
+      //
+      // function leapYear( yr ) {
+      //   return ( ( yr % 4 == 0 ) && ( yr % 100 != 0 ) ) || ( yr % 400 == 0 );
+      // }
+      //
+      // if ( yearNow == year && ( month > monthNow || ( month == monthNow && day > dayNow ) ) ) throw "Ungültiges Geburtsdatum"
+      // else switch ( month ) {
+      //   case 4:
+      //   case 6:
+      //   case 9:
+      //   case 11:
+      //     if ( day > 30 ) throw "Ungültiges Geburtsdatum";
+      //     break;
+      //   case 2:
+      //     if ( day > 29 ) throw "Ungültiges Geburtsdatum";
+      //     if ( day == 29 )
+      //       if ( !leapYear( year ) ) throw " Ungültiges Geburtsdatum";
+      //     break;
+      // }
 
       ageYears = startTime.getFullYear() - year;
       ageMonths = startTime.getMonth() - ( month - 1 );
@@ -120,23 +133,21 @@ angular.module( 'ATEM-App.services', [] )
       return ( ageYears * 12 + ageMonths );
     }
 
-    function createFile( fileName, fileText ) {
-      // var fileDir = cordova.file.externalDataDirectory.replace(cordova.file.externalRootDirectory, '');
-      // var filePath = fileDir + fileName;
-      // console.log(fileDir);
-      // console.log(cordova.file.externalDataDirectory);
-      // filesystem.root.getFile(filePath, {
-      //   create: true,
-      //   exclusive: true
-      // }, function(fileEntry) {
-      //   console.log('fileEntry: ' + fileEntry);
-      //   if (fileName.startsWith("events")) eventFile = fileEntry;
-      //   if (fileName.startsWith("sensor")) sensorFile = fileEntry;
-      //   if (fileName.startsWith("results")) resultFile = fileEntry;
-      //   writeFile(fileEntry, fileText, false);
-      // }, function(e) {
-      //   console.log('Error1' + e.code);
-      // });
+    function createFile( fileName, fileText, fileID ) {
+      var fileDir = cordova.file.externalDataDirectory.replace( cordova.file.externalRootDirectory, '' );
+      var filePath = fileDir + fileName;
+      console.log( fileDir );
+      console.log( cordova.file.externalDataDirectory );
+      filesystem.root.getFile( filePath, {
+        create: true,
+        exclusive: true
+      }, function( fileEntry ) {
+        console.log( 'fileEntry: ' + fileEntry );
+        files[ fileID ] = fileEntry;
+        writeFile( fileEntry, fileText, false );
+      }, function( e ) {
+        console.log( 'Error1' + e.code );
+      } );
 
     }
 
@@ -156,17 +167,17 @@ angular.module( 'ATEM-App.services', [] )
       } );
     }
 
-    function logStart( day, month, year, gender ) {
-      // var ageInMonths;
-      // ageInMonths = logBirthday(day, month, year);
-      // createFile("events" + startTime + ".txt", '');
-      // createFile("sensor" + startTime + ".csv", 'Timestamp;X;Y;Z' + '\n');
-      // createFile("results" + startTime + ".txt", "Age: " + ageInMonths + " months" + '\n' + "Gender: " + gender + '\n');
+    function logStart( day, month, year, gender, language ) {
+      var ageInMonths = countMonths( day, month, year );
+      var userID = Date.now();
+      createFile( "sensor" + userID + ".csv", 'Timestamp;X;Y;Z' + '\n', SENSORID );
+      createFile( "events" + userID + ".txt", '', EVENTID );
+      createFile( "results" + userID + ".txt", "Alter: " + ageInMonths + " Monate" + '\n' + "Geschlecht: " + gender + '\n' + "Sprache: " + language + '\n', RESULTID );
     }
 
     function startSensor() {
-      // logEvent('Start', 1, 1);
-      // sensorInterval = setInterval(logSensor, 20);
+      logEvent( 'Start', 1, 1 );
+      sensorInterval = setInterval( logSensor, 20 );
     }
 
     function wipeData() {
@@ -180,7 +191,9 @@ angular.module( 'ATEM-App.services', [] )
       logResult: logResult,
       startSensor: startSensor,
       results: results,
-      wipeData: wipeData
+      wipeData: wipeData,
+      requestFS: requestFS,
+      logAnswer: logAnswer
     };
 
   } )

@@ -14,22 +14,24 @@ angular.module( 'ATEM-App.controllers', [] )
     $scope.day = 'Tag';
     $scope.month = 'Monat';
     $scope.year = 'Jahr';
+    $scope.gender = '';
 
     $http.get( "json/intro.json" ).then( function( response ) {
       text1 = response.data.text1;
       text2 = response.data.text2;
       $scope.introText = text1;
       audio = response.data.audio;
+      storeEvents.requestFS();
     } );
 
     $scope.startStory = function() {
+      storeEvents.logStart( parseInt( $scope.day ), $scope.monthID, $scope.year, $scope.gender, $scope.language );
       // storeEvents.logStart();
       // storeEvents.logResult( 'Birthday: ' + $scope.day + '. ' + $scope.month + '. ' + $scope.year );
       // storeEvents.logResult( 'Gender: ' + $scope.gender );
       // storeEvents.logResult( 'Language: ' + $scope.language );
       // window.location = '#/introduction';
       // audioService.playAudio( audio[ 0 ] );
-      storeEvents.logStart( parseInt( $scope.day ), $scope.monthID, $scope.year, $scope.gender );
 
       window.location = '#/introduction';
       audioService.playAudio( audio[ 0 ] );
@@ -39,6 +41,7 @@ angular.module( 'ATEM-App.controllers', [] )
       if ( part2 ) {
         audioService.stopAudio();
         window.location = '#/comp1';
+        storeEvents.startSensor();
       } else {
         part2 = true;
         $scope.introText = text2;
@@ -70,7 +73,7 @@ angular.module( 'ATEM-App.controllers', [] )
 
     $scope.nextQuestion = function() {
       audioService.stopAudio();
-      storeEvents.logResult( 'Component 1, Question ' + $scope.currentQuestion.id + ': ' + $scope.selectedAnswer );
+      storeEvents.logAnswer( 1, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer );
       $scope.selectedAnswer = 0;
       storeEvents.logEvent( 'Confirm answer', 1, $scope.currentQuestion.id );
       if ( $scope.currentQuestion.id < numberOfQuestions ) {
@@ -99,14 +102,14 @@ angular.module( 'ATEM-App.controllers', [] )
 
     $scope.confirmQuestion = function() {
       audioService.stopAudio();
-      storeEvents.logResult( 'Component 2, Question ' + $scope.currentQuestion.id + ': ' + $scope.selectedAnswer );
+      storeEvents.logAnswer( 2, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer );
       storeEvents.logEvent( 'Confirm answer', 2, $scope.currentQuestion.id )
       if ( $scope.selectedAnswer == $scope.currentQuestion.correctAnswer ) {
         wrongAnswers = 0;
       } else {
         wrongAnswers++;
         if ( wrongAnswers == 3 ) {
-          storeEvents.logResult( 'Three wrong answers in a row. Test was stopped.' );
+          storeEvents.logResult( 'Drei Falsche Antworten hintereinander. Test wird beendet.' );
           window.location = '#/results';
         }
       }
@@ -175,14 +178,14 @@ angular.module( 'ATEM-App.controllers', [] )
 
     $scope.confirmQuestion = function() {
 
-      storeEvents.logResult( 'Component 3, Question ' + $scope.currentQuestion.id + ': ' + $scope.selectedAnswer );
+      storeEvents.logAnswer( 3, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer );
       storeEvents.logEvent( 'Confirm answer', 3, $scope.currentQuestion.id )
       if ( $scope.selectedAnswer == $scope.currentQuestion.correctAnswer ) {
         wrongAnswers = 0;
       } else {
         wrongAnswers++;
         if ( wrongAnswers == 3 ) {
-          storeEvents.logResult( 'Three wrong answers in a row. Jumping to component 4.' );
+          storeEvents.logResult( 'Drei falsche Antworten hintereinander. Sprung zu Komponente 4.' );
           $window.location = '#/comp4';
         }
       }
@@ -256,14 +259,14 @@ angular.module( 'ATEM-App.controllers', [] )
     }
 
     $scope.confirmQuestion = function() {
-      storeEvents.logResult( 'Component 4, Question ' + $scope.currentQuestion.id + ': ' + $scope.selectedAnswer );
+      storeEvents.logAnswer( 4, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer );
       storeEvents.logEvent( 'Confirm answer', 4, $scope.currentChoice.id )
       if ( $scope.selectedAnswer == $scope.currentQuestion.correctAnswer ) {
         wrongAnswers = 0;
       } else {
         wrongAnswers++;
         if ( wrongAnswers == 3 ) {
-          storeEvents.logResult( 'Three wrong answers in a row. Jumping to component 5.' );
+          storeEvents.logResult( 'Drei falsche Antworten hintereinander. Sprung zu Komponente 5.' );
           $window.location = '#/comp5';
         }
       }
@@ -344,14 +347,14 @@ angular.module( 'ATEM-App.controllers', [] )
 
     $scope.confirmQuestion = function() {
       if ( typeof( allQuestions[ currentId - 1 ].question2 ) === "undefined" ) {
-        storeEvents.logResult( 'Component 5, Question ' + $scope.currentQuestion.id + ': ' + $scope.selectedAnswer );
+        storeEvents.logAnswer( 5, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1 );
         storeEvents.logEvent( 'Confirm answer', 5, $scope.currentQuestion.id );
         if ( $scope.selectedAnswer == $scope.currentQuestion.correctAnswer1 ) {
           wrongAnswers = 0;
         } else {
           wrongAnswers++;
           if ( wrongAnswers == 3 ) {
-            storeEvents.logResult( 'Three wrong answers in a row. Jumping to component 6.' );
+            storeEvents.logResult( 'Drei falsche Antworten hintereinander. Sprung zu Komponente 6.' );
             $window.location = '#/comp6';
           }
         }
@@ -360,18 +363,19 @@ angular.module( 'ATEM-App.controllers', [] )
       } else if ( $scope.currentQuestion.question == allQuestions[ currentId - 1 ].question1 ) {
         answerQ1 = $scope.selectedAnswer;
         storeEvents.logEvent( 'Question A: Confirm answer', 5, $scope.currentQuestion.id );
-        storeEvents.logResult( 'Component 5, Question ' + $scope.currentQuestion.id + ' a: ' + $scope.selectedAnswer );
+        storeEvents.logAnswer( 5, $scope.currentQuestion.id + 'a', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1 );
         $scope.selectedAnswer = 0;
         $scope.currentQuestion.question = allQuestions[ currentId - 1 ].question2;
       } else {
-        storeEvents.logResult( 'Component 5, Question ' + $scope.currentQuestion.id + ' b: ' + $scope.selectedAnswer );
         storeEvents.logEvent( 'Question B: Confirm answer', 5, $scope.currentQuestion.id );
+        storeEvents.logAnswer( 5, $scope.currentQuestion.id + 'b', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer2 );
         if ( answerQ1 == allQuestions[ currentId - 1 ].correctAnswer1 && $scope.selectedAnswer == allQuestions[ currentId - 1 ].correctAnswer2 ) {
           wrongAnswers = 0;
         } else {
           wrongAnswers++;
           if ( wrongAnswers == 3 ) {
-            alert( "Abbruch" );
+            storeEvents.logResult( 'Drei falsche Antworten hintereinander. Sprung zu Komponente 6.' );
+            $window.location = '#/comp6';
           }
         }
         nextQuestion();
@@ -457,14 +461,14 @@ angular.module( 'ATEM-App.controllers', [] )
 
     $scope.confirmQuestion = function() {
       if ( typeof( allQuestions[ currentId - 1 ].question2 ) === "undefined" ) {
-        storeEvents.logResult( 'Component 6, Question ' + $scope.currentQuestion.id + ': ' + $scope.selectedAnswer );
+        storeEvents.logAnswer( 6, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1 );
         storeEvents.logEvent( 'Confirm answer', 6, $scope.currentQuestion.id );
         if ( $scope.selectedAnswer == $scope.currentQuestion.correctAnswer1 ) {
           wrongAnswers = 0;
         } else {
           wrongAnswers++;
           if ( wrongAnswers == 3 ) {
-            storeEvents.logResult( 'Three wrong answers in a row. Test was stopped.' );
+            storeEvents.logResult( 'Drei falsche Antworten hintereinander. Test wird beendet.' );
             $window.location = '#/results';
           }
         }
@@ -473,18 +477,19 @@ angular.module( 'ATEM-App.controllers', [] )
       } else if ( $scope.currentQuestion.question == allQuestions[ currentId - 1 ].question1 ) {
         answerQ1 = $scope.selectedAnswer;
         storeEvents.logEvent( 'Question A: Confirm answer', 6, $scope.currentQuestion.id );
-        storeEvents.logResult( 'Component 6, Question ' + $scope.currentQuestion.id + ' a: ' + $scope.selectedAnswer );
+        storeEvents.logAnswer( 6, $scope.currentQuestion.id + 'a', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1 );
         $scope.selectedAnswer = 0;
         $scope.currentQuestion.question = allQuestions[ currentId - 1 ].question2;
       } else {
-        storeEvents.logResult( 'Component 6, Question ' + $scope.currentQuestion.id + ' b: ' + $scope.selectedAnswer );
+        storeEvents.logAnswer( 6, $scope.currentQuestion.id + 'b', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer2 );
         storeEvents.logEvent( 'Question B: Confirm answer', 6, $scope.currentQuestion.id );
         if ( answerQ1 == allQuestions[ currentId - 1 ].correctAnswer1 && $scope.selectedAnswer == allQuestions[ currentId - 1 ].correctAnswer2 ) {
           wrongAnswers = 0;
         } else {
           wrongAnswers++;
           if ( wrongAnswers == 3 ) {
-            alert( "Abbruch" );
+            storeEvents.logResult( 'Drei falsche Antworten hintereinander. Test wird beendet.' );
+            $window.location = '#/results';
           }
         }
         nextQuestion();
