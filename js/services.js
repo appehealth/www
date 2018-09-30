@@ -226,7 +226,7 @@ angular.module('ATEM-App.services', [])
       my_media.stop();
     }
 
-    function repeatAudio() {
+    function repeatAudio(url) {
       my_media.stop();
       my_media.play();
     }
