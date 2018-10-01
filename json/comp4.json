@@ -6,6 +6,7 @@
       "choiceStoryImg": "img/story/k4i1.JPG",
       "choiceA": "Rüssel",
       "choiceB": "Zusehen",
+      "choiceAudio": "k4i23.mp3",
 
       "questionA": {
         "story": ["Tim und Ali würden auch gerne auf dem Rüssel des Elefanten sitzen und sich tragen lassen. Und der Tierpfleger erlaubt es ihnen auch.",
@@ -18,7 +19,11 @@
           "img/emotions/both/froehlich.JPG",
           "img/emotions/both/aergerlich.JPG"
         ],
-        "correctAnswer": 3
+        "correctAnswer": 3,
+        "audio":[
+          "audio/k4i23a.mp3",
+          "audio/k4i23aant.mp3"
+        ]
       },
       "questionB": {
         "story": ["Tim und Ali wollen auch lieber nicht auf dem Rüssel des Elefanten sitzen. Sie schauen es sich lieber an.",
@@ -31,7 +36,11 @@
           "img/emotions/both/froehlich.JPG",
           "img/emotions/both/aergerlich.JPG"
         ],
-        "correctAnswer": 3
+        "correctAnswer": 3,
+        "audio":[
+          "audio/k4i23b.mp3",
+          "audio/k4i23bant.mp3"
+        ]
       }
     },
 
@@ -43,6 +52,7 @@
       "choiceStoryImg": "img/story/k4i2.JPG",
       "choiceA": "füttern",
       "choiceB": "anschauen",
+      "choiceAudio": "audio/k4i24.mp3",
       "questionA": {
         "story": ["Tim und Ali wollen die Elefanten auch gerne füttern. Tims Vater kauft einen kleinen Korb voll Möhren, die sie den Elefanten geben können.",
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, wenn sie die Elefanten füttern dürfen?"],
@@ -54,7 +64,11 @@
           "img/emotions/both/traurig.JPG",
           "img/emotions/both/ekelnd.JPG"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "audio":[
+          "audio/k4i24a.mp3",
+          "audio/k4i24aant.mp3"
+        ]
       },
 
       "questionB": {
@@ -68,7 +82,11 @@
           "img/emotions/both/traurig.JPG",
           "img/emotions/both/ekelnd.JPG"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "audio":[
+          "audio/k4i24b.mp3",
+          "audio/k4i24bant.mp3"
+        ]
       }
     },
 
@@ -80,6 +98,7 @@
       "choiceStoryImg": "img/story/k4i3.JPG",
       "choiceA": "anschauen",
       "choiceB": "Fotos machen",
+      "choiceAudio": "k4i25.mp3",
 
       "questionA": {
         "story": ["Tim und Ali würden auch gerne einmal einen großen Elefantenhaufen anschauen. Aber dann geht der Tierpfleger auf einmal weg und zeigt einem anderen Kind den großen Haufen.",
@@ -92,7 +111,11 @@
           "img/emotions/both/froehlich.JPG",
           "img/emotions/both/traurig.JPG"
         ],
-        "correctAnswer": 4
+        "correctAnswer": 4,
+        "audio":[
+          "audio/k4i25a.mp3",
+          "audio/k4i25aant.mp3"
+        ]
       },
 
       "questionB": {
@@ -106,7 +129,11 @@
           "img/emotions/both/froehlich.JPG",
           "img/emotions/both/traurig.JPG"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "audio":[
+          "audio/k4i25b.mp3",
+          "audio/k4i25bant.mp3"
+        ]
       }
     },
 
@@ -118,6 +145,7 @@
       "choiceStoryImg": "img/story/k4i4.JPG",
       "choiceA": "mitkommen",
       "choiceB": "bleiben",
+      "choiceAudio": "audio/k4i26.mp3",
 
       "questionA": {
         "story": ["Tim und Ali möchten aber nicht mit dem Tierpfleger gehen. Sie wollen lieber draußen den Affen zusehen. Aber der Tierpfleger nimmt Tim und Ali einfach an der Hand und nimmt sie mit, damit sie die Tür öffnen.",
@@ -130,7 +158,11 @@
           "img/emotions/both/ueberrascht.JPG",
           "img/emotions/both/froehlich.JPG"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "audio":[
+          "audio/k4i26a.mp3",
+          "audio/k4i26bant.mp3"
+        ]
       },
 
       "questionB": {
@@ -144,7 +176,11 @@
           "img/emotions/both/ueberrascht.JPG",
           "img/emotions/both/froehlich.JPG"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "audio":[
+          "audio/k4i26b.mp3",
+          "audio/k4i26bant.mp3"
+        ]
       }
     },
 
@@ -156,6 +192,7 @@
       "choiceStoryImg": "img/story/k4i5.JPG",
       "choiceA": "versuchen",
       "choiceB": "weitergehen",
+      "choiceAudio": "audio/k4i27.mp3",
 
       "questionA": {
         "story": ["Tim und Ali wollen das nicht so gerne versuchen. Sie finden das langweilig. Aber Tims Mutter sagt, sie müssen das mal versuchen.",
@@ -168,7 +205,11 @@
           "img/emotions/both/froehlich.JPG",
           "img/emotions/both/ekelnd.JPG"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "audio":[
+          "audio/k4i27a.mp3",
+          "audio/k4i27aant.mp3"
+        ]
       },
 
       "questionB": {
@@ -182,7 +223,11 @@
           "img/emotions/both/froehlich.JPG",
           "img/emotions/both/ekelnd.JPG"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "audio":[
+          "audio/k4i27b.mp3",
+          "audio/k4i27bant.mp3"
+        ]
       }
     },
 
@@ -194,6 +239,7 @@
       "choiceStoryImg": "img/story/k4i6.JPG",
       "choiceA": "füttern",
       "choiceB": "zusehen",
+      "choiceAudio": "audio/k4i28.mp3",
 
       "questionA": {
         "story": ["Tim und Ali möchten aber nicht die Äffchen füttern. Sie wollen lieber nur zusehen und die Äffchen bleiben auch nur bei den anderen Kindern.",
@@ -206,7 +252,11 @@
           "img/emotions/both/traurig.JPG",
           "img/emotions/both/froehlich.JPG"
         ],
-        "correctAnswer": 4
+        "correctAnswer": 4,
+        "audio":[
+          "audio/k4i28a.mp3",
+          "audio/k4i28bant.mp3"
+        ]
       },
 
       "questionB": {
@@ -220,7 +270,11 @@
           "img/emotions/both/traurig.JPG",
           "img/emotions/both/froehlich.JPG"
         ],
-        "correctAnswer": 4
+        "correctAnswer": 4,
+        "audio":[
+          "audio/k4i28b.mp3",
+          "audio/k4i28bant.mp3"
+        ]
       }
     }
 
@@ -229,19 +283,22 @@
       "text": "Jetzt kann es endlich losgehen. Tim und Ali und Tims Eltern machen sich auf den Weg zu den Tieren. Zuerst gehen sie zu den Elefanten. Es gibt dort ein großes Elefantenhaus, in dem die Elefanten wohnen und auch noch einen Platz draußen, auf dem man sie beobachten kann.",
       "image": "img/story/k4intro.JPG",
       "id": 1,
-      "location": 1
+      "location": 1,
+      "audio": "audio/k4intro.mp3"
     },
     {
       "text": "Als nächstes besuchen Tim und Ali und Tims Eltern die Affen. Es gibt ein großes Affenhaus, wo es sehr warm ist und viele verschiedene Affen in großen Hallen leben. Außerdem gibt es einen Bereich draußen, der von einem Wassergraben umgeben ist, damit die Affen nicht weglaufen können.",
       "image": "img/story/k4middle.JPG",
       "id": 2,
-      "location": 4
+      "location": 4,
+      "audio": "audio/k4intro2.mp3"
     },
     {
       "text": "",
       "image": "img/BelohnungKomp4.jpg",
       "id": 3,
-      "location": 7
+      "location": 7,
+      "audio": ""
     }
   ]
 }

@@ -29,7 +29,11 @@
         "img/emotions/tim/froehlich.JPG",
         "img/emotions/tim/aergerlich.JPG"
       ],
-      "correctAnswer": 1
+      "correctAnswer": 1,
+      "audio":[
+        "audio/k2i8.mp3",
+        "audio/k2i8ant.mp3"
+      ]
     },
     {
       "id": 3,
@@ -43,7 +47,11 @@
         "img/emotions/ali/ekelnd.JPG",
         "img/emotions/ali/aengstlich.JPG"
       ],
-      "correctAnswer": 1
+      "correctAnswer": 1,
+      "audio":[
+        "audio/k2i9.mp3",
+        "audio/k2i9ant.mp3"
+      ]
     },
     {
       "id": 4,
@@ -57,7 +65,11 @@
         "img/emotions/tim/ueberrascht.JPG",
         "img/emotions/tim/aengstlich.JPG"
       ],
-      "correctAnswer": 2
+      "correctAnswer": 2,
+      "audio":[
+        "audio/k2i10.mp3",
+        "audio/k2i10ant.mp3"
+      ]
     },
     {
       "id": 5,
@@ -71,7 +83,11 @@
         "img/emotions/ali/traurig.JPG",
         "img/emotions/ali/aengstlich.JPG"
       ],
-      "correctAnswer": 4
+      "correctAnswer": 4,
+      "audio":[
+        "audio/k2i11.mp3",
+        "audio/k2i11ant.mp3"
+      ]
     },
     {
       "id": 6,
@@ -85,7 +101,11 @@
         "img/emotions/tim/aergerlich.JPG",
         "img/emotions/tim/froehlich.JPG"
       ],
-      "correctAnswer": 3
+      "correctAnswer": 3,
+      "audio":[
+        "audio/k2i12.mp3",
+        "audio/k2i12ant.mp3"
+      ]
     },
     {
       "id": 7,
@@ -99,7 +119,11 @@
         "img/emotions/ali/ekelnd.JPG",
         "img/emotions/ali/aengstlich.JPG"
       ],
-      "correctAnswer": 1
+      "correctAnswer": 1,
+      "audio":[
+        "audio/k2i13.mp3",
+        "audio/k2i13ant.mp3"
+      ]
     },
     {
       "id": 8,
@@ -113,7 +137,11 @@
         "img/emotions/tim/ekelnd.JPG",
         "img/emotions/tim/froehlich.JPG"
       ],
-      "correctAnswer": 3
+      "correctAnswer": 3,
+      "audio":[
+        "audio/k2i14.mp3",
+        "audio/k2i14ant.mp3"
+      ]
     },
     {
       "id": 9,
@@ -127,7 +155,11 @@
         "img/emotions/tim/ekelnd.JPG",
         "img/emotions/tim/ueberrascht.JPG"
       ],
-      "correctAnswer": 2
+      "correctAnswer": 2,
+      "audio":[
+        "audio/k2i15.mp3",
+        "audio/k2i15ant.mp3"
+      ]
     },
     {
       "id": 10,
@@ -141,26 +173,33 @@
         "img/emotions/tim/aergerlich.JPG",
         "img/emotions/tim/froehlich.JPG"
       ],
-      "correctAnswer": 1
+      "correctAnswer": 1,
+      "audio":[
+        "audio/k2i16.mp3",
+        "audio/k2i16ant.mp3"
+      ]
     }
   ],
   "story": [{
       "text": "Tim und Ali sind bei Tim zuhause und packen die Sachen ein, die sie für den Tag im Zoo brauchen.",
       "image": "img/story/k2intro.JPG",
       "id": 1,
-      "location": 1
+      "location": 1,
+      "audio": "audio/k2intro.mp3"
     },
     {
       "text": "Nachdem sie ihre Rucksäcke gepackt haben, machen sich Tim und Ali und Tims Eltern auf den Weg zum Zoo. Sie fahren mit der S-Bahn dort hin.",
       "image": "img/story/k2middle.JPG",
       "id": 2,
-      "location": 6
+      "location": 6,
+      "audio": "audio/k2intro2.mp3"
     },
     {
       "text": "",
       "image": "img/BelohnungKomp2.jpg",
       "id": 3,
-      "location": 11
+      "location": 11,
+      "audio": ""
     }
   ]
 }

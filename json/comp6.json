@@ -15,7 +15,11 @@
           "img/emotions/tim/froehlich.JPG"
         ]
       },
-      "correctAnswer1": 4
+      "correctAnswer1": 4,
+      "audio":[
+        "audio/k6i35.mp3",
+        "audio/k6i35ant.mp3",
+      ]
 
     },
 
@@ -35,7 +39,11 @@
           "img/emotions/ali/froehlich.JPG"
         ]
       },
-      "correctAnswer1": 2
+      "correctAnswer1": 2,
+      "audio":[
+        "audio/k6i36.mp3",
+        "audio/k6i36ant.mp3",
+      ]
     },
     {
       "id": 3,
@@ -53,7 +61,11 @@
           "img/emotions/ali/froehlich.JPG"
         ]
       },
-      "correctAnswer1": 3
+      "correctAnswer1": 3,
+      "audio":[
+        "audio/k6i37.mp3",
+        "audio/k6i37ant.mp3",
+      ]
     },
     {
       "id": 4,
@@ -79,7 +91,11 @@
           "img/emotions/ali/ueberrascht.JPG"
         ]
       },
-      "correctAnswer2": 1
+      "correctAnswer2": 1,
+      "audio":[
+        "audio/k6i38.mp3",
+        "audio/k6i38ant.mp3",
+      ]
     },
     {
       "id": 5,

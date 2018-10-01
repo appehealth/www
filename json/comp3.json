@@ -11,7 +11,11 @@
         "img/emotions/ali/traurigAengstlich.JPG",
         "img/emotions/ali/traurig.JPG"
       ],
-      "correctAnswer": 1
+      "correctAnswer": 1,
+      "audio":[
+        "audio/k3i17.mp3",
+        "audio/k3i17ant.mp3"
+      ]
     },
 
     {
@@ -26,7 +30,11 @@
         "img/emotions/ali/aengstlichFroehlich.JPG",
         "img/emotions/ali/traurigAengstlich.JPG"
       ],
-      "correctAnswer": 4
+      "correctAnswer": 4,
+      "audio":[
+        "audio/k3i18.mp3",
+        "audio/k3i18ant.mp3"
+      ]
     },
     {
       "id": 3,
@@ -40,7 +48,11 @@
         "img/emotions/ali/aengstlich.JPG",
         "img/emotions/ali/ueberraschtFroehlich.JPG"
       ],
-      "correctAnswer": 2
+      "correctAnswer": 2,
+      "audio":[
+        "audio/k3i19.mp3",
+        "audio/k3i19ant.mp3"
+      ]
     },
     {
       "id": 4,
@@ -54,7 +66,11 @@
         "img/emotions/tim/aengstlichAergerlich.JPG",
         "img/emotions/tim/traurig.JPG"
       ],
-      "correctAnswer": 2
+      "correctAnswer": 2,
+      "audio":[
+        "audio/k3i20.mp3",
+        "audio/k3i20ant.mp3"
+      ]
     },
     {
       "id": 5,
@@ -68,7 +84,11 @@
         "img/emotions/tim/ekelnd.JPG",
         "img/emotions/tim/froehlichAergerlich.JPG"
       ],
-      "correctAnswer": 4
+      "correctAnswer": 4,
+      "audio":[
+        "audio/k3i21.mp3",
+        "audio/k3i21ant.mp3"
+      ]
     },
     {
       "id": 6,
@@ -82,26 +102,33 @@
         "img/emotions/tim/ekelndTraurig.JPG",
         "img/emotions/tim/aergerlichFroehlich.JPG"
       ],
-      "correctAnswer": 2
+      "correctAnswer": 2,
+      "audio":[
+        "audio/k3i22.mp3",
+        "audio/k3i22ant.mp3"
+      ]
     }
   ],
   "story": [{
       "text": "Tim und Ali und Tims Eltern sind am Zoo angekommen. Aber bevor sie hineingehen können, müssen sie sich eine Eintrittskarte kaufen. Sie stellen sich am Eingang an der Warteschlange an und warten, bis sie an der Reihe sind.",
       "image": "img/story/k3intro.JPG",
       "id": 1,
-      "location": 1
+      "location": 1,
+      "audio": "audio/k3intro.mp3"
     },
     {
       "text": "Tim, Ali und Tims Eltern haben die Eintrittskarten gekauft und sind im Zoo angekommen. Tim und Ali wollen gleich los zu den Tieren. Aber Tims Eltern sagen, sie wollen sich einen Plan machen, wie sie den Tag im Zoo verbringen wollen und wo sie sich treffen, falls sie sich mal verlieren sollten.",
       "image": "img/story/k3middle.JPG",
       "id": 2,
-      "location": 5
+      "location": 5,
+      "audio": "audio/k3intro2.mp3"
     },
     {
       "text": "",
       "image": "img/BelohnungKomp3.jpg",
       "id": 3,
-      "location": 7
+      "location": 7,
+      "audio": ""
     }
   ]
 }
