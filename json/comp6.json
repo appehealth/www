@@ -13,14 +13,13 @@
           "img/emotions/tim/traurig.JPG",
           "img/emotions/tim/ekelnd.JPG",
           "img/emotions/tim/froehlich.JPG"
+        ],
+        "audio":[
+          "audio/k6i35.mp3",
+          "audio/k6i35ant.mp3",
         ]
       },
-      "correctAnswer1": 4,
-      "audio":[
-        "audio/k6i35.mp3",
-        "audio/k6i35ant.mp3",
-      ]
-
+      "correctAnswer1": 4
     },
 
     {
@@ -37,13 +36,13 @@
           "img/emotions/ali/traurig.JPG",
           "img/emotions/ali/ekelnd.JPG",
           "img/emotions/ali/froehlich.JPG"
+        ],
+        "audio":[
+          "audio/k6i36.mp3",
+          "audio/k6i36ant.mp3",
         ]
       },
-      "correctAnswer1": 2,
-      "audio":[
-        "audio/k6i36.mp3",
-        "audio/k6i36ant.mp3",
-      ]
+      "correctAnswer1": 2
     },
     {
       "id": 3,
@@ -59,14 +58,14 @@
           "img/emotions/ali/ekelnd.JPG",
           "img/emotions/ali/aergerlich.JPG",
           "img/emotions/ali/froehlich.JPG"
+        ],
+        "audio":[
+          "audio/k6i37.mp3",
+          "audio/k6i37ant.mp3",
         ]
       },
-      "correctAnswer1": 3,
-      "audio":[
-        "audio/k6i37.mp3",
-        "audio/k6i37ant.mp3",
-      ]
-    },
+      "correctAnswer1": 3
+    }
     {
       "id": 4,
       "story": ["Tim möchte unbedingt auf einem Pony reiten. Aber Ali findet die Ponys viel zu groß und zu schnell. Trotzdem stellt er sich zum Reiten an.",
