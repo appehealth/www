@@ -8,9 +8,6 @@
     <img src={{currentQuestion.storyImg}} class="storyimg" ng-show="showQuestionImg" />
   </div>
 
-
-
-
   <button type="button" class="btn btn-success btn-block btn-lg" ng-click="showQuestion()" ng-show="showQuestionImg">Weiter</button>
 
   <div class="container" ng-show="!showQuestionImg" id="answerImages">
@@ -25,7 +22,6 @@
       </tr>
     </table>
   </div>
-
 
   <button type="button" class="btn btn-success btn-block btn-lg" ng-show="!showQuestionImg && selectedAnswer>0" ng-click="confirmQuestion()">Weiter</button>
 </div>

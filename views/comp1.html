@@ -31,7 +31,7 @@
   <br/>
 
 
-  <button type="button" class="btn btn-success btn-block btn-lg" ng-click="nextQuestion()" ng-show="selectedAnswer > 0">Weiter</button>
+  <button type="button" class="btn btn-success btn-block btn-lg" ng-click="nextQuestion()" ng-style="{'visibility': selectedAnswer > 0 ? 'visible' : 'hidden'}">Weiter</button>
 </div>
 <div class="PlaceHolder" ng-show="selectedAnswer <= 0"> </div>
 <div ng-show="finished">
