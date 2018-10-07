@@ -128,10 +128,14 @@
 
   <div class="row">
     <div class="column">
-      <button type="button" class="btn btn-success">Deutsch</button>
+      <div class="btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-success btn-lg active">
+    <input type="checkbox" checked autocomplete="off"> Deutsch
+  </label>
+      </div>
     </div>
     <div class="column">
-      <h3>  und  </h3>
+      <h3> &nbsp; und &nbsp; </h3>
     </div>
     <div class="column">
       <div class="dropdown">
@@ -144,7 +148,13 @@
           <button class="dropdown-item" type="button" ng-click="language='Französisch'">Französisch</button>
           <button class="dropdown-item" type="button" ng-click="language='Spanisch'">Spanisch</button>
           <button class="dropdown-item" type="button" ng-click="language='Arabisch'">Arabisch</button>
-          <button class="dropdown-item" type="button" ng-click="language='...'">...</button>
+          <button class="dropdown-item" type="button" ng-click="language='Türkisch'">Türkisch</button>
+          <button class="dropdown-item" type="button" ng-click="language='Chinesisch'">Chinesisch</button>
+          <button class="dropdown-item" type="button" ng-click="language='Japanisch'">Japanisch</button>
+          <button class="dropdown-item" type="button" ng-click="language='Russisch'">Russisch</button>
+          <button class="dropdown-item" type="button" ng-click="language='Polnisch'">Polnisch</button>
+          <button class="dropdown-item" type="button" ng-click="language='Rumänisch'">Rumänisch</button>
+          <button class="dropdown-item" type="button" ng-click="language='eine andere Sprache'">eine andere Srpache</button>
         </div>
       </div>
     </div>
