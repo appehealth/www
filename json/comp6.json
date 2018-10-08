@@ -8,7 +8,7 @@
       ],
       "storyImg": "img/story/k6i1.JPG",
       "question1": {
-        "question": "Kannst Du mir zeigen, wie Ali sich wirklich fühlt? Ist er ängstlich oder ist er traurig oder ist er fröhlich oder ist er überrascht?",
+        "question": ["Kannst Du mir zeigen, wie Ali sich wirklich fühlt? Ist er ängstlich oder ist er traurig oder ist er fröhlich oder ist er überrascht?"],
         "answers": [
           "img/emotions/ali/aengstlich.JPG",
           "img/emotions/ali/traurig.JPG",
@@ -31,7 +31,7 @@
       ],
       "storyImg": "img/story/k6i2.JPG",
       "question1": {
-        "question": "Kannst Du mir zeigen, wie Ali sich wirklich fühlt? Ist er ängstlich oder ekelt er sich oder ist er ärgerlich oder ist er fröhlich?",
+        "question": ["Kannst Du mir zeigen, wie Ali sich wirklich fühlt? Ist er ängstlich oder ekelt er sich oder ist er ärgerlich oder ist er fröhlich?"],
         "answers": [
           "img/emotions/ali/aengstlich.JPG",
           "img/emotions/ali/ekelnd.JPG",
@@ -73,7 +73,7 @@
       ],
       "storyImg": "img/story/k6i4.JPG",
       "question1": {
-        "question": "Kannst Du mir zeigen, wie Alis Gesicht aussieht, wenn er zum Ponyreiten geht? Sieht sein Gesicht fröhlich aus oder sieht es traurig aus oder sieht es ängstlich aus oder sieht es überrascht aus?",
+        "question": ["Kannst Du mir zeigen, wie Alis Gesicht aussieht, wenn er zum Ponyreiten geht? Sieht sein Gesicht fröhlich aus oder sieht es traurig aus oder sieht es ängstlich aus oder sieht es überrascht aus?"],
         "answers": [
           "img/emotions/ali/froehlich.JPG",
           "img/emotions/ali/traurig.JPG",
@@ -83,7 +83,7 @@
       },
       "correctAnswer1": 1,
       "question2": {
-        "question": "Und kannst Du mir zeigen, wie Ali sich fühlt, wenn er zum Ponyreiten geht? Ist er ängstlich oder ist er fröhlich oder ist er traurig oder ist er überrascht?",
+        "question": ["Und kannst Du mir zeigen, wie Ali sich fühlt, wenn er zum Ponyreiten geht? Ist er ängstlich oder ist er fröhlich oder ist er traurig oder ist er überrascht?"],
         "answers": [
           "img/emotions/ali/aengstlich.JPG",
           "img/emotions/ali/froehlich.JPG",
@@ -105,7 +105,7 @@
       ],
       "storyImg": "img/story/k6i5.JPG",
       "question1": {
-        "question": "Kannst Du mir zeigen, wie Tims Gesicht aussieht, als das Mädchen immer wieder fragt, ob er ihr hilft? Sieht sein Gesicht fröhlich aus oder sieht es ängstlich aus oder sieht es ärgerlich aus oder sieht es aus als würde sich Tim ekeln?",
+        "question": ["Kannst Du mir zeigen, wie Tims Gesicht aussieht, als das Mädchen immer wieder fragt, ob er ihr hilft? Sieht sein Gesicht fröhlich aus oder sieht es ängstlich aus oder sieht es ärgerlich aus oder sieht es aus als würde sich Tim ekeln?"],
         "answers": [
           "img/emotions/tim/froehlich.JPG",
           "img/emotions/tim/aengstlich.JPG",
@@ -115,7 +115,7 @@
       },
       "correctAnswer1": 3,
       "question2": {
-        "question": "Und kannst Du mir zeigen, wie Tim sich fühlt, als ihn das Mädchen immer wieder fragt, ob er ihr hilft? Ist Tim ärgerlich oder ist er fröhlich oder ist er traurig oder ekelt er sich?",
+        "question": ["Und kannst Du mir zeigen, wie Tim sich fühlt, als ihn das Mädchen immer wieder fragt, ob er ihr hilft? Ist Tim ärgerlich oder ist er fröhlich oder ist er traurig oder ekelt er sich?"],
         "answers": [
           "img/emotions/tim/aergerlich.JPG",
           "img/emotions/tim/froehlich.JPG",
@@ -133,7 +133,7 @@
       ],
       "storyImg": "img/story/k6i6.JPG",
       "question1": {
-        "question": "Kannst Du mir zeigen, wie Alis Gesicht aussieht, als die Ziege ihm das Futter weggeschnappt hat? Sieht sein Gesicht traurig aus oder sieht es ängstlich aus oder sieht es fröhlich aus oder sieht es aus als würde sich Ali ekeln?",
+        "question": ["Kannst Du mir zeigen, wie Alis Gesicht aussieht, als die Ziege ihm das Futter weggeschnappt hat? Sieht sein Gesicht traurig aus oder sieht es ängstlich aus oder sieht es fröhlich aus oder sieht es aus als würde sich Ali ekeln?"],
         "answers": [
           "img/emotions/ali/traurig.JPG",
           "img/emotions/ali/aengstlich.JPG",
@@ -143,7 +143,7 @@
       },
       "correctAnswer1": 1,
       "question2": {
-        "question": "Und kannst Du mir zeigen wie Ali sich fühlt, als die Ziege ihm das Futter weggeschnappt hat? Ekelt Ali sich oder ist er ängstlich oder ist er fröhlich oder ist er traurig?",
+        "question": ["Und kannst Du mir zeigen wie Ali sich fühlt, als die Ziege ihm das Futter weggeschnappt hat? Ekelt Ali sich oder ist er ängstlich oder ist er fröhlich oder ist er traurig?"],
         "answers": [
           "img/emotions/ali/ekelnd.JPG",
           "img/emotions/ali/aengstlich.JPG",

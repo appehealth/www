@@ -5,7 +5,7 @@
         "Kannst Du mir zeigen, wie Ali sich fühlt, wenn er plötzlich seinen anderen Freund in der Warteschlange sieht?"
       ],
       "storyImg": "img/story/k3i1.JPG",
-      "question": "Ist er überrascht und fröhlich gleichzeitig oder ist er überrascht oder ist er traurig und ängstlich gleichzeitig oder ist er traurig?",
+      "question": ["Ist er überrascht und fröhlich gleichzeitig oder ist er überrascht oder ist er traurig und ängstlich gleichzeitig oder ist er traurig?"],
       "answers": [
         "img/emotions/ali/ueberraschtFroehlich.JPG",
         "img/emotions/ali/ueberrascht.JPG",
@@ -24,7 +24,7 @@
         "Kannst Du mir zeigen, wie Ali sich fühlt, wenn er sich die Sachen im Schaufenster nicht ansehen kann und auch noch ganz alleine bei den fremden Menschen in der Warteschlange stehen bleiben muss?"
       ],
       "storyImg": "img/story/k3i2.JPG",
-      "question": "Ist er traurig oder ist er überrascht oder ist er ängstlich und fröhlich gleichzeitig oder ist er traurig und ängstlich gleichzeitig?",
+      "question": ["Ist er traurig oder ist er überrascht oder ist er ängstlich und fröhlich gleichzeitig oder ist er traurig und ängstlich gleichzeitig?"],
       "answers": [
         "img/emotions/ali/traurig.JPG",
         "img/emotions/ali/ueberrascht.JPG",
@@ -43,7 +43,7 @@
         "Kannst Du mir zeigen wie Ali sich fühlt, wenn der Hund auf ihn zuspringt und er in einen Hundehaufen tritt?"
       ],
       "storyImg": "img/story/k3i3.JPG",
-      "question": "Ist er ärgerlich oder ist er ängstlich und ekelt sich gleichzeitig oder ist er ängstlich oder ist er überrascht und fröhlich gleichzeitig?",
+      "question": ["Ist er ärgerlich oder ist er ängstlich und ekelt sich gleichzeitig oder ist er ängstlich oder ist er überrascht und fröhlich gleichzeitig?"],
       "answers": [
         "img/emotions/ali/aergerlich.JPG",
         "img/emotions/ali/aengstlichEkelnd.JPG",
@@ -62,7 +62,7 @@
         "Kannst du mir zeigen, wie Tim sich fühlt, wenn er Geld bekommt aber seine Mutter ihm verbietet, es alles für Süßigkeiten auszugeben?"
       ],
       "storyImg": "img/story/k3i4.JPG",
-      "question": "Ist er überrascht oder ist er ängstlich und fröhlich gleichzeitig oder ekelt er sich oder ist er fröhlich und ärgerlich gleichzeitig?",
+      "question": ["Ist er überrascht oder ist er ängstlich und fröhlich gleichzeitig oder ekelt er sich oder ist er fröhlich und ärgerlich gleichzeitig?"],
       "answers": [
         "img/emotions/tim/ueberrascht.JPG",
         "img/emotions/tim/aengstlichFroehlich.JPG",
@@ -81,7 +81,7 @@
         "Kannst Du mir zeigen, wie Tim sich fühlt, als sie das Handy bekommen aber sein Vater ihn warnt, dass er keins bekommt, wenn er nicht gut darauf aufpasst?"
       ],
       "storyImg": "img/story/k3i5.JPG",
-      "question": "Ist er ängstlich oder ist er fröhlich und ängstlich gleichzeitig oder ekelt er sich und ist traurig gleichzeitig oder ist er ärgerlich und fröhlich gleichzeitig?",
+      "question": ["Ist er ängstlich oder ist er fröhlich und ängstlich gleichzeitig oder ekelt er sich und ist traurig gleichzeitig oder ist er ärgerlich und fröhlich gleichzeitig?"],
       "answers": [
         "img/emotions/tim/aengstlich.JPG",
         "img/emotions/tim/froehlichAengstlich.JPG",

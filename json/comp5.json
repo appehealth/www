@@ -6,7 +6,7 @@
       ],
       "storyImg": "img/story/k5i1.JPG",
       "question1": {
-        "question": "Ekelt er sich oder ist er traurig oder ist er überrascht oder ist er fröhlich?",
+        "question": ["Ekelt er sich oder ist er traurig oder ist er überrascht oder ist er fröhlich?"],
         "answers": [
           "img/emotions/ali/ekelnd.JPG",
           "img/emotions/ali/traurig.JPG",
@@ -27,7 +27,7 @@
       ],
       "storyImg": "img/story/k5i2.JPG",
       "question1": {
-        "question": "Ist er fröhlich oder ekelt er sich oder ist er ängstlich oder ist er ärgerlich?",
+        "question": ["Ist er fröhlich oder ekelt er sich oder ist er ängstlich oder ist er ärgerlich?"],
         "answers": [
           "img/emotions/tim/froehlich.JPG",
           "img/emotions/tim/ekelnd.JPG",
@@ -50,7 +50,7 @@
       ],
       "storyImg": "img/story/k5i3.JPG",
       "question1": {
-        "question": "Ist Tim fröhlich oder ist er ärgerlich oder ist er ängstlich oder ist er überrascht?",
+        "question": ["Ist Tim fröhlich oder ist er ärgerlich oder ist er ängstlich oder ist er überrascht?"],
         "answers": [
           "img/emotions/tim/froehlich.JPG",
           "img/emotions/tim/aergerlich.JPG",
@@ -64,7 +64,7 @@
       },
       "correctAnswer1": 1,
       "question2": {
-        "question": "Ist Ali ängstlich oder ist er fröhlich oder ist er traurig oder ist er überrascht?",
+        "question": ["Ist Ali ängstlich oder ist er fröhlich oder ist er traurig oder ist er überrascht?"],
         "answers": [
           "img/emotions/ali/aengstlich.JPG",
           "img/emotions/ali/froehlich.JPG",
@@ -87,7 +87,7 @@
       ],
       "storyImg": "img/story/k5i4.JPG",
       "question1": {
-        "question": "Ist Tim ängstlich oder ist er traurig oder ist er überrascht oder ist er fröhlich?",
+        "question": ["Ist Tim ängstlich oder ist er traurig oder ist er überrascht oder ist er fröhlich?"],
         "answers": [
           "img/emotions/tim/aengstlich.JPG",
           "img/emotions/tim/traurig.JPG",
@@ -101,7 +101,7 @@
       },
       "correctAnswer1": 2,
       "question2": {
-        "question": "Ekelt sich Ali oder ist er fröhlich oder ist er überrascht oder ist er ärgerlich?",
+        "question": ["Ekelt sich Ali oder ist er fröhlich oder ist er überrascht oder ist er ärgerlich?"],
         "answers": [
           "img/emotions/ali/ekelnd.JPG",
           "img/emotions/ali/froehlich.JPG",
@@ -124,7 +124,7 @@
       ],
       "storyImg": "img/story/k5i5.JPG",
       "question1": {
-        "question": "Ist Tim überrascht oder ekelt er sich oder ist er ärgerlich oder ist er traurig?",
+        "question": ["Ist Tim überrascht oder ekelt er sich oder ist er ärgerlich oder ist er traurig?"],
         "answers": [
           "img/emotions/tim/ueberrascht.JPG",
           "img/emotions/tim/ekelnd.JPG",
@@ -138,7 +138,7 @@
       },
       "correctAnswer1": 3,
       "question2": {
-        "question": "Und ist Ali überrascht oder ist er ängstlich oder ist er fröhlich oder ist er ärgerlich?",
+        "question": ["Und ist Ali überrascht oder ist er ängstlich oder ist er fröhlich oder ist er ärgerlich?"],
         "answers": [
           "img/emotions/ali/ueberrascht.JPG",
           "img/emotions/ali/aengstlich.JPG",
