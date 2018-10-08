@@ -1,7 +1,7 @@
 var app = {
   // Application Constructor
   initialize: function() {
-    console.log("index js initialize");
+    console.log( "index js initialize" );
     this.bindEvents();
   },
   // Bind Event Listeners
@@ -9,9 +9,8 @@ var app = {
   // Bind any events that are required on startup. Common events are:
   // 'load', 'deviceready', 'offline', and 'online'.
   bindEvents: function() {
-    document.addEventListener('deviceready', this.onDeviceReady, false);
-
-
+    document.addEventListener( 'deviceready', this.onDeviceReady, false );
+    document.addEventListener( 'backbutton', this.onBackButton, false );
   },
   // deviceready Event Handler
   //
@@ -19,22 +18,25 @@ var app = {
   // function, we must explicity call 'app.receivedEvent(...);'
   onDeviceReady: function() {
 
-    console.log("device ready");
-    app.receivedEvent('deviceready');
-
+    console.log( "device ready" );
+    app.receivedEvent( 'deviceready' );
 
   },
 
+  receivedEvent: function( id ) {
+    var parentElement = document.getElementById( id );
+    var listeningElement = parentElement.querySelector( '.listening' );
+    var receivedElement = parentElement.querySelector( '.received' );
 
-  // Update DOM on a Received Event
-  receivedEvent: function(id) {
-    var parentElement = document.getElementById(id);
-    var listeningElement = parentElement.querySelector('.listening');
-    var receivedElement = parentElement.querySelector('.received');
+    listeningElement.setAttribute( 'style', 'display:none;' );
+    receivedElement.setAttribute( 'style', 'display:block;' );
 
-    listeningElement.setAttribute('style', 'display:none;');
-    receivedElement.setAttribute('style', 'display:block;');
+    console.log( 'Received Event: ' + id );
+  },
 
-    console.log('Received Event: ' + id);
+  onBackButton: function() {
+    console.log( "backbutton" );
   }
-};
+}
+
+app.initialize();

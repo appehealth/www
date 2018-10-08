@@ -53,30 +53,6 @@
   <script type="text/javascript" src="js/services.js"></script>
   <script type="text/javascript" src="js/controllers.js"></script>
 
-  <!-- Disable Backbutton -->
-  <script type="text/javascript">
-    document.addEventListener("backbutton", function(e) {
-      e.preventDefault();
-    }, false);
-
-    document.addEventListener("pause", onPause, false);
-
-    function onPause() {
-      // Handle the pause event
-    }
-
-
-    document.addEventListener("resume", onResume, false);
-
-    function onResume() {
-      // Handle the resume event
-    }
-  </script>
-
-
-
-
-
   <title>ATEM</title>
 </head>
 
@@ -87,9 +63,7 @@
   </div>
   <br>
 
-
   <div ng-show="presentationMode">
-
 
     <nav aria-label="Page navigation example">
       <ul class="pagination">
@@ -109,12 +83,7 @@
   </div>
   <br>
 
-
-
   <div ng-view></div>
-
-
-
 
 </body>
 

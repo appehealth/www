@@ -2,7 +2,8 @@
   "questions": [{
       "id": 1,
       "story": ["Bei den Kindermenüs gibt es kleine Boxen mit Figuren von Tieren aus dem Zoo. Auf Alis Box ist ein Nilpferd abgebildet und deswegen denkt Ali, dass darin eine Figur von einem Nilpferd ist. Aber Ali mag Nilpferde gar nicht so gerne. In Wirklichkeit ist aber die Figur von einem Tiger in Alis Box. Und Tiger mag Ali sehr gern.",
-        "Kannst Du mit zeigen, wie Ali sich fühlt, als er die Box mit dem Nilpferd drauf sieht ?"],
+        "Kannst Du mit zeigen, wie Ali sich fühlt, als er die Box mit dem Nilpferd drauf sieht?"
+      ],
       "storyImg": "img/story/k5i1.JPG",
       "question1": {
         "question": "Ekelt er sich oder ist er traurig oder ist er überrascht oder ist er fröhlich?",
@@ -11,20 +12,19 @@
           "img/emotions/ali/traurig.JPG",
           "img/emotions/ali/ueberrascht.JPG",
           "img/emotions/ali/froehlich.JPG"
+        ],
+        "audio": [
+          "audio/k5i29.mp3",
+          "audio/k5i29ant.mp3"
         ]
       },
-      "correctAnswer1": 2,
-      "audio":[
-        "audio/k5i29.mp3",
-        "audio/k5i29ant.mp3"
-      ]
-
+      "correctAnswer1": 2
     },
-
     {
       "id": 2,
       "story": ["Zum Nachtisch hat sich Tims Mama einen heißen Kakao bestellt. Sie sagt, Tim darf probieren. Aber Tim denkt, dass der Kakao viel zu heiß ist und er sich den Mund verbrennt. In Wirklichkeit ist der Kakao aber gar nicht mehr so heiß.",
-        "Kannst Du mir zeigen, wie Tim sich fühlt, als er den heißen Kakao probieren soll ? "],
+        "Kannst Du mir zeigen, wie Tim sich fühlt, als er den heißen Kakao probieren soll? "
+      ],
       "storyImg": "img/story/k5i2.JPG",
       "question1": {
         "question": "Ist er fröhlich oder ekelt er sich oder ist er ängstlich oder ist er ärgerlich?",
@@ -33,18 +33,19 @@
           "img/emotions/tim/ekelnd.JPG",
           "img/emotions/tim/aengstlich.JPG",
           "img/emotions/tim/aergerlich.JPG"
+        ],
+        "audio": [
+          "audio/k5i30.mp3",
+          "audio/k5i30ant.mp3"
         ]
       },
-      "correctAnswer1": 3,
-      "audio":[
-        "audio/k5i30.mp3"
-        "audio/k5i30ant.mp3"
-      ]
+      "correctAnswer1": 3
     },
     {
       "id": 3,
       "story": ["Tims Vater sagt, Tim und Ali sollen sich etwas aus dem Kindermenü aussuchen. Tim denkt, die Portionen, die es im Kindermenü gibt, sind sehr klein. In Wirklichkeit sind die Portionen aber gar nicht klein. Das, was es im Kindermenü gibt, schmeckt den meisten Kindern sehr gut.",
-        "Kannst Du mir zeigen, wie Tim sich fühlt, als sein Vater ihm sagt, dass er sich etwas aus dem Kindermenü aussuchen soll ? "],
+        "Kannst Du mir zeigen, wie Tim sich fühlt, als sein Vater ihm sagt, dass er sich etwas aus dem Kindermenü aussuchen soll? "
+      ],
       "storyImg": "img/story/k5i3.JPG",
       "question1": {
         "question": "Ekelt er sich oder ist er fröhlich oder ist er überrascht oder ist er ärgerlich?",
@@ -53,20 +54,21 @@
           "img/emotions/tim/froehlich.JPG",
           "img/emotions/tim/ueberrascht.JPG",
           "img/emotions/tim/aergerlich.JPG"
+        ],
+        "audio": [
+          "audio/k5i31.mp3",
+          "audio/k5i31ant.mp3"
         ]
       },
-      "correctAnswer1": 4,
-      "audio":[
-        "audio/k5i31.mp3"
-        "audio/k5i31ant.mp3"
-      ]
+      "correctAnswer1": 4
     },
     {
       "id": 4,
       "story": ["Einige der Vögel fliegen ganz dicht über Tim und Alis Köpfen. Es sieht so aus, als würden sie gleich auf ihren Köpfen landen.",
         "Ali glaubt, wenn die Vögel auf ihren Köpfen oder Schultern landen, wird das ganz schön wehtun.",
         "Aber Tim glaubt nicht, dass es wehtun wird.Er glaubt, er kann dann die schönen weichen Federn der Vögel streicheln.",
-        "Kannst Du mir zeigen, wie Tim sich fühlt und wie Ali sich fühlt, als es so aussieht, als würden die Vögel auf ihren Köpfen landen ? "],
+        "Kannst Du mir zeigen, wie Tim sich fühlt und wie Ali sich fühlt, als es so aussieht, als würden die Vögel auf ihren Köpfen landen? "
+      ],
       "storyImg": "img/story/k5i4.JPG",
       "question1": {
         "question": "Ist Tim fröhlich oder ist er ärgerlich oder ist er ängstlich oder ist er überrascht?",
@@ -75,6 +77,10 @@
           "img/emotions/tim/aergerlich.JPG",
           "img/emotions/tim/aengstlich.JPG",
           "img/emotions/tim/ueberrascht.JPG"
+        ],
+        "audio": [
+          "audio/k5i32tim.mp3",
+          "audio/k5i32timant.mp3"
         ]
       },
       "correctAnswer1": 1,
@@ -85,22 +91,21 @@
           "img/emotions/ali/froehlich.JPG",
           "img/emotions/ali/traurig.JPG",
           "img/emotions/ali/ueberrascht.JPG"
+        ],
+        "audio": [
+          "audio/k5i32ali.mp3",
+          "audio/k5i32aliant.mp3"
         ]
       },
-      "correctAnswer2": 1,
-      "audio":[
-        "audio/k5i32tim.mp3",
-        "audio/k5i32timant.mp3",
-        "audio/k5i32ali.mp3",
-        "audio/k5i32aliant.mp3"
-      ]
+      "correctAnswer2": 1
     },
     {
       "id": 5,
       "story": ["Tim und Ali wollen gerne einen Pelikan mit Fisch füttern. Jetzt sehen sie, wie ein anderes Kind zusammen mit einem Tierpfleger einen Pelikan füttert.",
         "Tim glaubt, dass der Pelikan jetzt bestimmt schon satt ist und sie ihn jetzt nicht mehr füttern dürfen.",
         "Aber Ali denkt, sie dürfen den Pelikan jetzt auch füttern.",
-        "Kannst Du mir zeigen, wie Tim sich fühlt und wie Ali sich fühlt als sie sehen, dass das andere Kind den Pelikan füttert ? "],
+        "Kannst Du mir zeigen, wie Tim sich fühlt und wie Ali sich fühlt als sie sehen, dass das andere Kind den Pelikan füttert? "
+      ],
       "storyImg": "img/story/k5i5.JPG",
       "question1": {
         "question": "Ist Tim ängstlich oder ist er traurig oder ist er überrascht oder ist er fröhlich?",
@@ -109,6 +114,10 @@
           "img/emotions/tim/traurig.JPG",
           "img/emotions/tim/ueberrascht.JPG",
           "img/emotions/tim/froehlich.JPG"
+        ],
+        "audio": [
+          "audio/k5i33tim.mp3",
+          "audio/k5i33timant.mp3"
         ]
       },
       "correctAnswer1": 2,
@@ -119,22 +128,21 @@
           "img/emotions/ali/froehlich.JPG",
           "img/emotions/ali/ueberrascht.JPG",
           "img/emotions/ali/aergerlich.JPG"
+        ],
+        "audio": [
+          "audio/k5i33ali.mp3",
+          "audio/k5i33aliant.mp3"
         ]
       },
-      "correctAnswer2": 2,
-      "audio":[
-        "audio/k5i33tim.mp3",
-        "audio/k5i33timant.mp3",
-        "audio/k5i33ali.mp3",
-        "audio/k5i33aliant.mp3"
-      ]
+      "correctAnswer2": 2
     },
     {
       "id": 6,
       "story": ["Einige kleine Kinder haben in der großen Halle einen ganzen Schwarm von Vögeln so sehr erschreckt, dass die Vögel nun ganz aufgeregt umherfliegen.",
         "Tim findet, dass es ganz schön blöd von den Kindern war, dass sie die Vögel so erschreckt haben.",
         "Aber Ali findet das ganz schön gefährlich, weil er glaubt, die Vögel könnten gegen ihn fliegen und ihm wehtun.",
-        "Kannst Du mir zeigen, wie Tim sich fühlt und wie Ali sich fühlt, als die Vögel so aufgeregt umherfliegen, weil die Kinder sie erschreckt haben ? "],
+        "Kannst Du mir zeigen, wie Tim sich fühlt und wie Ali sich fühlt, als die Vögel so aufgeregt umherfliegen, weil die Kinder sie erschreckt haben? "
+      ],
       "storyImg": "img/story/k5i6.JPG",
       "question1": {
         "question": "Ist Tim überrascht oder ekelt er sich oder ist er ärgerlich oder ist er traurig?",
@@ -143,6 +151,10 @@
           "img/emotions/tim/ekelnd.JPG",
           "img/emotions/tim/aergerlich.JPG",
           "img/emotions/tim/traurig.JPG"
+        ],
+        "audio": [
+          "audio/k5i34tim.mp3",
+          "audio/k5i34timant.mp3"
         ]
       },
       "correctAnswer1": 3,
@@ -153,15 +165,13 @@
           "img/emotions/ali/aengstlich.JPG",
           "img/emotions/ali/froehlich.JPG",
           "img/emotions/ali/aergerlich.JPG"
+        ],
+        "audio": [
+          "audio/k5i34ali.mp3",
+          "audio/k5i34aliant.mp3"
         ]
       },
-      "correctAnswer2": 2,
-      "audio":[
-        "audio/k5i34tim.mp3",
-        "audio/k5i34timant.mp3",
-        "audio/k5i34ali.mp3",
-        "audio/k5i34aliant.mp3"
-      ]
+      "correctAnswer2": 2
     }
   ],
   "story": [{
