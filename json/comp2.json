@@ -4,7 +4,7 @@
       "story": ["Im Kühlschrank steht eine kleine Box. Tim möchte gerne wissen, was in der Box drin ist und öffnet sie. Es stinkt fürchterlich, weil da ein ganz alter, schlechter Käse drin ist.",
         "Kannst Du mir zeigen, wie Tim sich fühlt, wenn er den alten Käse riecht?"
       ],
-      "storyImg": "img/story/k2i2.JPG",
+      "storyImg": "img/story/k2i1.JPG",
       "question": "Ekelt er sich oder ist er traurig oder ist er fröhlich oder ist er ärgerlich?",
       "answers": [
         "img/emotions/tim/ekelnd.JPG",
@@ -22,7 +22,7 @@
     {"id": 2,
     "story": ["Tim ekelt sich sehr von dem Käse. Was könnte Tim am besten tun, damit er sich nicht mehr so vor dem Käse ekelt?"
     ],
-    "storyImg": "",
+    "storyImg": "img/story/k2i2.JPG",
     "question": ["1. Tim könnte sich vorstellen, dass in dem Käse bestimmt auch schon Würmer leben.",
       "2. Tim könnte den Käse schnell in die Mülltonne vor dem Haus werfen, damit es drinnen nicht mehr so stinkt",
       "3. Tim könnte seine Mutter anschreien, dass sie den Käse wegtun soll.",
@@ -84,7 +84,7 @@
       "story": ["Die S-Bahnfahrt dauert sehr lange und ist langweilig. Aber Tims Mutter hat für Tim und Ali ein Comicheft mitgenommen, das sie lesen können.",
         "Kannst Du mir zeigen, wie Ali sich fühlt wenn er das Comicheft in der S-Bahn lesen kann, weil die Fahrt so lange dauert?"
       ],
-      "storyImg": "img/story/k2i7.JPG",
+      "storyImg": "img/story/k2i5.JPG",
       "question": "Ist er fröhlich oder traurig oder ekelt er sich oder ist er ängstlich?",
       "answers": [
         "img/emotions/ali/froehlich.JPG",
@@ -103,7 +103,7 @@
       "story": ["An einer S-Bahn-Station steigen einige große, böse aussehende Männer mit bellenden Hunden in die S-Bahn ein. Und auf der anderen Straßenseite sieht Tim ein paar hübsche Blumen stehen.",
         "Kannst Du mir zeigen, wie Tim sich fühlt, wenn die Männer mit den Hunden in die S-Bahn einsteigen und er die Blumen sieht?"
       ],
-      "storyImg": "img/story/k2i9.JPG",
+      "storyImg": "img/story/k2i6.JPG",
       "question": "Ist er fröhlich oder ist er ängstlich oder ekelt er sich oder ist er überrascht?",
       "answers": [
         "img/emotions/tim/froehlich.JPG",
@@ -120,7 +120,7 @@
     {"id": 7,
     "story": ["Tim ist ängstlich, weil die großen, böse aussehende Männer mit den Hunden eingestiegen sind. Was könnte Tim am besten tun, damit er nicht mehr ängstlich ist?"
     ],
-    "storyImg": "",
+    "storyImg": "img/story/k2i7.JPG",
     "question": ["1. Tim könnte die Männer und die Hunde die ganze Zeit ansehen",
       "2. Tim kann nichts machen, damit er nicht mehr ängstlich ist.",
       "3. Tim könnte an die vielen tollen Tiere denken, die sie im Zoo bald sehen werden.",
@@ -142,7 +142,7 @@
       "story": ["Eigentlich kennt Tim den Weg, den die S-Bahn fährt. Sie fährt durch einige dunkle Tunnel. Aber heute fährt sie einen anderen Weg als sonst.",
         "Kannst Du mir zeigen, wie Tim sich fühlt, wenn die S-Bahn einen anderen Weg fährt als sonst und nicht durch die dunklen Tunnel?"
       ],
-      "storyImg": "img/story/k2i10.JPG",
+      "storyImg": "img/story/k2i8.JPG",
       "question": "Ist er überrascht oder ekelt er sich oder ist er ärgerlich oder ist er fröhlich?",
       "answers": [
         "img/emotions/tim/ueberrascht.JPG",
