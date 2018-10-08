@@ -6,7 +6,7 @@
         "Sein Gesicht sieht aber anders aus, als er sich wirklich fühlt.",
         "Hier siehst Du wie sein Gesicht aussieht. Es sieht fröhlich aus."
       ],
-      "storyImg": "img/story/k6i2.JPG",
+      "storyImg": "img/story/k6i1.JPG",
       "question1": {
         "question": "Kannst Du mir zeigen, wie Ali sich wirklich fühlt? Ist er ängstlich oder ist er traurig oder ist er fröhlich oder ist er überrascht?",
         "answers": [
@@ -29,7 +29,7 @@
         "Ali möchte sich nicht mit Tim streiten, weil der sich vorgedrängelt hat. Deswegen sieht sein Gesicht anders aus als er sich fühlt.",
         "Hier siehst Du wie sein Gesicht aussieht. Es sieht fröhlich aus."
       ],
-      "storyImg": "img/story/k6i3.JPG",
+      "storyImg": "img/story/k6i2.JPG",
       "question1": {
         "question": "Kannst Du mir zeigen, wie Ali sich wirklich fühlt? Ist er ängstlich oder ekelt er sich oder ist er ärgerlich oder ist er fröhlich?",
         "answers": [
@@ -48,7 +48,7 @@
     {"id": 3,
     "story": ["Ali ist ärgerlich, weil Tim sich vorgedrängelt hat. Was könnte Ali am besten tun, damit er nicht mehr ärgerlich ist?"
     ],
-    "storyImg": "",
+    "storyImg": "img/story/k6i3.JPG",
     "question": ["1. Ali könnte sich selbst auch vordrändeln.",
       "2. Ali könnte denken, dass Tim immer alles zuerst machen darf. ",
       "3. Ali kann nichts machen, damit er nicht mehr ärgerlich ist.",

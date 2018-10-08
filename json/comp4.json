@@ -50,7 +50,7 @@
       "choiceStory": ["Ein Tierpfleger kommt mit einem Eimer Elefantenhaufen vorbei und einige Kinder gucken sich das an. Andere Kinder machen mit ihren Kameras Fotos von den Elefanten.",
         "Würdest Du gerne einen großen Elefantenhaufen anschauen? Oder lieber ein paar Fotos von den Elefanten machen?"
       ],
-      "choiceStoryImg": "img/story/k4i3.JPG",
+      "choiceStoryImg": "img/story/k4i2.JPG",
       "choiceA": "anschauen",
       "choiceB": "Fotos machen",
       "choiceAudio": "k4i25.mp3",
@@ -58,7 +58,7 @@
         "story": ["Tim und Ali würden auch gerne einmal einen großen Elefantenhaufen anschauen. Aber dann geht der Tierpfleger auf einmal weg und zeigt einem anderen Kind den großen Haufen.",
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, wenn der Tierpfleger auf einmal weggeht und sie sich nicht den Haufen ansehen können?"
         ],
-        "storyImg": "img/story/k4i3A.JPG",
+        "storyImg": "img/story/k4i2A.JPG",
         "question": "Sind sie ängstlich oder ekeln sie sich oder sind sie fröhlich oder sind sie traurig?",
         "answers": [
           "img/emotions/both/aengstlich.JPG",
@@ -76,7 +76,7 @@
         "story": ["Tim und Ali würden sich den Haufen auch nicht so gerne anschauen, sondern lieber Fotos machen. Aber der Tierpfleger hält ihnen einfach den großen Eimer voll Elefantenhaufen unter die Nase.",
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, wenn der Tierpfleger ihnen auf einmal den Eimer Elefantenhaufen unter die Nase hält, obwohl sie nur Fotos machen wollten?"
         ],
-        "storyImg": "img/story/k4i3B.JPG",
+        "storyImg": "img/story/k4i2B.JPG",
         "question": "Sind sie ängstlich oder ekeln sie sich oder sind sie fröhlich oder sind sie traurig?",
         "answers": [
           "img/emotions/both/aengstlich.JPG",
@@ -96,7 +96,7 @@
       "choiceStory": ["Ein Tierpfleger kommt und möchte die Affen nach draußen lassen. Er fragt, ob ein Kind mitkommen möchte, um den Affen die Tür zu öffnen.",
         "Würdest Du gerne mit dem Tierpfleger zu den Affen gehen und ihnen die Tür öffnen, damit sie nach draußen gehen können?"
       ],
-      "choiceStoryImg": "img/story/k4i4.JPG",
+      "choiceStoryImg": "img/story/k4i3.JPG",
       "choiceA": "mitkommen",
       "choiceB": "bleiben",
       "choiceAudio": "audio/k4i26.mp3",
@@ -104,7 +104,7 @@
         "story": ["Tim und Ali möchten aber nicht mit dem Tierpfleger gehen. Sie wollen lieber draußen den Affen zusehen. Aber der Tierpfleger nimmt Tim und Ali einfach an der Hand und nimmt sie mit, damit sie die Tür öffnen.",
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als der Tierpfleger sie einfach mitnimmt, um die Tür für die Affen zu öffnen?"
         ],
-        "storyImg": "img/story/k4i4A.JPG",
+        "storyImg": "img/story/k4i3A.JPG",
         "question": "Sind sie ängstlich oder sind sie ärgerlich oder sind sie überrascht oder sind sie fröhlich?",
         "answers": [
           "img/emotions/both/aengstlich.JPG",
@@ -122,7 +122,7 @@
         "story": ["Tim und Ali möchten aber gerne mit dem Tierpfleger mitgehen. Aber der sagt, dass nur ein Kind mitkommen kann und nimmt einfach ein kleines Mädchen mit.",
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als der Tierpfleger nicht sie, sondern ein anderes kleines Mädchen mitnimmt?"
         ],
-        "storyImg": "img/story/k4i4B.JPG",
+        "storyImg": "img/story/k4i3B.JPG",
         "question": "Sind sie ängstlich oder sind sie ärgerlich oder sind sie überrascht oder sind sie fröhlich?",
         "answers": [
           "img/emotions/both/aengstlich.JPG",
@@ -142,7 +142,7 @@
       "choiceStory": ["Draußen versuchen einige Affen mit kleinen Stöcken Insekten aus einem Baumstamm zu holen. Neben dem Gehege kann man auch versuchen, Gummibärchen aus einem Baumstamm zu holen und sehen, ob man genauso gut ist wie die Affen.",
         "Würdest Du auch gerne versuchen, mit einem Stock Gummibärchen aus einem Baumstamm herauszuholen?"
       ],
-      "choiceStoryImg": "img/story/k4i5.JPG",
+      "choiceStoryImg": "img/story/k4i4.JPG",
       "choiceA": "versuchen",
       "choiceB": "weitergehen",
       "choiceAudio": "audio/k4i27.mp3",
@@ -150,7 +150,7 @@
         "story": ["Tim und Ali wollen das nicht so gerne versuchen. Sie finden das langweilig. Aber Tims Mutter sagt, sie müssen das mal versuchen.",
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als Tims Mama sagt, dass sie das versuchen müssen?"
         ],
-        "storyImg": "img/story/k4i5A.JPG",
+        "storyImg": "img/story/k4i4A.JPG",
         "question": "Sind sie überrascht oder sind sie traurig oder sind sie fröhlich oder ekeln sie sich?",
         "answers": [
           "img/emotions/both/ueberrascht.JPG",
@@ -168,7 +168,7 @@
         "story": ["Tim und Ali wollen aber gerne einmal versuchen, mit einem Stock Gummibärchen aus dem Baumstamm zu holen. Aber Tims Mama sagt, sie haben dafür keine Zeit.",
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als Tims Mama sagt, dass sie keine Zeit haben?"
         ],
-        "storyImg": "img/story/k4i5B.JPG",
+        "storyImg": "img/story/k4i4B.JPG",
         "question": "Sind sie überrascht oder sind sie traurig oder sind sie fröhlich oder ekeln sie sich?",
         "answers": [
           "img/emotions/both/ueberrascht.JPG",
@@ -188,7 +188,7 @@
       "choiceStory": ["In einem Gehege gibt es ganz kleine Äffchen, die immer an das Gitter kommen und sich dort Obststückchen von den Besuchern abholen.",
         "Würdest Du auch gerne die Äffchen am Gitter mit Obststückchen füttern wollen? Oder lieber nur dabei zusehen?"
       ],
-      "choiceStoryImg": "img/story/k4i6.JPG",
+      "choiceStoryImg": "img/story/k4i5.JPG",
       "choiceA": "füttern",
       "choiceB": "zusehen",
       "choiceAudio": "audio/k4i28.mp3",
@@ -196,7 +196,7 @@
         "story": ["Tim und Ali möchten aber nicht die Äffchen füttern. Sie wollen lieber nur zusehen und die Äffchen bleiben auch nur bei den anderen Kindern.",
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, wenn die Äffchen nur bei den anderen Kindern bleiben und sie nur beim Füttern zusehen dürfen?"
         ],
-        "storyImg": "img/story/k4i6A.JPG",
+        "storyImg": "img/story/k4i5A.JPG",
         "question": "Ekeln sie sich oder sind sie ängstlich oder sind sie traurig oder sind sie fröhlich?",
         "answers": [
           "img/emotions/both/ekelnd.JPG",
@@ -214,7 +214,7 @@
         "story": ["Tim und Ali möchten aber auch gerne die Äffchen mit Obst füttern. Und tatsächlich kommen die Äffchen zu ihnen und sie können ihnen ihr Obst geben.",
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, wenn die Äffchen zu ihnen kommen und sie sie mit Obst füttern können?"
         ],
-        "storyImg": "img/story/k4i6B.JPG",
+        "storyImg": "img/story/k4i5B.JPG",
         "question": "Ekeln sie sich oder sind sie ängstlich oder sind sie traurig oder sind sie fröhlich?",
         "answers": [
           "img/emotions/both/ekelnd.JPG",
