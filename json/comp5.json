@@ -42,27 +42,6 @@
       "correctAnswer1": 3
     },
     {
-      "id": 3,
-      "story": ["Tims Vater sagt, Tim und Ali sollen sich etwas aus dem Kindermenü aussuchen. Tim denkt, die Portionen, die es im Kindermenü gibt, sind sehr klein. In Wirklichkeit sind die Portionen aber gar nicht klein. Das, was es im Kindermenü gibt, schmeckt den meisten Kindern sehr gut.",
-        "Kannst Du mir zeigen, wie Tim sich fühlt, als sein Vater ihm sagt, dass er sich etwas aus dem Kindermenü aussuchen soll? "
-      ],
-      "storyImg": "img/story/k5i3.JPG",
-      "question1": {
-        "question": "Ekelt er sich oder ist er fröhlich oder ist er überrascht oder ist er ärgerlich?",
-        "answers": [
-          "img/emotions/tim/ekelnd.JPG",
-          "img/emotions/tim/froehlich.JPG",
-          "img/emotions/tim/ueberrascht.JPG",
-          "img/emotions/tim/aergerlich.JPG"
-        ],
-        "audio": [
-          "audio/k5i31.mp3",
-          "audio/k5i31ant.mp3"
-        ]
-      },
-      "correctAnswer1": 4
-    },
-    {
       "id": 4,
       "story": ["Einige der Vögel fliegen ganz dicht über Tim und Alis Köpfen. Es sieht so aus, als würden sie gleich auf ihren Köpfen landen.",
         "Ali glaubt, wenn die Vögel auf ihren Köpfen oder Schultern landen, wird das ganz schön wehtun.",
@@ -189,7 +168,7 @@
       "audio": "audio/k5intro2.mp3"
     },
     {
-      "text": "Super! Du hast einen weiteren Sticker gesammelt.",
+      "text": "",
       "image": "img/BelohnungKomp5.jpg",
       "id": 3,
       "location": 7
