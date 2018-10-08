@@ -35,6 +35,7 @@
 </div>
 <div class="PlaceHolder" ng-show="selectedAnswer <= 0"> </div>
 <div ng-show="finished">
+  <p class="storyText">{{albumText}}</p>
   <img src={{rewardImg}} class="storyimg" />
 
   <button type="button" class="btn btn-success btn-block btn-lg" ng-click="nextComp()">Weiter</button>
