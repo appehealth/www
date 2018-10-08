@@ -38,7 +38,7 @@
     </table>
   </div>
 
-  <button type="button" class="btn btn-success btn-block btn-lg" ng-show="!showQuestionImg && selectedAnswer>0" ng-click="confirmQuestion()">Weiter</button>
+  <button type="button" class="btn btn-success btn-block btn-lg" ng-click="confirmQuestion()" ng-style="{'visibility':(!showQuestionImg && selectedAnswer > 0) ? 'visible' : 'hidden'}">Weiter</button>
 </div>
 <div ng-show="displayMode==='story'">
   <p class="storyText">{{currentStory.text}}</p>

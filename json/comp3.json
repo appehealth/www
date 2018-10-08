@@ -13,7 +13,7 @@
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, wenn sie auf dem Rüssel des Elefanten sitzen dürfen?"
         ],
         "storyImg": "img/story/k4i1A.JPG",
-        "question": "Ekeln sie sich oder sind sie traurig oder sind sie fröhlich oder sind sie ärgerlich?",
+        "question": ["Ekeln sie sich oder sind sie traurig oder sind sie fröhlich oder sind sie ärgerlich?"],
         "answers": [
           "img/emotions/both/ekelnd.JPG",
           "img/emotions/both/traurig.JPG",
@@ -31,7 +31,7 @@
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, wenn sie nicht auf dem Rüssel des Elefanten sitzen müssen und nur zuschauen?"
         ],
         "storyImg": "img/story/k4i1B.JPG",
-        "question": "Ekeln sie sich oder sind sie traurig oder sind sie fröhlich oder sind sie ärgerlich?",
+        "question": ["Ekeln sie sich oder sind sie traurig oder sind sie fröhlich oder sind sie ärgerlich?"],
         "answers": [
           "img/emotions/both/ekelnd.JPG",
           "img/emotions/both/traurig.JPG",
@@ -59,7 +59,7 @@
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, wenn der Tierpfleger auf einmal weggeht und sie sich nicht den Haufen ansehen können?"
         ],
         "storyImg": "img/story/k4i2A.JPG",
-        "question": "Sind sie ängstlich oder ekeln sie sich oder sind sie fröhlich oder sind sie traurig?",
+        "question": ["Sind sie ängstlich oder ekeln sie sich oder sind sie fröhlich oder sind sie traurig?"],
         "answers": [
           "img/emotions/both/aengstlich.JPG",
           "img/emotions/both/ekelnd.JPG",
@@ -77,7 +77,7 @@
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, wenn der Tierpfleger ihnen auf einmal den Eimer Elefantenhaufen unter die Nase hält, obwohl sie nur Fotos machen wollten?"
         ],
         "storyImg": "img/story/k4i2B.JPG",
-        "question": "Sind sie ängstlich oder ekeln sie sich oder sind sie fröhlich oder sind sie traurig?",
+        "question": ["Sind sie ängstlich oder ekeln sie sich oder sind sie fröhlich oder sind sie traurig?"],
         "answers": [
           "img/emotions/both/aengstlich.JPG",
           "img/emotions/both/ekelnd.JPG",
@@ -105,7 +105,7 @@
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als der Tierpfleger sie einfach mitnimmt, um die Tür für die Affen zu öffnen?"
         ],
         "storyImg": "img/story/k4i3A.JPG",
-        "question": "Sind sie ängstlich oder sind sie ärgerlich oder sind sie überrascht oder sind sie fröhlich?",
+        "question": ["Sind sie ängstlich oder sind sie ärgerlich oder sind sie überrascht oder sind sie fröhlich?"],
         "answers": [
           "img/emotions/both/aengstlich.JPG",
           "img/emotions/both/aergerlich.JPG",
@@ -123,7 +123,7 @@
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als der Tierpfleger nicht sie, sondern ein anderes kleines Mädchen mitnimmt?"
         ],
         "storyImg": "img/story/k4i3B.JPG",
-        "question": "Sind sie ängstlich oder sind sie ärgerlich oder sind sie überrascht oder sind sie fröhlich?",
+        "question": ["Sind sie ängstlich oder sind sie ärgerlich oder sind sie überrascht oder sind sie fröhlich?"],
         "answers": [
           "img/emotions/both/aengstlich.JPG",
           "img/emotions/both/aergerlich.JPG",
@@ -151,7 +151,7 @@
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als Tims Mama sagt, dass sie das versuchen müssen?"
         ],
         "storyImg": "img/story/k4i4A.JPG",
-        "question": "Sind sie überrascht oder sind sie traurig oder sind sie fröhlich oder ekeln sie sich?",
+        "question": ["Sind sie überrascht oder sind sie traurig oder sind sie fröhlich oder ekeln sie sich?"],
         "answers": [
           "img/emotions/both/ueberrascht.JPG",
           "img/emotions/both/traurig.JPG",
@@ -169,7 +169,7 @@
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als Tims Mama sagt, dass sie keine Zeit haben?"
         ],
         "storyImg": "img/story/k4i4B.JPG",
-        "question": "Sind sie überrascht oder sind sie traurig oder sind sie fröhlich oder ekeln sie sich?",
+        "question": ["Sind sie überrascht oder sind sie traurig oder sind sie fröhlich oder ekeln sie sich?"],
         "answers": [
           "img/emotions/both/ueberrascht.JPG",
           "img/emotions/both/traurig.JPG",
@@ -197,7 +197,7 @@
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, wenn die Äffchen nur bei den anderen Kindern bleiben und sie nur beim Füttern zusehen dürfen?"
         ],
         "storyImg": "img/story/k4i5A.JPG",
-        "question": "Ekeln sie sich oder sind sie ängstlich oder sind sie traurig oder sind sie fröhlich?",
+        "question": ["Ekeln sie sich oder sind sie ängstlich oder sind sie traurig oder sind sie fröhlich?"],
         "answers": [
           "img/emotions/both/ekelnd.JPG",
           "img/emotions/both/aengstlich.JPG",
@@ -215,7 +215,7 @@
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, wenn die Äffchen zu ihnen kommen und sie sie mit Obst füttern können?"
         ],
         "storyImg": "img/story/k4i5B.JPG",
-        "question": "Ekeln sie sich oder sind sie ängstlich oder sind sie traurig oder sind sie fröhlich?",
+        "question": ["Ekeln sie sich oder sind sie ängstlich oder sind sie traurig oder sind sie fröhlich?"],
         "answers": [
           "img/emotions/both/ekelnd.JPG",
           "img/emotions/both/aengstlich.JPG",

@@ -153,6 +153,7 @@ angular.module('ATEM-App.controllers', [])
 
     $scope.selectAnswer = function(ans) {
       $scope.selectedAnswer = ans;
+      window.scrollTo(0, document.body.scrollHeight);
       fileService.logEvent('Select answer ' + ans, 2, $scope.currentQuestion.id);
     }
 
@@ -235,6 +236,7 @@ angular.module('ATEM-App.controllers', [])
 
     $scope.selectAnswer = function(ans) {
       $scope.selectedAnswer = ans;
+      window.scrollTo(0, document.body.scrollHeight);
       fileService.logEvent('Select answer ' + ans, 4, $scope.currentQuestion.id);
     }
 
@@ -334,6 +336,7 @@ angular.module('ATEM-App.controllers', [])
 
     $scope.selectAnswer = function(ans) {
       $scope.selectedAnswer = ans;
+      window.scrollTo(0, document.body.scrollHeight);
       fileService.logEvent('Select answer ' + ans, 3, $scope.currentChoice.id);
     }
 
@@ -449,6 +452,7 @@ angular.module('ATEM-App.controllers', [])
 
     $scope.selectAnswer = function(ans) {
       $scope.selectedAnswer = ans;
+      window.scrollTo(0, document.body.scrollHeight);
       fileService.logEvent('Select answer ' + ans, 5, $scope.currentQuestion.id);
     }
 
@@ -557,6 +561,7 @@ angular.module('ATEM-App.controllers', [])
 
     $scope.selectAnswer = function(ans) {
       $scope.selectedAnswer = ans;
+      window.scrollTo(0, document.body.scrollHeight);
       fileService.logEvent('Select answer ' + ans, 5, $scope.currentQuestion.id);
     }
 
