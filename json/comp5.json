@@ -42,7 +42,7 @@
       "correctAnswer1": 3
     },
     {
-      "id": 4,
+      "id": 3,
       "story": ["Einige der Vögel fliegen ganz dicht über Tim und Alis Köpfen. Es sieht so aus, als würden sie gleich auf ihren Köpfen landen.",
         "Ali glaubt, wenn die Vögel auf ihren Köpfen oder Schultern landen, wird das ganz schön wehtun.",
         "Aber Tim glaubt nicht, dass es wehtun wird.Er glaubt, er kann dann die schönen weichen Federn der Vögel streicheln.",
@@ -79,7 +79,7 @@
       "correctAnswer2": 1
     },
     {
-      "id": 5,
+      "id": 4,
       "story": ["Tim und Ali wollen gerne einen Pelikan mit Fisch füttern. Jetzt sehen sie, wie ein anderes Kind zusammen mit einem Tierpfleger einen Pelikan füttert.",
         "Tim glaubt, dass der Pelikan jetzt bestimmt schon satt ist und sie ihn jetzt nicht mehr füttern dürfen.",
         "Aber Ali denkt, sie dürfen den Pelikan jetzt auch füttern.",
@@ -116,7 +116,7 @@
       "correctAnswer2": 2
     },
     {
-      "id": 6,
+      "id": 5,
       "story": ["Einige kleine Kinder haben in der großen Halle einen ganzen Schwarm von Vögeln so sehr erschreckt, dass die Vögel nun ganz aufgeregt umherfliegen.",
         "Tim findet, dass es ganz schön blöd von den Kindern war, dass sie die Vögel so erschreckt haben.",
         "Aber Ali findet das ganz schön gefährlich, weil er glaubt, die Vögel könnten gegen ihn fliegen und ihm wehtun.",
@@ -164,14 +164,14 @@
       "text": "Dann geht es weiter zu den Vögeln. Es gibt eine große Halle, in die man hineingehen kann und in der dann ganz viele verschiedene Vögel um einen herumfliegen, ohne, dass noch ein Gitter oder eine Glasscheibe dazwischen ist.",
       "image": "img/story/k5middle.JPG",
       "id": 2,
-      "location": 4,
+      "location": 3,
       "audio": "audio/k5intro2.mp3"
     },
     {
       "text": "",
       "image": "img/BelohnungKomp5.jpg",
       "id": 3,
-      "location": 7
+      "location": 6
     }
   ]
 }

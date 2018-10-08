@@ -1,6 +1,6 @@
 {
   "questions": [{
-      "id": 2,
+      "id": 1,
       "story": ["Ali sieht bei den Schlangen einen anderen Freund aus der Schule. Der will sich gleich mit Ali zusammen die Schlangen anschauen.Aber Ali möchte eigentlich viel lieber mit Tim die Schlangen ansehen und nicht dem anderen Schulfreund.",
         "Ali möchte seinem anderen Schulfreund nicht wehtun und schaut sich mit ihm die Schlangen an, obwohl er das lieber mit Tim machen würde.",
         "Sein Gesicht sieht aber anders aus, als er sich wirklich fühlt.",
@@ -23,7 +23,7 @@
       "correctAnswer1": 2
     },
     {
-      "id": 3,
+      "id": 2,
       "story": ["Es gibt kleine Fische, die sich streicheln lassen. Tim und Ali finden das toll und wollen das auch gerne machen. Aber es darf immer nur ein Kind seine Hand in das Becken reinhalten.",
         "Ali wollte eigentlich zuerst drankommen aber dann kommt Tim und drängelt sich ganz schnell vor.",
         "Ali möchte sich nicht mit Tim streiten, weil der sich vorgedrängelt hat. Deswegen sieht sein Gesicht anders aus als er sich fühlt.",
@@ -44,7 +44,28 @@
         ]
       },
       "correctAnswer1": 3
-    } {
+    },
+    {"id": 3,
+    "story": ["Ali ist ärgerlich, weil Tim sich vorgedrängelt hat. Was könnte Ali am besten tun, damit er nicht mehr ärgerlich ist?"
+    ],
+    "storyImg": "",
+    "question": ["1. Ali könnte sich selbst auch vordrändeln.",
+      "2. Ali könnte denken, dass Tim immer alles zuerst machen darf. ",
+      "3. Ali kann nichts machen, damit er nicht mehr ärgerlich ist.",
+      "4. Ali könnte denken, dass er die Fische ja trotzdem auch anfassen darf."],
+    "answers": [
+      "img/emotions/one.png",
+      "img/emotions/two.png",
+      "img/emotions/three.png",
+      "img/emotions/four.png"
+    ],
+    "correctAnswer": 4,
+    "audio": [
+      "audio/.mp3",
+      "audio/.mp3"
+    ]
+    },
+     {
       "id": 4,
       "story": ["Tim möchte unbedingt auf einem Pony reiten. Aber Ali findet die Ponys viel zu groß und zu schnell. Trotzdem stellt er sich zum Reiten an.",
         "Ali möchte nicht, dass Tim denkt, dass er ein Angsthase ist und deswegen geht er mit zum Ponyreiten."

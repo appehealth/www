@@ -46,7 +46,7 @@
       }
     },
     {
-      "id": 3,
+      "id": 2,
       "choiceStory": ["Ein Tierpfleger kommt mit einem Eimer Elefantenhaufen vorbei und einige Kinder gucken sich das an. Andere Kinder machen mit ihren Kameras Fotos von den Elefanten.",
         "Würdest Du gerne einen großen Elefantenhaufen anschauen? Oder lieber ein paar Fotos von den Elefanten machen?"
       ],
@@ -92,7 +92,7 @@
       }
     },
     {
-      "id": 4,
+      "id": 3,
       "choiceStory": ["Ein Tierpfleger kommt und möchte die Affen nach draußen lassen. Er fragt, ob ein Kind mitkommen möchte, um den Affen die Tür zu öffnen.",
         "Würdest Du gerne mit dem Tierpfleger zu den Affen gehen und ihnen die Tür öffnen, damit sie nach draußen gehen können?"
       ],
@@ -138,7 +138,7 @@
       }
     },
     {
-      "id": 5,
+      "id": 4,
       "choiceStory": ["Draußen versuchen einige Affen mit kleinen Stöcken Insekten aus einem Baumstamm zu holen. Neben dem Gehege kann man auch versuchen, Gummibärchen aus einem Baumstamm zu holen und sehen, ob man genauso gut ist wie die Affen.",
         "Würdest Du auch gerne versuchen, mit einem Stock Gummibärchen aus einem Baumstamm herauszuholen?"
       ],
@@ -184,7 +184,7 @@
       }
     },
     {
-      "id": 6,
+      "id": 5,
       "choiceStory": ["In einem Gehege gibt es ganz kleine Äffchen, die immer an das Gitter kommen und sich dort Obststückchen von den Besuchern abholen.",
         "Würdest Du auch gerne die Äffchen am Gitter mit Obststückchen füttern wollen? Oder lieber nur dabei zusehen?"
       ],
@@ -241,14 +241,14 @@
       "text": "Als nächstes besuchen Tim und Ali und Tims Eltern die Affen. Es gibt ein großes Affenhaus, wo es sehr warm ist und viele verschiedene Affen in großen Hallen leben. Außerdem gibt es einen Bereich draußen, der von einem Wassergraben umgeben ist, damit die Affen nicht weglaufen können.",
       "image": "img/story/k4middle.JPG",
       "id": 2,
-      "location": 4,
+      "location": 3,
       "audio": "audio/k4intro2.mp3"
     },
     {
       "text": "",
       "image": "img/BelohnungKomp4.jpg",
       "id": 3,
-      "location": 7,
+      "location": 6,
       "audio": ""
     }
   ]

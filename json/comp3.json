@@ -57,7 +57,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": 4,
       "story": ["Tim und Ali bekommen von Tims Eltern jeder etwas Geld geschenkt, das sie im Zoo ausgeben können. Tim und Ali sprechen darüber, wie viele Süßigkeiten sie von dem Geld kaufen können. Aber Tims Mutter verbietet Tim, das ganze Geld nur für Süßigkeiten auszugeben.",
         "Kannst du mir zeigen, wie Tim sich fühlt, wenn er Geld bekommt aber seine Mutter ihm verbietet, es alles für Süßigkeiten auszugeben?"
       ],
@@ -76,7 +76,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": 5,
       "story": ["Für die Zeit im Zoo bekommen Tim und Ali ein Handy von Tims Eltern, damit sie anrufen können, wenn sie sich mal verlieren sollten. Tim hat sich schon lange ein Handy gewünscht. Aber Tims Vater warnt sie: Wenn sie nicht gut auf das Handy aufpassen, wird Tim auch später kein Handy bekommen.",
         "Kannst Du mir zeigen, wie Tim sich fühlt, als sie das Handy bekommen aber sein Vater ihn warnt, dass er keins bekommt, wenn er nicht gut darauf aufpasst?"
       ],
@@ -96,24 +96,24 @@
     }
   ],
   "story": [{
-      "text": "Tim und Ali und Tims Eltern sind am Zoo angekommen. Aber bevor sie hineingehen können, müssen sie sich eine Eintrittskarte kaufen. Sie stellen sich am Eingang an der Warteschlange an und warten, bis sie an der Reihe sind.",
+      "text": "Tim und Ali und Tims Eltern wollen sich im Zooladen ein Andenken kaufen. Sie stellen sich am Eingang an der Warteschlange an und warten, bis sie an der Reihe sind.",
       "image": "img/story/k3intro.JPG",
       "id": 1,
       "location": 1,
       "audio": "audio/k3intro.mp3"
     },
     {
-      "text": "Tim, Ali und Tims Eltern haben die Eintrittskarten gekauft und sind im Zoo angekommen. Tim und Ali wollen gleich los zu den Tieren. Aber Tims Eltern sagen, sie wollen sich einen Plan machen, wie sie den Tag im Zoo verbringen wollen und wo sie sich treffen, falls sie sich mal verlieren sollten.",
+      "text": "Tim, Ali und Tims Eltern haben sich ihre Andenken gekauft. Tim und Ali wollen gleich weiter zu den anderen Tieren. Aber Tims Eltern sagen, sie wollen noch etwas mit ihnen besprechen.",
       "image": "img/story/k3middle.JPG",
       "id": 2,
-      "location": 5,
+      "location": 4,
       "audio": "audio/k3intro2.mp3"
     },
     {
       "text": "",
       "image": "img/BelohnungKomp3.jpg",
       "id": 3,
-      "location": 7,
+      "location": 6,
       "audio": ""
     }
   ]
