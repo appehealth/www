@@ -17,7 +17,7 @@
         ],
         "audio": [
           "audio/k6i36.mp3",
-          "audio/k6i36ant.mp3",
+          "audio/k6i36ant.mp3"
         ]
       },
       "correctAnswer1": 2
@@ -40,32 +40,33 @@
         ],
         "audio": [
           "audio/k6i37.mp3",
-          "audio/k6i37ant.mp3",
+          "audio/k6i37ant.mp3"
         ]
       },
       "correctAnswer1": 3
     },
-    {"id": 3,
-    "story": ["Ali ist ärgerlich, weil Tim sich vorgedrängelt hat. Was könnte Ali am besten tun, damit er nicht mehr ärgerlich ist?"
-    ],
-    "storyImg": "img/story/k6i3.JPG",
-    "question": ["1. Ali könnte sich selbst auch vordrändeln.",
-      "2. Ali könnte denken, dass Tim immer alles zuerst machen darf. ",
-      "3. Ali kann nichts machen, damit er nicht mehr ärgerlich ist.",
-      "4. Ali könnte denken, dass er die Fische ja trotzdem auch anfassen darf."],
-    "answers": [
-      "img/emotions/one.png",
-      "img/emotions/two.png",
-      "img/emotions/three.png",
-      "img/emotions/four.png"
-    ],
-    "correctAnswer": 4,
-    "audio": [
-      "audio/.mp3",
-      "audio/.mp3"
-    ]
+    {
+      "id": 3,
+      "story": ["Ali ist ärgerlich, weil Tim sich vorgedrängelt hat. Was könnte Ali am besten tun, damit er nicht mehr ärgerlich ist?"],
+      "storyImg": "img/story/k6i3.JPG",
+      "question": ["1. Ali könnte sich selbst auch vordrändeln.",
+        "2. Ali könnte denken, dass Tim immer alles zuerst machen darf. ",
+        "3. Ali kann nichts machen, damit er nicht mehr ärgerlich ist.",
+        "4. Ali könnte denken, dass er die Fische ja trotzdem auch anfassen darf."
+      ],
+      "answers": [
+        "img/emotions/one.png",
+        "img/emotions/two.png",
+        "img/emotions/three.png",
+        "img/emotions/four.png"
+      ],
+      "correctAnswer": 4,
+      "audio": [
+        "audio/.mp3",
+        "audio/.mp3"
+      ]
     },
-     {
+    {
       "id": 4,
       "story": ["Tim möchte unbedingt auf einem Pony reiten. Aber Ali findet die Ponys viel zu groß und zu schnell. Trotzdem stellt er sich zum Reiten an.",
         "Ali möchte nicht, dass Tim denkt, dass er ein Angsthase ist und deswegen geht er mit zum Ponyreiten."
@@ -93,7 +94,7 @@
       "correctAnswer2": 1,
       "audio": [
         "audio/k6i38.mp3",
-        "audio/k6i38ant.mp3",
+        "audio/k6i38ant.mp3"
       ]
     },
     {
