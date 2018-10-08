@@ -15,7 +15,7 @@
   <p class="storyText" ng-repeat="y in currentQuestion.story">{{y}}</p>
   <img src="img/repeat.png" style="margin:2%;" ng-click="repeatAudio()">
   <br>
-  <p ng-show="!showQuestionImg" class="storyText">{{currentQuestion.question}}</p>
+  <p ng-show="!showQuestionImg" class="storyText" ng-repeat="v in currentQuestion.question">{{v}}</p>
 
   <div class="text-center">
     <img src={{currentQuestion.questionImg}} class="storyimg" ng-show="showQuestionImg" />
