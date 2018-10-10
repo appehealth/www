@@ -61,8 +61,6 @@ angular.module('ATEM-App.services', [])
           writeFile(files[SENSORID], sensorBuffer.join('\n') + '\n', true);
           sensorBuffer = [];
         }
-
-
       }
     }
 
@@ -183,6 +181,39 @@ angular.module('ATEM-App.services', [])
       createFile("sensor" + userID + ".csv", 'Timestamp;X;Y;Z' + '\n', SENSORID);
       createFile("events" + userID + ".txt", '', EVENTID);
       createFile("results" + userID + ".txt", "Alter: " + ageInMonths + " Monate" + '\n' + "Geschlecht: " + gender + '\n' + "Sprache: " + language + '\n', RESULTID);
+    }
+
+    function logEnd() {
+      if (files.length > 0) {
+        var endTime = Date.now();
+        logEvent('Test finished', 0, 0);
+        clearInterval(sensorInterval);
+        writeFile(files[SENSORID], sensorBuffer.join('\n') + '\n', true);
+        sensorBuffer = [];
+        logResult("Bearbeitungszeit: " + printTime(startTime - endTime));
+        files = [];
+      }
+
+      function printTime(ms) {
+        var hr = ms / 36000;
+        time -= (hr * 36000);
+        var min = ms / 6000;
+        ms -= (min * 6000);
+        var sec = ms / 1000;
+        ms -= (sec * 1000);
+        var msg;
+        if (hr > 0) {
+          msg = hr.toString() + ':';
+          min < 10 ? msg += '0';
+        }
+        msg += min.toString() + ':';
+        sec < 10 ? msg += '0';
+        mgs += sec.toString() + ':';
+        ms < 100 ? msg += '0';
+        ms < 10 ? msg += '0';
+        msg += ms;
+        return msg;
+      }
     }
 
     function startSensor() {

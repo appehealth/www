@@ -87,8 +87,7 @@ angular.module('ATEM-App.controllers', [])
       if ($scope.selectedAnswer != $scope.currentQuestion.correctAnswer) {
         $rootScope.mistakes1_2++;
         if ($rootScope.mistakes1_2 == 4) {
-          fileService.logResult('Zu viele Fehler in Komponente 1. Test wird beendet.');
-          window.location = '#/results';
+          fileService.logResult('Zu viele Fehler in Komponente 1. Test wird nach Komponente 2 beendet.');
         }
       }
       $scope.selectedAnswer = 0;
@@ -126,8 +125,7 @@ angular.module('ATEM-App.controllers', [])
         $rootScope.mistakes1_2++;
         console.log("fehler: " + $rootScope.mistakes1_2);
         if ($rootScope.mistakes1_2 == 4) {
-          fileService.logResult('Zu viele Fehler in Komponente 1 und 2. Test wird beendet.');
-          window.location = '#/results';
+          fileService.logResult('Zu viele Fehler in Komponente 1 und 2. Test wird nach dieser Komponente beendet.');
         }
       }
 
@@ -164,7 +162,7 @@ angular.module('ATEM-App.controllers', [])
     $scope.continueStory = function() {
       audioService.stopAudio();
       if ($scope.currentStory.id == story.length) {
-        window.location = '#/comp3';
+        $rootScope.mistakes1_2 < 4 ? window.location = '#/comp3' : window.location = '#/results';
       } else {
         if (($scope.currentStory.location != story[$scope.currentStory.id].location) && $scope.currentStory.location <= numberOfQuestions) {
           $scope.displayMode = 'question';
