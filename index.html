@@ -65,7 +65,7 @@
 
   <div ng-show="presentationMode">
 
-    <nav aria-label="Page navigation example">
+    <!-- <nav aria-label="Page navigation example">
       <ul class="pagination">
         <li class="page-item"><a class="page-link" href="#/">Titel</a></li>
         <li class="page-item"><a class="page-link" href="#/intro">Anmeldung</a></li>
@@ -78,7 +78,24 @@
         <li class="page-item"><a class="page-link" href="#/results">Results</a></li>
 
       </ul>
-    </nav>
+    </nav> -->
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Komponenten
+  </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#/">Titel</a>
+        <a class="dropdown-item" href="#/intro">Anmeldung</a>
+        <a class="dropdown-item" href="#/comp1">Komp1</a>
+        <a class="dropdown-item" href="#/comp2">Komp2</a>
+        <a class="dropdown-item" href="#/comp3">Komp3</a>
+        <a class="dropdown-item" href="#/comp4">Komp4</a>
+        <a class="dropdown-item" href="#/comp5">Komp5</a>
+        <a class="dropdown-item" href="#/comp6">Komp6</a>
+        <a class="dropdown-item" href="#/results">Ende</a>
+      </div>
+    </div>
 
   </div>
   <br>
