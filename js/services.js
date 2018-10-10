@@ -33,9 +33,9 @@ angular.module('ATEM-App.services', [])
     var filesystem;
 
     window.addEventListener('devicemotion', function(event) {
-      x = event.acceleration.x;
-      y = event.acceleration.y;
-      z = event.acceleration.z;
+      x = event.accelerationIncludingGravity.x;
+      y = event.accelerationIncludingGravity.y;
+      z = event.accelerationIncludingGravity.z;
     });
 
     function requestFS() {
