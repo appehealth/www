@@ -59,6 +59,7 @@ angular.module('ATEM-App.services', [])
         sensorBuffer.push(timestamp + '; ' + x + '; ' + y + '; ' + z);
         if (sensorBuffer.length == 10) {
           writeFile(files[SENSORID], sensorBuffer.join('\n') + '\n', true);
+          sensorBuffer = [];
         }
 
 
