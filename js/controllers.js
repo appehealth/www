@@ -3,6 +3,7 @@ angular.module('ATEM-App.controllers', [])
   .controller('StartCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
 
     $scope.normalClick = function() {
+      $rootScope.presentationMode = true;
       window.location = '#/intro';
     }
 
@@ -121,8 +122,9 @@ angular.module('ATEM-App.controllers', [])
       audioService.stopAudio();
       fileService.logAnswer(2, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer);
       fileService.logEvent('Confirm answer', 2, $scope.currentQuestion.id)
-      if ($scope.selectedAnswer != $scope.currentQuestion.correctAnswer) {
+      if ($scope.selectedAnswer != $scope.currentQuestion.correctAnswer && !$scope.currentQuestion.isRegItem) {
         $rootScope.mistakes1_2++;
+        console.log("fehler: " + $rootScope.mistakes1_2);
         if ($rootScope.mistakes1_2 == 4) {
           fileService.logResult('Zu viele Fehler in Komponente 1 und 2. Test wird beendet.');
           window.location = '#/results';
@@ -549,7 +551,7 @@ angular.module('ATEM-App.controllers', [])
         if ($scope.selectedAnswer == $scope.currentQuestion.correctAnswer1) {
           wrongAnswers = 0;
         } else {
-          wrongAnswers++;
+          if (!$scope.currentQuestion.isRegItem) wrongAnswers++;
           if (wrongAnswers == 3) {
             fileService.logResult('Drei falsche Antworten hintereinander. Test wird beendet.');
             window.location = '#/results';
