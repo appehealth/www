@@ -1,7 +1,7 @@
 {
   "questions": [{
       "id": 1,
-      "story": ["Ali sieht bei den Schlangen einen anderen Freund aus der Schule. Der will sich gleich mit Ali zusammen die Schlangen anschauen.Aber Ali möchte eigentlich viel lieber mit Tim die Schlangen ansehen und nicht dem anderen Schulfreund.",
+      "story": ["Ali sieht bei den Schlangen einen anderen Freund aus der Schule. Der will sich gleich mit Ali zusammen die Schlangen anschauen. Aber Ali möchte eigentlich viel lieber mit Tim die Schlangen ansehen und nicht dem anderen Schulfreund.",
         "Ali möchte seinem anderen Schulfreund nicht wehtun und schaut sich mit ihm die Schlangen an, obwohl er das lieber mit Tim machen würde.",
         "Sein Gesicht sieht aber anders aus, als er sich wirklich fühlt.",
         "Hier siehst Du wie sein Gesicht aussieht. Es sieht fröhlich aus."
@@ -167,7 +167,6 @@
       "id": 2,
       "location": 4
     },
-  
     {
       "text": "",
       "image": "img/BelohnungKomp6Ende.JPG",
