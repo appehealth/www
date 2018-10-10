@@ -37,7 +37,8 @@
       "audio": [
         "audio/.mp3",
         "audio/.mp3"
-      ]
+      ],
+      "isRegItem": true
     },
     {
       "id": 3,
@@ -134,7 +135,8 @@
       "audio": [
         "audio/.mp3",
         "audio/.mp3"
-      ]
+      ],
+      "isRegItem": true
     },
     {
       "id": 8,
