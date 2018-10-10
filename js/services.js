@@ -21,6 +21,7 @@ angular.module('ATEM-App.services', [])
 
   .service('fileService', ['$http', function($http) {
     var files = [];
+    var sensorBuffer = [];
     const SENSORID = 0;
     const EVENTID = 1;
     const RESULTID = 2;
@@ -55,7 +56,12 @@ angular.module('ATEM-App.services', [])
     function logSensor() {
       if (files.length > 0) {
         var timestamp = Date.now() - startTime;
-        writeFile(files[SENSORID], timestamp + '; ' + x + '; ' + y + '; ' + z + '\n', true);
+        sensorBuffer.push(timestamp + '; ' + x + '; ' + y + '; ' + z);
+        if (sensorBuffer.length == 10) {
+          writeFile(files[SENSORID], sensorBuffer.join('\n') + '\n', true);
+        }
+
+
       }
     }
 

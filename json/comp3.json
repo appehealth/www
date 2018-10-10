@@ -93,52 +93,6 @@
     },
     {
       "id": 3,
-      "choiceStory": ["Ein Tierpfleger kommt und möchte die Affen nach draußen lassen. Er fragt, ob ein Kind mitkommen möchte, um den Affen die Tür zu öffnen.",
-        "Würdest Du gerne mit dem Tierpfleger zu den Affen gehen und ihnen die Tür öffnen, damit sie nach draußen gehen können?"
-      ],
-      "choiceStoryImg": "img/story/k4i3.JPG",
-      "choiceA": "mitkommen",
-      "choiceB": "bleiben",
-      "choiceAudio": "audio/k4i26.mp3",
-      "questionA": {
-        "story": ["Tim und Ali möchten aber nicht mit dem Tierpfleger gehen. Sie wollen lieber draußen den Affen zusehen. Aber der Tierpfleger nimmt Tim und Ali einfach an der Hand und nimmt sie mit, damit sie die Tür öffnen.",
-          "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als der Tierpfleger sie einfach mitnimmt, um die Tür für die Affen zu öffnen?"
-        ],
-        "storyImg": "img/story/k4i3A.JPG",
-        "question": ["Sind sie ängstlich oder sind sie ärgerlich oder sind sie überrascht oder sind sie fröhlich?"],
-        "answers": [
-          "img/emotions/both/aengstlich.JPG",
-          "img/emotions/both/aergerlich.JPG",
-          "img/emotions/both/ueberrascht.JPG",
-          "img/emotions/both/froehlich.JPG"
-        ],
-        "correctAnswer": 2,
-        "audio": [
-          "audio/k4i26a.mp3",
-          "audio/k4i26bant.mp3"
-        ]
-      },
-      "questionB": {
-        "story": ["Tim und Ali möchten aber gerne mit dem Tierpfleger mitgehen. Aber der sagt, dass nur ein Kind mitkommen kann und nimmt einfach ein kleines Mädchen mit.",
-          "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als der Tierpfleger nicht sie, sondern ein anderes kleines Mädchen mitnimmt?"
-        ],
-        "storyImg": "img/story/k4i3B.JPG",
-        "question": ["Sind sie ängstlich oder sind sie ärgerlich oder sind sie überrascht oder sind sie fröhlich?"],
-        "answers": [
-          "img/emotions/both/aengstlich.JPG",
-          "img/emotions/both/aergerlich.JPG",
-          "img/emotions/both/ueberrascht.JPG",
-          "img/emotions/both/froehlich.JPG"
-        ],
-        "correctAnswer": 2,
-        "audio": [
-          "audio/k4i26b.mp3",
-          "audio/k4i26bant.mp3"
-        ]
-      }
-    },
-    {
-      "id": 4,
       "choiceStory": ["Draußen versuchen einige Affen mit kleinen Stöcken Insekten aus einem Baumstamm zu holen. Neben dem Gehege kann man auch versuchen, Gummibärchen aus einem Baumstamm zu holen und sehen, ob man genauso gut ist wie die Affen.",
         "Würdest Du auch gerne versuchen, mit einem Stock Gummibärchen aus einem Baumstamm herauszuholen?"
       ],
@@ -180,6 +134,52 @@
         "audio": [
           "audio/k4i27b.mp3",
           "audio/k4i27bant.mp3"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "choiceStory": ["Ein Tierpfleger kommt und möchte die Affen nach draußen lassen. Er fragt, ob ein Kind mitkommen möchte, um den Affen die Tür zu öffnen.",
+        "Würdest Du gerne mit dem Tierpfleger zu den Affen gehen und ihnen die Tür öffnen, damit sie nach draußen gehen können?"
+      ],
+      "choiceStoryImg": "img/story/k4i3.JPG",
+      "choiceA": "mitkommen",
+      "choiceB": "bleiben",
+      "choiceAudio": "audio/k4i26.mp3",
+      "questionA": {
+        "story": ["Tim und Ali möchten aber nicht mit dem Tierpfleger gehen. Sie wollen lieber draußen den Affen zusehen. Aber der Tierpfleger nimmt Tim und Ali einfach an der Hand und nimmt sie mit, damit sie die Tür öffnen.",
+          "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als der Tierpfleger sie einfach mitnimmt, um die Tür für die Affen zu öffnen?"
+        ],
+        "storyImg": "img/story/k4i3A.JPG",
+        "question": ["Sind sie ängstlich oder sind sie ärgerlich oder sind sie überrascht oder sind sie fröhlich?"],
+        "answers": [
+          "img/emotions/both/aengstlich.JPG",
+          "img/emotions/both/aergerlich.JPG",
+          "img/emotions/both/ueberrascht.JPG",
+          "img/emotions/both/froehlich.JPG"
+        ],
+        "correctAnswer": 2,
+        "audio": [
+          "audio/k4i26a.mp3",
+          "audio/k4i26bant.mp3"
+        ]
+      },
+      "questionB": {
+        "story": ["Tim und Ali möchten aber gerne mit dem Tierpfleger mitgehen. Aber der sagt, dass nur ein Kind mitkommen kann und nimmt einfach ein kleines Mädchen mit.",
+          "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als der Tierpfleger nicht sie, sondern ein anderes kleines Mädchen mitnimmt?"
+        ],
+        "storyImg": "img/story/k4i3B.JPG",
+        "question": ["Sind sie ängstlich oder sind sie ärgerlich oder sind sie überrascht oder sind sie fröhlich?"],
+        "answers": [
+          "img/emotions/both/aengstlich.JPG",
+          "img/emotions/both/aergerlich.JPG",
+          "img/emotions/both/ueberrascht.JPG",
+          "img/emotions/both/froehlich.JPG"
+        ],
+        "correctAnswer": 2,
+        "audio": [
+          "audio/k4i26b.mp3",
+          "audio/k4i26bant.mp3"
         ]
       }
     },
