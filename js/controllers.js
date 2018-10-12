@@ -159,6 +159,10 @@ angular.module('ATEM-App.controllers', [])
       fileService.logEvent('Select answer ' + ans, 2, $scope.currentQuestion.id);
     }
 
+    $scope.repeatAudio = function() {
+      audioService.repeatAudio();
+    }
+
     $scope.continueStory = function() {
       audioService.stopAudio();
       if ($scope.currentStory.id == story.length) {
@@ -218,6 +222,10 @@ angular.module('ATEM-App.controllers', [])
       $scope.displayMode = 'question';
       audioService.playAudio($scope.currentQuestion.audio[0]);
       window.scrollTo(0, 0);
+    }
+
+    $scope.repeatAudio = function() {
+      audioService.repeatAudio();
     }
 
     $scope.confirmQuestion = function() {
@@ -351,6 +359,10 @@ angular.module('ATEM-App.controllers', [])
       fileService.logEvent('Select answer ' + ans, 4, $scope.currentQuestion.id);
     }
 
+    $scope.repeatAudio = function() {
+      audioService.repeatAudio();
+    }
+
     $scope.showQuestion = function() {
       audioService.stopAudio();
       $scope.showQuestionImg = false;
@@ -425,6 +437,11 @@ angular.module('ATEM-App.controllers', [])
       } else $scope.displayMode = 'story';
 
       window.scrollTo(0, 0);
+    }
+
+
+    $scope.repeatAudio = function() {
+      audioService.repeatAudio();
     }
 
     $scope.confirmQuestion = function() {
@@ -577,6 +594,9 @@ angular.module('ATEM-App.controllers', [])
         }
         nextQuestion();
       }
+    }
+    $scope.repeatAudio = function() {
+      audioService.repeatAudio();
     }
 
     $scope.selectAnswer = function(ans) {
