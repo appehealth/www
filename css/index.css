@@ -4,6 +4,10 @@ body {
   max-width: auto;
 }
 
+.dropdown {
+  margin: 2px;
+}
+
 .PlaceHolder {
   height: 50px;
   width: 1px;
