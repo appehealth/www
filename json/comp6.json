@@ -49,17 +49,19 @@
       "id": 3,
       "story": ["Ali ist ärgerlich, weil Tim sich vorgedrängelt hat. Was könnte Ali am besten tun, damit er nicht mehr ärgerlich ist?"],
       "storyImg": "img/story/k6i3.JPG",
-      "question": ["1. Ali könnte sich selbst auch vordrändeln.",
-        "2. Ali könnte denken, dass Tim immer alles zuerst machen darf. ",
-        "3. Ali kann nichts machen, damit er nicht mehr ärgerlich ist.",
-        "4. Ali könnte denken, dass er die Fische ja trotzdem auch anfassen darf."
-      ],
-      "answers": [
-        "img/emotions/one.png",
-        "img/emotions/two.png",
-        "img/emotions/three.png",
-        "img/emotions/four.png"
-      ],
+      "question1": {
+        "question": ["1. Ali könnte sich selbst auch vordrändeln.",
+          "2. Ali könnte denken, dass Tim immer alles zuerst machen darf. ",
+          "3. Ali kann nichts machen, damit er nicht mehr ärgerlich ist.",
+          "4. Ali könnte denken, dass er die Fische ja trotzdem auch anfassen darf."
+        ],
+        "answers": [
+          "img/emotions/one.png",
+          "img/emotions/two.png",
+          "img/emotions/three.png",
+          "img/emotions/four.png"
+        ]
+      },
       "correctAnswer": 4,
       "audio": [
         "audio/.mp3",
@@ -159,13 +161,15 @@
       "text": "Die nächste Station ist das Tropenaquarium. Das ist ein großes Haus, in dem es ganz warm und feucht ist. Es ist für Tiere, die aus Ländern kommen, in denen es auch immer so warm und feucht ist. Dort leben z.B. Schlangen, Eidechsen und Krokodile. Aber es gibt in dem Haus auch Fische.",
       "image": "img/story/k6intro.JPG",
       "id": 1,
-      "location": 1
+      "location": 1,
+      "audio": ""
     },
     {
       "text": "Tim und Ali gehen mit Tims Eltern weiter. Als nächstes wollen sie zum Streichelzoo. Dort gibt es ganz viele Ziegen, ein paar Esel und Ponys und außerdem auch noch Kaninchen und Meerschweinchen. Es sind schon ziemlich viele Kinder in dem Gehege, die die Ziegen mit Ziegenfutter füttern.",
       "image": "img/story/k6middle.JPG",
       "id": 2,
-      "location": 4
+      "location": 4,
+      "audio": ""
     },
     {
       "text": "",
