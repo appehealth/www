@@ -3,12 +3,12 @@ angular.module('ATEM-App.controllers', [])
   .controller('StartCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
 
     $scope.normalClick = function() {
-      $rootScope.presentationMode = true;
+      $rootScope.presentationMode = false;
       window.location = '#/intro';
     }
 
     $scope.presentationClick = function() {
-      $rootScope.presentationMode = true;
+      $rootScope.presentationMode = true; +
       window.location = '#/intro';
     }
   }])
