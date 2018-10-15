@@ -7,7 +7,7 @@
       "choiceStoryImg": "img/story/k4i1.JPG",
       "choiceA": "Rüssel",
       "choiceB": "Zusehen",
-      "choiceAudio": "k4i23.mp3",
+      "choiceAudio": "audio/k4i23.mp3",
       "questionA": {
         "story": ["Tim und Ali würden auch gerne auf dem Rüssel des Elefanten sitzen und sich tragen lassen. Und der Tierpfleger erlaubt es ihnen auch.",
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, wenn sie auf dem Rüssel des Elefanten sitzen dürfen?"
@@ -53,7 +53,7 @@
       "choiceStoryImg": "img/story/k4i2.JPG",
       "choiceA": "anschauen",
       "choiceB": "Fotos machen",
-      "choiceAudio": "k4i25.mp3",
+      "choiceAudio": "audio/k4i25.mp3",
       "questionA": {
         "story": ["Tim und Ali würden auch gerne einmal einen großen Elefantenhaufen anschauen. Aber dann geht der Tierpfleger auf einmal weg und zeigt einem anderen Kind den großen Haufen.",
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, wenn der Tierpfleger auf einmal weggeht und sie sich nicht den Haufen ansehen können?"

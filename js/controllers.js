@@ -28,6 +28,7 @@ angular.module('ATEM-App.controllers', [])
     $scope.month = 'Monat';
     $scope.year = 'Jahr';
     $scope.gender = '';
+    $scope.buttonCaption = 'Weiter';
 
     fileService.loadJson("intro").then(function(response) {
       text1 = response.data.text1;
@@ -51,6 +52,7 @@ angular.module('ATEM-App.controllers', [])
       } else {
         part2 = true;
         $scope.introText = text2;
+        $scope.buttonCaption = 'Start';
         window.scrollTo(0, 0);
       }
     }
