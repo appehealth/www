@@ -38,6 +38,10 @@ angular.module('ATEM-App.controllers', [])
       fileService.requestFS();
     });
 
+    $scope.repeatAudio = function() {
+      audioService.repeatAudio();
+    }
+
     $scope.startStory = function() {
       fileService.logStart(parseInt($scope.day), $scope.monthID, $scope.year, $scope.gender, $scope.language);
       window.location = '#/introduction';
