@@ -43,7 +43,7 @@ angular.module('ATEM-App.controllers', [])
     }
 
     $scope.startStory = function() {
-      console.log($scope.gender);
+      console.log($scope.gender.name);
       // fileService.logStart(parseInt($scope.day), $scope.monthID, $scope.year, $scope.gender, $scope.language);
       // window.location = '#/introduction';
       // audioService.playAudio(audio[0]);
