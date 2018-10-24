@@ -231,23 +231,31 @@
     }
   ],
   "story": [{
+
+    "text": "Für jede Station, die Du gemeinsam mit Tim und Ali im Zoo besuchst, kannst Du Dir einen Sticker in Dein Stickeralbum kleben. Du hast jetzt schon einen Sticker gesammelt. Schaffst Du es, das ganze Album zu füllen?",
+    "image": "img/BelohnungKomp2.JPG",
+    "id": 1,
+    "location": 1,
+    "audio": ""
+  }
+  {
       "text": "Jetzt kann es endlich losgehen. Tim und Ali und Tims Eltern machen sich auf den Weg zu den Tieren. Zuerst gehen sie zu den Elefanten. Es gibt dort ein großes Elefantenhaus, in dem die Elefanten wohnen und auch noch einen Platz draußen, auf dem man sie beobachten kann.",
       "image": "img/story/k4intro.JPG",
-      "id": 1,
+      "id": 2,
       "location": 1,
       "audio": "audio/k4intro.mp3"
     },
     {
       "text": "Als nächstes besuchen Tim und Ali und Tims Eltern die Affen. Es gibt ein großes Affenhaus, wo es sehr warm ist und viele verschiedene Affen in großen Hallen leben. Außerdem gibt es einen Bereich draußen, der von einem Wassergraben umgeben ist, damit die Affen nicht weglaufen können.",
       "image": "img/story/k4middle.JPG",
-      "id": 2,
+      "id": 3,
       "location": 3,
       "audio": "audio/k4intro2.mp3"
     },
     {
       "text": "",
       "image": "img/BelohnungKomp4.JPG",
-      "id": 3,
+      "id": 4,
       "location": 6,
       "audio": ""
     }
