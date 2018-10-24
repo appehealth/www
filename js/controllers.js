@@ -43,9 +43,10 @@ angular.module('ATEM-App.controllers', [])
     }
 
     $scope.startStory = function() {
-      fileService.logStart(parseInt($scope.day), $scope.monthID, $scope.year, $scope.gender, $scope.language);
-      window.location = '#/introduction';
-      audioService.playAudio(audio[0]);
+      console.log($scope.gender);
+      // fileService.logStart(parseInt($scope.day), $scope.monthID, $scope.year, $scope.gender, $scope.language);
+      // window.location = '#/introduction';
+      // audioService.playAudio(audio[0]);
     }
 
     $scope.startComp1 = function() {
