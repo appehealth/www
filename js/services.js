@@ -259,7 +259,7 @@ angular.module('ATEM-App.services', [])
     function playAudio(url) {
       // Play the audio file at url
 
-      //url = "/android_asset/www/" + url;
+      url = "/android_asset/www/" + url;
       //fix url for Android
       my_media = new Media(url,
         // success callback
