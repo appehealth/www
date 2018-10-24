@@ -27,7 +27,7 @@ angular.module('ATEM-App.controllers', [])
     $scope.day = 'Tag';
     $scope.month = 'Monat';
     $scope.year = 'Jahr';
-    $scope.gender = '';
+    $scope.gender = {name:''};
     $scope.buttonCaption = 'Weiter';
 
     fileService.loadJson("intro").then(function(response) {
