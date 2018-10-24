@@ -14,8 +14,8 @@
       ],
       "correctAnswer": 1,
       "audio": [
-        "audio/k2i8.mp3",
-        "audio/k2i8ant.mp3"
+        "audio/k2i1.mp3",
+        "audio/k2i1ant.mp3"
       ]
     },
     {
@@ -35,8 +35,8 @@
       ],
       "correctAnswer": 2,
       "audio": [
-        "audio/.mp3",
-        "audio/.mp3"
+        "audio/k2i2.mp3",
+        "audio/k2i2ant.mp3"
       ],
       "isRegItem": true
     },
@@ -55,8 +55,8 @@
       ],
       "correctAnswer": 1,
       "audio": [
-        "audio/k2i9.mp3",
-        "audio/k2i9ant.mp3"
+        "audio/k2i3.mp3",
+        "audio/k2i3ant.mp3"
       ]
     },
     {
@@ -74,8 +74,8 @@
       ],
       "correctAnswer": 2,
       "audio": [
-        "audio/k2i10.mp3",
-        "audio/k2i10ant.mp3"
+        "audio/k2i4.mp3",
+        "audio/k2i4ant.mp3"
       ]
     },
     {
@@ -93,8 +93,8 @@
       ],
       "correctAnswer": 1,
       "audio": [
-        "audio/k2i13.mp3",
-        "audio/k2i13ant.mp3"
+        "audio/k2i5.mp3",
+        "audio/k2i5ant.mp3"
       ]
     },
     {
@@ -112,8 +112,8 @@
       ],
       "correctAnswer": 2,
       "audio": [
-        "audio/k2i15.mp3",
-        "audio/k2i15ant.mp3"
+        "audio/k2i6.mp3",
+        "audio/k2i6ant.mp3"
       ]
     },
     {
@@ -133,8 +133,8 @@
       ],
       "correctAnswer": 3,
       "audio": [
-        "audio/.mp3",
-        "audio/.mp3"
+        "audio/k2i7.mp3",
+        "audio/k2i7ant.mp3"
       ],
       "isRegItem": true
     },
@@ -153,8 +153,8 @@
       ],
       "correctAnswer": 1,
       "audio": [
-        "audio/k2i16.mp3",
-        "audio/k2i16ant.mp3"
+        "audio/k2i8.mp3",
+        "audio/k2i8ant.mp3"
       ]
     }
   ],
@@ -170,14 +170,14 @@
       "image": "img/story/k2middle.JPG",
       "id": 2,
       "location": 5,
-      "audio": "audio/k2intro2.mp3"
+      "audio": "audio/k2middle.mp3"
     },
     {
-      "text": "Super! Du hast einen weiteren Sticker gesammelt.",
+      "text": "Für jede Station, die Du gemeinsam mit Tim und Ali im Zoo besuchst, kannst Du Dir einen Sticker in Dein Stickeralbum kleben. Du hast jetzt schon einen Sticker gesammelt. Schaffst Du es, das ganze Album zu füllen?",
       "image": "img/BelohnungKomp2.JPG",
       "id": 3,
       "location": 9,
-      "audio": ""
+      "audio": "audio/k2reward.mp3"
     }
   ]
 }
