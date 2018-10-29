@@ -233,11 +233,11 @@
   "story": [{
 
     "text": "Für jede Station, die Du gemeinsam mit Tim und Ali im Zoo besuchst, kannst Du Dir einen Sticker in Dein Stickeralbum kleben. Du hast jetzt schon einen Sticker gesammelt. Schaffst Du es, das ganze Album zu füllen?",
-    "image": "img/BelohnungKomp2.JPG",
+    "image": "img/book1.png",
     "id": 1,
     "location": 1,
     "audio": ""
-  }
+  },
   {
       "text": "Jetzt kann es endlich losgehen. Tim und Ali und Tims Eltern machen sich auf den Weg zu den Tieren. Zuerst gehen sie zu den Elefanten. Es gibt dort ein großes Elefantenhaus, in dem die Elefanten wohnen und auch noch einen Platz draußen, auf dem man sie beobachten kann.",
       "image": "img/story/k4intro.JPG",
@@ -254,7 +254,7 @@
     },
     {
       "text": "",
-      "image": "img/BelohnungKomp4.JPG",
+      "image": "img/book2.png",
       "id": 4,
       "location": 6,
       "audio": ""
