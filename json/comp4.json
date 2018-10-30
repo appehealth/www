@@ -100,14 +100,14 @@
       "image": "img/story/k3intro.JPG",
       "id": 1,
       "location": 1,
-      "audio": "audio/k3intro.mp3"
+      "audio": "audio/k4intro.mp3"
     },
     {
       "text": "Tim, Ali und Tims Eltern haben sich ihre Andenken gekauft. Tim und Ali wollen gleich weiter zu den anderen Tieren. Aber Tims Eltern sagen, sie wollen noch etwas mit ihnen besprechen.",
       "image": "img/story/k3middle.JPG",
       "id": 2,
       "location": 4,
-      "audio": "audio/k3intro2.mp3"
+      "audio": "audio/k4middle.mp3"
     },
     {
       "text": "",

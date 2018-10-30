@@ -98,27 +98,9 @@
       ],
       "choiceStoryImg": "img/story/k4i4.JPG",
       "choiceA": "versuchen",
-      "choiceB": "weitergehen",
+      "choiceB": "nicht versuchen",
       "choiceAudio": "audio/k4i27.mp3",
       "questionA": {
-        "story": ["Tim und Ali wollen das nicht so gerne versuchen. Sie finden das langweilig. Aber Tims Mutter sagt, sie müssen das mal versuchen.",
-          "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als Tims Mama sagt, dass sie das versuchen müssen?"
-        ],
-        "storyImg": "img/story/k4i4A.JPG",
-        "question": ["Sind sie überrascht oder sind sie traurig oder sind sie fröhlich oder ekeln sie sich?"],
-        "answers": [
-          "img/emotions/both/ueberrascht.JPG",
-          "img/emotions/both/traurig.JPG",
-          "img/emotions/both/froehlich.JPG",
-          "img/emotions/both/ekelnd.JPG"
-        ],
-        "correctAnswer": 2,
-        "audio": [
-          "audio/k4i27a.mp3",
-          "audio/k4i27aant.mp3"
-        ]
-      },
-      "questionB": {
         "story": ["Tim und Ali wollen aber gerne einmal versuchen, mit einem Stock Gummibärchen aus dem Baumstamm zu holen. Aber Tims Mama sagt, sie haben dafür keine Zeit.",
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als Tims Mama sagt, dass sie keine Zeit haben?"
         ],
@@ -135,6 +117,24 @@
           "audio/k4i27b.mp3",
           "audio/k4i27bant.mp3"
         ]
+      },
+      "questionB": {
+        "story": ["Tim und Ali wollen das nicht so gerne versuchen. Sie finden das langweilig. Aber Tims Mutter sagt, sie müssen das mal versuchen.",
+          "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als Tims Mama sagt, dass sie das versuchen müssen?"
+        ],
+        "storyImg": "img/story/k4i4A.JPG",
+        "question": ["Sind sie überrascht oder sind sie traurig oder sind sie fröhlich oder ekeln sie sich?"],
+        "answers": [
+          "img/emotions/both/ueberrascht.JPG",
+          "img/emotions/both/traurig.JPG",
+          "img/emotions/both/froehlich.JPG",
+          "img/emotions/both/ekelnd.JPG"
+        ],
+        "correctAnswer": 2,
+        "audio": [
+          "audio/k4i27a.mp3",
+          "audio/k4i27aant.mp3"
+        ]
       }
     },
     {
@@ -147,24 +147,6 @@
       "choiceB": "bleiben",
       "choiceAudio": "audio/k4i26.mp3",
       "questionA": {
-        "story": ["Tim und Ali möchten aber nicht mit dem Tierpfleger gehen. Sie wollen lieber draußen den Affen zusehen. Aber der Tierpfleger nimmt Tim und Ali einfach an der Hand und nimmt sie mit, damit sie die Tür öffnen.",
-          "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als der Tierpfleger sie einfach mitnimmt, um die Tür für die Affen zu öffnen?"
-        ],
-        "storyImg": "img/story/k4i3A.JPG",
-        "question": ["Sind sie ängstlich oder sind sie ärgerlich oder sind sie überrascht oder sind sie fröhlich?"],
-        "answers": [
-          "img/emotions/both/aengstlich.JPG",
-          "img/emotions/both/aergerlich.JPG",
-          "img/emotions/both/ueberrascht.JPG",
-          "img/emotions/both/froehlich.JPG"
-        ],
-        "correctAnswer": 2,
-        "audio": [
-          "audio/k4i26a.mp3",
-          "audio/k4i26bant.mp3"
-        ]
-      },
-      "questionB": {
         "story": ["Tim und Ali möchten aber gerne mit dem Tierpfleger mitgehen. Aber der sagt, dass nur ein Kind mitkommen kann und nimmt einfach ein kleines Mädchen mit.",
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als der Tierpfleger nicht sie, sondern ein anderes kleines Mädchen mitnimmt?"
         ],
@@ -181,6 +163,24 @@
           "audio/k4i26b.mp3",
           "audio/k4i26bant.mp3"
         ]
+      },
+      "questionB": {
+        "story": ["Tim und Ali möchten aber nicht mit dem Tierpfleger gehen. Sie wollen lieber draußen den Affen zusehen. Aber der Tierpfleger nimmt Tim und Ali einfach an der Hand und nimmt sie mit, damit sie die Tür öffnen.",
+          "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als der Tierpfleger sie einfach mitnimmt, um die Tür für die Affen zu öffnen?"
+        ],
+        "storyImg": "img/story/k4i3A.JPG",
+        "question": ["Sind sie ängstlich oder sind sie ärgerlich oder sind sie überrascht oder sind sie fröhlich?"],
+        "answers": [
+          "img/emotions/both/aengstlich.JPG",
+          "img/emotions/both/aergerlich.JPG",
+          "img/emotions/both/ueberrascht.JPG",
+          "img/emotions/both/froehlich.JPG"
+        ],
+        "correctAnswer": 2,
+        "audio": [
+          "audio/k4i26a.mp3",
+          "audio/k4i26bant.mp3"
+        ]
       }
     },
     {
@@ -192,7 +192,7 @@
       "choiceA": "füttern",
       "choiceB": "zusehen",
       "choiceAudio": "audio/k4i28.mp3",
-      "questionA": {
+      "questionB": {
         "story": ["Tim und Ali möchten aber nicht die Äffchen füttern. Sie wollen lieber nur zusehen und die Äffchen bleiben auch nur bei den anderen Kindern.",
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, wenn die Äffchen nur bei den anderen Kindern bleiben und sie nur beim Füttern zusehen dürfen?"
         ],
@@ -210,7 +210,7 @@
           "audio/k4i28bant.mp3"
         ]
       },
-      "questionB": {
+      "questionA": {
         "story": ["Tim und Ali möchten aber auch gerne die Äffchen mit Obst füttern. Und tatsächlich kommen die Äffchen zu ihnen und sie können ihnen ihr Obst geben.",
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, wenn die Äffchen zu ihnen kommen und sie sie mit Obst füttern können?"
         ],
@@ -232,18 +232,18 @@
   ],
   "story": [{
 
-    "text": "Für jede Station, die Du gemeinsam mit Tim und Ali im Zoo besuchst, kannst Du Dir einen Sticker in Dein Stickeralbum kleben. Du hast jetzt schon einen Sticker gesammelt. Schaffst Du es, das ganze Album zu füllen?",
-    "image": "img/book1.png",
-    "id": 1,
-    "location": 1,
-    "audio": ""
-  },
-  {
+      "text": "Für jede Station, die Du gemeinsam mit Tim und Ali im Zoo besuchst, kannst Du Dir einen Sticker in Dein Stickeralbum kleben. Du hast jetzt schon einen Sticker gesammelt. Schaffst Du es, das ganze Album zu füllen?",
+      "image": "img/book1.png",
+      "id": 1,
+      "location": 1,
+      "audio": "audio/book.mp3"
+    },
+    {
       "text": "Jetzt kann es endlich losgehen. Tim und Ali und Tims Eltern machen sich auf den Weg zu den Tieren. Zuerst gehen sie zu den Elefanten. Es gibt dort ein großes Elefantenhaus, in dem die Elefanten wohnen und auch noch einen Platz draußen, auf dem man sie beobachten kann.",
       "image": "img/story/k4intro.JPG",
       "id": 2,
       "location": 1,
-      "audio": "audio/k4intro.mp3"
+      "audio": "audio/k3intro.mp3"
     },
     {
       "text": "Als nächstes besuchen Tim und Ali und Tims Eltern die Affen. Es gibt ein großes Affenhaus, wo es sehr warm ist und viele verschiedene Affen in großen Hallen leben. Außerdem gibt es einen Bereich draußen, der von einem Wassergraben umgeben ist, damit die Affen nicht weglaufen können.",

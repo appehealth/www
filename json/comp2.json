@@ -171,13 +171,6 @@
       "id": 2,
       "location": 5,
       "audio": "audio/k2middle.mp3"
-    },
-    {
-      "text": "Für jede Station, die Du gemeinsam mit Tim und Ali im Zoo besuchst, kannst Du Dir einen Sticker in Dein Stickeralbum kleben. Du hast jetzt schon einen Sticker gesammelt. Schaffst Du es, das ganze Album zu füllen?",
-      "image": "img/BelohnungKomp2.JPG",
-      "id": 3,
-      "location": 9,
-      "audio": "audio/k2reward.mp3"
     }
   ]
 }
