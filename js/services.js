@@ -29,7 +29,7 @@ angular.module('ATEM-App.services', [])
     var x, y, z, x_grav, y_grav, z_grav, alpha, beta, gamma;
     var sensorInterval;
     var filesystem;
-    var points;
+    var points = 0;
 
     window.addEventListener('devicemotion', function(event) {
       x_grav = event.accelerationIncludingGravity.x.toString().replace(".", ",");
