@@ -227,11 +227,11 @@ angular.module('ATEM-App.services', [])
       logEvent('Start', 0, 0);
       sensorInterval = setInterval(logSensor, 20);
 
-      window.addEventListener('pause', function() {
+      document.addEventListener('pause', function() {
         audioService.stopAudio();
         logEvent('Test paused', 0, 0);
         clearInterval(sensorInterval);
-        window.addEventListener('resume', function() {
+        document.addEventListener('resume', function() {
           logEvent('Test continued', 0, 0);
           sensorInterval = setInterval(logSensor, 20);
         })
