@@ -26,17 +26,24 @@ angular.module('ATEM-App.services', [])
     const EVENTID = 1;
     const RESULTID = 2;
     var startTime;
-    var x;
-    var y;
-    var z;
+    var x, y, z, x_grav, y_grav, z_grav, alpha, beta, gamma;
     var sensorInterval;
     var filesystem;
 
     window.addEventListener('devicemotion', function(event) {
-      x = event.accelerationIncludingGravity.x.toString().replace(".", ",");
-      y = event.accelerationIncludingGravity.y.toString().replace(".", ",");
-      z = event.accelerationIncludingGravity.z.toString().replace(".", ",");
+      x = event.acceleration.x.toString().replace(".", ",");
+      x_grav = event.accelerationIncludingGravity.x.toString().replace(".", ",");
+      y = event.acceleration.y.toString().replace(".", ",");
+      y_grav = event.accelerationIncludingGravity.y.toString().replace(".", ",");
+      z = event.acceleration.z.toString().replace(".", ",");
+      z_grav = event.accelerationIncludingGravity.z.toString().replace(".", ",");
     });
+
+    window.addEventListener("deviceorientation", function(event) {
+      alpha = event.alpha;
+      beta = event.beta;
+      gamma = event.gamma;
+    }, true);
 
     function requestFS() {
       window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
@@ -48,15 +55,15 @@ angular.module('ATEM-App.services', [])
       if (files.length > 0) {
         var timestamp = Date.now() - startTime;
         if (component > 0)
-          writeFile(files[EVENTID], timestamp + ': Component ' + component + ', Item ' + item + ': ' + logText + '\n', true);
-        else writeFile(files[EVENTID], timestamp + ': ' + logText + '\n', true);
+          writeFile(files[EVENTID], timestamp + '; Component ' + component + ', Item ' + item + ': ' + logText + '\n', true);
+        else writeFile(files[EVENTID], timestamp + '; ' + logText + '\n', true);
       }
     }
 
     function logSensor() {
       if (files.length > 0) {
         var timestamp = Date.now() - startTime;
-        sensorBuffer.push(timestamp + '; ' + x + '; ' + y + '; ' + z);
+        sensorBuffer.push(timestamp + '; ' + x + '; ' + y + '; ' + z + '; ' + x_grav + '; ' + y_grav + '; ' + z_grav + '; ' + alpha + '; ' + beta + '; ' + gamma);
         if (sensorBuffer.length == 10) {
           writeFile(files[SENSORID], sensorBuffer.join('\n') + '\n', true);
           sensorBuffer = [];
