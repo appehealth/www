@@ -667,11 +667,10 @@ angular.module('ATEM-App.controllers', [])
 
   .controller('ResultsCtrl', ['$scope', 'fileService', 'audioService', function($scope, fileService, audioService) {
     audioService.playAudio("audio/Outro.mp3");
-    fileService.logEvent('Test finished', '', 0, 0);
-    fileService.logResult('Ende des Tests');
+    fileService.finishTest();
 
     $scope.returnToTitle = function() {
-      fileService.wipeData();
+      audioService.stopAudio();
       window.location = '#/';
     }
   }])

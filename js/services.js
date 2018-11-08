@@ -55,7 +55,7 @@ angular.module('ATEM-App.services', [])
     function logEvent(logText, param, component, item) {
       if (files.length > 0) {
         var timestamp = Date.now() - startTime;
-        writeFile(files[EVENTID], timestamp + '; ' + component + '; ' + item + '; ' + logText + '\n', true);
+        writeFile(files[EVENTID], timestamp + '; ' + component + '; ' + item + '; ' + logText + '; ' + param + '\n', true);
       }
     }
 
@@ -227,10 +227,10 @@ angular.module('ATEM-App.services', [])
 
       document.addEventListener('pause', function() {
         audioService.stopAudio();
-        logEvent('Test paused', 0, 0);
+        logEvent('Test paused', '', 0, 0);
         clearInterval(sensorInterval);
         document.addEventListener('resume', function() {
-          logEvent('Test continued', 0, 0);
+          logEvent('Test continued', '', 0, 0);
           sensorInterval = setInterval(logSensor, 20);
         })
       })
@@ -244,6 +244,14 @@ angular.module('ATEM-App.services', [])
     function loadJson(id) {
       var filepath = "json/" + id + ".json";
       return $http.get(filepath);
+    }
+
+    function finishTest() {
+      logEvent('Test finished', '', 0, 0);
+      logResult('Ende des Tests. Punktzahl: ' + points.toString());
+      writeFile(files[SENSORID], sensorBuffer.join('\n') + '\n', true);
+      sensorBuffer = [];
+      files = [];
     }
 
     return {
