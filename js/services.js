@@ -19,7 +19,7 @@ angular.module('ATEM-App.services', [])
   //   };
   // } ] )
 
-  .service('fileService', ['$http', function($http) {
+  .service('fileService', ['$http', 'audioService', function($http, audioService) {
     var files = [];
     var sensorBuffer = [];
     const SENSORID = 0;
@@ -29,6 +29,7 @@ angular.module('ATEM-App.services', [])
     var x, y, z, x_grav, y_grav, z_grav, alpha, beta, gamma;
     var sensorInterval;
     var filesystem;
+    var points;
 
     window.addEventListener('devicemotion', function(event) {
       x = event.acceleration.x.toString().replace(".", ",");
@@ -55,7 +56,7 @@ angular.module('ATEM-App.services', [])
       if (files.length > 0) {
         var timestamp = Date.now() - startTime;
         if (component > 0)
-          writeFile(files[EVENTID], timestamp + '; Component ' + component + ', Item ' + item + ': ' + logText + '\n', true);
+          writeFile(files[EVENTID], timestamp + '; ' + component + '; ' + item + '; ' + logText + '\n', true);
         else writeFile(files[EVENTID], timestamp + '; ' + logText + '\n', true);
       }
     }
@@ -77,11 +78,12 @@ angular.module('ATEM-App.services', [])
       }
     }
 
-    function logAnswer(comp, question, answer, correctAnswer) {
+    function logAnswer(comp, question, answer, correctAnswer, isRegItem) {
       var msg = "";
       msg += ("Komponente " + comp + ', Frage ' + question + ': ' + answer + ' (richtige Antwort: ' + correctAnswer + ')');
       console.log(msg);
       logResult(msg);
+      if (answer == correctAnswer && !isRegItem) points++;
     }
 
     function writeFile(fileEntry, dataObj, isAppend) {
@@ -183,8 +185,8 @@ angular.module('ATEM-App.services', [])
     function logStart(day, month, year, gender, language) {
       var ageInMonths = countMonths(day, month, year);
       var userID = Date.now();
-      createFile("sensor" + userID + ".csv", 'Timestamp;X;Y;Z' + '\n', SENSORID);
-      createFile("events" + userID + ".txt", '', EVENTID);
+      createFile("sensor" + userID + ".csv", 'Timestamp;X;Y;Z;X including gravity;Y including gravity;Z including Gravity;Alpha;Beta;Gamma' + '\n', SENSORID);
+      createFile("events" + userID + ".csv", 'Timestamp;Component;Item;Event' + '\n', EVENTID);
       createFile("results" + userID + ".txt", "Alter: " + ageInMonths + " Monate" + '\n' + "Geschlecht: " + gender + '\n' + "Sprache: " + language + '\n', RESULTID);
     }
 
@@ -224,7 +226,9 @@ angular.module('ATEM-App.services', [])
     function startSensor() {
       logEvent('Start', 0, 0);
       sensorInterval = setInterval(logSensor, 20);
+
       window.addEventListener('pause', function() {
+        audioService.stopAudio();
         logEvent('Test paused', 0, 0);
         clearInterval(sensorInterval);
         window.addEventListener('resume', function() {

@@ -233,7 +233,7 @@ angular.module('ATEM-App.controllers', [])
 
     $scope.confirmQuestion = function() {
       audioService.stopAudio();
-      fileService.logAnswer(3, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer);
+      fileService.logAnswer(3, $scope.currentChoice.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer, false);
       fileService.logEvent('Confirm answer', 3, $scope.currentChoice.id)
       if ($scope.selectedAnswer == $scope.currentQuestion.correctAnswer) {
         wrongAnswers = 0;
@@ -329,7 +329,7 @@ angular.module('ATEM-App.controllers', [])
 
     $scope.confirmQuestion = function() {
       audioService.stopAudio();
-      fileService.logAnswer(4, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer);
+      fileService.logAnswer(4, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer, false);
       fileService.logEvent('Confirm answer', 4, $scope.currentQuestion.id)
       if ($scope.selectedAnswer == $scope.currentQuestion.correctAnswer) {
         wrongAnswers = 0;
@@ -451,7 +451,7 @@ angular.module('ATEM-App.controllers', [])
     $scope.confirmQuestion = function() {
       audioService.stopAudio();
       if (typeof(allQuestions[currentId - 1].question2) === "undefined") {
-        fileService.logAnswer(5, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1);
+        fileService.logAnswer(5, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1, false);
         fileService.logEvent('Confirm answer', 5, $scope.currentQuestion.id);
         if ($scope.selectedAnswer == $scope.currentQuestion.correctAnswer1) {
           wrongAnswers = 0;
@@ -467,17 +467,18 @@ angular.module('ATEM-App.controllers', [])
       } else if ($scope.currentQuestion.question == allQuestions[currentId - 1].question1) {
         answerQ1 = $scope.selectedAnswer;
         fileService.logEvent('Question A: Confirm answer', 5, $scope.currentQuestion.id);
-        fileService.logAnswer(5, $scope.currentQuestion.id + 'a', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1);
+        fileService.logAnswer(5, $scope.currentQuestion.id + 'a', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1, true);
         $scope.selectedAnswer = 0;
         $scope.currentQuestion.question = allQuestions[currentId - 1].question2;
         audioService.playAudio($scope.currentQuestion.question.audio[1]);
       } else {
         fileService.logEvent('Question B: Confirm answer', 5, $scope.currentQuestion.id);
-        fileService.logAnswer(5, $scope.currentQuestion.id + 'b', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer2);
         if (answerQ1 == allQuestions[currentId - 1].correctAnswer1 && $scope.selectedAnswer == allQuestions[currentId - 1].correctAnswer2) {
           wrongAnswers = 0;
+          fileService.logAnswer(5, $scope.currentQuestion.id + 'b', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer2, false);
         } else {
           wrongAnswers++;
+          fileService.logAnswer(5, $scope.currentQuestion.id + 'b', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer2, true);
           if (wrongAnswers == 3) {
             fileService.logResult('Drei falsche Antworten hintereinander. Sprung zu Komponente 6.');
             window.location = '#/comp6';
@@ -580,7 +581,7 @@ angular.module('ATEM-App.controllers', [])
 
     $scope.confirmQuestion = function() {
       if (typeof(allQuestions[currentId - 1].question2) === "undefined") {
-        fileService.logAnswer(6, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1);
+        fileService.logAnswer(6, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1, $scope.currentQuestion.isRegItem == true);
         fileService.logEvent('Confirm answer', 6, $scope.currentQuestion.id);
         if ($scope.selectedAnswer == $scope.currentQuestion.correctAnswer1) {
           wrongAnswers = 0;
@@ -596,17 +597,18 @@ angular.module('ATEM-App.controllers', [])
       } else if ($scope.currentQuestion.question == allQuestions[currentId - 1].question1) {
         answerQ1 = $scope.selectedAnswer;
         fileService.logEvent('Question A: Confirm answer', 6, $scope.currentQuestion.id);
-        fileService.logAnswer(6, $scope.currentQuestion.id + 'a', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1);
+        fileService.logAnswer(6, $scope.currentQuestion.id + 'a', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1, true);
         $scope.selectedAnswer = 0;
         $scope.currentQuestion.question = allQuestions[currentId - 1].question2;
         audioService.playAudio($scope.currentQuestion.question.audio[0]);
       } else {
-        fileService.logAnswer(6, $scope.currentQuestion.id + 'b', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer2);
         fileService.logEvent('Question B: Confirm answer', 6, $scope.currentQuestion.id);
         if (answerQ1 == allQuestions[currentId - 1].correctAnswer1 && $scope.selectedAnswer == allQuestions[currentId - 1].correctAnswer2) {
           wrongAnswers = 0;
+          fileService.logAnswer(6, $scope.currentQuestion.id + 'b', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer2, false);
         } else {
           wrongAnswers++;
+          fileService.logAnswer(6, $scope.currentQuestion.id + 'b', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer2, true);
           if (wrongAnswers == 3) {
             fileService.logResult('Drei falsche Antworten hintereinander. Test wird beendet.');
             window.location = '#/results';
