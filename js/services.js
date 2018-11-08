@@ -41,9 +41,9 @@ angular.module('ATEM-App.services', [])
     });
 
     window.addEventListener("deviceorientation", function(event) {
-      alpha = event.alpha;
-      beta = event.beta;
-      gamma = event.gamma;
+      alpha = event.alpha.toString().replace(".", ",");
+      beta = event.beta.toString().replace(".", ",");;
+      gamma = event.gamma.toString().replace(".", ",");;
     }, true);
 
     function requestFS() {
