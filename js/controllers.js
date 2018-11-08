@@ -29,7 +29,6 @@ angular.module('ATEM-App.controllers', [])
     $scope.year = 'Jahr';
     $scope.gender = '';
     $scope.buttonCaption = 'Weiter';
-    $scope.teststring = document.getElementById("gender_m").checked.toString();
 
     fileService.requestFS();
 
