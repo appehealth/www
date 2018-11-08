@@ -5,11 +5,11 @@
   <form name="myForm">
     <div class="btn-group btn-group-toggle" data-toggle="buttons">
       <label class="btn btn-success btn-lg">
-    <input type="radio" > Junge
-  </label>
+        <input type="radio"> Junge
+      </label>
       <label class="btn btn-success btn-lg">
-    <input type="radio" ng-model="gender" ng-value="Mädchen" > Mädchen
-  </label>
+        <input type="radio" ng-model="gender" ng-value="Maedchen"> Mädchen
+      </label>
     </div>
   </form>
 </div>
@@ -24,7 +24,7 @@
       <div class="introSelect">
         <div class="dropdown">
           <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">{{day}}
-  <span class="caret"></span></button>
+            <span class="caret"></span></button>
           <ul class="dropdown-menu">
             <button class="dropdown-item" type="button" ng-click="day=1+'.'">1</button>
             <button class="dropdown-item" type="button" ng-click="day=2+'.'">2</button>
@@ -65,7 +65,7 @@
     <div class="column">
       <div class="dropdown">
         <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">{{month}}
-  <span class="caret"></span></button>
+          <span class="caret"></span></button>
         <ul class="dropdown-menu">
           <button class="dropdown-item" type="button" ng-click="month='Januar'; monthID=0">Januar</button>
           <button class="dropdown-item" type="button" ng-click="month='Februar'; monthID=1">Februar</button>
@@ -86,7 +86,7 @@
     <div class="column">
       <div class="dropdown">
         <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">{{year}}
-  <span class="caret"></span></button>
+          <span class="caret"></span></button>
         <ul class="dropdown-menu">
           <button class="dropdown-item" type="button" ng-click="year=birthdayYears[1]">{{birthdayYears[1]}}</button>
           <button class="dropdown-item" type="button" ng-click="year=birthdayYears[2]">{{birthdayYears[2]}}</button>
@@ -133,8 +133,8 @@
     <div class="column">
       <div class="btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-success btn-lg active">
-    <input type="checkbox" checked autocomplete="off"> Deutsch
-  </label>
+          <input type="checkbox" checked autocomplete="off"> Deutsch
+        </label>
       </div>
     </div>
     <div class="column">
@@ -143,8 +143,8 @@
     <div class="column">
       <div class="dropdown">
         <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      {{language}}
-    </button>
+          {{language}}
+        </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
           <button class="dropdown-item" type="button" ng-click="language='keine andere Sprache'">keine andere Sprache</button>
           <button class="dropdown-item" type="button" ng-click="language='Englisch'">Englisch</button>
