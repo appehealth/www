@@ -32,12 +32,12 @@ angular.module('ATEM-App.services', [])
     var points;
 
     window.addEventListener('devicemotion', function(event) {
-      x = event.acceleration.x.toString().replace(".", ",");
       x_grav = event.accelerationIncludingGravity.x.toString().replace(".", ",");
-      y = event.acceleration.y.toString().replace(".", ",");
       y_grav = event.accelerationIncludingGravity.y.toString().replace(".", ",");
-      z = event.acceleration.z.toString().replace(".", ",");
       z_grav = event.accelerationIncludingGravity.z.toString().replace(".", ",");
+      x = event.acceleration.x.toString().replace(".", ",");
+      y = event.acceleration.y.toString().replace(".", ",");
+      z = event.acceleration.z.toString().replace(".", ",");
     });
 
     window.addEventListener("deviceorientation", function(event) {
@@ -65,7 +65,7 @@ angular.module('ATEM-App.services', [])
       if (files.length > 0) {
         var timestamp = Date.now() - startTime;
         sensorBuffer.push(timestamp + '; ' + x + '; ' + y + '; ' + z + '; ' + x_grav + '; ' + y_grav + '; ' + z_grav + '; ' + alpha + '; ' + beta + '; ' + gamma);
-        if (sensorBuffer.length == 10) {
+        if (sensorBuffer.length == 50) {
           writeFile(files[SENSORID], sensorBuffer.join('\n') + '\n', true);
           sensorBuffer = [];
         }
