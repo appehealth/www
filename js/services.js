@@ -262,7 +262,8 @@ angular.module('ATEM-App.services', [])
       wipeData: wipeData,
       requestFS: requestFS,
       logAnswer: logAnswer,
-      loadJson: loadJson
+      loadJson: loadJson,
+      finishTest: finishTest
     };
 
   }])
