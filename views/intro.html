@@ -2,19 +2,11 @@
   Bist du ein Junge oder ein Mädchen?</p>
 
 <div class="introSelect">
-  <form name="myForm">
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-      <label class="btn btn-success btn-lg">
-        <input type="radio"> Junge
-      </label>
-      <label class="btn btn-success btn-lg">
-        <input type="radio" ng-model="gender" ng-value="Maedchen"> Mädchen
-      </label>
-    </div>
-  </form>
+  <button class="btn btn-success btn-lg" ng-click="gender='Junge'"> Junge </button>
+  <button class="btn btn-success btn-lg" ng-click="gender='Mädchen'"> Mädchen </button>
 </div>
 
-
+<p>{{gender}}</p>
 
 <p class="storyText">Wann bist du geboren?</p>
 <div class="introSelect">

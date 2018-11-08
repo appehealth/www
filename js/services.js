@@ -52,12 +52,10 @@ angular.module('ATEM-App.services', [])
       });
     }
 
-    function logEvent(logText, component, item) {
+    function logEvent(logText, param, component, item) {
       if (files.length > 0) {
         var timestamp = Date.now() - startTime;
-        if (component > 0)
-          writeFile(files[EVENTID], timestamp + '; ' + component + '; ' + item + '; ' + logText + '\n', true);
-        else writeFile(files[EVENTID], timestamp + '; ' + logText + '\n', true);
+        writeFile(files[EVENTID], timestamp + '; ' + component + '; ' + item + '; ' + logText + '\n', true);
       }
     }
 
@@ -186,7 +184,7 @@ angular.module('ATEM-App.services', [])
       var ageInMonths = countMonths(day, month, year);
       var userID = Date.now();
       createFile("sensor" + userID + ".csv", 'Timestamp;X;Y;Z;X including gravity;Y including gravity;Z including Gravity;Alpha;Beta;Gamma' + '\n', SENSORID);
-      createFile("events" + userID + ".csv", 'Timestamp;Component;Item;Event' + '\n', EVENTID);
+      createFile("events" + userID + ".csv", 'Timestamp;Component;Item;Event;Param' + '\n', EVENTID);
       createFile("results" + userID + ".txt", "Alter: " + ageInMonths + " Monate" + '\n' + "Geschlecht: " + gender + '\n' + "Sprache: " + language + '\n', RESULTID);
     }
 
