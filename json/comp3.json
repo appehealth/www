@@ -101,8 +101,8 @@
       "choiceB": "nicht versuchen",
       "choiceAudio": "audio/k4i27.mp3",
       "questionA": {
-        "story": ["Tim und Ali wollen aber gerne einmal versuchen, mit einem Stock Gummibärchen aus dem Baumstamm zu holen. Aber Tims Mama sagt, sie haben dafür keine Zeit.",
-          "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als Tims Mama sagt, dass sie keine Zeit haben?"
+        "story": ["Tim und Ali wollen das nicht so gerne versuchen. Sie finden das langweilig. Aber Tims Mutter sagt, sie müssen das mal versuchen.",
+        "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als Tims Mama sagt, dass sie das versuchen müssen?"
         ],
         "storyImg": "img/story/k4i4B.JPG",
         "question": ["Sind sie überrascht oder sind sie traurig oder sind sie fröhlich oder ekeln sie sich?"],
@@ -119,8 +119,8 @@
         ]
       },
       "questionB": {
-        "story": ["Tim und Ali wollen das nicht so gerne versuchen. Sie finden das langweilig. Aber Tims Mutter sagt, sie müssen das mal versuchen.",
-          "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als Tims Mama sagt, dass sie das versuchen müssen?"
+        "story": ["Tim und Ali wollen aber gerne einmal versuchen, mit einem Stock Gummibärchen aus dem Baumstamm zu holen. Aber Tims Mama sagt, sie haben dafür keine Zeit.",
+          "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als Tims Mama sagt, dass sie keine Zeit haben?"
         ],
         "storyImg": "img/story/k4i4A.JPG",
         "question": ["Sind sie überrascht oder sind sie traurig oder sind sie fröhlich oder ekeln sie sich?"],
@@ -253,11 +253,11 @@
       "audio": "audio/k4intro2.mp3"
     },
     {
-      "text": "",
+      "text": "Super! Du hast einen weiteren Sticker gesammelt.",
       "image": "img/book2.png",
       "id": 4,
       "location": 6,
-      "audio": ""
+      "audio": "audio/bookMiddle.mp3"
     }
   ]
 }

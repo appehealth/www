@@ -192,10 +192,11 @@
       "audio": "audio/k6intro2.mp3"
     },
     {
-      "text": "",
+      "text": "Super! Dein Stickeralbum ist voll.",
       "image": "img/book5.png",
       "id": 3,
-      "location": 7
+      "location": 7,
+      "audio": "audio/bookEnd.mp3"
     }
   ]
 }
