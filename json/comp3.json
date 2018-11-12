@@ -104,24 +104,6 @@
         "story": ["Tim und Ali wollen das nicht so gerne versuchen. Sie finden das langweilig. Aber Tims Mutter sagt, sie müssen das mal versuchen.",
         "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als Tims Mama sagt, dass sie das versuchen müssen?"
         ],
-        "storyImg": "img/story/k4i4B.JPG",
-        "question": ["Sind sie überrascht oder sind sie traurig oder sind sie fröhlich oder ekeln sie sich?"],
-        "answers": [
-          "img/emotions/both/ueberrascht.JPG",
-          "img/emotions/both/traurig.JPG",
-          "img/emotions/both/froehlich.JPG",
-          "img/emotions/both/ekelnd.JPG"
-        ],
-        "correctAnswer": 2,
-        "audio": [
-          "audio/k4i27b.mp3",
-          "audio/k4i27bant.mp3"
-        ]
-      },
-      "questionB": {
-        "story": ["Tim und Ali wollen aber gerne einmal versuchen, mit einem Stock Gummibärchen aus dem Baumstamm zu holen. Aber Tims Mama sagt, sie haben dafür keine Zeit.",
-          "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als Tims Mama sagt, dass sie keine Zeit haben?"
-        ],
         "storyImg": "img/story/k4i4A.JPG",
         "question": ["Sind sie überrascht oder sind sie traurig oder sind sie fröhlich oder ekeln sie sich?"],
         "answers": [
@@ -134,6 +116,24 @@
         "audio": [
           "audio/k4i27a.mp3",
           "audio/k4i27aant.mp3"
+        ]
+      },
+      "questionB": {
+        "story": ["Tim und Ali wollen aber gerne einmal versuchen, mit einem Stock Gummibärchen aus dem Baumstamm zu holen. Aber Tims Mama sagt, sie haben dafür keine Zeit.",
+          "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, als Tims Mama sagt, dass sie keine Zeit haben?"
+        ],
+        "storyImg": "img/story/k4i4B.JPG",
+        "question": ["Sind sie überrascht oder sind sie traurig oder sind sie fröhlich oder ekeln sie sich?"],
+        "answers": [
+          "img/emotions/both/ueberrascht.JPG",
+          "img/emotions/both/traurig.JPG",
+          "img/emotions/both/froehlich.JPG",
+          "img/emotions/both/ekelnd.JPG"
+        ],
+        "correctAnswer": 2,
+        "audio": [
+          "audio/k4i27b.mp3",
+          "audio/k4i27bant.mp3"
         ]
       }
     },
