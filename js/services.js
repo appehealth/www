@@ -249,18 +249,21 @@ angular.module('ATEM-App.services', [])
     function finishTest() {
       logEvent('Test finished', '', 0, 0);
       var testTime = Date.now() - startTime;
-      var hrs = testTime / 3600000;
+      var hrs = Math.floor(testTime / 3600000);
       testTime -= hrs * 3600000;
-      var mins = testTime / 60000;
+      var mins = Math.floor(testTime / 60000);
       testTime -= mins * 60000;
-      var secs = testTime / 1000;
+      var secs = Math.floor(testTime / 1000);
       var timeString = hrs.toString() + ":";
       if (mins < 10) timeString += "0";
       timeString += mins.toString() + ":";
       if (secs < 10) timeString += "0";
       timeString += secs.toString();
-      logResult('Ende des Tests. Bearbeitungszeit: ' + timeString);
+      timeString = "Ende des Tests. Bearbeitungszeit: " + timeString;
+      logResult(timeString + '\nPunktzahl. ' + points.toString());
+      console.log(timeString);
       logResult('Punktzahl: ' + points.toString());
+      logResult('');
       writeFile(files[SENSORID], sensorBuffer.join('\n') + '\n', true);
       sensorBuffer = [];
       files = [];
