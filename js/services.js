@@ -30,6 +30,7 @@ angular.module('ATEM-App.services', [])
     var sensorInterval;
     var filesystem;
     var points = 0;
+    var isFinished = false;
 
     window.addEventListener('devicemotion', function(event) {
       x_grav = event.accelerationIncludingGravity.x.toString().replace(".", ",");
@@ -63,7 +64,7 @@ angular.module('ATEM-App.services', [])
       if (files.length > 0) {
         var timestamp = Date.now() - startTime;
         sensorBuffer.push(timestamp + '; ' + x + '; ' + y + '; ' + z + '; ' + x_grav + '; ' + y_grav + '; ' + z_grav + '; ' + alpha + '; ' + beta + '; ' + gamma);
-        if (sensorBuffer.length == 50) {
+        if (sensorBuffer.length == 50 || isFinished) {
           writeFile(files[SENSORID], sensorBuffer.join('\n') + '\n', true);
           sensorBuffer = [];
         }
@@ -117,26 +118,6 @@ angular.module('ATEM-App.services', [])
       var yearNow = startTime.getFullYear();
       var bthDate = new Date(year, month - 1, day);
       var ageYears, ageMonths, ageDays;
-      //
-      // function leapYear( yr ) {
-      //   return ( ( yr % 4 == 0 ) && ( yr % 100 != 0 ) ) || ( yr % 400 == 0 );
-      // }
-      //
-      // if ( yearNow == year && ( month > monthNow || ( month == monthNow && day > dayNow ) ) ) throw "Ungültiges Geburtsdatum"
-      // else switch ( month ) {
-      //   case 4:
-      //   case 6:
-      //   case 9:
-      //   case 11:
-      //     if ( day > 30 ) throw "Ungültiges Geburtsdatum";
-      //     break;
-      //   case 2:
-      //     if ( day > 29 ) throw "Ungültiges Geburtsdatum";
-      //     if ( day == 29 )
-      //       if ( !leapYear( year ) ) throw " Ungültiges Geburtsdatum";
-      //     break;
-      // }
-
       ageYears = startTime.getFullYear() - year;
       ageMonths = startTime.getMonth() - (month - 1);
       ageDays = startTime.getDate() - day;
@@ -183,6 +164,7 @@ angular.module('ATEM-App.services', [])
     function logStart(day, month, year, gender, language) {
       var ageInMonths = countMonths(day, month, year);
       var userID = Date.now();
+      isFinished = false;
       createFile("sensor" + userID + ".csv", 'Timestamp;X;Y;Z;X including gravity;Y including gravity;Z including Gravity;Alpha;Beta;Gamma' + '\n', SENSORID);
       createFile("events" + userID + ".csv", 'Timestamp;Component;Item;Event;Param' + '\n', EVENTID);
       createFile("results" + userID + ".txt", "Alter: " + ageInMonths + " Monate" + '\n' + "Geschlecht: " + gender + '\n' + "Sprache: " + language + '\n', RESULTID);
@@ -237,7 +219,7 @@ angular.module('ATEM-App.services', [])
     }
 
     function wipeData() {
-      results = [];
+      files = [];
       clearInterval(sensorInterval);
     }
 
@@ -264,9 +246,9 @@ angular.module('ATEM-App.services', [])
       console.log(timeString);
       logResult('Punktzahl: ' + points.toString());
       logResult('');
-      writeFile(files[SENSORID], sensorBuffer.join('\n') + '\n', true);
-      sensorBuffer = [];
-      files = [];
+      isFinished = true;
+      logSensor();
+      wipeData();
     }
 
     return {
