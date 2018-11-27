@@ -43,6 +43,7 @@
     },
     {
       "id": 3,
+      "audio": ["audio/k5i32tim.mp3"],
       "story": ["Einige der Vögel fliegen ganz dicht über Tim und Alis Köpfen. Es sieht so aus, als würden sie gleich auf ihren Köpfen landen.",
         "Ali glaubt, wenn die Vögel auf ihren Köpfen oder Schultern landen, wird das ganz schön wehtun.",
         "Aber Tim glaubt nicht, dass es wehtun wird.Er glaubt, er kann dann die schönen weichen Federn der Vögel streicheln.",
@@ -80,6 +81,7 @@
     },
     {
       "id": 4,
+      "audio": ["audio/k5i33tim.mp3"],
       "story": ["Tim und Ali wollen gerne einen Pelikan mit Fisch füttern. Jetzt sehen sie, wie ein anderes Kind zusammen mit einem Tierpfleger einen Pelikan füttert.",
         "Tim glaubt, dass der Pelikan jetzt bestimmt schon satt ist und sie ihn jetzt nicht mehr füttern dürfen.",
         "Aber Ali denkt, sie dürfen den Pelikan jetzt auch füttern.",
@@ -117,6 +119,7 @@
     },
     {
       "id": 5,
+      "audio": ["audio/k5i34tim.mp3"],
       "story": ["Einige kleine Kinder haben in der großen Halle einen ganzen Schwarm von Vögeln so sehr erschreckt, dass die Vögel nun ganz aufgeregt umherfliegen.",
         "Tim findet, dass es ganz schön blöd von den Kindern war, dass sie die Vögel so erschreckt haben.",
         "Aber Ali findet das ganz schön gefährlich, weil er glaubt, die Vögel könnten gegen ihn fliegen und ihm wehtun.",
@@ -168,10 +171,11 @@
       "audio": "audio/k5intro2.mp3"
     },
     {
-      "text": "",
+      "text": "Super! Du hast einen weiteren Sticker gesammelt.",
       "image": "img/book4.png",
       "id": 3,
-      "location": 6
+      "location": 6,
+      "audio": "audio/bookMiddle.mp3"
     }
   ]
 }

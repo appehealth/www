@@ -19,24 +19,32 @@ angular.module('ATEM-App.services', [])
   //   };
   // } ] )
 
-  .service('fileService', ['$http', function($http) {
+  .service('fileService', ['$http', 'audioService', function($http, audioService) {
     var files = [];
     var sensorBuffer = [];
     const SENSORID = 0;
     const EVENTID = 1;
     const RESULTID = 2;
     var startTime;
-    var x;
-    var y;
-    var z;
+    var x, y, z, x_grav, y_grav, z_grav, alpha, beta, gamma;
     var sensorInterval;
     var filesystem;
+    var points = 0;
 
     window.addEventListener('devicemotion', function(event) {
-      x = event.accelerationIncludingGravity.x.toString().replace(".", ",");
-      y = event.accelerationIncludingGravity.y.toString().replace(".", ",");
-      z = event.accelerationIncludingGravity.z.toString().replace(".", ",");
+      x_grav = event.accelerationIncludingGravity.x.toString().replace(".", ",");
+      y_grav = event.accelerationIncludingGravity.y.toString().replace(".", ",");
+      z_grav = event.accelerationIncludingGravity.z.toString().replace(".", ",");
+      x = event.acceleration.x.toString().replace(".", ",");
+      y = event.acceleration.y.toString().replace(".", ",");
+      z = event.acceleration.z.toString().replace(".", ",");
     });
+
+    window.addEventListener("deviceorientation", function(event) {
+      alpha = event.alpha.toString().replace(".", ",");
+      beta = event.beta.toString().replace(".", ",");;
+      gamma = event.gamma.toString().replace(".", ",");;
+    }, true);
 
     function requestFS() {
       window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
@@ -44,20 +52,18 @@ angular.module('ATEM-App.services', [])
       });
     }
 
-    function logEvent(logText, component, item) {
+    function logEvent(logText, param, component, item) {
       if (files.length > 0) {
         var timestamp = Date.now() - startTime;
-        if (component > 0)
-          writeFile(files[EVENTID], timestamp + ': Component ' + component + ', Item ' + item + ': ' + logText + '\n', true);
-        else writeFile(files[EVENTID], timestamp + ': ' + logText + '\n', true);
+        writeFile(files[EVENTID], timestamp + '; ' + component + '; ' + item + '; ' + logText + '; ' + param + '\n', true);
       }
     }
 
     function logSensor() {
       if (files.length > 0) {
         var timestamp = Date.now() - startTime;
-        sensorBuffer.push(timestamp + '; ' + x + '; ' + y + '; ' + z);
-        if (sensorBuffer.length == 10) {
+        sensorBuffer.push(timestamp + '; ' + x + '; ' + y + '; ' + z + '; ' + x_grav + '; ' + y_grav + '; ' + z_grav + '; ' + alpha + '; ' + beta + '; ' + gamma);
+        if (sensorBuffer.length == 50) {
           writeFile(files[SENSORID], sensorBuffer.join('\n') + '\n', true);
           sensorBuffer = [];
         }
@@ -70,11 +76,12 @@ angular.module('ATEM-App.services', [])
       }
     }
 
-    function logAnswer(comp, question, answer, correctAnswer) {
+    function logAnswer(comp, question, answer, correctAnswer, isRegItem) {
       var msg = "";
       msg += ("Komponente " + comp + ', Frage ' + question + ': ' + answer + ' (richtige Antwort: ' + correctAnswer + ')');
       console.log(msg);
       logResult(msg);
+      if (answer == correctAnswer && !isRegItem) points++;
     }
 
     function writeFile(fileEntry, dataObj, isAppend) {
@@ -164,9 +171,7 @@ angular.module('ATEM-App.services', [])
       fileEntry.file(function(file) {
         var reader = new FileReader();
 
-        reader.onloadend = function() {
-          console.log("Successful file read: " + this.result);
-        };
+        reader.onloadend = function() {};
 
         reader.readAsText(file);
 
@@ -178,8 +183,8 @@ angular.module('ATEM-App.services', [])
     function logStart(day, month, year, gender, language) {
       var ageInMonths = countMonths(day, month, year);
       var userID = Date.now();
-      createFile("sensor" + userID + ".csv", 'Timestamp;X;Y;Z' + '\n', SENSORID);
-      createFile("events" + userID + ".txt", '', EVENTID);
+      createFile("sensor" + userID + ".csv", 'Timestamp;X;Y;Z;X including gravity;Y including gravity;Z including Gravity;Alpha;Beta;Gamma' + '\n', SENSORID);
+      createFile("events" + userID + ".csv", 'Timestamp;Component;Item;Event;Param' + '\n', EVENTID);
       createFile("results" + userID + ".txt", "Alter: " + ageInMonths + " Monate" + '\n' + "Geschlecht: " + gender + '\n' + "Sprache: " + language + '\n', RESULTID);
     }
 
@@ -219,11 +224,13 @@ angular.module('ATEM-App.services', [])
     function startSensor() {
       logEvent('Start', 0, 0);
       sensorInterval = setInterval(logSensor, 20);
-      window.addEventListener('pause', function() {
-        logEvent('Test paused', 0, 0);
+
+      document.addEventListener('pause', function() {
+        audioService.stopAudio();
+        logEvent('Test paused', '', 0, 0);
         clearInterval(sensorInterval);
-        window.addEventListener('resume', function() {
-          logEvent('Test continued', 0, 0);
+        document.addEventListener('resume', function() {
+          logEvent('Test continued', '', 0, 0);
           sensorInterval = setInterval(logSensor, 20);
         })
       })
@@ -239,6 +246,29 @@ angular.module('ATEM-App.services', [])
       return $http.get(filepath);
     }
 
+    function finishTest() {
+      logEvent('Test finished', '', 0, 0);
+      var testTime = Date.now() - startTime;
+      var hrs = Math.floor(testTime / 3600000);
+      testTime -= hrs * 3600000;
+      var mins = Math.floor(testTime / 60000);
+      testTime -= mins * 60000;
+      var secs = Math.floor(testTime / 1000);
+      var timeString = hrs.toString() + ":";
+      if (mins < 10) timeString += "0";
+      timeString += mins.toString() + ":";
+      if (secs < 10) timeString += "0";
+      timeString += secs.toString();
+      timeString = "Ende des Tests. Bearbeitungszeit: " + timeString;
+      logResult(timeString + '\nPunktzahl. ' + points.toString());
+      console.log(timeString);
+      logResult('Punktzahl: ' + points.toString());
+      logResult('');
+      writeFile(files[SENSORID], sensorBuffer.join('\n') + '\n', true);
+      sensorBuffer = [];
+      files = [];
+    }
+
     return {
       logStart: logStart,
       logEvent: logEvent,
@@ -247,7 +277,8 @@ angular.module('ATEM-App.services', [])
       wipeData: wipeData,
       requestFS: requestFS,
       logAnswer: logAnswer,
-      loadJson: loadJson
+      loadJson: loadJson,
+      finishTest: finishTest
     };
 
   }])
@@ -258,6 +289,7 @@ angular.module('ATEM-App.services', [])
 
     function playAudio(url) {
       // Play the audio file at url
+      if (my_media != null) my_media.release();
 
       url = "/android_asset/www/" + url;
       //fix url for Android

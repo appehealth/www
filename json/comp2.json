@@ -28,10 +28,10 @@
         "4. Tim kann gar nichts dagegen tun, dass er sich vor dem Käse ekelt"
       ],
       "answers": [
-        "img/emotions/one.png",
-        "img/emotions/two.png",
-        "img/emotions/three.png",
-        "img/emotions/four.png"
+        "img/emotions/regulation/1.1.PNG",
+        "img/emotions/regulation/1.2.PNG",
+        "img/emotions/regulation/1.3.PNG",
+        "img/emotions/regulation/1.4.PNG"
       ],
       "correctAnswer": 2,
       "audio": [
@@ -126,10 +126,10 @@
         "4. Tim könnte daran denken, dass die Hunde ihn bestimmt beißen werden"
       ],
       "answers": [
-        "img/emotions/one.png",
-        "img/emotions/two.png",
-        "img/emotions/three.png",
-        "img/emotions/four.png"
+        "img/emotions/regulation/2.1.PNG",
+        "img/emotions/regulation/2.2.PNG",
+        "img/emotions/regulation/2.3.PNG",
+        "img/emotions/regulation/2.4.PNG"
       ],
       "correctAnswer": 3,
       "audio": [
@@ -171,13 +171,6 @@
       "id": 2,
       "location": 5,
       "audio": "audio/k2middle.mp3"
-    },
-    {
-      "text": "Für jede Station, die Du gemeinsam mit Tim und Ali im Zoo besuchst, kannst Du Dir einen Sticker in Dein Stickeralbum kleben. Du hast jetzt schon einen Sticker gesammelt. Schaffst Du es, das ganze Album zu füllen?",
-      "image": "img/BelohnungKomp2.JPG",
-      "id": 3,
-      "location": 9,
-      "audio": "audio/k2reward.mp3"
     }
   ]
 }

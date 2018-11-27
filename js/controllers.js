@@ -27,15 +27,16 @@ angular.module('ATEM-App.controllers', [])
     $scope.day = 'Tag';
     $scope.month = 'Monat';
     $scope.year = 'Jahr';
-    $scope.gender = {name:''};
+    $scope.gender = '';
     $scope.buttonCaption = 'Weiter';
+
+    fileService.requestFS();
 
     fileService.loadJson("intro").then(function(response) {
       text1 = response.data.text1;
       text2 = response.data.text2;
       $scope.introText = text1;
       audio = response.data.audio;
-      fileService.requestFS();
     });
 
     $scope.repeatAudio = function() {
@@ -43,10 +44,9 @@ angular.module('ATEM-App.controllers', [])
     }
 
     $scope.startStory = function() {
-      console.log($scope.gender.name);
-      // fileService.logStart(parseInt($scope.day), $scope.monthID, $scope.year, $scope.gender, $scope.language);
-      // window.location = '#/introduction';
-      // audioService.playAudio(audio[0]);
+      window.location = '#/introduction';
+      fileService.logStart(parseInt($scope.day), $scope.monthID, $scope.year, $scope.gender, $scope.language);
+      audioService.playAudio(audio[0]);
     }
 
     $scope.startComp1 = function() {
@@ -55,6 +55,8 @@ angular.module('ATEM-App.controllers', [])
         window.location = '#/comp1';
         fileService.startSensor();
       } else {
+        audioService.stopAudio();
+        audioService.playAudio(audio[1]);
         part2 = true;
         $scope.introText = text2;
         $scope.buttonCaption = 'Start';
@@ -72,8 +74,6 @@ angular.module('ATEM-App.controllers', [])
     fileService.loadJson("comp1").then(function(response) {
       allQuestions = response.data.questions;
       numberOfQuestions = allQuestions.length;
-      $scope.rewardImg = response.data.rewardImg;
-      $scope.albumText = response.data.text;
       $scope.currentQuestion = allQuestions[0];
       audioService.playAudio($scope.currentQuestion.audio);
     });
@@ -81,7 +81,7 @@ angular.module('ATEM-App.controllers', [])
     $scope.selectAnswer = function(ans) {
       $scope.selectedAnswer = ans;
       window.scrollTo(0, document.body.scrollHeight);
-      fileService.logEvent('Select answer ' + ans, 1, $scope.currentQuestion.id);
+      fileService.logEvent('Select answer', ans, 1, $scope.currentQuestion.id);
     }
 
     $scope.repeatAudio = function() {
@@ -97,22 +97,18 @@ angular.module('ATEM-App.controllers', [])
           fileService.logResult('Zu viele Fehler in Komponente 1. Test wird nach Komponente 2 beendet.');
         }
       }
+      fileService.logEvent('Confirm answer', $scope.selectedAnswer, 1, $scope.currentQuestion.id);
       $scope.selectedAnswer = 0;
-      fileService.logEvent('Confirm answer', 1, $scope.currentQuestion.id);
       if ($scope.currentQuestion.id < numberOfQuestions) {
         $scope.currentQuestion = allQuestions[$scope.currentQuestion.id];
         audioService.playAudio($scope.currentQuestion.audio);
         window.scrollTo(0, 0);
       } else {
-        $scope.finished = true;
+        audioService.stopAudio();
+        window.location = '#/comp2';
       }
     }
 
-    $scope.nextComp = function() {
-      audioService.stopAudio();
-      fileService.logEvent('Start component 2')
-      window.location = '#/comp2';
-    }
   }])
 
   .controller('Comp2Ctrl', ['$scope', '$rootScope', 'audioService', 'fileService', function($scope, $rootScope, audioService, fileService) {
@@ -127,7 +123,7 @@ angular.module('ATEM-App.controllers', [])
     $scope.confirmQuestion = function() {
       audioService.stopAudio();
       fileService.logAnswer(2, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer);
-      fileService.logEvent('Confirm answer', 2, $scope.currentQuestion.id)
+      fileService.logEvent('Confirm answer', $scope.selectedAnswer, 2, $scope.currentQuestion.id)
       if ($scope.selectedAnswer != $scope.currentQuestion.correctAnswer && !$scope.currentQuestion.isRegItem) {
         $rootScope.mistakes1_2++;
         console.log("fehler: " + $rootScope.mistakes1_2);
@@ -148,7 +144,10 @@ angular.module('ATEM-App.controllers', [])
           $scope.showAnswers = false;
           audioService.playAudio($scope.currentQuestion.audio[0]);
         }
-      } else $scope.displayMode = 'story';
+      } else {
+        audioService.stopAudio();
+        $rootScope.mistakes1_2 < 4 ? window.location = '#/comp3' : window.location = '#/results';
+      }
 
       window.scrollTo(0, 0);
 
@@ -163,7 +162,7 @@ angular.module('ATEM-App.controllers', [])
     $scope.selectAnswer = function(ans) {
       $scope.selectedAnswer = ans;
       window.scrollTo(0, document.body.scrollHeight);
-      fileService.logEvent('Select answer ' + ans, 2, $scope.currentQuestion.id);
+      fileService.logEvent('Select answer', ans, 2, $scope.currentQuestion.id);
     }
 
     $scope.repeatAudio = function() {
@@ -172,16 +171,12 @@ angular.module('ATEM-App.controllers', [])
 
     $scope.continueStory = function() {
       audioService.stopAudio();
-      if ($scope.currentStory.id == story.length) {
-        $rootScope.mistakes1_2 < 4 ? window.location = '#/comp3' : window.location = '#/results';
-      } else {
-        if (($scope.currentStory.location != story[$scope.currentStory.id].location) && $scope.currentStory.location <= numberOfQuestions) {
-          $scope.displayMode = 'question';
-          audioService.playAudio($scope.currentQuestion.audio[0]);
-        }
-        $scope.currentStory = story[$scope.currentStory.id];
-        nextStory = $scope.currentStory.location;
-      }
+      //if ( ( $scope.currentStory.location != story[ $scope.currentStory.id ].location ) && $scope.currentStory.location <= numberOfQuestions ) {
+      $scope.displayMode = 'question';
+      audioService.playAudio($scope.currentQuestion.audio[0]);
+      //}
+      $scope.currentStory = story[$scope.currentStory.id];
+      nextStory = $scope.currentStory.location;
 
       window.scrollTo(0, 0);
     }
@@ -223,7 +218,7 @@ angular.module('ATEM-App.controllers', [])
 
     $scope.btnChoice = function(ch) {
       audioService.stopAudio();
-      fileService.logEvent('Select choice ' + ch, 3, $scope.currentChoice.id);
+      fileService.logEvent('Select choice ', ch, 3, $scope.currentChoice.id);
       if (ch == 'A') $scope.currentQuestion = $scope.currentChoice.questionA;
       else $scope.currentQuestion = $scope.currentChoice.questionB;
       $scope.displayMode = 'question';
@@ -237,8 +232,8 @@ angular.module('ATEM-App.controllers', [])
 
     $scope.confirmQuestion = function() {
       audioService.stopAudio();
-      fileService.logAnswer(3, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer);
-      fileService.logEvent('Confirm answer', 3, $scope.currentChoice.id)
+      fileService.logAnswer(3, $scope.currentChoice.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer, false);
+      fileService.logEvent('Confirm answer', $scope.selectedAnswer, 3, $scope.currentChoice.id)
       if ($scope.selectedAnswer == $scope.currentQuestion.correctAnswer) {
         wrongAnswers = 0;
       } else {
@@ -273,7 +268,7 @@ angular.module('ATEM-App.controllers', [])
     $scope.selectAnswer = function(ans) {
       $scope.selectedAnswer = ans;
       window.scrollTo(0, document.body.scrollHeight);
-      fileService.logEvent('Select answer ' + ans, 3, $scope.currentChoice.id);
+      fileService.logEvent('Select answer', ans, 3, $scope.currentChoice.id);
     }
 
     $scope.showQuestion = function() {
@@ -291,6 +286,8 @@ angular.module('ATEM-App.controllers', [])
         if (($scope.currentStory.location != story[$scope.currentStory.id].location) && $scope.currentStory.location <= numberOfQuestions) {
           $scope.displayMode = 'choice';
           audioService.playAudio($scope.currentChoice.choiceAudio);
+        } else {
+          audioService.playAudio(story[$scope.currentStory.id].audio);
         }
         $scope.currentStory = story[$scope.currentStory.id];
         nextStory = $scope.currentStory.location;
@@ -331,8 +328,8 @@ angular.module('ATEM-App.controllers', [])
 
     $scope.confirmQuestion = function() {
       audioService.stopAudio();
-      fileService.logAnswer(4, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer);
-      fileService.logEvent('Confirm answer', 4, $scope.currentQuestion.id)
+      fileService.logAnswer(4, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer, false);
+      fileService.logEvent('Confirm answer', $scope.selectedAnswer, 4, $scope.currentQuestion.id)
       if ($scope.selectedAnswer == $scope.currentQuestion.correctAnswer) {
         wrongAnswers = 0;
       } else {
@@ -363,7 +360,7 @@ angular.module('ATEM-App.controllers', [])
     $scope.selectAnswer = function(ans) {
       $scope.selectedAnswer = ans;
       window.scrollTo(0, document.body.scrollHeight);
-      fileService.logEvent('Select answer ' + ans, 4, $scope.currentQuestion.id);
+      fileService.logEvent('Select answer', ans, 4, $scope.currentQuestion.id);
     }
 
     $scope.repeatAudio = function() {
@@ -446,7 +443,6 @@ angular.module('ATEM-App.controllers', [])
       window.scrollTo(0, 0);
     }
 
-
     $scope.repeatAudio = function() {
       audioService.repeatAudio();
     }
@@ -454,8 +450,8 @@ angular.module('ATEM-App.controllers', [])
     $scope.confirmQuestion = function() {
       audioService.stopAudio();
       if (typeof(allQuestions[currentId - 1].question2) === "undefined") {
-        fileService.logAnswer(5, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1);
-        fileService.logEvent('Confirm answer', 5, $scope.currentQuestion.id);
+        fileService.logAnswer(5, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1, false);
+        fileService.logEvent('Confirm answer', $scope.selectedAnswer, 5, $scope.currentQuestion.id);
         if ($scope.selectedAnswer == $scope.currentQuestion.correctAnswer1) {
           wrongAnswers = 0;
         } else {
@@ -469,18 +465,19 @@ angular.module('ATEM-App.controllers', [])
 
       } else if ($scope.currentQuestion.question == allQuestions[currentId - 1].question1) {
         answerQ1 = $scope.selectedAnswer;
-        fileService.logEvent('Question A: Confirm answer', 5, $scope.currentQuestion.id);
-        fileService.logAnswer(5, $scope.currentQuestion.id + 'a', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1);
+        fileService.logEvent('Question A: Confirm answer', $scope.selectedAnswer, 5, $scope.currentQuestion.id);
+        fileService.logAnswer(5, $scope.currentQuestion.id + 'a', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1, true);
         $scope.selectedAnswer = 0;
         $scope.currentQuestion.question = allQuestions[currentId - 1].question2;
-        audioService.playAudio($scope.currentQuestion.question[0]);
+        audioService.playAudio($scope.currentQuestion.question.audio[1]);
       } else {
-        fileService.logEvent('Question B: Confirm answer', 5, $scope.currentQuestion.id);
-        fileService.logAnswer(5, $scope.currentQuestion.id + 'b', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer2);
+        fileService.logEvent('Question B: Confirm answer', $scope.selectedAnswer, 5, $scope.currentQuestion.id);
         if (answerQ1 == allQuestions[currentId - 1].correctAnswer1 && $scope.selectedAnswer == allQuestions[currentId - 1].correctAnswer2) {
           wrongAnswers = 0;
+          fileService.logAnswer(5, $scope.currentQuestion.id + 'b', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer2, false);
         } else {
           wrongAnswers++;
+          fileService.logAnswer(5, $scope.currentQuestion.id + 'b', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer2, true);
           if (wrongAnswers == 3) {
             fileService.logResult('Drei falsche Antworten hintereinander. Sprung zu Komponente 6.');
             window.location = '#/comp6';
@@ -493,7 +490,7 @@ angular.module('ATEM-App.controllers', [])
     $scope.selectAnswer = function(ans) {
       $scope.selectedAnswer = ans;
       window.scrollTo(0, document.body.scrollHeight);
-      fileService.logEvent('Select answer ' + ans, 5, $scope.currentQuestion.id);
+      fileService.logEvent('Select answer', ans, 5, $scope.currentQuestion.id);
     }
 
     $scope.showQuestion = function() {
@@ -503,11 +500,15 @@ angular.module('ATEM-App.controllers', [])
     }
 
     $scope.continueStory = function() {
+      audioService.stopAudio();
       if ($scope.currentStory.id == story.length) {
         window.location = '#/comp6';
       } else {
         if (($scope.currentStory.location != story[$scope.currentStory.id].location) && $scope.currentStory.location <= numberOfQuestions) {
           $scope.displayMode = 'question';
+          audioService.playAudio($scope.currentQuestion.question.audio[0]);
+        } else {
+          audioService.playAudio($scope.currentStory.audio)
         }
         $scope.currentStory = story[$scope.currentStory.id];
         nextStory = $scope.currentStory.location;
@@ -552,6 +553,7 @@ angular.module('ATEM-App.controllers', [])
     $scope.showQuestionImg = true;
 
     function nextQuestion() {
+      audioService.stopAudio();
       $scope.selectedAnswer = 0;
       if (currentId < numberOfQuestions) {
         $scope.currentQuestion = allQuestions[currentId];
@@ -560,7 +562,11 @@ angular.module('ATEM-App.controllers', [])
         currentId++;
         if ($scope.currentQuestion.id == nextStory) {
           $scope.displayMode = 'story';
-        } else $scope.showAnswers = false;
+          audioService.playAudio($scope.currentStory.audio);
+        } else {
+          $scope.showAnswers = false;
+          audioService.playAudio($scope.currentQuestion.question.audio[0]);
+        }
       } else $scope.displayMode = 'story';
 
       window.scrollTo(0, 0);
@@ -574,8 +580,8 @@ angular.module('ATEM-App.controllers', [])
 
     $scope.confirmQuestion = function() {
       if (typeof(allQuestions[currentId - 1].question2) === "undefined") {
-        fileService.logAnswer(6, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1);
-        fileService.logEvent('Confirm answer', 6, $scope.currentQuestion.id);
+        fileService.logAnswer(6, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1, $scope.currentQuestion.isRegItem == true);
+        fileService.logEvent('Confirm answer', $scope.selectedAnswer, 6, $scope.currentQuestion.id);
         if ($scope.selectedAnswer == $scope.currentQuestion.correctAnswer1) {
           wrongAnswers = 0;
         } else {
@@ -589,17 +595,19 @@ angular.module('ATEM-App.controllers', [])
 
       } else if ($scope.currentQuestion.question == allQuestions[currentId - 1].question1) {
         answerQ1 = $scope.selectedAnswer;
-        fileService.logEvent('Question A: Confirm answer', 6, $scope.currentQuestion.id);
-        fileService.logAnswer(6, $scope.currentQuestion.id + 'a', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1);
+        fileService.logEvent('Question A: Confirm answer', $scope.selectedAnswer, 6, $scope.currentQuestion.id);
+        fileService.logAnswer(6, $scope.currentQuestion.id + 'a', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer1, true);
         $scope.selectedAnswer = 0;
         $scope.currentQuestion.question = allQuestions[currentId - 1].question2;
+        audioService.playAudio($scope.currentQuestion.question.audio[0]);
       } else {
-        fileService.logAnswer(6, $scope.currentQuestion.id + 'b', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer2);
-        fileService.logEvent('Question B: Confirm answer', 6, $scope.currentQuestion.id);
+        fileService.logEvent('Question B: Confirm answer', $scope.selectedAnswer, 6, $scope.currentQuestion.id);
         if (answerQ1 == allQuestions[currentId - 1].correctAnswer1 && $scope.selectedAnswer == allQuestions[currentId - 1].correctAnswer2) {
           wrongAnswers = 0;
+          fileService.logAnswer(6, $scope.currentQuestion.id + 'b', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer2, false);
         } else {
           wrongAnswers++;
+          fileService.logAnswer(6, $scope.currentQuestion.id + 'b', $scope.selectedAnswer, $scope.currentQuestion.correctAnswer2, true);
           if (wrongAnswers == 3) {
             fileService.logResult('Drei falsche Antworten hintereinander. Test wird beendet.');
             window.location = '#/results';
@@ -615,15 +623,17 @@ angular.module('ATEM-App.controllers', [])
     $scope.selectAnswer = function(ans) {
       $scope.selectedAnswer = ans;
       window.scrollTo(0, document.body.scrollHeight);
-      fileService.logEvent('Select answer ' + ans, 5, $scope.currentQuestion.id);
+      fileService.logEvent('Select answer', ans, 5, $scope.currentQuestion.id);
     }
 
     $scope.continueStory = function() {
+      audioService.stopAudio();
       if ($scope.currentStory.id == story.length) {
         window.location = '#/results';
       } else {
-        if (($scope.currentStory.location != story[$scope.currentStory.id].location) && $scope.currentStory.location <= numberOfQuestions) {
+        if (($scope.currentStory.location != numberOfQuestions + 1) && $scope.currentStory.location <= numberOfQuestions) {
           $scope.displayMode = 'question';
+          audioService.playAudio($scope.currentQuestion.question.audio[0]);
         }
         $scope.currentStory = story[$scope.currentStory.id];
         nextStory = $scope.currentStory.location;
@@ -647,7 +657,7 @@ angular.module('ATEM-App.controllers', [])
           audioService.playAudio($scope.currentStory.audio);
         } else {
           $scope.displayMode = 'question';
-          audioService.playAudio($scope.currentQuestion.audio[0]);
+          audioService.playAudio($scope.currentQuestion.question.audio[0]);
         }
       }
     });
@@ -655,10 +665,12 @@ angular.module('ATEM-App.controllers', [])
 
   }])
 
-  .controller('ResultsCtrl', ['$scope', 'fileService', function($scope, fileService) {
+  .controller('ResultsCtrl', ['$scope', 'fileService', 'audioService', function($scope, fileService, audioService) {
+    audioService.playAudio("audio/Outro.mp3");
+    fileService.finishTest();
 
     $scope.returnToTitle = function() {
-      fileService.wipeData();
+      audioService.stopAudio();
       window.location = '#/';
     }
   }])
