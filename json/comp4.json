@@ -20,25 +20,6 @@
     },
     {
       "id": 2,
-      "story": ["Ein Mann mit einem großen Hund kommt vorbei. Der Hund sieht böse aus und will auf Ali zuspringen. Da macht Ali einen Schritt zurück und tritt in einen Hundehaufen.",
-        "Kannst Du mir zeigen wie Ali sich fühlt, wenn der Hund auf ihn zuspringt und er in einen Hundehaufen tritt?"
-      ],
-      "storyImg": "img/story/k3i3.JPG",
-      "question": ["Ist er ärgerlich oder ist er ängstlich und ekelt sich gleichzeitig oder ist er ängstlich oder ist er überrascht und fröhlich gleichzeitig?"],
-      "answers": [
-        "img/emotions/ali/aergerlich.JPG",
-        "img/emotions/ali/aengstlichEkelnd.JPG",
-        "img/emotions/ali/aengstlich.JPG",
-        "img/emotions/ali/ueberraschtFroehlich.JPG"
-      ],
-      "correctAnswer": 2,
-      "audio": [
-        "audio/k3i19.mp3",
-        "audio/k3i19ant.mp3"
-      ]
-    },
-    {
-      "id": 3,
       "story": ["Tim und seine Eltern wollen in dem Schaufenster vom Zooladen noch nach einem Geschenk für Tims Schwester schauen. Ali möchte das auch gerne ansehen aber er soll ganz alleine zwischen den fremden Menschen in der Warteschlage stehen bleiben und den Platz freihalten.",
         "Kannst Du mir zeigen, wie Ali sich fühlt, wenn er sich die Sachen im Schaufenster nicht ansehen kann und auch noch ganz alleine bei den fremden Menschen in der Warteschlange stehen bleiben muss?"
       ],
@@ -54,6 +35,25 @@
       "audio": [
         "audio/k3i18.mp3",
         "audio/k3i18ant.mp3"
+      ]
+    },
+    {
+      "id": 3,
+      "story": ["Ein Mann mit einem großen Hund kommt vorbei. Der Hund sieht böse aus und will auf Ali zuspringen. Da macht Ali einen Schritt zurück und tritt in einen Hundehaufen.",
+        "Kannst Du mir zeigen wie Ali sich fühlt, wenn der Hund auf ihn zuspringt und er in einen Hundehaufen tritt?"
+      ],
+      "storyImg": "img/story/k3i3.JPG",
+      "question": ["Ist er ärgerlich oder ist er ängstlich und ekelt sich gleichzeitig oder ist er ängstlich oder ist er überrascht und fröhlich gleichzeitig?"],
+      "answers": [
+        "img/emotions/ali/aergerlich.JPG",
+        "img/emotions/ali/aengstlichEkelnd.JPG",
+        "img/emotions/ali/aengstlich.JPG",
+        "img/emotions/ali/ueberraschtFroehlich.JPG"
+      ],
+      "correctAnswer": 2,
+      "audio": [
+        "audio/k3i19.mp3",
+        "audio/k3i19ant.mp3"
       ]
     },
     {

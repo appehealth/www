@@ -1,23 +1,4 @@
 angular.module('ATEM-App.services', [])
-  // .factory( 'cordovaReady', [ function() {
-  //   return function( fn ) {
-  //     var queue = [],
-  //       impl = function() {
-  //         queue.push( [].slice.call( arguments ) );
-  //       };
-  //
-  //     document.addEventListener( 'deviceready', function() {
-  //       queue.forEach( function( args ) {
-  //         fn.apply( this, args );
-  //       } );
-  //       impl = fn;
-  //     }, false );
-  //
-  //     return function() {
-  //       return impl.apply( this, arguments );
-  //     };
-  //   };
-  // } ] )
 
   .service('fileService', ['$http', 'audioService', function($http, audioService) {
     var files = [];
@@ -223,10 +204,6 @@ angular.module('ATEM-App.services', [])
       clearInterval(sensorInterval);
     }
 
-    function loadJson(id) {
-      var filepath = "json/" + id + ".json";
-      return $http.get(filepath);
-    }
 
     function finishTest() {
       logEvent('Test finished', '', 0, 0);
@@ -259,7 +236,6 @@ angular.module('ATEM-App.services', [])
       wipeData: wipeData,
       requestFS: requestFS,
       logAnswer: logAnswer,
-      loadJson: loadJson,
       finishTest: finishTest
     };
 
@@ -304,4 +280,197 @@ angular.module('ATEM-App.services', [])
       stopAudio: stopAudio,
       repeatAudio: repeatAudio
     };
-  });
+  })
+
+  .service('compService', ['$http', 'fileService', 'audioService', function($http, fileService, audioService) {
+
+    var scope, rootScope;
+    var mistakes3_6;
+    var answerQ1;
+
+    function setScope(currentScope) {
+      scope = currentScope;
+      mistakes3_6 = 0;
+    }
+
+    function setRootScope(currentRootScope) {
+      rootScope = currentRootScope;
+    }
+
+    function loadJson(id) {
+      var filepath = "json/" + id + ".json";
+      return $http.get(filepath);
+    }
+
+    function selectAnswer(answer) {
+      scope.selectedAnswer = answer;
+      window.scrollTo(0, document.body.scrollHeight);
+      fileService.logEvent('Select answer', answer, rootScope.currentComp, scope.currentQuestion.id);
+    }
+
+    function nextComp() {
+      $mistakes3_6 = 0;
+
+    }
+
+    function nextQuestion(nextStory) {
+      var comp = rootScope.currentComp;
+      var item, maxItem;
+      if (comp == 3) {
+        item = scope.currentChoice.id;
+        maxItem = scope.allChoices.length;
+      } else {
+        item = scope.currentQuestion.id;
+        maxItem = scope.allQuestions.length;
+      }
+      audioService.stopAudio();
+
+      if (comp > 4) {
+        nextQuestion5_6(nextStory, comp, item, maxItem);
+      } else {
+        fileService.logAnswer(comp, item, scope.selectedAnswer, scope.currentQuestion.correctAnswer, scope.currentQuestion.isRegItem);
+        fileService.logEvent('Confirm answer', scope.selectedAnswer, rootScope.currentComp, scope.currentQuestion.id);
+        if (scope.selectedAnswer == scope.currentQuestion.correctAnswer) {
+          mistakes3_6 = 0;
+        } else if (scope.selectedAnswer != scope.currentQuestion.correctAnswer && !scope.currentQuestion.isRegItem) {
+          if (comp < 3) {
+            rootScope.mistakes1_2++;
+            if (rootScope.mistakes1_2 == 4) {
+              fileService.logResult('Zu viele Fehler in Komponente 1 und 2. Test wird nach Komponente 2 beendet.');
+            }
+          } else {
+            mistakes3_6++;
+            if (mistakes3_6 == 3) {
+              if (comp == 6) {
+                fileService.logResult('Drei falsche Antworten hintereinander. Test wird beendet.');
+              } else {
+                fileService.logResult('Drei falsche Antworten hintereinander. Sprung zur nächsten Komponente.')
+              }
+              nextComp();
+            }
+          }
+        }
+        scope.selectedAnswer = 0;
+
+        if (item < maxItem) {
+          switch (comp) {
+            case 3:
+              scope.currentChoice = scope.allChoices[item];
+              break;
+            case 5:
+              scope.currentQuestion = scope.allQuestions[item];
+              scope.currentQuestion.question = scope.allQuestions[currentId].question1;
+              break;
+            default:
+              scope.currentQuestion = scope.allQuestions[item];
+              break;
+          }
+          scope.showQuestionImg = true;
+          if (scope.currentQuestion.id == nextStory) {
+            scope.displayMode = 'story';
+            audioService.playAudio(scope.currentStory.audio);
+          } else {
+            if (comp == 3) {
+              scope.displayMode = 'choice';
+              audioService.playAudio(scope.currentChoice.choiceAudio);
+            } else {
+              scope.showAnswers = false;
+              audioService.playAudio(scope.currentQuestion.audio[0]);
+              window.scrollTo(0, 0);
+            }
+          }
+        } else {
+          audioService.stopAudio();
+          switch (comp) {
+            case 1:
+              nextComp();
+              break;
+            case 2:
+              rootScope.mistakes1_2 < 4 ? nextComp() : window.location = '#/results';
+              break;
+            default:
+              scope.displayMode = 'story';
+              audioService.playAudio(scope.currentStory.audio);
+              break;
+          }
+        }
+      }
+    }
+
+    function nextQuestion5_6(nextStory, comp, item, numberOfQuestions) {
+      if (typeof(scope.allQuestions[item - 1].question2) === "undefined") {
+        fileService.logAnswer(comp, scope.currentQuestion.id, scope.selectedAnswer, scope.currentQuestion.correctAnswer1, false);
+        fileService.logEvent('Confirm answer', scope.selectedAnswer, comp, scope.currentQuestion.id);
+        if (scope.selectedAnswer == scope.currentQuestion.correctAnswer1) {
+          mistakes3_6 = 0;
+        } else {
+          mistakes3_6++;
+          if (mistakes3_6 == 3) {
+            if (comp == 5) {
+              fileService.logResult('Drei falsche Antworten hintereinander. Sprung zur nächsten Komponente.');
+            } else {
+              fileService.logResult('Drei falsche Antworten hintereinander. Test wird beendet.');
+            }
+            nextComp();
+            return;
+          }
+        }
+        nextItem();
+
+      } else if (scope.currentQuestion.question == scope.allQuestions[item - 1].question1) {
+        answerQ1 = scope.selectedAnswer;
+        fileService.logEvent('Question A: Confirm answer', scope.selectedAnswer, comp, scope.currentQuestion.id);
+        fileService.logAnswer(comp, scope.currentQuestion.id + 'a', scope.selectedAnswer, scope.currentQuestion.correctAnswer1, true);
+        scope.selectedAnswer = 0;
+        scope.currentQuestion.question = scope.allQuestions[item - 1].question2;
+        audioService.playAudio(scope.currentQuestion.question.audio[1]);
+      } else {
+        fileService.logEvent('Question B: Confirm answer', scope.selectedAnswer, comp, scope.currentQuestion.id);
+        if (answerQ1 == scope.allQuestions[item - 1].correctAnswer1 && scope.selectedAnswer == scope.allQuestions[item - 1].correctAnswer2) {
+          mistakes3_6 = 0;
+          fileService.logAnswer(comp, scope.currentQuestion.id + 'b', scope.selectedAnswer, scope.currentQuestion.correctAnswer2, false);
+        } else {
+          mistakes3_6++;
+          fileService.logAnswer(comp, scope.currentQuestion.id + 'b', scope.selectedAnswer, scope.currentQuestion.correctAnswer2, true);
+          if (mistakes3_6 == 3) {
+            if (comp == 5) {
+              fileService.logResult('Drei falsche Antworten hintereinander. Sprung zur nächsten Komponente.');
+            } else {
+              fileService.logResult('Drei falsche Antworten hintereinander. Test wird beendet.');
+            }
+            nextComp();
+            return;
+          }
+        }
+        nextItem();
+
+      }
+
+      function nextItem() {
+        audioService.stopAudio();
+        scope.selectedAnswer = 0;
+        if (item < numberOfQuestions) {
+          scope.currentQuestion = scope.allQuestions[item];
+          scope.currentQuestion.question = scope.allQuestions[item].question1;
+          scope.showQuestionImg = true;
+          if (scope.currentQuestion.id == nextStory) {
+            scope.displayMode = 'story';
+            audioService.playAudio(scope.currentStory.audio);
+          } else {
+            scope.showAnswers = false;
+            audioService.playAudio(scope.currentQuestion.question.audio[0]);
+          }
+        } else scope.displayMode = 'story';
+
+        window.scrollTo(0, 0);
+      }
+    }
+
+    return {
+      loadJson: loadJson,
+      selectAnswer: selectAnswer,
+      setScope: setScope,
+      setRootScope: setRootScope,
+      nextQuestion: nextQuestion
+    };
+  }]);
