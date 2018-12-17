@@ -53,18 +53,19 @@ angular.module('ATEM-App.services', [])
     }
 
     function logResult(msg) {
+      console.log('Result: ' + msg + '\n');
       if (files.length > 0) {
-        writeFile(files[RESULTID], msg + '\n', true);
+        writeFile(files[RESULTID], msg, true);
       }
     }
 
-    function logAnswer(comp, question, answer, correctAnswer, isRegItem) {
-      var msg = "";
-      msg += ("Komponente " + comp + ', Frage ' + question + ': ' + answer + ' (richtige Antwort: ' + correctAnswer + ')');
-      console.log(msg);
-      logResult(msg);
-      if (answer == correctAnswer && !isRegItem) points++;
-    }
+    // function logResult(comp, question, answer, correctAnswer, isRegItem) {
+    //   var msg = "";
+    //   msg += ("Komponente " + comp + ', Frage ' + question + ': ' + answer + ' (richtige Antwort: ' + correctAnswer + ')');
+    //   console.log(msg);
+    //   logResult(msg);
+    //   if (answer == correctAnswer && !isRegItem) points++;
+    // }
 
     function writeFile(fileEntry, dataObj, isAppend) {
       // Create a FileWriter object for our FileEntry (log.txt).
@@ -148,7 +149,7 @@ angular.module('ATEM-App.services', [])
       isFinished = false;
       createFile("sensor" + userID + ".csv", 'Timestamp;X;Y;Z;X including gravity;Y including gravity;Z including Gravity;Alpha;Beta;Gamma' + '\n', SENSORID);
       createFile("events" + userID + ".csv", 'Timestamp;Component;Item;Event;Param' + '\n', EVENTID);
-      createFile("results" + userID + ".txt", "Alter: " + ageInMonths + " Monate" + '\n' + "Geschlecht: " + gender + '\n' + "Sprache: " + language + '\n', RESULTID);
+      createFile("results" + userID + ".csv", ageInMonths + ";" + "CODE" + ";" + gender + ";" + language + ";", RESULTID);
     }
 
     function logEnd() {
@@ -219,10 +220,7 @@ angular.module('ATEM-App.services', [])
       if (secs < 10) timeString += "0";
       timeString += secs.toString();
       timeString = "Ende des Tests. Bearbeitungszeit: " + timeString;
-      logResult(timeString + '\nPunktzahl. ' + points.toString());
-      console.log(timeString);
-      logResult('Punktzahl: ' + points.toString());
-      logResult('');
+      logResult(timeString + ';');
       isFinished = true;
       logSensor();
       wipeData();
@@ -235,7 +233,7 @@ angular.module('ATEM-App.services', [])
       startSensor: startSensor,
       wipeData: wipeData,
       requestFS: requestFS,
-      logAnswer: logAnswer,
+      logResult: logResult,
       finishTest: finishTest
     };
 
@@ -309,11 +307,31 @@ angular.module('ATEM-App.services', [])
     }
 
     function nextComp() {
-      $mistakes3_6 = 0;
-
+      switch (rootScope.currentComp) {
+        case 1:
+          window.location = '#/comp2';
+          break;
+        case 2:
+          if (rootScope.mistakes1_2 < 4) {
+            window.location = "#/comp3";
+          } else {
+            const QUESTIONS3_6 = 5 + 5 + 8 + 9;
+            var skippedAnswers = "";
+            for (i = 0; i < QUESTIONS3_6; i++) {
+              skippedAnswers += "0;";
+            }
+            fileService.logResult(skippedAnswers);
+            window.location = "#/results";
+          }
+          break;
+        default:
+          scope.displayMode = 'story';
+          audioService.playAudio(scope.currentStory.audio);
+          break;
+      }
     }
 
-    function nextQuestion(nextStory) {
+    function nextQuestion() {
       var comp = rootScope.currentComp;
       var item, maxItem;
       if (comp == 3) {
@@ -326,9 +344,9 @@ angular.module('ATEM-App.services', [])
       audioService.stopAudio();
 
       if (comp > 4) {
-        nextQuestion5_6(nextStory, comp, item, maxItem);
+        nextQuestion5_6(scope.nextStory, comp, item, maxItem);
       } else {
-        fileService.logAnswer(comp, item, scope.selectedAnswer, scope.currentQuestion.correctAnswer, scope.currentQuestion.isRegItem);
+        fileService.logResult(scope.selectedAnswer.toString() + ";");
         fileService.logEvent('Confirm answer', scope.selectedAnswer, rootScope.currentComp, scope.currentQuestion.id);
         if (scope.selectedAnswer == scope.currentQuestion.correctAnswer) {
           mistakes3_6 = 0;
@@ -336,7 +354,7 @@ angular.module('ATEM-App.services', [])
           if (comp < 3) {
             rootScope.mistakes1_2++;
             if (rootScope.mistakes1_2 == 4) {
-              fileService.logResult('Zu viele Fehler in Komponente 1 und 2. Test wird nach Komponente 2 beendet.');
+              //fileService.logResult('Zu viele Fehler in Komponente 1 und 2. Test wird nach Komponente 2 beendet.');
             }
           } else {
             mistakes3_6++;
@@ -366,7 +384,7 @@ angular.module('ATEM-App.services', [])
               break;
           }
           scope.showQuestionImg = true;
-          if (scope.currentQuestion.id == nextStory) {
+          if (scope.currentQuestion.id == scope.nextStory) {
             scope.displayMode = 'story';
             audioService.playAudio(scope.currentStory.audio);
           } else {
@@ -381,25 +399,14 @@ angular.module('ATEM-App.services', [])
           }
         } else {
           audioService.stopAudio();
-          switch (comp) {
-            case 1:
-              nextComp();
-              break;
-            case 2:
-              rootScope.mistakes1_2 < 4 ? nextComp() : window.location = '#/results';
-              break;
-            default:
-              scope.displayMode = 'story';
-              audioService.playAudio(scope.currentStory.audio);
-              break;
-          }
+          nextComp();
         }
       }
     }
 
-    function nextQuestion5_6(nextStory, comp, item, numberOfQuestions) {
+    function nextQuestion5_6(assa, comp, item, numberOfQuestions) {
       if (typeof(scope.allQuestions[item - 1].question2) === "undefined") {
-        fileService.logAnswer(comp, scope.currentQuestion.id, scope.selectedAnswer, scope.currentQuestion.correctAnswer1, false);
+        fileService.logResult(scope.selectedAnswer.toString() + ";");
         fileService.logEvent('Confirm answer', scope.selectedAnswer, comp, scope.currentQuestion.id);
         if (scope.selectedAnswer == scope.currentQuestion.correctAnswer1) {
           mistakes3_6 = 0;
@@ -420,7 +427,7 @@ angular.module('ATEM-App.services', [])
       } else if (scope.currentQuestion.question == scope.allQuestions[item - 1].question1) {
         answerQ1 = scope.selectedAnswer;
         fileService.logEvent('Question A: Confirm answer', scope.selectedAnswer, comp, scope.currentQuestion.id);
-        fileService.logAnswer(comp, scope.currentQuestion.id + 'a', scope.selectedAnswer, scope.currentQuestion.correctAnswer1, true);
+        fileService.logResult(scope.selectedAnswer.toString() + ";");
         scope.selectedAnswer = 0;
         scope.currentQuestion.question = scope.allQuestions[item - 1].question2;
         audioService.playAudio(scope.currentQuestion.question.audio[1]);
@@ -428,10 +435,10 @@ angular.module('ATEM-App.services', [])
         fileService.logEvent('Question B: Confirm answer', scope.selectedAnswer, comp, scope.currentQuestion.id);
         if (answerQ1 == scope.allQuestions[item - 1].correctAnswer1 && scope.selectedAnswer == scope.allQuestions[item - 1].correctAnswer2) {
           mistakes3_6 = 0;
-          fileService.logAnswer(comp, scope.currentQuestion.id + 'b', scope.selectedAnswer, scope.currentQuestion.correctAnswer2, false);
+          fileService.logResult(scope.selectedAnswer.toString() + ";");
         } else {
           mistakes3_6++;
-          fileService.logAnswer(comp, scope.currentQuestion.id + 'b', scope.selectedAnswer, scope.currentQuestion.correctAnswer2, true);
+          fileService.logResult(scope.selectedAnswer.toString() + ";");
           if (mistakes3_6 == 3) {
             if (comp == 5) {
               fileService.logResult('Drei falsche Antworten hintereinander. Sprung zur nächsten Komponente.');
@@ -453,7 +460,7 @@ angular.module('ATEM-App.services', [])
           scope.currentQuestion = scope.allQuestions[item];
           scope.currentQuestion.question = scope.allQuestions[item].question1;
           scope.showQuestionImg = true;
-          if (scope.currentQuestion.id == nextStory) {
+          if (scope.currentQuestion.id == scope.nextStory) {
             scope.displayMode = 'story';
             audioService.playAudio(scope.currentStory.audio);
           } else {
@@ -463,6 +470,15 @@ angular.module('ATEM-App.services', [])
         } else scope.displayMode = 'story';
 
         window.scrollTo(0, 0);
+      }
+    }
+
+    function fillResults() {
+      for (i = scope.currentQuestion.id; i < scope.allQuestions.length - 1; i++) {
+        fileService.logResult("0;");
+        if (rootScope.currentComp > 4 && typeof(scope.allQuestions[i - 1].question2) != "undefined") {
+          fileService.logResult("0;");
+        }
       }
     }
 

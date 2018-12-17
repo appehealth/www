@@ -2,8 +2,8 @@
   Bist du ein Junge oder ein Mädchen?</p>
 
 <div class="introSelect">
-  <button class="btn btn-success btn-lg" ng-click="gender='Junge'"> Junge </button>
-  <button class="btn btn-success btn-lg" ng-click="gender='Mädchen'"> Mädchen </button>
+  <button class="btn btn-success btn-lg" ng-click="gender='M'"> Junge </button>
+  <button class="btn btn-success btn-lg" ng-click="gender='W'"> Mädchen </button>
 </div>
 
 <p class="storyText">Wann bist du geboren?</p>
@@ -173,8 +173,7 @@
 
 <br />
 
-
-<button type="button" class="btn btn-success btn-block btn-lg" ng-click="startStory()" ng-disabled="year=='Jahr' || month=='Monat' || day=='Tag' || gender=='undefined'">Geschichte starten</button>
+<button type="button" class="btn btn-success btn-block btn-lg" ng-click="startStory()" ng-disabled="year=='Jahr' || month=='Monat' || day=='Tag'">Geschichte Starten</button>
 
 
 <br />

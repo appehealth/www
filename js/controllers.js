@@ -1,7 +1,6 @@
 angular.module('ATEM-App.controllers', [])
 
   .controller('StartCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
-
     $scope.normalClick = function() {
       $rootScope.presentationMode = false;
       window.location = '#/intro';
@@ -15,7 +14,7 @@ angular.module('ATEM-App.controllers', [])
 
   .controller('IntroCtrl', ['$scope', '$rootScope', 'fileService', 'audioService', 'compService', function($scope, $rootScope, fileService, audioService, compService) {
     var part2 = false;
-    var text1, text2;
+    var img1, img2;
     var audio = [];
     var d = new Date();
     var y = d.getFullYear();
@@ -34,9 +33,9 @@ angular.module('ATEM-App.controllers', [])
     compService.setRootScope($rootScope);
 
     compService.loadJson("intro").then(function(response) {
-      text1 = response.data.text1;
-      text2 = response.data.text2;
-      $scope.introText = text1;
+      img1 = response.data.img1;
+      img2 = response.data.img2;
+      $scope.introImg = img1;
       audio = response.data.audio;
     });
 
@@ -59,7 +58,7 @@ angular.module('ATEM-App.controllers', [])
         audioService.stopAudio();
         audioService.playAudio(audio[1]);
         part2 = true;
-        $scope.introText = text2;
+        $scope.introImg = img2;
         $scope.buttonCaption = 'Start';
         window.scrollTo(0, 0);
       }
@@ -109,7 +108,7 @@ angular.module('ATEM-App.controllers', [])
       //   window.location = '#/comp2';
       // }
 
-      compService.nextQuestion(0);
+      compService.nextQuestion();
     }
 
   }])
@@ -118,7 +117,7 @@ angular.module('ATEM-App.controllers', [])
     var story = [];
     var numberOfQuestions = 0;
     var wrongAnswers = 0;
-    var nextStory = 0;
+    $scope.nextStory = 0;
     $scope.allQuestions = [];
     $scope.selectedAnswer = 0;
     $scope.showQuestionImg = true;
@@ -142,7 +141,7 @@ angular.module('ATEM-App.controllers', [])
       // if ($scope.currentQuestion.id < numberOfQuestions) {
       //   $scope.currentQuestion = $scope.allQuestions[$scope.currentQuestion.id];
       //   $scope.showQuestionImg = true;
-      //   if ($scope.currentQuestion.id == nextStory) {
+      //   if ($scope.currentQuestion.id == $scope.nextStory) {
       //     $scope.displayMode = 'story';
       //     audioService.playAudio($scope.currentStory.audio);
       //   } else {
@@ -155,7 +154,7 @@ angular.module('ATEM-App.controllers', [])
       // }
       //
       // window.scrollTo(0, 0);
-      compService.nextQuestion(nextStory);
+      compService.nextQuestion($scope.nextStory);
     }
 
     $scope.showQuestion = function() {
@@ -179,7 +178,7 @@ angular.module('ATEM-App.controllers', [])
       audioService.playAudio($scope.currentQuestion.audio[0]);
       //}
       $scope.currentStory = story[$scope.currentStory.id];
-      nextStory = $scope.currentStory.location;
+      $scope.nextStory = $scope.currentStory.location;
 
       window.scrollTo(0, 0);
     }
@@ -193,8 +192,8 @@ angular.module('ATEM-App.controllers', [])
 
       if (story.length > 0) {
         $scope.currentStory = story[0];
-        nextStory = story[0].location;
-        if (nextStory <= 1) {
+        $scope.nextStory = story[0].location;
+        if ($scope.nextStory <= 1) {
           $scope.displayMode = 'story';
           audioService.playAudio($scope.currentStory.audio);
         } else {
@@ -213,7 +212,7 @@ angular.module('ATEM-App.controllers', [])
     var numberOfQuestions = 0;
     var wrongAnswers = 0;
     var showAnswers = false;
-    var nextStory = 0;
+    $scope.nextStory = 0;
     $scope.allChoices = [];
     $rootScope.mistakes3_6 = 0;
     $scope.selectedAnswer = 0;
@@ -255,7 +254,7 @@ angular.module('ATEM-App.controllers', [])
       // if ($scope.currentChoice.id < numberOfQuestions) {
       //   $scope.currentChoice = allChoices[$scope.currentChoice.id];
       //   $scope.showQuestionImg = true;
-      //   if ($scope.currentChoice.id == nextStory) {
+      //   if ($scope.currentChoice.id == $scope.nextStory) {
       //     $scope.displayMode = 'story';
       //     audioService.playAudio($scope.currentStory.audio);
       //   } else {
@@ -268,7 +267,7 @@ angular.module('ATEM-App.controllers', [])
       // }
       //
       // window.scrollTo(0, 0);
-      compService.nextQuestion(nextStory);
+      compService.nextQuestion($scope.nextStory);
 
     }
 
@@ -295,7 +294,7 @@ angular.module('ATEM-App.controllers', [])
           audioService.playAudio(story[$scope.currentStory.id].audio);
         }
         $scope.currentStory = story[$scope.currentStory.id];
-        nextStory = $scope.currentStory.location;
+        $scope.nextStory = $scope.currentStory.location;
       }
 
       window.scrollTo(0, 0);
@@ -309,8 +308,8 @@ angular.module('ATEM-App.controllers', [])
 
       if (story.length > 0) {
         $scope.currentStory = story[0];
-        nextStory = story[0].location;
-        if (nextStory == 1) {
+        $scope.nextStory = story[0].location;
+        if ($scope.nextStory == 1) {
           $scope.displayMode = 'story';
           audioService.playAudio($scope.currentStory.audio);
         } else {
@@ -326,7 +325,7 @@ angular.module('ATEM-App.controllers', [])
     var story = [];
     var numberOfQuestions = 0;
     var wrongAnswers = 0;
-    var nextStory = 0;
+    $scope.nextStory = 0;
     $scope.allQuestions = [];
     $rootScope.mistakes3_6 = 0;
     $scope.selectedAnswer = 0;
@@ -353,7 +352,7 @@ angular.module('ATEM-App.controllers', [])
       // if ($scope.currentQuestion.id < numberOfQuestions) {
       //   $scope.currentQuestion = $scope.allQuestions[$scope.currentQuestion.id];
       //   $scope.showQuestionImg = true;
-      //   if ($scope.currentQuestion.id == nextStory) {
+      //   if ($scope.currentQuestion.id == $scope.nextStory) {
       //     $scope.displayMode = 'story';
       //     audioService.playAudio($scope.currentStory.audio);
       //   } else {
@@ -363,7 +362,7 @@ angular.module('ATEM-App.controllers', [])
       // } else $scope.displayMode = 'story';
       //
       // window.scrollTo(0, 0);
-      compService.nextQuestion(nextStory);
+      compService.nextQuestion($scope.nextStory);
     }
 
     $scope.selectAnswer = function(ans) {
@@ -390,7 +389,7 @@ angular.module('ATEM-App.controllers', [])
           audioService.playAudio($scope.currentQuestion.audio[0]);
         }
         $scope.currentStory = story[$scope.currentStory.id];
-        nextStory = $scope.currentStory.location;
+        $scope.nextStory = $scope.currentStory.location;
       }
 
       window.scrollTo(0, 0);
@@ -405,8 +404,8 @@ angular.module('ATEM-App.controllers', [])
 
       if (story.length > 0) {
         $scope.currentStory = story[0];
-        nextStory = story[0].location;
-        if (nextStory == 1) {
+        $scope.nextStory = story[0].location;
+        if ($scope.nextStory == 1) {
           $scope.displayMode = 'story';
           audioService.playAudio($scope.currentStory.audio);
         } else {
@@ -422,7 +421,7 @@ angular.module('ATEM-App.controllers', [])
     var story = [];
     var numberOfQuestions = 0;
     var wrongAnswers = 0;
-    var nextStory = 0;
+    $scope.nextStory = 0;
     var answerQ1 = 0;
     var currentId = 1;
 
@@ -440,7 +439,7 @@ angular.module('ATEM-App.controllers', [])
       //   $scope.currentQuestion.question = $scope.allQuestions[currentId].question1;
       //   $scope.showQuestionImg = true;
       //   currentId++;
-      //   if ($scope.currentQuestion.id == nextStory) {
+      //   if ($scope.currentQuestion.id == $scope.nextStory) {
       //     $scope.displayMode = 'story';
       //     audioService.playAudio($scope.currentStory.audio);
       //   } else {
@@ -494,7 +493,7 @@ angular.module('ATEM-App.controllers', [])
       //   }
       //   nextQuestion();
       // }
-      compService.nextQuestion(nextStory);
+      compService.nextQuestion($scope.nextStory);
     }
 
     $scope.selectAnswer = function(ans) {
@@ -519,7 +518,7 @@ angular.module('ATEM-App.controllers', [])
           audioService.playAudio($scope.currentStory.audio)
         }
         $scope.currentStory = story[$scope.currentStory.id];
-        nextStory = $scope.currentStory.location;
+        $scope.nextStory = $scope.currentStory.location;
       }
 
       window.scrollTo(0, 0);
@@ -534,8 +533,8 @@ angular.module('ATEM-App.controllers', [])
       $scope.currentQuestion.question = $scope.allQuestions[0].question1;
       if (story.length > 0) {
         $scope.currentStory = story[0];
-        nextStory = story[0].location;
-        if (nextStory == 1) {
+        $scope.nextStory = story[0].location;
+        if ($scope.nextStory == 1) {
           $scope.displayMode = 'story';
           audioService.playAudio($scope.currentStory.audio);
         } else {
@@ -552,7 +551,7 @@ angular.module('ATEM-App.controllers', [])
     var story = [];
     var numberOfQuestions = 0;
     var wrongAnswers = 0;
-    var nextStory = 0;
+    $scope.nextStory = 0;
     var answerQ1 = 0;
     var currentId = 1;
 
@@ -571,7 +570,7 @@ angular.module('ATEM-App.controllers', [])
     //     $scope.currentQuestion.question = $scope.allQuestions[currentId].question1;
     //     $scope.showQuestionImg = true;
     //     currentId++;
-    //     if ($scope.currentQuestion.id == nextStory) {
+    //     if ($scope.currentQuestion.id == $scope.nextStory) {
     //       $scope.displayMode = 'story';
     //       audioService.playAudio($scope.currentStory.audio);
     //     } else {
@@ -626,7 +625,7 @@ angular.module('ATEM-App.controllers', [])
       //   }
       //   nextQuestion();
       // }
-      compService.nextQuestion(nextStory);
+      compService.nextQuestion($scope.nextStory);
     }
     $scope.repeatAudio = function() {
       audioService.repeatAudio();
@@ -646,7 +645,7 @@ angular.module('ATEM-App.controllers', [])
           audioService.playAudio($scope.currentQuestion.question.audio[0]);
         }
         $scope.currentStory = story[$scope.currentStory.id];
-        nextStory = $scope.currentStory.location;
+        $scope.nextStory = $scope.currentStory.location;
       }
 
       window.scrollTo(0, 0);
@@ -661,8 +660,8 @@ angular.module('ATEM-App.controllers', [])
       $scope.currentQuestion.question = $scope.allQuestions[0].question1;
       if (story.length > 0) {
         $scope.currentStory = story[0];
-        nextStory = story[0].location;
-        if (nextStory == 1) {
+        $scope.nextStory = story[0].location;
+        if ($scope.nextStory == 1) {
           $scope.displayMode = 'story';
           audioService.playAudio($scope.currentStory.audio);
         } else {
