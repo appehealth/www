@@ -168,7 +168,11 @@ angular.module('ATEM-App.controllers', [])
     }
 
     $scope.repeatAudio = function() {
-      audioService.repeatAudio();
+      if ($scope.displayMode == 'story') {
+        audioService.repeatAudio($scope.currentStory.audio);
+      } else {
+        audioService.repeatAudio($scope.currentQuestion.audio[0])
+      }
     }
 
     $scope.continueStory = function() {
