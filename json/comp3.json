@@ -239,9 +239,16 @@
       "audio": "audio/book.mp3"
     },
     {
+      "text": "Tim und Ali und Tims Eltern sind am Zoo angekommen.",
+      "image": "img/story/k3intro.JPG",
+      "id": 2,
+      "location": 1,
+      "audio": "audio/k3transition.mp3"
+    },
+    {
       "text": "Jetzt kann es endlich losgehen. Tim und Ali und Tims Eltern machen sich auf den Weg zu den Tieren. Zuerst gehen sie zu den Elefanten. Es gibt dort ein großes Elefantenhaus, in dem die Elefanten wohnen und auch noch einen Platz draußen, auf dem man sie beobachten kann.",
       "image": "img/story/k4intro.JPG",
-      "id": 2,
+      "id": 3,
       "location": 1,
       "audio": "audio/k3intro.mp3"
     },
