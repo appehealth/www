@@ -1,6 +1,7 @@
 angular.module('ATEM-App.services', [])
 
   .service('fileService', ['$http', 'audioService', function($http, audioService) {
+    var results = [];
     var files = [];
     var sensorBuffer = [];
     const SENSORID = 0;
@@ -53,9 +54,11 @@ angular.module('ATEM-App.services', [])
     }
 
     function logResult(msg) {
-      console.log('Result: ' + msg + '\n');
       if (files.length > 0) {
-        writeFile(files[RESULTID], msg, true);
+        results.push(msg);
+        console.log(results);
+        //writeFile(files[RESULTID], msg, true);
+
       }
     }
 
@@ -159,7 +162,7 @@ angular.module('ATEM-App.services', [])
         clearInterval(sensorInterval);
         writeFile(files[SENSORID], sensorBuffer.join('\n') + '\n', true);
         sensorBuffer = [];
-        //logResult("Bearbeitungszeit: " + printTime(startTime - endTime));
+        //t("Bearbeitungszeit: " + printTime(startTime - endTime));
         files = [];
       }
 
@@ -220,7 +223,8 @@ angular.module('ATEM-App.services', [])
       if (secs < 10) timeString += "0";
       timeString += secs.toString();
       timeString = "Ende des Tests. Bearbeitungszeit: " + timeString;
-      logResult(timeString + ';');
+      logResult(timeString);
+      writeFile(files[RESULTID], results.join(';'), true);
       isFinished = true;
       logSensor();
       wipeData();
@@ -270,7 +274,7 @@ angular.module('ATEM-App.services', [])
 
     function repeatAudio(url) {
       my_media.stop();
-      my_media.play();
+      playAudio(url);
     }
 
     return {
@@ -316,11 +320,9 @@ angular.module('ATEM-App.services', [])
             window.location = "#/comp3";
           } else {
             const QUESTIONS3_6 = 5 + 5 + 8 + 9;
-            var skippedAnswers = "";
             for (i = 0; i < QUESTIONS3_6; i++) {
-              skippedAnswers += "0;";
+              fileService.logResult("0");
             }
-            fileService.logResult(skippedAnswers);
             window.location = "#/results";
           }
           break;
@@ -346,7 +348,7 @@ angular.module('ATEM-App.services', [])
       if (comp > 4) {
         nextQuestion5_6(scope.nextStory, comp, item, maxItem);
       } else {
-        fileService.logResult(scope.selectedAnswer.toString() + ";");
+        fileService.logResult(scope.selectedAnswer.toString());
         fileService.logEvent('Confirm answer', scope.selectedAnswer, rootScope.currentComp, scope.currentQuestion.id);
         if (scope.selectedAnswer == scope.currentQuestion.correctAnswer) {
           mistakes3_6 = 0;
@@ -365,6 +367,7 @@ angular.module('ATEM-App.services', [])
                 fileService.logResult('Drei falsche Antworten hintereinander. Sprung zur nächsten Komponente.')
               }
               nextComp();
+              fillResults();
             }
           }
         }
@@ -406,7 +409,7 @@ angular.module('ATEM-App.services', [])
 
     function nextQuestion5_6(assa, comp, item, numberOfQuestions) {
       if (typeof(scope.allQuestions[item - 1].question2) === "undefined") {
-        fileService.logResult(scope.selectedAnswer.toString() + ";");
+        fileService.logResult(scope.selectedAnswer.toString());
         fileService.logEvent('Confirm answer', scope.selectedAnswer, comp, scope.currentQuestion.id);
         if (scope.selectedAnswer == scope.currentQuestion.correctAnswer1) {
           mistakes3_6 = 0;
@@ -419,6 +422,7 @@ angular.module('ATEM-App.services', [])
               fileService.logResult('Drei falsche Antworten hintereinander. Test wird beendet.');
             }
             nextComp();
+            fillResults();
             return;
           }
         }
@@ -427,7 +431,7 @@ angular.module('ATEM-App.services', [])
       } else if (scope.currentQuestion.question == scope.allQuestions[item - 1].question1) {
         answerQ1 = scope.selectedAnswer;
         fileService.logEvent('Question A: Confirm answer', scope.selectedAnswer, comp, scope.currentQuestion.id);
-        fileService.logResult(scope.selectedAnswer.toString() + ";");
+        fileService.logResult(scope.selectedAnswer.toString());
         scope.selectedAnswer = 0;
         scope.currentQuestion.question = scope.allQuestions[item - 1].question2;
         audioService.playAudio(scope.currentQuestion.question.audio[1]);
@@ -435,10 +439,10 @@ angular.module('ATEM-App.services', [])
         fileService.logEvent('Question B: Confirm answer', scope.selectedAnswer, comp, scope.currentQuestion.id);
         if (answerQ1 == scope.allQuestions[item - 1].correctAnswer1 && scope.selectedAnswer == scope.allQuestions[item - 1].correctAnswer2) {
           mistakes3_6 = 0;
-          fileService.logResult(scope.selectedAnswer.toString() + ";");
+          fileService.logResult(scope.selectedAnswer.toString());
         } else {
           mistakes3_6++;
-          fileService.logResult(scope.selectedAnswer.toString() + ";");
+          fileService.logResult(scope.selectedAnswer.toString());
           if (mistakes3_6 == 3) {
             if (comp == 5) {
               fileService.logResult('Drei falsche Antworten hintereinander. Sprung zur nächsten Komponente.');
@@ -446,6 +450,7 @@ angular.module('ATEM-App.services', [])
               fileService.logResult('Drei falsche Antworten hintereinander. Test wird beendet.');
             }
             nextComp();
+            fillResults();
             return;
           }
         }
@@ -475,9 +480,9 @@ angular.module('ATEM-App.services', [])
 
     function fillResults() {
       for (i = scope.currentQuestion.id; i < scope.allQuestions.length - 1; i++) {
-        fileService.logResult("0;");
+        fileService.logResult("0");
         if (rootScope.currentComp > 4 && typeof(scope.allQuestions[i - 1].question2) != "undefined") {
-          fileService.logResult("0;");
+          fileService.logResult("0");
         }
       }
     }
