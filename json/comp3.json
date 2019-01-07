@@ -77,14 +77,14 @@
           "Kannst Du mir zeigen, wie Tim und Ali sich fühlen, wenn der Tierpfleger ihnen auf einmal den Eimer Elefantenhaufen unter die Nase hält, obwohl sie nur Fotos machen wollten?"
         ],
         "storyImg": "img/story/k4i2B.JPG",
-        "question": ["Sind sie ängstlich oder ekeln sie sich oder sind sie fröhlich oder sind sie traurig?"],
+        "question": ["Sind sie ängstlich oder sind sie traurig oder sind sie fröhlich oder ekeln sie sich?"],
         "answers": [
           "img/emotions/both/aengstlich.JPG",
-          "img/emotions/both/ekelnd.JPG",
+          "img/emotions/both/traurig.JPG",
           "img/emotions/both/froehlich.JPG",
-          "img/emotions/both/traurig.JPG"
+          "img/emotions/both/ekelnd.JPG"
         ],
-        "correctAnswer": 2,
+        "correctAnswer": 4,
         "audio": [
           "audio/k4i25b.mp3",
           "audio/k4i25bant.mp3"
