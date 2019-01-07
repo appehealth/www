@@ -50,7 +50,7 @@
   <img src={{currentQuestion.question.answers[2]}} class="regImg" id="option3" ng-click="selectAnswer(3)" ng-style="{'outline': selectedAnswer === 3 ? '5px solid green' : ''}">
   <p class="storyText">{{currentQuestion.question.question[3]}}</p>
   <img src={{currentQuestion.question.answers[3]}} class="regImg" id="option4" ng-click="selectAnswer(4)" ng-style="{'outline': selectedAnswer === 4 ? '5px solid green' : ''}">
-
+  <p></p>
   <button type="button" class="btn btn-success btn-block btn-lg"  ng-click="confirmQuestion()" ng-style="{'visibility': selectedAnswer > 0 ? 'visible' : 'hidden'}">Weiter</button>
 
 </div>
