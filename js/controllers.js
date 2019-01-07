@@ -87,25 +87,6 @@ angular.module('ATEM-App.controllers', [])
     }
 
     $scope.nextQuestion = function() {
-      // audioService.stopAudio();
-      // fileService.logAnswer(1, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer);
-      // if ($scope.selectedAnswer != $scope.currentQuestion.correctAnswer) {
-      //   $rootScope.mistakes1_2++;
-      //   if ($rootScope.mistakes1_2 == 4) {
-      //     fileService.logResult('Zu viele Fehler in Komponente 1. Test wird nach Komponente 2 beendet.');
-      //   }
-      // }
-      // fileService.logEvent('Confirm answer', $scope.selectedAnswer, 1, $scope.currentQuestion.id);
-      // $scope.selectedAnswer = 0;
-      // if ($scope.currentQuestion.id < numberOfQuestions) {
-      //   $scope.currentQuestion = $scope.allQuestions[$scope.currentQuestion.id];
-      //   audioService.playAudio($scope.currentQuestion.audio);
-      //   window.scrollTo(0, 0);
-      // } else {
-      //   audioService.stopAudio();
-      //   window.location = '#/comp2';
-      // }
-
       compService.nextQuestion();
     }
 
@@ -123,35 +104,6 @@ angular.module('ATEM-App.controllers', [])
     compService.setScope($scope);
 
     $scope.confirmQuestion = function() {
-      // audioService.stopAudio();
-      // fileService.logAnswer(2, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer);
-      // fileService.logEvent('Confirm answer', $scope.selectedAnswer, 2, $scope.currentQuestion.id)
-      // if ($scope.selectedAnswer != $scope.currentQuestion.correctAnswer && !$scope.currentQuestion.isRegItem) {
-      //   $rootScope.mistakes1_2++;
-      //   console.log("fehler: " + $rootScope.mistakes1_2);
-      //   if ($rootScope.mistakes1_2 == 4) {
-      //     fileService.logResult('Zu viele Fehler in Komponente 1 und 2. Test wird nach dieser Komponente beendet.');
-      //   }
-      // }
-      //
-      // $scope.selectedAnswer = 0;
-      //
-      // if ($scope.currentQuestion.id < numberOfQuestions) {
-      //   $scope.currentQuestion = $scope.allQuestions[$scope.currentQuestion.id];
-      //   $scope.showQuestionImg = true;
-      //   if ($scope.currentQuestion.id == $scope.nextStory) {
-      //     $scope.displayMode = 'story';
-      //     audioService.playAudio($scope.currentStory.audio);
-      //   } else {
-      //     $scope.showAnswers = false;
-      //     audioService.playAudio($scope.currentQuestion.audio[0]);
-      //   }
-      // } else {
-      //   audioService.stopAudio();
-      //   $rootScope.mistakes1_2 < 4 ? window.location = '#/comp3' : window.location = '#/results';
-      // }
-      //
-      // window.scrollTo(0, 0);
       compService.nextQuestion($scope.nextStory);
     }
 
@@ -175,13 +127,10 @@ angular.module('ATEM-App.controllers', [])
 
     $scope.continueStory = function() {
       audioService.stopAudio();
-      //if ( ( $scope.currentStory.location != story[ $scope.currentStory.id ].location ) && $scope.currentStory.location <= numberOfQuestions ) {
       $scope.displayMode = 'question';
       audioService.playAudio($scope.currentQuestion.audio[0]);
-      //}
       $scope.currentStory = story[$scope.currentStory.id];
       $scope.nextStory = $scope.currentStory.location;
-
       window.scrollTo(0, 0);
     }
 
@@ -247,39 +196,7 @@ angular.module('ATEM-App.controllers', [])
     }
 
     $scope.confirmQuestion = function() {
-      // audioService.stopAudio();
-      // fileService.logAnswer(3, $scope.currentChoice.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer, false);
-      // fileService.logEvent('Confirm answer', $scope.selectedAnswer, 3, $scope.currentChoice.id)
-      // if ($scope.selectedAnswer == $scope.currentQuestion.correctAnswer) {
-      //   wrongAnswers = 0;
-      // } else {
-      //   wrongAnswers++;
-      //   if (wrongAnswers == 3) {
-      //     fileService.logResult('Drei falsche Antworten hintereinander. Sprung zu Komponente 4.');
-      //     window.location = '#/comp4';
-      //   }
-      // }
-      //
-      // $scope.selectedAnswer = 0;
-      //
-      // if ($scope.currentChoice.id < numberOfQuestions) {
-      //   $scope.currentChoice = allChoices[$scope.currentChoice.id];
-      //   $scope.showQuestionImg = true;
-      //   if ($scope.currentChoice.id == $scope.nextStory) {
-      //     $scope.displayMode = 'story';
-      //     audioService.playAudio($scope.currentStory.audio);
-      //   } else {
-      //     $scope.displayMode = 'choice';
-      //     audioService.playAudio($scope.currentChoice.choiceAudio);
-      //   }
-      // } else {
-      //   $scope.displayMode = 'story';
-      //   audioService.playAudio($scope.currentStory.audio);
-      // }
-      //
-      // window.scrollTo(0, 0);
       compService.nextQuestion($scope.nextStory);
-
     }
 
     $scope.selectAnswer = function(ans) {
@@ -345,34 +262,6 @@ angular.module('ATEM-App.controllers', [])
     compService.setScope($scope);
 
     $scope.confirmQuestion = function() {
-      // audioService.stopAudio();
-      // fileService.logAnswer(4, $scope.currentQuestion.id, $scope.selectedAnswer, $scope.currentQuestion.correctAnswer, false);
-      // fileService.logEvent('Confirm answer', $scope.selectedAnswer, 4, $scope.currentQuestion.id)
-      // if ($scope.selectedAnswer == $scope.currentQuestion.correctAnswer) {
-      //   wrongAnswers = 0;
-      // } else {
-      //   wrongAnswers++;
-      //   if (wrongAnswers == 3) {
-      //     fileService.logResult('Drei falsche Antworten hintereinander. Sprung zu Komponente 4.');
-      //     window.location = '#/comp5';
-      //   }
-      // }
-      //
-      // $scope.selectedAnswer = 0;
-      //
-      // if ($scope.currentQuestion.id < numberOfQuestions) {
-      //   $scope.currentQuestion = $scope.allQuestions[$scope.currentQuestion.id];
-      //   $scope.showQuestionImg = true;
-      //   if ($scope.currentQuestion.id == $scope.nextStory) {
-      //     $scope.displayMode = 'story';
-      //     audioService.playAudio($scope.currentStory.audio);
-      //   } else {
-      //     $scope.showAnswers = false;
-      //     audioService.playAudio($scope.currentQuestion.audio[0]);
-      //   }
-      // } else $scope.displayMode = 'story';
-      //
-      // window.scrollTo(0, 0);
       compService.nextQuestion($scope.nextStory);
     }
 

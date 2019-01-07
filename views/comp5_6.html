@@ -40,3 +40,17 @@
 
   <button type="button" class="btn btn-success btn-block btn-lg" ng-click="continueStory()">Weiter</button>
 </div>
+
+<div ng-show="displayMode==='regItem'">
+  <p class="storyText">{{currentQuestion.question.question[0]}}</p>
+  <img src={{currentQuestion.question.answers[0]}} class="regImg" id="option1" ng-click="selectAnswer(1)" ng-style="{'outline': selectedAnswer === 1 ? '5px solid green' : ''}">
+  <p class="storyText">{{currentQuestion.question.question[1]}}</p>
+  <img src={{currentQuestion.question.answers[1]}} class="regImg" id="option2" ng-click="selectAnswer(2)" ng-style="{'outline': selectedAnswer === 2 ? '5px solid green' : ''}">
+  <p class="storyText">{{currentQuestion.question.question[2]}}</p>
+  <img src={{currentQuestion.question.answers[2]}} class="regImg" id="option3" ng-click="selectAnswer(3)" ng-style="{'outline': selectedAnswer === 3 ? '5px solid green' : ''}">
+  <p class="storyText">{{currentQuestion.question.question[3]}}</p>
+  <img src={{currentQuestion.question.answers[3]}} class="regImg" id="option4" ng-click="selectAnswer(4)" ng-style="{'outline': selectedAnswer === 4 ? '5px solid green' : ''}">
+
+  <button type="button" class="btn btn-success btn-block btn-lg"  ng-click="confirmQuestion()" ng-style="{'visibility': selectedAnswer > 0 ? 'visible' : 'hidden'}">Weiter</button>
+
+</div>

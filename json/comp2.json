@@ -22,10 +22,10 @@
       "id": 2,
       "story": ["Tim ekelt sich sehr von dem Käse. Was könnte Tim am besten tun, damit er sich nicht mehr so vor dem Käse ekelt?"],
       "storyImg": "img/story/k2i2.JPG",
-      "question": ["1. Tim könnte sich vorstellen, dass in dem Käse bestimmt auch schon Würmer leben.",
-        "2. Tim könnte den Käse schnell in die Mülltonne vor dem Haus werfen, damit es drinnen nicht mehr so stinkt",
-        "3. Tim könnte seine Mutter anschreien, dass sie den Käse wegtun soll.",
-        "4. Tim kann gar nichts dagegen tun, dass er sich vor dem Käse ekelt"
+      "question": ["Tim könnte sich vorstellen, dass in dem Käse bestimmt auch schon Würmer leben.",
+        "Tim könnte den Käse schnell in die Mülltonne vor dem Haus werfen, damit es drinnen nicht mehr so stinkt",
+        "Tim könnte seine Mutter anschreien, dass sie den Käse wegtun soll.",
+        "Tim kann gar nichts dagegen tun, dass er sich vor dem Käse ekelt"
       ],
       "answers": [
         "img/emotions/regulation/1.1.PNG",
@@ -120,10 +120,10 @@
       "id": 7,
       "story": ["Tim ist ängstlich, weil die großen, böse aussehende Männer mit den Hunden eingestiegen sind. Was könnte Tim am besten tun, damit er nicht mehr ängstlich ist?"],
       "storyImg": "img/story/k2i7.JPG",
-      "question": ["1. Tim könnte die Männer und die Hunde die ganze Zeit ansehen",
-        "2. Tim kann nichts machen, damit er nicht mehr ängstlich ist.",
-        "3. Tim könnte an die vielen tollen Tiere denken, die sie im Zoo bald sehen werden.",
-        "4. Tim könnte daran denken, dass die Hunde ihn bestimmt beißen werden"
+      "question": ["Tim könnte die Männer und die Hunde die ganze Zeit ansehen",
+        "Tim kann nichts machen, damit er nicht mehr ängstlich ist.",
+        "Tim könnte an die vielen tollen Tiere denken, die sie im Zoo bald sehen werden.",
+        "Tim könnte daran denken, dass die Hunde ihn bestimmt beißen werden"
       ],
       "answers": [
         "img/emotions/regulation/2.1.PNG",
