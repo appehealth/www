@@ -11,29 +11,29 @@
 <br />
 <br />
 
-<button type="button" class="btn btn-success btn-block btn-lg" ng-click="normalClick()">Normal</button>
+<button type="button" class="btn btn-success btn-block btn-lg" ng-click="start(false)">Normal</button>
 <br>
-<button type="button" class="btn btn-danger btn-block btn-lg" ng-click="presentationClick()">Präsentation</button>
+<button type="button" class="btn btn-danger btn-block btn-lg" ng-click="start(true)">Präsentation</button>
 <br>
 
 <div class="text-center">
-  <form>
+  <form name="codeForm">
     <label><b>Code: </b></label>
     <div class="row">
       <div class="col">
-        <input type="text" class="form-control" placeholder="Ort">
+        <input type="text" class="form-control" placeholder="Ort" ng-model="code_1">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="Institution">
+        <input type="text" class="form-control" placeholder="Institution" ng-model="code_2">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="Klasse">
+        <input type="text" class="form-control" placeholder="Klasse" ng-model="code_3">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="Namenskürzel">
+        <input type="text" class="form-control" placeholder="Namenskürzel" ng-model="code_4">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="ID">
+        <input type="text" class="form-control" placeholder="ID" ng-model="code_5">
       </div>
     </div>
   </form>

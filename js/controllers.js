@@ -1,13 +1,10 @@
 angular.module('ATEM-App.controllers', [])
 
   .controller('StartCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
-    $scope.normalClick = function() {
-      $rootScope.presentationMode = false;
-      window.location = '#/intro';
-    }
-
-    $scope.presentationClick = function() {
-      $rootScope.presentationMode = true;
+    $scope.start = function(presentationMode) {
+      $rootScope.presentationMode = presentationMode;
+      $rootScope.code = $scope.code_1 + $scope.code_2 + $scope.code_3 + $scope.code_4 + $scope.code_5;
+      console.log($rootScope.code);
       window.location = '#/intro';
     }
   }])
@@ -18,6 +15,7 @@ angular.module('ATEM-App.controllers', [])
     var audio = [];
     var d = new Date();
     var y = d.getFullYear();
+    var code = "";
     $scope.birthdayYears = [];
     for (i = y - 30; i <= y; i++) {
       $scope.birthdayYears.push(i);
@@ -45,7 +43,7 @@ angular.module('ATEM-App.controllers', [])
 
     $scope.startStory = function() {
       window.location = '#/introduction';
-      fileService.logStart(parseInt($scope.day), $scope.monthID, $scope.year, $scope.gender, $scope.language);
+      fileService.logStart(parseInt($scope.day), $scope.monthID, $scope.year, $scope.gender, $scope.language, $rootScope.code);
       audioService.playAudio(audio[0]);
     }
 
@@ -85,7 +83,7 @@ angular.module('ATEM-App.controllers', [])
     }
 
     $scope.repeatAudio = function() {
-      audioService.repeatAudio();
+      audioService.repeatAudio($scope.currentQuestion.audio[0]);
     }
 
     $scope.nextQuestion = function() {
@@ -236,7 +234,16 @@ angular.module('ATEM-App.controllers', [])
     }
 
     $scope.repeatAudio = function() {
-      audioService.repeatAudio();
+      switch ($scope.displayMode) {
+        case 'story':
+          audioService.repeatAudio($scope.currentStory.audio);
+          break;
+        case 'question':
+          audioService.repeatAudio($scope.currentQuestion.audio[0]);
+        case 'choice':
+          audioService.repeatAudio($scope.currentChoice.choiceAudio);
+          break;
+      }
     }
 
     $scope.confirmQuestion = function() {
@@ -374,7 +381,11 @@ angular.module('ATEM-App.controllers', [])
     }
 
     $scope.repeatAudio = function() {
-      audioService.repeatAudio();
+      if ($scope.displayMode == 'story') {
+        audioService.repeatAudio($scope.currentStory.audio);
+      } else {
+        audioService.repeatAudio($scope.currentQuestion.audio[0])
+      }
     }
 
     $scope.showQuestion = function() {
@@ -456,7 +467,11 @@ angular.module('ATEM-App.controllers', [])
     }
 
     $scope.repeatAudio = function() {
-      audioService.repeatAudio();
+      if ($scope.displayMode == 'story') {
+        audioService.repeatAudio($scope.currentStory.audio);
+      } else {
+        audioService.repeatAudio($scope.currentQuestion.audio[0])
+      }
     }
 
     $scope.confirmQuestion = function() {
@@ -632,7 +647,11 @@ angular.module('ATEM-App.controllers', [])
       compService.nextQuestion($scope.nextStory);
     }
     $scope.repeatAudio = function() {
-      audioService.repeatAudio();
+      if ($scope.displayMode == 'story') {
+        audioService.repeatAudio($scope.currentStory.audio);
+      } else {
+        audioService.repeatAudio($scope.currentQuestion.audio[0])
+      }
     }
 
     $scope.selectAnswer = function(ans) {

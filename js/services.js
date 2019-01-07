@@ -146,13 +146,13 @@ angular.module('ATEM-App.services', [])
       });
     }
 
-    function logStart(day, month, year, gender, language) {
+    function logStart(day, month, year, gender, language, code) {
       var ageInMonths = countMonths(day, month, year);
       var userID = Date.now();
       isFinished = false;
       createFile("sensor" + userID + ".csv", 'Timestamp;X;Y;Z;X including gravity;Y including gravity;Z including Gravity;Alpha;Beta;Gamma' + '\n', SENSORID);
       createFile("events" + userID + ".csv", 'Timestamp;Component;Item;Event;Param' + '\n', EVENTID);
-      createFile("results" + userID + ".csv", ageInMonths + ";" + "CODE" + ";" + gender + ";" + language + ";", RESULTID);
+      createFile("results" + userID + ".csv", code + ";" + userID + ";" + ageInMonths + ";" + gender + ";" + language + ";", RESULTID);
     }
 
     function logEnd() {
@@ -222,7 +222,6 @@ angular.module('ATEM-App.services', [])
       timeString += mins.toString() + ":";
       if (secs < 10) timeString += "0";
       timeString += secs.toString();
-      timeString = "Ende des Tests. Bearbeitungszeit: " + timeString;
       logResult(timeString);
       writeFile(files[RESULTID], results.join(';'), true);
       isFinished = true;
