@@ -39,7 +39,9 @@ angular.module( 'ATEM-App.controllers', [] )
     } );
 
     $scope.repeatAudio = function() {
-      audioService.repeatAudio();
+      if ( part2 )
+        audioService.repeatAudio( audio[ 1 ] );
+      else audioService.repeatAudio( audio[ 0 ] );
     }
 
     $scope.startStory = function() {
