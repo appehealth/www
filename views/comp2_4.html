@@ -22,7 +22,7 @@
     </table>
   </div>
 
-  <button type="button" class="btn btn-success btn-block btn-lg"  ng-click="confirmQuestion()" ng-style="{'visibility':(!showQuestionImg && selectedAnswer > 0) ? 'visible' : 'hidden'}">Weiter</button>
+  <button type="button" class="btn btn-success btn-block btn-lg" ng-click="confirmQuestion()" ng-style="{'visibility':(!showQuestionImg && selectedAnswer > 0) ? 'visible' : 'hidden'}">Weiter</button>
 
   <button type="button" class="btn btn-success btn-block btn-lg" ng-click="showQuestion()" ng-show="showQuestionImg">Weiter</button>
 
@@ -44,15 +44,26 @@
 </div>
 
 <div ng-show="displayMode==='regItem'">
-  <p class="storyText">{{currentQuestion.question[0]}}</p>
-  <img src={{currentQuestion.answers[0]}} class="regImg" id="option1" ng-click="selectAnswer(1)" ng-style="{'outline': selectedAnswer === 1 ? '5px solid green' : ''}">
-  <p class="storyText">{{currentQuestion.question[1]}}</p>
-  <img src={{currentQuestion.answers[1]}} class="regImg" id="option2" ng-click="selectAnswer(2)" ng-style="{'outline': selectedAnswer === 2 ? '5px solid green' : ''}">
-  <p class="storyText">{{currentQuestion.question[2]}}</p>
-  <img src={{currentQuestion.answers[2]}} class="regImg" id="option3" ng-click="selectAnswer(3)" ng-style="{'outline': selectedAnswer === 3 ? '5px solid green' : ''}">
-  <p class="storyText">{{currentQuestion.question[3]}}</p>
-  <img src={{currentQuestion.answers[3]}} class="regImg" id="option4" ng-click="selectAnswer(4)" ng-style="{'outline': selectedAnswer === 4 ? '5px solid green' : ''}">
-  <p></p>
-  <button type="button" class="btn btn-success btn-block btn-lg"  ng-click="confirmQuestion()" ng-style="{'visibility': selectedAnswer > 0 ? 'visible' : 'hidden'}">Weiter</button>
 
+  <p class="storyText" ng-repeat="y in currentQuestion.story">{{y}}</p>
+  <img src="img/repeat.png" style="margin:2%;" ng-click="repeatAudio()">
+
+  <div class="text-center">
+    <img src={{currentQuestion.storyImg}} class="storyimg" ng-show="showQuestionImg" />
+  </div>
+  <br>
+  <button type="button" class="btn btn-success btn-block btn-lg" ng-click="showQuestion()" ng-show="showQuestionImg">Weiter</button>
+
+  <div ng-show="!showQuestionImg">
+    <p class="storyText">{{currentQuestion.question[0]}}</p>
+    <img src={{currentQuestion.answers[0]}} class="regImg" id="option1" ng-click="selectAnswer(1)" ng-style="{'outline': selectedAnswer === 1 ? '5px solid green' : ''}">
+    <p class="storyText">{{currentQuestion.question[1]}}</p>
+    <img src={{currentQuestion.answers[1]}} class="regImg" id="option2" ng-click="selectAnswer(2)" ng-style="{'outline': selectedAnswer === 2 ? '5px solid green' : ''}">
+    <p class="storyText">{{currentQuestion.question[2]}}</p>
+    <img src={{currentQuestion.answers[2]}} class="regImg" id="option3" ng-click="selectAnswer(3)" ng-style="{'outline': selectedAnswer === 3 ? '5px solid green' : ''}">
+    <p class="storyText">{{currentQuestion.question[3]}}</p>
+    <img src={{currentQuestion.answers[3]}} class="regImg" id="option4" ng-click="selectAnswer(4)" ng-style="{'outline': selectedAnswer === 4 ? '5px solid green' : ''}">
+    <br>
+    <button type="button" class="btn btn-success btn-block btn-lg" ng-click="confirmQuestion()" ng-style="{'visibility':(!showQuestionImg && selectedAnswer > 0) ? 'visible' : 'hidden'}">Weiter</button>
+  </div>
 </div>
