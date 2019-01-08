@@ -205,7 +205,7 @@ angular.module( 'ATEM-App.services', [] )
 
     function wipeData() {
       files = [];
-      clearInterval( sensorInterval );
+      //clearInterval( sensorInterval );
     }
 
     function finishTest() {
@@ -224,7 +224,7 @@ angular.module( 'ATEM-App.services', [] )
       logResult( timeString );
       writeFile( files[ RESULTID ], results.join( ';' ), true );
       isFinished = true;
-      logSensor();
+      //logSensor();
       wipeData();
     }
 

@@ -26,6 +26,7 @@ angular.module( 'ATEM-App.controllers', [] )
     $scope.year = 'Jahr';
     $scope.gender = 'undefined';
     $scope.buttonCaption = 'Weiter';
+    $scope.isGerman = true;
 
     fileService.requestFS();
     compService.setRootScope( $rootScope );
